@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Python
 .venv/
 venv/
@@ -14,3 +15,6 @@ __pycache__/
 
 # VS Code
 .vscode/
+=======
+node_modules/
+>>>>>>> frontend
