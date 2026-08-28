@@ -34,7 +34,7 @@ function Topbar({
 
   return (
     <header
-      className={`flex h-16 items-center justify-between bg-[#112D4E] px-6 transition-all duration-500 ease-out motion-reduce:transition-none motion-reduce:transform-none ${
+      className={`sticky top-0 z-50 isolate flex h-16 items-center justify-between bg-[#112D4E] px-6 shadow-md transition-all duration-500 ease-out motion-reduce:transition-none motion-reduce:transform-none ${
         mounted ? "translate-y-0 opacity-100" : "-translate-y-4 opacity-0"
       }`}
     >

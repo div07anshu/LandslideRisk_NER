@@ -1,14 +1,13 @@
-import { AlertTriangle } from "lucide-react";
-
+import { AlertTriangle, ChevronRight } from "lucide-react";
 import Card from "../../common/Card";
 import CardHeader from "../../common/CardHeader";
-
 import { recentAlerts, alertLevelColor } from "../../data/mockData";
+import { Link } from "react-router-dom";
 
 function RecentAlerts() {
   return (
-    <Card>
-      <CardHeader title="RECENT ALERTS" actionLabel="View all" />
+    <Card className="h-full flex flex-col">
+      <CardHeader title="RECENT ALERTS" />
 
       <div className="px-5 pb-4 space-y-4">
         {recentAlerts.map((a) => (
@@ -45,6 +44,13 @@ function RecentAlerts() {
             </div>
           </div>
         ))}
+      </div>
+
+      <div className="px-5 pb-4 pt-1 mt-auto">
+        <Link to="/alerts" className="w-full text-sm font-medium text-blue-600 hover:text-blue-800 flex items-center justify-center gap-1 py-1">
+          View all alerts
+          <ChevronRight size={14} strokeWidth={3} />
+        </Link>
       </div>
     </Card>
   );
