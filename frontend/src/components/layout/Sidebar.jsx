@@ -7,7 +7,6 @@ import {
   FileText,
   Bot,
   Phone,
-  LogIn,
 } from "lucide-react";
 
 import { NavLink } from "react-router-dom";
@@ -65,7 +64,9 @@ function Sidebar() {
 
   return (
     <div
-      className={`flex h-full w-60 flex-col bg-[#112D4E] text-slate-200 border-t border-[#475569] transition-all duration-500 ease-out motion-reduce:transition-none motion-reduce:transform-none ${mounted ? "translate-x-0 opacity-100" : "-translate-x-4 opacity-0"
+      className={`flex h-full w-60 flex-col bg-[#112D4E] text-slate-200 border-t border-[#475569] transition-all duration-500 ease-out motion-reduce:transition-none motion-reduce:transform-none ${mounted
+          ? "translate-x-0 opacity-100"
+          : "-translate-x-4 opacity-0"
         }`}
     >
       <style>{`
@@ -73,12 +74,16 @@ function Sidebar() {
           from { opacity: 0; transform: translateX(-12px); }
           to { opacity: 1; transform: translateX(0); }
         }
+
         .nav-item-enter {
           animation: navItemIn 300ms ease-out both;
           animation-delay: var(--enter-delay, 0ms);
         }
+
         @media (prefers-reduced-motion: reduce) {
-          .nav-item-enter { animation: none; }
+          .nav-item-enter {
+            animation: none;
+          }
         }
       `}</style>
 
@@ -111,25 +116,12 @@ function Sidebar() {
         ))}
       </nav>
 
-      <div className="p-3 space-y-3">
-
-        {/* Login Button */}
-        <NavLink
-          to="/login"
-          className={({ isActive }) =>
-            `flex w-full items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium transition-all duration-200 ${isActive
-              ? "bg-white text-[#112D4E]"
-              : "bg-[#3F72AF] text-white hover:bg-[#4a82c5]"
-            }`
-          }
-        >
-          <LogIn size={18} />
-          <span>Login</span>
-        </NavLink>
-
+      <div className="p-3">
         {/* Emergency Contact */}
         <div className="rounded-xl border border-red-400/40 bg-gradient-to-b from-red-500/90 to-red-900 px-4 py-3 text-center shadow-md shadow-red-950/40 transition-transform duration-300 ease-out hover:scale-[1.02]">
-          <p className="text-xs text-red-100">Emergency Contact</p>
+          <p className="text-xs text-red-100">
+            Emergency Contact
+          </p>
 
           <div className="mt-1 flex items-center justify-center gap-2 text-white">
             <Phone
@@ -138,10 +130,11 @@ function Sidebar() {
               className="text-yellow-300 animate-pulse motion-reduce:animate-none"
             />
 
-            <span className="text-sm font-semibold">0123456789</span>
+            <span className="text-sm font-semibold">
+              0123456789
+            </span>
           </div>
         </div>
-
       </div>
     </div>
   );
