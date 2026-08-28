@@ -66,6 +66,7 @@ export const recentReports = [
     status: "PENDING",
     statusColor: "#B45309",
     statusBg: "#FEF3C7",
+    category: "road_crack",
   },
   {
     title: "Soil Movement in Aizawl",
@@ -74,6 +75,7 @@ export const recentReports = [
     status: "INVESTIGATING",
     statusColor: "#1D4ED8",
     statusBg: "#DBEAFE",
+    category: "soil_movement",
   },
   {
     title: "Small Landslide in Tawang",
@@ -82,6 +84,7 @@ export const recentReports = [
     status: "RESOLVED",
     statusColor: "#15803D",
     statusBg: "#DCFCE7",
+    category: "landslide",
   },
 ];
 

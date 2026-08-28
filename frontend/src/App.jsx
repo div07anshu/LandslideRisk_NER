@@ -6,6 +6,7 @@ import Dashboard from "./pages/Dashboard";
 import RiskAnalysis from "./pages/RiskAnalysis";
 import Login from "./pages/LoginPage";
 import Signup from "./pages/Signup";
+import Reports from "./pages/Reports";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
@@ -26,6 +27,8 @@ function App() {
           <Route index element={<Dashboard />} />
 
           <Route path="risk-analysis" element={<RiskAnalysis />} />
+
+          <Route path="reports" element={<Reports />} />
         </Route>
       </Routes>
     </BrowserRouter>
