@@ -9,10 +9,10 @@ function ProtectedRoute({ children }) {
   useEffect(() => {
     const checkUser = async () => {
       const {
-        data: { user },
-      } = await supabase.auth.getUser();
+        data: { session },
+      } = await supabase.auth.getSession();
 
-      setUser(user);
+      setUser(session?.user ?? null);
       setLoading(false);
     };
 
@@ -20,7 +20,7 @@ function ProtectedRoute({ children }) {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return null;
   }
 
   if (!user) {
