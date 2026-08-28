@@ -67,7 +67,7 @@ function Topbar({
           )}
         </button>
 
-        {/* User login box */}
+        {/* User Login box */}
         <div className="relative" ref={menuRef}>
           <button
             onClick={() => setMenuOpen((o) => !o)}
