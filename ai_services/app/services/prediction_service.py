@@ -32,7 +32,10 @@ def predict_risk(data: dict) -> dict:
         risk_level = "HIGH"
 
     return {
-        "probability": round(probability, 4),
+        "probability": round(
+            probability,
+            4,
+        ),
         "risk_score": risk_score,
         "risk_level": risk_level,
     }
