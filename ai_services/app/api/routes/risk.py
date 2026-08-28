@@ -24,7 +24,7 @@ def analyze_risk(data: RiskInput):
     try:
         return predict_risk(data.model_dump())
 
-    except Exception as error:
+    except Exception as error:  # noqa: BLE001
         raise HTTPException(
             status_code=500,
             detail=f"Risk prediction failed: {error}",
