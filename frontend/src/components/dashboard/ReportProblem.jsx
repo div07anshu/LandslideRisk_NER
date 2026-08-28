@@ -13,7 +13,7 @@ function ReportProblem() {
         Help us by reporting landslide or related issues.
       </p>
       <Link
-        to=""
+        to="/reports"
         className="mt-auto w-full bg-[#0B1B3B] text-white text-sm font-semibold rounded-lg py-2.5 hover:bg-[#132a5c] transition-colors text-center"
       >
         Report Now
