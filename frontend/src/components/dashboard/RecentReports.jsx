@@ -1,12 +1,13 @@
+import { ChevronRight } from "lucide-react";
 import Card from "../../common/Card";
 import CardHeader from "../../common/CardHeader";
-
 import { recentReports } from "../../data/mockData";
+import { Link } from "react-router-dom";
 
 function RecentReports() {
   return (
-    <Card>
-      <CardHeader title="RECENT REPORTS" actionLabel="View all" />
+    <Card className="h-full flex flex-col">
+      <CardHeader title="RECENT REPORTS" />
 
       <div className="px-5 pb-4 divide-y divide-slate-300">
         {recentReports.map((r) => (
@@ -36,6 +37,13 @@ function RecentReports() {
             </div>
           </div>
         ))}
+      </div>
+
+      <div className="px-5 pb-4 pt-1 mt-auto">
+        <Link to="/reports" className="w-full text-sm font-medium text-blue-600 hover:text-blue-800 flex items-center justify-center gap-1 py-1">
+          View all reports
+          <ChevronRight size={14} strokeWidth={3} />
+        </Link>
       </div>
     </Card>
   );

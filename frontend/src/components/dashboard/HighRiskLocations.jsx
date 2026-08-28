@@ -2,12 +2,12 @@ import { ChevronRight, MapPin } from "lucide-react";
 import Card from "../../common/Card";
 import CardHeader from "../../common/CardHeader";
 import { highRiskLocations } from "../../data/mockData";
-highRiskLocations;
+import { Link } from "react-router-dom";
 
 function HighRiskLocations() {
   return (
-    <Card>
-      <CardHeader title="HIGH RISK LOCATIONS" actionLabel="View all" />
+    <Card className="h-full flex flex-col">
+      <CardHeader title="HIGH RISK LOCATIONS" />
 
       <div className="px-5 pb-2 divide-y divide-slate-300">
         {highRiskLocations.map((loc) => (
@@ -37,11 +37,11 @@ function HighRiskLocations() {
         ))}
       </div>
 
-      <div className="px-5 pb-4 pt-1">
-        <button className="w-full text-sm font-medium text-blue-600 hover:text-blue-800 flex items-center justify-center gap-1 py-1">
+      <div className="px-5 pb-4 pt-1 mt-auto">
+        <Link to="/risk-map" className="w-full text-sm font-medium text-blue-600 hover:text-blue-800 flex items-center justify-center gap-1 py-1">
           View all high risk areas
           <ChevronRight size={14} strokeWidth={3} />
-        </button>
+        </Link>
       </div>
     </Card>
   );

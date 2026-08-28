@@ -7,6 +7,7 @@ export const quickActions = [
     icon: Compass,
     iconBg: "#DCFCE7",
     iconColor: "#16A34A",
+    path: "/risk-map",
   },
   {
     title: "Analyze Risk",
@@ -14,6 +15,7 @@ export const quickActions = [
     icon: Search,
     iconBg: "#FEF3C7",
     iconColor: "#D97706",
+    path: "/risk-analysis",
   },
   {
     title: "Ask AI Assistant",
@@ -21,5 +23,6 @@ export const quickActions = [
     icon: Bot,
     iconBg: "#DBEAFE",
     iconColor: "#2563EB",
+    path: "/assistant",
   },
 ];
