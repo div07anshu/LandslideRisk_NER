@@ -7,6 +7,7 @@ import Dashboard from "./pages/Dashboard";
 import RiskAnalysis from "./pages/RiskAnalysis";
 import Login from "./pages/LoginPage";
 import Signup from "./pages/Signup";
+import UpdatePassword from "./pages/UpdatePassword";
 import Reports from "./pages/Reports";
 import Alerts from "./pages/Alerts";
 import RiskMap from "./pages/RiskMap";
@@ -14,14 +15,31 @@ import AIAssistant from "./pages/AIAssistant";
 import ComingSoon from "./pages/ComingSoon";
 import NotFound from "./pages/NotFound";
 import ProtectedRoute from "./components/ProtectedRoute";
+import GuestRoute from "./components/GuestRoute";
 
 function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
+          <Route
+            path="/login"
+            element={
+              <GuestRoute>
+                <Login />
+              </GuestRoute>
+            }
+          />
+          <Route
+            path="/signup"
+            element={
+              <GuestRoute>
+                <Signup />
+              </GuestRoute>
+            }
+          />
+
+          <Route path="/update-password" element={<UpdatePassword />} />
 
           <Route
             path="/"

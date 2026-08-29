@@ -10,7 +10,7 @@ export default function ChatBubble({ message, index }) {
     >
       <div
         className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 ${
-          isUser ? "bg-[#0B1B3B]" : "bg-[#DBEAFE]"
+          isUser ? "bg-brand-950" : "bg-[#DBEAFE]"
         }`}
       >
         {isUser ? (
@@ -26,7 +26,7 @@ export default function ChatBubble({ message, index }) {
         <div
           className={`text-sm rounded-2xl px-4 py-2.5 leading-relaxed whitespace-pre-line ${
             isUser
-              ? "bg-[#0B1B3B] text-white rounded-br-sm"
+              ? "bg-brand-950 text-white rounded-br-sm"
               : "bg-slate-100 text-slate-700 rounded-bl-sm"
           }`}
         >

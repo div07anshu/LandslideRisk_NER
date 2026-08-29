@@ -10,6 +10,7 @@ export default function ReportsList({
   setStatusFilter,
   search,
   setSearch,
+  loading = false,
 }) {
   const prevIdsRef = useRef(new Set());
   const [newIds, setNewIds] = useState(new Set());
@@ -61,7 +62,9 @@ export default function ReportsList({
               ALL REPORTS
             </h3>
             <p className="text-xs text-slate-500 mt-1">
-              {reports.length} report{reports.length !== 1 ? "s" : ""} found
+              {loading
+                ? "Loading reports..."
+                : `${reports.length} report${reports.length !== 1 ? "s" : ""} found`}
             </p>
           </div>
 
@@ -77,7 +80,7 @@ export default function ReportsList({
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search reports..."
               aria-label="Search reports"
-              className="pl-8 pr-3 py-1.5 text-sm border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-[#3F72AF]"
+              className="pl-8 pr-3 py-1.5 text-sm border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-brand-600"
             />
           </div>
         </div>
@@ -90,7 +93,7 @@ export default function ReportsList({
               onClick={() => setStatusFilter(s)}
               className={`px-3 py-1.5 rounded-lg text-xs font-medium transition ${
                 statusFilter === s
-                  ? "bg-[#0B1B3B] text-white"
+                  ? "bg-brand-950 text-white"
                   : "text-slate-500 hover:bg-slate-200"
               }`}
             >
@@ -102,10 +105,16 @@ export default function ReportsList({
 
       {/* List */}
       <div className="px-5 pb-4 divide-y divide-slate-200 overflow-y-auto flex-1">
-        {reports.length === 0 && (
+        {!loading && reports.length === 0 && (
           <p className="text-sm text-slate-400 py-6 text-center">
             No reports match your filters.
           </p>
+        )}
+
+        {loading && (
+          <div className="py-6 flex justify-center">
+            <div className="w-6 h-6 border-2 border-slate-200 border-t-brand-600 rounded-full animate-spin motion-reduce:animate-none" />
+          </div>
         )}
 
         {reports.map((r, index) => {

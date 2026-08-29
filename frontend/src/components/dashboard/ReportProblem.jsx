@@ -14,7 +14,7 @@ function ReportProblem() {
       </p>
       <Link
         to="/reports"
-        className="mt-auto w-full bg-[#0B1B3B] text-white text-sm font-semibold rounded-lg py-2.5 hover:bg-[#132a5c] transition-colors text-center"
+        className="mt-auto w-full bg-brand-950 text-white text-sm font-semibold rounded-lg py-2.5 hover:bg-brand-800 transition-colors text-center"
       >
         Report Now
       </Link>

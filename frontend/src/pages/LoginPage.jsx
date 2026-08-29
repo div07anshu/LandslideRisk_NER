@@ -52,7 +52,7 @@ function Login() {
     setResetLoading(true);
 
     const { error } = await supabase.auth.resetPasswordForEmail(resetEmail, {
-      redirectTo: `${window.location.origin}/login`,
+      redirectTo: `${window.location.origin}/update-password`,
     });
 
     setResetLoading(false);
@@ -82,13 +82,13 @@ function Login() {
     <div className="min-h-screen bg-slate-100 flex items-center justify-center p-4">
       <div className="w-full max-w-5xl bg-white rounded-2xl shadow-xl overflow-hidden grid md:grid-cols-2">
         {/* LEFT SIDE */}
-        <div className="relative hidden md:flex bg-[#112D4E] text-white p-10 flex-col justify-between overflow-hidden">
+        <div className="relative hidden md:flex bg-brand-900 text-white p-10 flex-col justify-between overflow-hidden">
           {/* Background contour motif filling the lower space */}
-          <ContourMotif className="absolute -bottom-6 -right-10 w-[420px] h-[280px] text-[#3F72AF] opacity-25 pointer-events-none" />
+          <ContourMotif className="absolute -bottom-6 -right-10 w-[420px] h-[280px] text-brand-600 opacity-25 pointer-events-none" />
 
           <div className="relative">
             <div className="flex items-center gap-3">
-              <div className="bg-[#3F72AF] p-3 rounded-xl">
+              <div className="bg-brand-600 p-3 rounded-xl">
                 <Mountain size={28} />
               </div>
 
@@ -147,12 +147,12 @@ function Login() {
         <div className="p-8 sm:p-12">
           {/* MOBILE LOGO */}
           <div className="flex md:hidden items-center gap-3 mb-10">
-            <div className="bg-[#112D4E] text-white p-3 rounded-xl">
+            <div className="bg-brand-900 text-white p-3 rounded-xl">
               <Mountain size={24} />
             </div>
 
             <div>
-              <h1 className="font-bold text-[#112D4E]">LandslideRisk NER</h1>
+              <h1 className="font-bold text-brand-900">LandslideRisk NER</h1>
 
               <p className="text-xs text-slate-500">Early Warning System</p>
             </div>
@@ -189,7 +189,7 @@ function Login() {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required
-                        className="w-full pl-10 pr-4 py-3 border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-[#3F72AF] focus:border-transparent"
+                        className="w-full pl-10 pr-4 py-3 border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-brand-600 focus:border-transparent"
                       />
                     </div>
                   </div>
@@ -204,7 +204,7 @@ function Login() {
                       <button
                         type="button"
                         onClick={goToForgot}
-                        className="text-xs font-semibold text-[#3F72AF] hover:underline"
+                        className="text-xs font-semibold text-brand-600 hover:underline"
                       >
                         Forgot password?
                       </button>
@@ -222,7 +222,7 @@ function Login() {
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         required
-                        className="w-full pl-10 pr-4 py-3 border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-[#3F72AF] focus:border-transparent"
+                        className="w-full pl-10 pr-4 py-3 border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-brand-600 focus:border-transparent"
                       />
                     </div>
                   </div>
@@ -246,7 +246,7 @@ function Login() {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="w-full bg-[#3F72AF] hover:bg-[#345f92] text-white py-3 rounded-lg font-semibold shadow-sm shadow-[#3F72AF]/30 transition disabled:opacity-60"
+                    className="w-full bg-brand-600 hover:bg-brand-700 text-white py-3 rounded-lg font-semibold shadow-sm shadow-brand-600/30 transition disabled:opacity-60"
                   >
                     {loading ? "Signing in..." : "Sign In"}
                   </button>
@@ -257,7 +257,7 @@ function Login() {
                   Don't have an account?{" "}
                   <Link
                     to="/signup"
-                    className="text-[#3F72AF] font-semibold hover:underline"
+                    className="text-brand-600 font-semibold hover:underline"
                   >
                     Create account
                   </Link>
@@ -307,7 +307,7 @@ function Login() {
                     <button
                       type="button"
                       onClick={backToLogin}
-                      className="inline-block mt-6 bg-[#112D4E] hover:bg-[#183d66] text-white py-3 px-6 rounded-lg font-semibold transition"
+                      className="inline-block mt-6 bg-brand-900 hover:bg-brand-800 text-white py-3 px-6 rounded-lg font-semibold transition"
                     >
                       Back to sign in
                     </button>
@@ -344,7 +344,7 @@ function Login() {
                             value={resetEmail}
                             onChange={(e) => setResetEmail(e.target.value)}
                             required
-                            className="w-full pl-10 pr-4 py-3 border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-[#3F72AF] focus:border-transparent"
+                            className="w-full pl-10 pr-4 py-3 border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-brand-600 focus:border-transparent"
                           />
                         </div>
                       </div>
@@ -366,7 +366,7 @@ function Login() {
                       <button
                         type="submit"
                         disabled={resetLoading}
-                        className="w-full bg-[#3F72AF] hover:bg-[#345f92] text-white py-3 rounded-lg font-semibold shadow-sm shadow-[#3F72AF]/30 transition disabled:opacity-60"
+                        className="w-full bg-brand-600 hover:bg-brand-700 text-white py-3 rounded-lg font-semibold shadow-sm shadow-brand-600/30 transition disabled:opacity-60"
                       >
                         {resetLoading ? "Sending..." : "Send reset link"}
                       </button>
