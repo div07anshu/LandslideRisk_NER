@@ -20,7 +20,7 @@ function Layout() {
       <div className="flex flex-1 overflow-hidden">
         <Sidebar />
 
-        <main className="flex-1 overflow-y-auto bg-[#F9F7F7] p-6">
+        <main className="flex-1 overflow-y-auto no-scrollbar bg-[#F9F7F7] p-6">
           <div
             key={location.pathname}
             className={`transition-all duration-300 ease-out motion-reduce:transition-none motion-reduce:transform-none ${

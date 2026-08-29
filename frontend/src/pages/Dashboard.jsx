@@ -4,7 +4,6 @@ import ReportProblem from "../components/dashboard/ReportProblem";
 import HighRiskLocations from "../components/dashboard/HighRiskLocations";
 import RecentAlerts from "../components/dashboard/RecentAlerts";
 import RecentReports from "../components/dashboard/RecentReports";
-import WeatherBanner from "../components/dashboard/WeatherBanner";
 import QuickActions from "../components/dashboard/QuickActions";
 
 function Dashboard() {
@@ -28,8 +27,6 @@ function Dashboard() {
 
         <RecentReports />
       </div>
-
-      <WeatherBanner />
 
       <QuickActions />
     </div>
