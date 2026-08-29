@@ -1,5 +1,5 @@
-from fastapi import FastAPI
 from app.api.routes.risk import router as risk_router
+from fastapi import FastAPI
 
 app = FastAPI()
 app.include_router(risk_router)

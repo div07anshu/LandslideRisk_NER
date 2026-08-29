@@ -1,83 +1,130 @@
-def calculate_risk(
-    rainfall_24h: float,
-    rainfall_7d: float,
-    soil_moisture: float,
-    slope: float,
-    elevation: float,
-    historical_landslides: int,
- ) -> dict:
+import math
 
-    
-    rainfall_score = calculate_rainfall_score(rainfall_24h, rainfall_7d)
-    soil_score = calculate_soil_score(soil_moisture)
-    slope_score = calculate_slope_score(slope)
-    elevation_score = calculate_elevation_score(elevation)
-    historical_score = calculate_historical_score(historical_landslides)
+import requests
+from app.services.prediction_service import predict_risk
+from app.services.weather_service import extract_weather_features
 
-    risk_score = (
-        rainfall_score * 0.30
-        + soil_score * 0.20
-        + slope_score * 0.25
-        + elevation_score * 0.10
-        + historical_score * 0.15
+ELEVATION_URL = "https://api.open-meteo.com/v1/elevation"
+
+OFFSET_DEGREES = 0.001
+
+
+def get_elevation(
+    latitude: float,
+    longitude: float,
+) -> float:
+    response = requests.get(
+        ELEVATION_URL,
+        params={
+            "latitude": latitude,
+            "longitude": longitude,
+        },
+        timeout=30,
     )
 
-    risk_score = round(min(max(risk_score, 0), 100), 2)
+    response.raise_for_status()
 
-    return {
-        "risk_score": risk_score,
-        "risk_level": get_risk_level(risk_score),
-    }
+    return float(response.json()["elevation"][0])
 
 
-def calculate_rainfall_score(
-    rainfall_24h: float,
-    rainfall_7d: float,
+def calculate_live_slope(
+    latitude: float,
+    longitude: float,
 ) -> float:
 
-    recent_score = min((rainfall_24h / 200) * 100, 100)
-    weekly_score = min((rainfall_7d / 500) * 100, 100)
+    lat = float(latitude)
+    lon = float(longitude)
 
-    return recent_score * 0.6 + weekly_score * 0.4
+    north_lat = lat + OFFSET_DEGREES
+    south_lat = lat - OFFSET_DEGREES
+    east_lon = lon + OFFSET_DEGREES
+    west_lon = lon - OFFSET_DEGREES
+
+    lats = [
+        north_lat,
+        south_lat,
+        lat,
+        lat,
+    ]
+
+    lons = [
+        lon,
+        lon,
+        east_lon,
+        west_lon,
+    ]
+
+    response = requests.get(
+        ELEVATION_URL,
+        params={
+            "latitude": ",".join(map(str, lats)),
+            "longitude": ",".join(map(str, lons)),
+        },
+        timeout=30,
+    )
+
+    response.raise_for_status()
+
+    elevations = response.json()["elevation"]
+
+    north_elev = elevations[0]
+    south_elev = elevations[1]
+    east_elev = elevations[2]
+    west_elev = elevations[3]
+
+    metres_per_lat = 111320
+
+    metres_per_lon = 111320 * math.cos(math.radians(lat))
+
+    dz_dy = (north_elev - south_elev) / (2 * OFFSET_DEGREES * metres_per_lat)
+
+    dz_dx = (east_elev - west_elev) / (2 * OFFSET_DEGREES * metres_per_lon)
+
+    gradient = math.sqrt(dz_dx**2 + dz_dy**2)
+
+    slope_radians = math.atan(gradient)
+
+    return round(
+        math.degrees(slope_radians),
+        2,
+    )
 
 
-def calculate_soil_score(soil_moisture: float) -> float:
-    """
-    soil_moisture expected roughly between 0 and 1.
-    """
+def analyze_location(
+    latitude: float,
+    longitude: float,
+) -> dict:
 
-    return min(max(soil_moisture * 100, 0), 100)
+    weather = extract_weather_features(
+        latitude=latitude,
+        longitude=longitude,
+    )
 
+    elevation = get_elevation(
+        latitude,
+        longitude,
+    )
 
-def calculate_slope_score(slope: float) -> float:
-    """
-    Higher slope generally means greater susceptibility.
-    """
+    slope = calculate_live_slope(
+        latitude,
+        longitude,
+    )
 
-    return min((slope / 60) * 100, 100)
+    features = {
+        "rainfall_24h": weather["rainfall_24h"],
+        "rainfall_48h": weather["rainfall_48h"],
+        "rainfall_7d": weather["rainfall_7d"],
+        "average_humidity_24h": weather["average_humidity_24h"],
+        "soil_moisture": weather["soil_moisture"],
+        "elevation": elevation,
+        "slope": slope,
+    }
 
+    prediction = predict_risk(features)
 
-def calculate_elevation_score(elevation: float) -> float:
-    """
-    Temporary placeholder.
-    """
-
-    return min((elevation / 3000) * 100, 100)
-
-
-def calculate_historical_score(historical_landslides: int) -> float:
-    """
-    Convert historical landslide count into a 0-100 score.
-    """
-
-    return min(historical_landslides * 10, 100)
-
-
-def get_risk_level(score: float) -> str:
-    if score < 35:
-        return "LOW"
-
-    if score < 70:
-        return "MODERATE"
-
-    return "HIGH"
+    return {
+        "probability": prediction["probability"],
+        "risk_score": prediction["risk_score"],
+        "risk_level": prediction["risk_level"],
+        "features": features,
+    }
