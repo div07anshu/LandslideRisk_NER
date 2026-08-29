@@ -11,6 +11,7 @@ import Reports from "./pages/Reports";
 import ComingSoon from "./pages/ComingSoon";
 import NotFound from "./pages/NotFound";
 import ProtectedRoute from "./components/ProtectedRoute";
+import AIAssistant from "./pages/AIAssistant";
 
 function App() {
   return (
@@ -50,15 +51,7 @@ function App() {
                 />
               }
             />
-            <Route
-              path="assistant"
-              element={
-                <ComingSoon
-                  title="AI ASSISTANT"
-                  subtitle="Ask questions about risk, factors and safety"
-                />
-              }
-            />
+            <Route path="assistant" element={<AIAssistant />} />
             <Route
               path="weather"
               element={
