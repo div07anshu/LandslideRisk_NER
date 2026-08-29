@@ -8,6 +8,7 @@ import RiskAnalysis from "./pages/RiskAnalysis";
 import Login from "./pages/LoginPage";
 import Signup from "./pages/Signup";
 import Reports from "./pages/Reports";
+import Alerts from "./pages/Alerts";
 import ComingSoon from "./pages/ComingSoon";
 import NotFound from "./pages/NotFound";
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -31,6 +32,7 @@ function App() {
             <Route index element={<Dashboard />} />
             <Route path="risk-analysis" element={<RiskAnalysis />} />
             <Route path="reports" element={<Reports />} />
+            <Route path="alerts" element={<Alerts />} />
 
             <Route
               path="risk-map"
@@ -38,15 +40,6 @@ function App() {
                 <ComingSoon
                   title="RISK MAP"
                   subtitle="Interactive landslide risk map across North East Region"
-                />
-              }
-            />
-            <Route
-              path="alerts"
-              element={
-                <ComingSoon
-                  title="ALERTS"
-                  subtitle="All active and historical landslide risk alerts"
                 />
               }
             />
