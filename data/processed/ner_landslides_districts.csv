@@ -1,0 +1,352 @@
+event_id,event_date,landslide_category,landslide_trigger,landslide_size,landslide_setting,country_name,admin_division_name,longitude,latitude,state_normalized,district,district_state,district_state_code,district_code,district_lgd,state_lgd
+2164,2010-07-29 23:00:00,landslide,downpour,medium,unknown,India,Manipur,94.48214677,25.3098633,Manipur,Ukhrul,Manipur,14,279,260.0,14.0
+5122,2013-07-17 00:00:00,mudslide,rain,medium,unknown,India,Nāgāland,93.9413,25.7658,Nagaland,Chumoukedima,Nagaland,13,818,758.0,13.0
+5123,2013-07-17 00:00:00,mudslide,rain,medium,unknown,India,Nāgāland,94.0885,25.7131,Nagaland,Kohima,Nagaland,13,270,245.0,13.0
+7370,2015-08-01 00:00:00,landslide,continuous_rain,medium,above_road,India,Manipur,94.1078,24.1419,Manipur,Chandel,Manipur,14,280,253.0,14.0
+5084,2013-07-12 23:00:00,landslide,downpour,medium,unknown,India,Nāgāland,94.1167,25.616,Nagaland,Kohima,Nagaland,13,270,245.0,13.0
+2566,2010-10-08 00:00:00,mudslide,downpour,medium,unknown,India,Nāgāland,94.1351,25.4769,Nagaland,Senapati,Manipur,14,272,257.0,14.0
+1109,2009-08-20 00:00:00,landslide,downpour,medium,unknown,India,Assam,93.1645,25.5215,Assam,Dima Hasao,Assam,18,315,299.0,18.0
+1961,2010-06-09 14:15:00,landslide,downpour,medium,unknown,India,Meghālaya,91.2,25.8833,Meghalaya,Kamrup,Assam,18,321,291.0,18.0
+2578,2010-10-09 00:00:00,landslide,downpour,medium,unknown,India,Nāgāland,94.0462,25.3179,Nagaland,Senapati,Manipur,14,272,257.0,14.0
+322,2007-10-21 00:00:00,landslide,rain,medium,unknown,India,Assam,93.4333,24.75,Assam,Noney,Manipur,14,771,714.0,14.0
+5552,2013-09-24 00:00:00,landslide,unknown,medium,unknown,India,Manipur,94.3619,25.0985,Manipur,Ukhrul,Manipur,14,279,260.0,14.0
+7031,2015-05-24 00:00:00,landslide,unknown,medium,above_road,India,Sikkim,88.6586,27.6163,Sikkim,Mangan,Sikkim,11,241,226.0,11.0
+2025,2010-06-28 00:00:00,landslide,downpour,medium,unknown,India,Meghālaya,91.885,25.5728,Meghalaya,East Khasi Hills,Meghalaya,17,298,274.0,17.0
+9405,2016-04-19 00:00:00,landslide,continuous_rain,medium,unknown,India,Nagaland,95.0243,26.7223,Nagaland,Mon,Nagaland,13,261,247.0,13.0
+5343,2013-08-17 23:00:00,landslide,continuous_rain,medium,unknown,India,Assam,93.4341,24.7625,Assam,Noney,Manipur,14,771,714.0,14.0
+6971,2015-06-09 00:00:00,landslide,continuous_rain,medium,above_road,India,Arunachal Pradesh,93.816,27.0987,Arunachal Pradesh,Papum Pare,Arunachal Pradesh,12,248,237.0,12.0
+1611,2010-04-01 00:00:00,landslide,downpour,medium,unknown,India,Assam,93.028,25.1553,Assam,Dima Hasao,Assam,18,315,299.0,18.0
+147,2007-07-30 00:00:00,landslide,downpour,medium,unknown,India,Mizoram,92.899,22.533,Mizoram,Lawngtlai,Mizoram,15,287,264.0,15.0
+4382,2012-06-03 00:00:00,landslide,downpour,medium,unknown,India,Assam,92.8573,25.1175,Assam,Dima Hasao,Assam,18,315,299.0,18.0
+1112,2009-08-20 00:00:00,mudslide,downpour,medium,unknown,India,Sikkim,88.5287,27.1761,Sikkim,Gangtok,Sikkim,11,244,225.0,11.0
+2424,2010-09-13 00:00:00,landslide,downpour,medium,unknown,India,Mizoram,92.9296,23.591,Mizoram,Aizawl,Mizoram,15,283,261.0,15.0
+78,2007-05-23 00:00:00,landslide,rain,medium,unknown,India,Sikkim,88.6069,27.3383,Sikkim,Gangtok,Sikkim,11,244,225.0,11.0
+5431,2013-09-01 00:00:00,mudslide,continuous_rain,medium,unknown,India,Assam,93.5063,24.9829,Assam,Tamenglong,Manipur,14,273,258.0,14.0
+3672,2011-06-29 00:00:00,landslide,downpour,medium,unknown,India,Assam,93.3613,25.5125,Assam,Dima Hasao,Assam,18,315,299.0,18.0
+2253,2010-08-15 23:00:00,landslide,downpour,medium,unknown,India,Manipur,94.48265093,25.31006064,Manipur,Ukhrul,Manipur,14,279,260.0,14.0
+1108,2009-08-20 00:00:00,landslide,downpour,medium,unknown,India,Assam,93.5,24.9925,Assam,Tamenglong,Manipur,14,273,258.0,14.0
+6105,2014-06-26 23:00:00,landslide,continuous_rain,medium,above_road,India,Arunachal Pradesh,95.3429,28.9205,Arunachal Pradesh,Dibang Valley,Arunachal Pradesh,12,257,230.0,12.0
+9168,2016-06-12 23:00:00,landslide,downpour,medium,above_road,India,Arunachal Pradesh,93.871,27.6438,Arunachal Pradesh,Lower Subansiri,Arunachal Pradesh,12,255,236.0,12.0
+3560,2011-05-31 14:30:00,landslide,downpour,medium,unknown,India,Manipur,93.5935,24.8286,Manipur,Noney,Manipur,14,771,714.0,14.0
+587,2008-06-15 00:00:00,landslide,downpour,medium,unknown,India,Assam,94.0989,27.2298,Assam,Lakhimpur,Assam,18,307,295.0,18.0
+8012,2015-09-06 15:00:00,landslide,unknown,medium,above_road,India,Meghalaya,91.8584,25.9703,Meghalaya,Ri Bhoi,Meghalaya,17,297,276.0,17.0
+7335,2015-08-18 09:00:00,landslide,continuous_rain,medium,urban,India,Meghalaya,90.2023,25.5145,Meghalaya,West Garo Hills,Meghalaya,17,293,278.0,17.0
+141,2007-07-26 00:00:00,landslide,rain,medium,unknown,India,Meghālaya,91.88,25.38,Meghalaya,East Khasi Hills,Meghalaya,17,298,274.0,17.0
+3983,2011-09-23 00:00:00,landslide,downpour,large,unknown,India,Assam,91.7351,26.1548,Assam,Kamrup Metro,Assam,18,322,618.0,18.0
+148,2007-07-30 00:00:00,landslide,downpour,medium,unknown,India,Mizoram,92.967,22.479,Mizoram,Siaha,Mizoram,15,288,267.0,15.0
+1775,2010-04-21 00:00:00,landslide,downpour,medium,unknown,India,Arunāchal Pradesh,96.1779,27.8965,Arunachal Pradesh,Lohit,Arunachal Pradesh,12,259,234.0,12.0
+3663,2011-06-28 00:00:00,landslide,downpour,medium,unknown,India,Nāgāland,94.1099,25.6682,Nagaland,Kohima,Nagaland,13,270,245.0,13.0
+7385,2015-08-01 00:00:00,landslide,continuous_rain,medium,unknown,India,Manipur,93.9815,24.004,Manipur,Chandel,Manipur,14,280,253.0,14.0
+2575,2010-10-09 00:00:00,landslide,downpour,medium,unknown,India,Assam,92.9914,25.5242,Assam,Dima Hasao,Assam,18,315,299.0,18.0
+3840,2011-07-25 00:00:00,landslide,downpour,medium,unknown,India,Manipur,93.9157,24.6869,Manipur,Thoubal,Manipur,14,276,259.0,14.0
+6015,2014-05-08 00:00:00,mudslide,rain,medium,above_road,India,Arunachal Pradesh,96.174,27.9032,Arunachal Pradesh,Lohit,Arunachal Pradesh,12,259,234.0,12.0
+3741,2011-07-07 00:00:00,landslide,rain,medium,unknown,India,Nāgāland,94.1079,25.4191,Nagaland,Senapati,Manipur,14,272,257.0,14.0
+2106,2010-07-20 00:00:00,landslide,downpour,medium,unknown,India,Nāgāland,94.9921,26.8716,Nagaland,Mon,Nagaland,13,261,247.0,13.0
+9051,2016-07-19 09:00:00,landslide,unknown,medium,natural_slope,India,Meghalaya,91.8744337,26.09748244,Meghalaya,Ri Bhoi,Meghalaya,17,297,276.0,17.0
+870,2008-10-29 00:00:00,mudslide,downpour,medium,unknown,India,Arunāchal Pradesh,92.35,27.4,Arunachal Pradesh,West Kameng,Arunachal Pradesh,12,246,242.0,12.0
+2392,2010-09-04 00:00:00,landslide,downpour,medium,unknown,India,Sikkim,88.7334,27.3702,Sikkim,Gangtok,Sikkim,11,244,225.0,11.0
+3830,2011-07-22 00:00:00,landslide,downpour,small,unknown,India,Manipur,94.3429,24.3527,Manipur,Tengnoupal,Manipur,14,769,716.0,14.0
+4906,2013-06-07 00:00:00,landslide,unknown,medium,unknown,India,Nāgāland,94.7499,26.0977,Nagaland,Tuensang,Nagaland,13,267,249.0,13.0
+3269,2011-03-22 00:00:00,landslide,downpour,medium,unknown,India,Arunāchal Pradesh,96.5242,28.0791,Arunachal Pradesh,Anjaw,Arunachal Pradesh,12,260,628.0,12.0
+1755,2010-04-17 15:00:00,landslide,downpour,small,unknown,India,Sikkim,88.6083,27.3341,Sikkim,Gangtok,Sikkim,11,244,225.0,11.0
+6990,2015-06-24 00:00:00,landslide,continuous_rain,medium,above_road,India,Nagaland,94.5466,26.0319,Nagaland,Zunheboto,Nagaland,13,263,251.0,13.0
+6222,2014-10-01 11:00:00,landslide,unknown,small,above_road,India,Arunachal Pradesh,93.7706,27.1249,Arunachal Pradesh,Papum Pare,Arunachal Pradesh,12,248,237.0,12.0
+9169,2016-06-12 00:00:00,landslide,continuous_rain,unknown,above_road,India,Nagaland,94.2442,26.1677,Nagaland,Wokha,Nagaland,13,264,250.0,13.0
+4435,2012-06-25 00:00:00,landslide,downpour,large,unknown,India,Arunāchal Pradesh,95.8011,27.174,Arunachal Pradesh,Changlang,Arunachal Pradesh,12,253,229.0,12.0
+4313,2012-04-08 00:00:00,landslide,downpour,medium,unknown,India,Arunāchal Pradesh,95.86,28.4659,Arunachal Pradesh,Dibang Valley,Arunachal Pradesh,12,257,230.0,12.0
+2344,2010-08-27 16:30:00,landslide,downpour,medium,unknown,India,Assam,93.4221,24.7505,Assam,Noney,Manipur,14,771,714.0,14.0
+7263,2015-07-22 00:00:00,landslide,continuous_rain,medium,above_road,India,Manipur,94.0489,25.4477,Manipur,Senapati,Manipur,14,272,257.0,14.0
+5271,2013-08-04 00:00:00,landslide,continuous_rain,medium,unknown,India,Nāgāland,94.5808,26.284,Nagaland,Tuensang,Nagaland,13,267,249.0,13.0
+4424,2012-06-20 00:00:00,landslide,downpour,medium,unknown,India,Assam,91.7351,26.149,Assam,Kamrup Metro,Assam,18,322,618.0,18.0
+3525,2011-05-22 00:00:00,landslide,downpour,medium,unknown,India,Assam,93.4093,25.0672,Assam,Tamenglong,Manipur,14,273,258.0,14.0
+7369,2015-08-01 00:00:00,landslide,continuous_rain,medium,above_road,India,Manipur,94.1016,24.1988,Manipur,Chandel,Manipur,14,280,253.0,14.0
+4892,2013-06-01 00:00:00,landslide,downpour,large,unknown,India,Arunāchal Pradesh,94.25,27.8776,Arunachal Pradesh,Upper Subansiri,Arunachal Pradesh,12,249,241.0,12.0
+4377,2012-06-02 00:00:00,landslide,downpour,large,unknown,India,Assam,91.7356,26.1475,Assam,Kamrup Metro,Assam,18,322,618.0,18.0
+5430,2013-09-01 00:00:00,mudslide,continuous_rain,medium,unknown,India,Manipur,93.487,24.9037,Manipur,Tamenglong,Manipur,14,273,258.0,14.0
+7264,2015-07-22 00:00:00,landslide,continuous_rain,medium,above_road,India,Manipur,93.9827,25.4538,Manipur,Senapati,Manipur,14,272,257.0,14.0
+5006,2013-07-01 00:00:00,landslide,downpour,medium,unknown,India,Nāgāland,94.3864,26.1147,Nagaland,Wokha,Nagaland,13,264,250.0,13.0
+256,2007-09-10 00:00:00,landslide,rain,medium,unknown,India,Sikkim,88.6236,27.3425,Sikkim,Gangtok,Sikkim,11,244,225.0,11.0
+9335,2016-05-18 08:00:00,landslide,continuous_rain,unknown,unknown,India,Assam,92.7239,24.5202,Assam,Hailakandi,Assam,18,318,289.0,18.0
+7279,2015-07-24 00:00:00,mudslide,monsoon,medium,other,India,Manipur,93.5142,24.9818,Manipur,Tamenglong,Manipur,14,273,258.0,14.0
+6288,2014-09-22 00:00:00,landslide,rain,small,unknown,India,Assam,91.7998,26.1985,Assam,Kamrup Metro,Assam,18,322,618.0,18.0
+5087,2013-07-12 00:00:00,landslide,downpour,medium,unknown,India,Nāgāland,94.1139,25.6269,Nagaland,Kohima,Nagaland,13,270,245.0,13.0
+258,2007-09-11 00:00:00,landslide,rain,medium,unknown,India,Manipur,94.0564,24.4279,Manipur,Chandel,Manipur,14,280,253.0,14.0
+5338,2013-08-16 00:00:00,landslide,rain,medium,unknown,India,Assam,94.9275,26.8727,Assam,Mon,Nagaland,13,261,247.0,13.0
+2411,2010-09-10 00:00:00,landslide,downpour,medium,unknown,India,Arunāchal Pradesh,93.7273,27.0011,Arunachal Pradesh,Lakhimpur,Assam,18,307,295.0,18.0
+6143,2014-07-14 18:00:00,landslide,downpour,medium,unknown,India,Mizoram,92.7463,23.7327,Mizoram,Aizawl,Mizoram,15,283,261.0,15.0
+4908,2013-06-08 17:00:00,landslide,downpour,medium,unknown,India,Sikkim,88.708,27.3721,Sikkim,Gangtok,Sikkim,11,244,225.0,11.0
+9124,2016-07-19 00:00:00,translational_slide,continuous_rain,large,natural_slope,India,Meghalaya,90.5573,25.203,Meghalaya,South Garo Hills,Meghalaya,17,295,277.0,17.0
+2282,2010-08-19 06:30:00,landslide,downpour,medium,unknown,India,Nāgāland,94.8158,26.1984,Nagaland,Tuensang,Nagaland,13,267,249.0,13.0
+9338,2016-05-18 08:00:00,landslide,continuous_rain,medium,natural_slope,India,Assam,92.4943,24.4638,Assam,Sribhumi,Assam,18,317,293.0,18.0
+2421,2010-09-13 09:00:00,landslide,downpour,medium,above_road,India,Mizoram,92.74128531,23.75406693,Mizoram,Aizawl,Mizoram,15,283,261.0,15.0
+2249,2010-08-14 00:00:00,landslide,downpour,medium,unknown,India,Nāgāland,94.803,26.0814,Nagaland,Tuensang,Nagaland,13,267,249.0,13.0
+8901,2016-07-10 00:00:00,landslide,downpour,medium,above_road,India,Nagaland,94.1318,25.7902,Nagaland,Kohima,Nagaland,13,270,245.0,13.0
+2283,2010-08-19 00:00:00,mudslide,downpour,medium,unknown,India,Manipur,93.4957,24.8961,Manipur,Tamenglong,Manipur,14,273,258.0,14.0
+4552,2012-09-14 00:00:00,landslide,downpour,medium,unknown,India,Sikkim,88.3603,27.0377,Sikkim,,,,,,
+6016,2014-05-09 23:00:00,landslide,rain,small,unknown,India,Assam,92.3576,24.8669,Assam,Sribhumi,Assam,18,317,293.0,18.0
+215,2007-08-28 00:00:00,landslide,rain,medium,unknown,India,Nāgāland,93.9136,25.7428,Nagaland,Chumoukedima,Nagaland,13,818,758.0,13.0
+7780,2015-08-26 00:00:00,landslide,continuous_rain,medium,above_road,India,Mizoram,92.7878,23.3572,Mizoram,Aizawl,Mizoram,15,283,261.0,15.0
+2281,2010-08-19 18:00:00,landslide,downpour,medium,above_road,India,Nāgāland,94.11603493,25.61560252,Nagaland,Kohima,Nagaland,13,270,245.0,13.0
+1996,2010-06-17 19:30:00,landslide,downpour,medium,unknown,India,Nāgāland,94.8833,26.4333,Nagaland,Longleng,Nagaland,13,268,615.0,13.0
+6283,2014-09-22 00:00:00,landslide,rain,small,unknown,India,Assam,91.7548,26.1314,Assam,Kamrup Metro,Assam,18,322,618.0,18.0
+8930,2016-07-11 23:00:00,landslide,unknown,large,unknown,India,Nagaland,94.4922,26.1699,Nagaland,Zunheboto,Nagaland,13,263,251.0,13.0
+869,2008-10-29 00:00:00,landslide,downpour,medium,unknown,India,Assam,94.1167,27.2333,Assam,Lakhimpur,Assam,18,307,295.0,18.0
+285,2007-09-29 00:00:00,landslide,rain,medium,unknown,India,Mizoram,92.6921,24.1293,Mizoram,Kolasib,Mizoram,15,282,263.0,15.0
+3662,2011-06-28 00:00:00,landslide,rain,medium,below_road,India,Manipur,94.0144205,25.03561729,Manipur,Imphal East,Manipur,14,278,255.0,14.0
+5427,2013-08-15 00:00:00,landslide,downpour,medium,unknown,India,Nāgāland,94.1884,25.3833,Nagaland,Senapati,Manipur,14,272,257.0,14.0
+8339,2015-09-23 00:00:00,landslide,continuous_rain,medium,above_road,India,Assam,91.7042,26.1666,Assam,Kamrup Metro,Assam,18,322,618.0,18.0
+4905,2013-06-07 00:00:00,landslide,unknown,medium,unknown,India,Nāgāland,94.7031,26.0977,Nagaland,Tuensang,Nagaland,13,267,249.0,13.0
+9186,2016-07-25 12:30:00,landslide,continuous_rain,medium,above_road,India,Manipur,94.1383,25.48,Manipur,Senapati,Manipur,14,272,257.0,14.0
+5107,2013-07-15 00:00:00,landslide,rain,medium,unknown,India,Nāgāland,94.1139,25.6269,Nagaland,Kohima,Nagaland,13,270,245.0,13.0
+7253,2015-07-22 00:00:00,landslide,continuous_rain,medium,urban,India,Assam,92.9974,24.7979,Assam,Cachar,Assam,18,316,282.0,18.0
+6286,2014-09-22 00:00:00,landslide,rain,small,unknown,India,Assam,91.7082,26.1044,Assam,Kamrup Metro,Assam,18,322,618.0,18.0
+594,2008-06-19 00:00:00,mudslide,monsoon,medium,unknown,India,Manipur,93.8275,24.9336,Manipur,Kangpokpi,Manipur,14,767,712.0,14.0
+5337,2013-08-16 00:00:00,landslide,rain,medium,unknown,India,Nāgāland,94.9731,26.4205,Nagaland,Mon,Nagaland,13,261,247.0,13.0
+3881,2011-08-05 00:00:00,landslide,downpour,medium,unknown,India,Arunāchal Pradesh,93.6885,27.1034,Arunachal Pradesh,Papum Pare,Arunachal Pradesh,12,248,237.0,12.0
+3925,2011-08-15 00:00:00,landslide,downpour,medium,unknown,India,Arunāchal Pradesh,93.0153,27.4888,Arunachal Pradesh,East Kameng,Arunachal Pradesh,12,247,231.0,12.0
+7383,2015-08-01 00:00:00,landslide,rain,medium,unknown,India,Manipur,94.1434,23.899,Manipur,Chandel,Manipur,14,280,253.0,14.0
+8900,2016-07-07 00:00:00,landslide,monsoon,large,above_road,India,Manipur,94.3136,25.0118,Manipur,Ukhrul,Manipur,14,279,260.0,14.0
+4757,2013-02-18 00:00:00,landslide,rain,medium,unknown,India,Arunāchal Pradesh,95.1645,28.1193,Arunachal Pradesh,Siang,Arunachal Pradesh,12,764,679.0,12.0
+7666,2015-08-11 00:00:00,landslide,continuous_rain,medium,unknown,India,Manipur,93.3729,25.1019,Manipur,Tamenglong,Manipur,14,273,258.0,14.0
+2113,2010-07-21 08:00:00,landslide,downpour,medium,unknown,India,Sikkim,88.559,27.3773,Sikkim,Mangan,Sikkim,11,241,226.0,11.0
+2045,2010-07-06 00:00:00,mudslide,monsoon,medium,unknown,India,Nāgāland,94.8133,26.2363,Nagaland,Tuensang,Nagaland,13,267,249.0,13.0
+7701,2015-08-19 15:00:00,landslide,continuous_rain,medium,above_road,India,Nagaland,94.1051,25.6278,Nagaland,Kohima,Nagaland,13,270,245.0,13.0
+2422,2010-09-13 00:00:00,landslide,downpour,medium,urban,India,Mizoram,92.7141905,23.74182634,Mizoram,Aizawl,Mizoram,15,283,261.0,15.0
+6513,2014-08-14 23:00:00,mudslide,downpour,medium,unknown,India,Tripura,91.7174,23.0137,Tripura,South Tripura,Tripura,16,290,271.0,16.0
+4990,2013-06-27 23:00:00,landslide,downpour,medium,unknown,India,Sikkim,88.7628,27.3765,Sikkim,Gangtok,Sikkim,11,244,225.0,11.0
+2248,2010-08-14 00:00:00,landslide,downpour,medium,unknown,India,Nāgāland,94.9152,26.222,Nagaland,Noklak,Nagaland,13,792,736.0,13.0
+5268,2013-08-04 00:00:00,landslide,continuous_rain,medium,unknown,India,Nāgāland,94.5163,26.0137,Nagaland,Zunheboto,Nagaland,13,263,251.0,13.0
+6106,2014-06-26 23:00:00,landslide,continuous_rain,small,unknown,India,Assam,91.7645,26.1407,Assam,Kamrup Metro,Assam,18,322,618.0,18.0
+3965,2011-09-06 08:00:00,landslide,rain,medium,unknown,India,Assam,93.117,24.808,Assam,Jiribam,Manipur,14,766,713.0,14.0
+6969,2015-06-16 06:15:00,landslide,downpour,medium,urban,India,Meghalaya,90.215,25.5114,Meghalaya,West Garo Hills,Meghalaya,17,293,278.0,17.0
+2044,2010-07-06 00:00:00,mudslide,monsoon,medium,unknown,India,Nāgāland,94.7861,25.8877,Nagaland,Kiphire,Nagaland,13,269,614.0,13.0
+2587,2010-10-10 06:00:00,landslide,downpour,medium,unknown,India,Nāgāland,94.1072,25.6623,Nagaland,Kohima,Nagaland,13,270,245.0,13.0
+8684,2016-07-07 00:00:00,landslide,continuous_rain,medium,retaining_wall,India,Assam,91.3681,25.9611,Assam,Kamrup,Assam,18,321,291.0,18.0
+1596,2010-03-27 20:00:00,mudslide,downpour,medium,unknown,India,Manipur,93.9161,24.7339,Manipur,Imphal West,Manipur,14,277,256.0,14.0
+1771,2010-04-20 00:00:00,landslide,downpour,medium,unknown,India,Assam,91.7665,26.1978,Assam,Kamrup Metro,Assam,18,322,618.0,18.0
+7364,2015-07-31 09:00:00,landslide,continuous_rain,medium,below_road,India,Manipur,94.3551,24.819,Manipur,Kamjong,Manipur,14,770,717.0,14.0
+6968,2015-06-13 00:00:00,landslide,continuous_rain,medium,unknown,India,Meghalaya,92.2121,25.463,Meghalaya,West Jaintia Hills,Meghalaya,17,299,275.0,17.0
+7373,2015-08-01 00:00:00,landslide,continuous_rain,medium,above_road,India,Manipur,94.4759,24.9111,Manipur,Kamjong,Manipur,14,770,717.0,14.0
+4570,2012-09-19 00:00:00,landslide,downpour,medium,unknown,India,Arunāchal Pradesh,95.2253,27.8458,Arunachal Pradesh,East Siang,Arunachal Pradesh,12,251,232.0,12.0
+1935,2010-06-03 00:00:00,landslide,downpour,medium,unknown,India,Tripura,91.7599,23.8986,Tripura,Khowai,Tripura,16,708,652.0,16.0
+2577,2010-10-09 00:00:00,landslide,downpour,medium,unknown,India,Nāgāland,93.8673,25.5265,Nagaland,Senapati,Manipur,14,272,257.0,14.0
+7276,2015-07-25 09:00:00,landslide,continuous_rain,medium,natural_slope,India,Assam,91.8717,26.1062,Assam,Kamrup Metro,Assam,18,322,618.0,18.0
+2576,2010-10-09 00:00:00,landslide,downpour,medium,unknown,India,Nāgāland,94.1399,25.4788,Nagaland,Senapati,Manipur,14,272,257.0,14.0
+6293,2014-10-20 00:00:00,landslide,rain,medium,unknown,India,Meghalaya,90.0896,25.5006,Meghalaya,South West Garo Hills,Meghalaya,17,711,663.0,17.0
+4858,2013-05-11 09:00:00,landslide,rain,medium,unknown,India,Assam,91.7138,26.1662,Assam,Kamrup Metro,Assam,18,322,618.0,18.0
+5269,2013-08-04 00:00:00,landslide,continuous_rain,medium,unknown,India,Nāgāland,94.5234,25.8376,Nagaland,Zunheboto,Nagaland,13,263,251.0,13.0
+5270,2013-08-04 00:00:00,landslide,continuous_rain,medium,unknown,India,Nāgāland,94.4619,26.0481,Nagaland,Zunheboto,Nagaland,13,263,251.0,13.0
+6284,2014-09-22 00:00:00,landslide,rain,small,unknown,India,Assam,91.8342,26.1324,Assam,Kamrup Metro,Assam,18,322,618.0,18.0
+4394,2012-06-07 04:30:00,landslide,rain,large,unknown,India,Sikkim,88.6458,27.1748,Sikkim,Pakyong,Sikkim,11,801,741.0,11.0
+9251,2016-07-28 23:00:00,landslide,downpour,medium,retaining_wall,India,Nagaland,94.7844,25.8702,Nagaland,Kiphire,Nagaland,13,269,614.0,13.0
+7699,2015-08-19 00:00:00,landslide,continuous_rain,medium,unknown,India,Nagaland,94.5224,26.0214,Nagaland,Zunheboto,Nagaland,13,263,251.0,13.0
+7664,2015-08-11 00:00:00,landslide,continuous_rain,medium,unknown,India,Manipur,93.4251,24.7459,Manipur,Noney,Manipur,14,771,714.0,14.0
+7589,2015-08-19 00:00:00,landslide,rain,medium,above_road,India,Meghalaya,92.3825,25.2568,Meghalaya,East Jaintia Hills,Meghalaya,17,714,657.0,17.0
+7887,2015-08-16 00:00:00,landslide,continuous_rain,medium,above_road,India,Arunachal Pradesh,96.9262,27.8835,Arunachal Pradesh,Anjaw,Arunachal Pradesh,12,260,628.0,12.0
+9404,2016-05-01 00:00:00,landslide,downpour,medium,above_road,India,Arunachal Pradesh,96.5316,28.0822,Arunachal Pradesh,Anjaw,Arunachal Pradesh,12,260,628.0,12.0
+6287,2014-09-22 00:00:00,landslide,rain,small,unknown,India,Assam,91.7056,26.1295,Assam,Kamrup Metro,Assam,18,322,618.0,18.0
+2296,2010-08-20 00:00:00,complex,downpour,medium,unknown,India,Sikkim,88.3652,27.167,Sikkim,Namchi,Sikkim,11,243,227.0,11.0
+2304,2010-08-21 18:00:00,landslide,downpour,medium,unknown,India,Nāgāland,94.1211,25.5718,Nagaland,Kohima,Nagaland,13,270,245.0,13.0
+5273,2013-08-04 00:00:00,landslide,monsoon,medium,unknown,India,Nāgāland,94.5497,26.1807,Nagaland,Zunheboto,Nagaland,13,263,251.0,13.0
+1125,2009-08-26 00:00:00,landslide,rain,medium,unknown,India,Sikkim,88.7648,27.3746,Sikkim,Gangtok,Sikkim,11,244,225.0,11.0
+8995,2016-07-14 00:00:00,landslide,monsoon,small,unknown,India,Assam,91.8074,26.1963,Assam,Kamrup Metro,Assam,18,322,618.0,18.0
+2567,2010-10-08 00:00:00,complex,downpour,medium,unknown,India,Manipur,94.4703,25.6633,Manipur,Meluri,Nagaland,13,847,788.0,13.0
+3794,2011-07-17 00:00:00,landslide,rain,medium,above_road,India,Sikkim,88.42280921,26.99195749,Sikkim,,,,,,
+6285,2014-09-22 00:00:00,landslide,rain,small,above_road,India,Assam,91.8178,26.159,Assam,Kamrup Metro,Assam,18,322,618.0,18.0
+868,2008-10-29 00:00:00,landslide,downpour,medium,unknown,India,Assam,91.25,26.3333,Assam,Barpeta,Assam,18,303,280.0,18.0
+5005,2013-07-01 00:00:00,landslide,downpour,medium,unknown,India,Nāgāland,95.029,26.72,Nagaland,Mon,Nagaland,13,261,247.0,13.0
+3860,2011-07-29 00:00:00,landslide,rain,medium,unknown,India,Nāgāland,94.108,25.4192,Nagaland,Senapati,Manipur,14,272,257.0,14.0
+5476,2013-09-07 15:00:00,landslide,rain,medium,unknown,India,Sikkim,88.7323,27.3736,Sikkim,Gangtok,Sikkim,11,244,225.0,11.0
+1127,2009-08-27 00:00:00,landslide,downpour,medium,unknown,India,Assam,93.123,25.1718,Assam,Dima Hasao,Assam,18,315,299.0,18.0
+5603,2013-10-13 19:30:00,mudslide,downpour,medium,unknown,India,Manipur,94.6024,25.426,Manipur,Ukhrul,Manipur,14,279,260.0,14.0
+2042,2010-07-06 00:00:00,mudslide,monsoon,medium,unknown,India,Nāgāland,94.5238,26.0093,Nagaland,Zunheboto,Nagaland,13,263,251.0,13.0
+5442,2013-09-02 00:00:00,landslide,downpour,large,unknown,India,Arunāchal Pradesh,93.7525,27.1614,Arunachal Pradesh,Papum Pare,Arunachal Pradesh,12,248,237.0,12.0
+7933,2015-09-01 00:00:00,rock_fall,rain,medium,unknown,India,Assam,91.6739,26.1868,Assam,Kamrup,Assam,18,321,291.0,18.0
+3637,2011-06-21 00:00:00,landslide,rain,medium,deforested_slope,India,Nāgāland,94.2341227,25.51614662,Nagaland,Phek,Nagaland,13,266,248.0,13.0
+3837,2011-07-24 12:30:00,landslide,downpour,medium,unknown,India,Assam,93.0038,26.5836,Assam,Nagaon,Assam,18,305,297.0,18.0
+220,2007-08-31 00:00:00,landslide,rain,medium,unknown,India,Manipur,93.9667,25.1333,Manipur,Kangpokpi,Manipur,14,767,712.0,14.0
+212,2007-08-26 00:00:00,complex,rain,medium,unknown,India,Meghālaya,91.8506,25.5576,Meghalaya,East Khasi Hills,Meghalaya,17,298,274.0,17.0
+7372,2015-07-31 23:00:00,mudslide,continuous_rain,medium,above_road,India,Manipur,94.3415,25.0634,Manipur,Ukhrul,Manipur,14,279,260.0,14.0
+2570,2010-10-08 00:00:00,landslide,downpour,medium,unknown,India,Manipur,93.9128,24.837,Manipur,Imphal West,Manipur,14,277,256.0,14.0
+126,2007-07-16 00:00:00,mudslide,rain,medium,unknown,India,Sikkim,88.38,27.1499,Sikkim,Namchi,Sikkim,11,243,227.0,11.0
+1168,2009-09-17 00:00:00,landslide,rain,medium,unknown,India,Sikkim,88.6115,27.1954,Sikkim,Pakyong,Sikkim,11,801,741.0,11.0
+3806,2011-07-19 00:00:00,landslide,downpour,medium,unknown,India,Arunāchal Pradesh,93.6884,27.1032,Arunachal Pradesh,Papum Pare,Arunachal Pradesh,12,248,237.0,12.0
+2026,2010-06-28 00:00:00,landslide,downpour,medium,unknown,India,Meghālaya,91.2698,25.4916,Meghalaya,West Khasi Hills,Meghalaya,17,296,279.0,17.0
+714,2008-08-14 00:00:00,landslide,rain,medium,unknown,India,Assam,94.0,27.163,Assam,Lakhimpur,Assam,18,307,295.0,18.0
+6110,2014-06-27 00:00:00,landslide,rain,small,unknown,India,Assam,91.7697,26.1619,Assam,Kamrup Metro,Assam,18,322,618.0,18.0
+247,2007-09-08 00:00:00,landslide,rain,medium,unknown,India,Manipur,93.9877,25.0604,Manipur,Kangpokpi,Manipur,14,767,712.0,14.0
+4407,2012-06-13 00:00:00,landslide,downpour,medium,unknown,India,Assam,92.3567,25.0951,Assam,East Jaintia Hills,Meghalaya,17,714,657.0,17.0
+3789,2011-07-16 00:00:00,landslide,downpour,medium,unknown,India,Arunāchal Pradesh,92.9064,27.2743,Arunachal Pradesh,Bichom,Arunachal Pradesh,12,848,787.0,12.0
+6292,2014-09-23 00:00:00,landslide,continuous_rain,small,unknown,India,Assam,89.9032,25.7238,Assam,West Garo Hills,Meghalaya,17,293,278.0,17.0
+545,2008-05-20 00:00:00,mudslide,mining,medium,unknown,India,Assam,92.8411,24.9849,Assam,Cachar,Assam,18,316,282.0,18.0
+7265,2015-07-22 00:00:00,landslide,continuous_rain,medium,above_road,India,Manipur,93.9854,25.5007,Manipur,Senapati,Manipur,14,272,257.0,14.0
+2436,2010-09-16 03:00:00,landslide,downpour,medium,unknown,India,Mizoram,93.125,24.3069,Mizoram,Pherzawl,Manipur,14,772,715.0,14.0
+7727,2015-08-20 18:00:00,landslide,continuous_rain,medium,below_road,India,Nagaland,94.1057,25.6263,Nagaland,Kohima,Nagaland,13,270,245.0,13.0
+7334,2015-08-18 00:00:00,landslide,unknown,medium,unknown,India,Arunachal Pradesh,94.7596,28.1737,Arunachal Pradesh,West Siang,Arunachal Pradesh,12,250,243.0,12.0
+6200,2014-08-17 00:00:00,landslide,downpour,large,unknown,India,Arunachal Pradesh,93.6086,27.0869,Arunachal Pradesh,Papum Pare,Arunachal Pradesh,12,248,237.0,12.0
+7778,2015-08-26 00:00:00,mudslide,continuous_rain,medium,above_road,India,Mizoram,93.0514,23.8447,Mizoram,Saitual,Mizoram,15,794,727.0,15.0
+6290,2014-09-23 03:00:00,landslide,continuous_rain,small,urban,India,Meghalaya,91.8666,25.5772,Meghalaya,East Khasi Hills,Meghalaya,17,298,274.0,17.0
+4408,2012-06-13 00:00:00,landslide,downpour,medium,unknown,India,Meghālaya,92.0757,25.5498,Meghalaya,East Khasi Hills,Meghalaya,17,298,274.0,17.0
+4403,2012-06-10 00:00:00,landslide,downpour,very_large,unknown,India,Manipur,93.5444,24.8142,Manipur,Tamenglong,Manipur,14,273,258.0,14.0
+5429,2013-09-01 18:00:00,landslide,downpour,medium,unknown,India,Sikkim,88.2426,27.3425,Sikkim,Gyalshing,Sikkim,11,242,228.0,11.0
+2140,2010-07-25 00:00:00,landslide,downpour,medium,unknown,India,Assam,92.801,25.0477,Assam,Cachar,Assam,18,316,282.0,18.0
+2243,2010-08-13 00:00:00,landslide,downpour,medium,mine,India,Nāgāland,94.04619681,25.70223725,Nagaland,Kohima,Nagaland,13,270,245.0,13.0
+9142,2016-06-14 08:00:00,landslide,continuous_rain,medium,retaining_wall,India,Nagaland,94.5247,26.3185,Nagaland,Mokokchung,Nagaland,13,262,246.0,13.0
+6107,2014-06-26 23:00:00,landslide,continuous_rain,small,unknown,India,Assam,91.7896,26.1844,Assam,Kamrup Metro,Assam,18,322,618.0,18.0
+255,2007-09-10 00:00:00,landslide,rain,medium,unknown,India,Manipur,94.0691,24.2451,Manipur,Chandel,Manipur,14,280,253.0,14.0
+7660,2015-08-12 00:00:00,mudslide,continuous_rain,medium,below_road,India,Nagaland,94.1136,25.6237,Nagaland,Kohima,Nagaland,13,270,245.0,13.0
+4556,2012-09-16 00:00:00,landslide,downpour,medium,unknown,India,Sikkim,88.3651,27.1675,Sikkim,Namchi,Sikkim,11,243,227.0,11.0
+7389,2015-08-01 00:00:00,landslide,continuous_rain,medium,above_road,India,Manipur,94.0644,24.4072,Manipur,Chandel,Manipur,14,280,253.0,14.0
+2437,2010-09-16 00:00:00,landslide,downpour,medium,unknown,India,Mizoram,92.694,23.7527,Mizoram,Aizawl,Mizoram,15,283,261.0,15.0
+731,2008-08-19 00:00:00,mudslide,downpour,medium,unknown,India,Nāgāland,94.25,26.138,Nagaland,Wokha,Nagaland,13,264,250.0,13.0
+7371,2015-08-01 00:00:00,landslide,continuous_rain,medium,unknown,India,Manipur,94.0573,23.9939,Manipur,Chandel,Manipur,14,280,253.0,14.0
+7923,2015-09-01 00:00:00,landslide,rain,medium,unknown,India,Assam,91.72137514,26.49349035,Assam,Kamrup,Assam,18,321,291.0,18.0
+760,2008-08-29 00:00:00,complex,downpour,medium,unknown,India,Nāgāland,94.1066,25.67,Nagaland,Kohima,Nagaland,13,270,245.0,13.0
+2182,2010-07-31 09:00:00,landslide,rain,medium,unknown,India,Manipur,93.8443,24.9356,Manipur,Imphal West,Manipur,14,277,256.0,14.0
+1954,2010-06-07 00:00:00,landslide,rain,medium,unknown,India,Manipur,93.5039,24.7543,Manipur,Noney,Manipur,14,771,714.0,14.0
+6963,2015-06-19 00:00:00,landslide,rain,medium,natural_slope,India,Mizoram,92.7362,23.7131,Mizoram,Aizawl,Mizoram,15,283,261.0,15.0
+5336,2013-08-16 00:00:00,landslide,rain,medium,unknown,India,Nāgāland,94.9439,26.3897,Nagaland,Mon,Nagaland,13,261,247.0,13.0
+7590,2015-08-19 00:00:00,landslide,rain,small,unknown,India,Meghalaya,92.3807,25.1416,Meghalaya,East Jaintia Hills,Meghalaya,17,714,657.0,17.0
+1222,2009-10-05 00:00:00,landslide,downpour,medium,urban,India,Mizoram,92.72124394,23.73478778,Mizoram,Aizawl,Mizoram,15,283,261.0,15.0
+8222,2016-06-22 12:00:00,mudslide,downpour,medium,natural_slope,India,Assam,91.7825,26.1961,Assam,Kamrup Metro,Assam,18,322,618.0,18.0
+7706,2015-08-19 00:00:00,landslide,rain,medium,above_road,India,Meghalaya,92.3636,25.0728,Meghalaya,East Jaintia Hills,Meghalaya,17,714,657.0,17.0
+9620,2016-10-15 00:00:00,landslide,downpour,medium,above_road,India,Sikkim,88.5292,27.172,Sikkim,,,,,,
+8224,2015-09-14 01:30:00,landslide,downpour,medium,above_road,India,Mizoram,92.7187,23.7313,Mizoram,Aizawl,Mizoram,15,283,261.0,15.0
+4241,2012-03-04 00:00:00,landslide,unknown,medium,unknown,India,Manipur,93.6795,25.1604,Manipur,Tamenglong,Manipur,14,273,258.0,14.0
+755,2008-08-28 00:00:00,landslide,downpour,medium,unknown,India,Sikkim,88.609,27.337,Sikkim,Gangtok,Sikkim,11,244,225.0,11.0
+1756,2010-04-17 00:00:00,landslide,downpour,small,unknown,India,Sikkim,88.6087,27.322,Sikkim,Gangtok,Sikkim,11,244,225.0,11.0
+1930,2010-05-31 00:00:00,landslide,downpour,medium,unknown,India,Arunāchal Pradesh,95.8776,28.4298,Arunachal Pradesh,Dibang Valley,Arunachal Pradesh,12,257,230.0,12.0
+9334,2016-05-18 08:00:00,landslide,continuous_rain,unknown,unknown,India,Assam,92.7264,24.5204,Assam,Hailakandi,Assam,18,318,289.0,18.0
+8237,2016-07-01 00:00:00,landslide,downpour,large,unknown,India,Arunachal Pradesh,92.6351,27.0136,Arunachal Pradesh,West Kameng,Arunachal Pradesh,12,246,242.0,12.0
+585,2008-06-14 00:00:00,landslide,rain,large,unknown,India,Arunāchal Pradesh,93.6287,27.0998,Arunachal Pradesh,Papum Pare,Arunachal Pradesh,12,248,237.0,12.0
+4859,2013-05-11 00:00:00,landslide,rain,medium,unknown,India,Assam,91.7599,26.1771,Assam,Kamrup Metro,Assam,18,322,618.0,18.0
+4436,2012-06-25 00:00:00,landslide,downpour,medium,unknown,India,Arunāchal Pradesh,95.4993,26.9986,Arunachal Pradesh,Tirap,Arunachal Pradesh,12,254,239.0,12.0
+3916,2011-08-13 08:00:00,mudslide,downpour,medium,unknown,India,Assam,93.8067,25.7713,Assam,Chumoukedima,Nagaland,13,818,758.0,13.0
+5250,2013-08-01 00:00:00,mudslide,rain,medium,unknown,India,Arunachal Pradesh,93.0515,27.8837,Arunachal Pradesh,Kurung Kumey,Arunachal Pradesh,12,256,233.0,12.0
+3805,2011-07-19 00:00:00,landslide,rain,medium,above_road,India,Sikkim,88.42572376,27.05374234,Sikkim,,,,,,
+3738,2011-07-06 00:00:00,landslide,downpour,medium,unknown,India,Manipur,93.9482,24.8063,Manipur,Imphal East,Manipur,14,278,255.0,14.0
+2426,2010-09-13 00:00:00,landslide,downpour,medium,unknown,India,Mizoram,92.8416,22.7176,Mizoram,Lunglei,Mizoram,15,286,265.0,15.0
+1084,2009-08-12 00:00:00,landslide,downpour,medium,unknown,India,Arunāchal Pradesh,92.8,27.7,Arunachal Pradesh,East Kameng,Arunachal Pradesh,12,247,231.0,12.0
+7266,2015-07-22 00:00:00,landslide,continuous_rain,medium,above_road,India,Manipur,93.8794,25.5098,Manipur,Senapati,Manipur,14,272,257.0,14.0
+1129,2009-08-30 00:00:00,landslide,downpour,medium,unknown,India,Manipur,94.4182,24.8628,Manipur,Kamjong,Manipur,14,770,717.0,14.0
+2166,2010-07-29 00:00:00,landslide,downpour,medium,unknown,India,Assam,93.5027,24.9786,Assam,Tamenglong,Manipur,14,273,258.0,14.0
+213,2007-08-26 00:00:00,landslide,rain,medium,unknown,India,Assam,92.8339,25.2946,Assam,Dima Hasao,Assam,18,315,299.0,18.0
+4426,2012-06-22 00:00:00,landslide,downpour,medium,unknown,India,Assam,91.7162,26.1226,Assam,Kamrup Metro,Assam,18,322,618.0,18.0
+8366,2015-09-23 15:00:00,landslide,downpour,medium,natural_slope,India,Meghalaya,91.893,25.583,Meghalaya,East Khasi Hills,Meghalaya,17,298,274.0,17.0
+1934,2010-06-03 05:00:00,landslide,downpour,medium,unknown,India,Assam,92.3814,24.6005,Assam,Sribhumi,Assam,18,317,293.0,18.0
+7655,2016-04-22 02:30:00,landslide,continuous_rain,medium,above_road,India,Arunachal Pradesh,91.8569,27.5799,Arunachal Pradesh,Tawang,Arunachal Pradesh,12,245,238.0,12.0
+9464,2016-08-05 00:00:00,landslide,downpour,medium,unknown,India,Arunachal Pradesh,91.9754,27.5754,Arunachal Pradesh,Tawang,Arunachal Pradesh,12,245,238.0,12.0
+3912,2011-08-12 00:00:00,landslide,rain,medium,unknown,India,Arunāchal Pradesh,92.2833,27.44,Arunachal Pradesh,West Kameng,Arunachal Pradesh,12,246,242.0,12.0
+5272,2013-08-04 00:00:00,landslide,monsoon,medium,unknown,India,Nāgāland,94.5438,26.2083,Nagaland,Mokokchung,Nagaland,13,262,246.0,13.0
+580,2008-06-09 00:00:00,landslide,monsoon,medium,unknown,India,Manipur,93.9784,24.6596,Manipur,Thoubal,Manipur,14,276,259.0,14.0
+5575,2013-10-05 23:00:00,mudslide,continuous_rain,medium,unknown,India,Nāgāland,94.1497,25.8266,Nagaland,Kohima,Nagaland,13,270,245.0,13.0
+8996,2016-07-14 00:00:00,landslide,monsoon,small,natural_slope,India,Assam,91.7702,26.1768,Assam,Kamrup Metro,Assam,18,322,618.0,18.0
+1613,2010-04-02 23:00:00,mudslide,downpour,large,unknown,India,Arunāchal Pradesh,93.3497,27.8997,Arunachal Pradesh,Kurung Kumey,Arunachal Pradesh,12,256,233.0,12.0
+7138,2015-07-07 00:00:00,landslide,continuous_rain,small,above_road,India,Sikkim,88.4397,27.0816,Sikkim,,,,,,
+4857,2013-05-11 09:00:00,landslide,rain,large,unknown,India,Mizoram,92.7175,23.7281,Mizoram,Aizawl,Mizoram,15,283,261.0,15.0
+6945,2015-06-19 00:00:00,landslide,monsoon,medium,above_road,India,Manipur,93.686,25.16,Manipur,Tamenglong,Manipur,14,273,258.0,14.0
+1857,2010-05-11 09:00:00,landslide,downpour,medium,unknown,India,Meghālaya,92.2897,25.3433,Meghalaya,East Jaintia Hills,Meghalaya,17,714,657.0,17.0
+2743,2010-11-22 00:00:00,landslide,unknown,medium,natural_slope,India,Arunāchal Pradesh,91.85672387,27.5798729,Arunachal Pradesh,Tawang,Arunachal Pradesh,12,245,238.0,12.0
+4860,2013-05-11 00:00:00,landslide,rain,medium,unknown,India,Assam,91.6906,26.1016,Assam,Kamrup Metro,Assam,18,322,618.0,18.0
+4845,2013-05-07 00:00:00,mudslide,rain,medium,unknown,India,Mizoram,92.6755,24.2315,Mizoram,Kolasib,Mizoram,15,282,263.0,15.0
+1770,2010-04-20 00:00:00,landslide,downpour,medium,unknown,India,Assam,91.763,26.1965,Assam,Kamrup Metro,Assam,18,322,618.0,18.0
+7728,2015-08-22 09:00:00,landslide,continuous_rain,medium,above_road,India,Assam,91.8806,26.1028,Assam,Kamrup Metro,Assam,18,322,618.0,18.0
+5274,2013-08-04 00:00:00,landslide,rain,medium,unknown,India,Nāgāland,94.564,26.0838,Nagaland,Zunheboto,Nagaland,13,263,251.0,13.0
+7836,2015-08-27 00:00:00,landslide,downpour,medium,above_road,India,Mizoram,92.6724,24.042,Mizoram,Kolasib,Mizoram,15,282,263.0,15.0
+3776,2011-07-15 18:00:00,landslide,downpour,small,unknown,India,Arunāchal Pradesh,93.7145,27.125,Arunachal Pradesh,Papum Pare,Arunachal Pradesh,12,248,237.0,12.0
+4798,2013-04-07 00:00:00,landslide,rain,medium,unknown,India,Arunachal Pradesh,96.1509,28.8254,Arunachal Pradesh,Dibang Valley,Arunachal Pradesh,12,257,230.0,12.0
+7388,2015-08-01 00:00:00,landslide,continuous_rain,medium,unknown,India,Manipur,94.0984,24.416,Manipur,Chandel,Manipur,14,280,253.0,14.0
+5421,2013-08-30 00:00:00,mudslide,unknown,medium,unknown,India,Nāgāland,94.9731,26.4205,Nagaland,Mon,Nagaland,13,261,247.0,13.0
+2343,2010-08-27 16:30:00,landslide,downpour,medium,unknown,India,Nāgāland,94.1327,25.4786,Nagaland,Senapati,Manipur,14,272,257.0,14.0
+3683,2011-07-01 00:00:00,landslide,downpour,medium,unknown,India,Nāgāland,94.1739,25.8782,Nagaland,Tseminyu,Nagaland,13,817,757.0,13.0
+9619,2016-10-15 00:00:00,landslide,rain,medium,above_road,India,Sikkim,88.3664,27.1695,Sikkim,Namchi,Sikkim,11,243,227.0,11.0
+7591,2015-03-19 00:00:00,landslide,rain,small,unknown,India,Assam,92.4584,25.0318,Assam,Cachar,Assam,18,316,282.0,18.0
+5441,2013-09-02 00:00:00,landslide,downpour,large,unknown,India,Arunāchal Pradesh,94.9829,28.611,Arunachal Pradesh,Upper Siang,Arunachal Pradesh,12,252,240.0,12.0
+9232,2016-07-28 23:00:00,landslide,continuous_rain,medium,unknown,India,Mizoram,93.3783,23.5397,Mizoram,Champhai,Mizoram,15,284,262.0,15.0
+4434,2012-06-25 18:00:00,landslide,downpour,large,unknown,India,Assam,91.7369,26.1049,Assam,Kamrup Metro,Assam,18,322,618.0,18.0
+4378,2012-06-02 00:00:00,landslide,downpour,medium,unknown,India,Arunachal Pradesh,96.1517,28.8254,Arunachal Pradesh,Dibang Valley,Arunachal Pradesh,12,257,230.0,12.0
+7214,2015-07-15 08:00:00,landslide,monsoon,medium,urban,India,Arunachal Pradesh,93.0385,27.36,Arunachal Pradesh,East Kameng,Arunachal Pradesh,12,247,231.0,12.0
+5582,2013-10-06 12:45:00,landslide,downpour,medium,unknown,India,Assam,91.8383,26.1309,Assam,Kamrup Metro,Assam,18,322,618.0,18.0
+2405,2010-09-09 23:00:00,landslide,downpour,medium,unknown,India,Arunāchal Pradesh,95.4112,28.3036,Arunachal Pradesh,East Siang,Arunachal Pradesh,12,251,232.0,12.0
+3556,2011-05-31 14:00:00,landslide,continuous_rain,small,unknown,India,Manipur,93.8474,25.1555,Manipur,Kangpokpi,Manipur,14,767,712.0,14.0
+2569,2010-10-08 00:00:00,landslide,downpour,medium,unknown,India,Nāgāland,94.0212,25.2745,Nagaland,Senapati,Manipur,14,272,257.0,14.0
+2423,2010-09-13 00:00:00,landslide,downpour,medium,above_road,India,Mizoram,92.71060943,23.73504471,Mizoram,Aizawl,Mizoram,15,283,261.0,15.0
+3532,2011-05-24 00:00:00,complex,downpour,medium,unknown,India,Assam,92.8551,25.0888,Assam,Dima Hasao,Assam,18,315,299.0,18.0
+2345,2010-08-27 18:00:00,landslide,downpour,medium,unknown,India,Sikkim,88.6188,27.3392,Sikkim,Gangtok,Sikkim,11,244,225.0,11.0
+7956,2015-09-05 00:00:00,landslide,unknown,medium,above_road,India,Meghalaya,91.8695,26.048,Meghalaya,Ri Bhoi,Meghalaya,17,297,276.0,17.0
+2425,2010-09-13 00:00:00,landslide,downpour,medium,unknown,India,Mizoram,93.0748,23.3439,Mizoram,Khawzawl,Mizoram,15,795,728.0,15.0
+6970,2015-06-16 00:00:00,rock_fall,downpour,small,above_road,India,Meghalaya,90.2191,25.5084,Meghalaya,West Garo Hills,Meghalaya,17,293,278.0,17.0
+5312,2013-08-11 23:00:00,landslide,downpour,very_large,unknown,India,Assam,94.693,26.7103,Assam,Mokokchung,Nagaland,13,262,246.0,13.0
+1929,2010-05-31 23:00:00,landslide,downpour,medium,unknown,India,Sikkim,88.6428,27.3543,Sikkim,Gangtok,Sikkim,11,244,225.0,11.0
+2568,2010-10-08 00:00:00,landslide,downpour,medium,unknown,India,Assam,93.4108,24.7679,Assam,Noney,Manipur,14,771,714.0,14.0
+7409,2015-08-02 00:00:00,landslide,continuous_rain,medium,unknown,India,Nagaland,94.6219,25.72,Nagaland,Meluri,Nagaland,13,847,788.0,13.0
+9219,2016-07-26 23:00:00,landslide,downpour,medium,retaining_wall,India,Nagaland,94.5282,26.0101,Nagaland,Zunheboto,Nagaland,13,263,251.0,13.0
+2579,2010-10-09 00:00:00,landslide,downpour,medium,unknown,India,Nāgāland,94.1076,25.682,Nagaland,Kohima,Nagaland,13,270,245.0,13.0
+8223,2015-09-14 03:10:00,landslide,downpour,large,above_road,India,Mizoram,92.7187,23.7348,Mizoram,Aizawl,Mizoram,15,283,261.0,15.0
+7336,2015-08-19 09:00:00,landslide,continuous_rain,medium,above_road,India,Meghalaya,90.5549,25.2193,Meghalaya,South Garo Hills,Meghalaya,17,295,277.0,17.0
+9252,2016-07-28 00:00:00,landslide,monsoon,medium,unknown,India,Arunachal Pradesh,91.8644,27.5748,Arunachal Pradesh,Tawang,Arunachal Pradesh,12,245,238.0,12.0
+5300,2013-08-09 00:00:00,landslide,downpour,large,unknown,India,Nāgāland,94.0441,25.318,Nagaland,Senapati,Manipur,14,272,257.0,14.0
+7665,2015-08-11 00:00:00,landslide,continuous_rain,medium,unknown,India,Manipur,93.5291,24.7016,Manipur,Noney,Manipur,14,771,714.0,14.0
+1994,2010-06-16 00:00:00,landslide,downpour,medium,unknown,India,Assam,92.8025,25.0633,Assam,Cachar,Assam,18,316,282.0,18.0
+3760,2011-07-11 09:00:00,landslide,downpour,medium,unknown,India,Nāgāland,94.1095,25.6703,Nagaland,Kohima,Nagaland,13,270,245.0,13.0
+692,2008-08-07 00:00:00,landslide,downpour,medium,unknown,India,Nāgāland,94.04,25.705,Nagaland,Kohima,Nagaland,13,270,245.0,13.0
+3633,2011-06-20 00:00:00,landslide,downpour,medium,unknown,India,Nāgāland,94.5121,26.3186,Nagaland,Mokokchung,Nagaland,13,262,246.0,13.0
+7374,2015-08-01 00:00:00,landslide,continuous_rain,medium,below_road,India,Manipur,94.3591,25.1122,Manipur,Ukhrul,Manipur,14,279,260.0,14.0
+4446,2012-07-05 00:00:00,landslide,downpour,large,unknown,India,Arunachal Pradesh,94.8885,28.9986,Arunachal Pradesh,Upper Siang,Arunachal Pradesh,12,252,240.0,12.0
+2098,2010-07-19 06:00:00,landslide,downpour,medium,unknown,India,Nāgāland,95.0283,26.7215,Nagaland,Mon,Nagaland,13,261,247.0,13.0
+269,2007-09-18 00:00:00,landslide,rain,medium,unknown,India,Sikkim,88.2816,27.2872,Sikkim,Namchi,Sikkim,11,243,227.0,11.0
+2205,2010-08-06 00:00:00,landslide,downpour,medium,unknown,India,Mizoram,92.7146,23.7365,Mizoram,Aizawl,Mizoram,15,283,261.0,15.0
+4610,2012-11-11 00:00:00,landslide,downpour,medium,unknown,India,Mizoram,92.5217,23.7705,Mizoram,Mamit,Mizoram,15,281,266.0,15.0
+5275,2013-08-04 00:00:00,landslide,monsoon,medium,unknown,India,Nāgāland,94.6055,26.1498,Nagaland,Zunheboto,Nagaland,13,263,251.0,13.0
+2247,2010-08-14 00:00:00,landslide,downpour,medium,unknown,India,Nāgāland,94.8422,26.148,Nagaland,Tuensang,Nagaland,13,267,249.0,13.0
+3927,2011-08-16 08:00:00,landslide,downpour,medium,unknown,India,Meghālaya,90.2167,25.5144,Meghalaya,West Garo Hills,Meghalaya,17,293,278.0,17.0
+259,2007-09-11 00:00:00,landslide,rain,medium,unknown,India,Meghālaya,91.27,25.52,Meghalaya,West Khasi Hills,Meghalaya,17,296,279.0,17.0
+6112,2014-06-28 09:00:00,landslide,rain,medium,unknown,India,Assam,91.7652,26.1964,Assam,Kamrup Metro,Assam,18,322,618.0,18.0
+7390,2015-08-01 00:00:00,landslide,continuous_rain,medium,above_road,India,Manipur,94.1913,24.4265,Manipur,Tengnoupal,Manipur,14,769,716.0,14.0
+2420,2010-09-13 00:00:00,landslide,downpour,medium,urban,India,Mizoram,92.71495623,23.72988966,Mizoram,Aizawl,Mizoram,15,283,261.0,15.0
+264,2007-09-13 00:00:00,landslide,rain,medium,unknown,India,Assam,91.8,26.1833,Assam,Kamrup Metro,Assam,18,322,618.0,18.0
+251,2007-09-09 00:00:00,landslide,rain,medium,unknown,India,Sikkim,88.35,27.1667,Sikkim,Namchi,Sikkim,11,243,227.0,11.0
+6214,2014-10-05 17:45:00,landslide,rain,medium,above_road,India,Meghalaya,91.8587,25.9702,Meghalaya,Ri Bhoi,Meghalaya,17,297,276.0,17.0
+4411,2012-06-14 04:00:00,landslide,downpour,medium,unknown,India,Sikkim,88.6065,27.339,Sikkim,Gangtok,Sikkim,11,244,225.0,11.0
+252,2007-09-09 00:00:00,landslide,rain,medium,unknown,India,Nāgāland,94.1192,25.4993,Nagaland,Senapati,Manipur,14,272,257.0,14.0
+142,2007-07-27 00:00:00,rock_fall,rain,large,unknown,India,Meghālaya,90.232,25.5212,Meghalaya,West Garo Hills,Meghalaya,17,293,278.0,17.0
+7384,2015-08-01 00:00:00,landslide,rain,medium,unknown,India,Manipur,94.0906,23.9278,Manipur,Chandel,Manipur,14,280,253.0,14.0
+211,2007-08-26 00:00:00,mudslide,continuous_rain,medium,unknown,India,Manipur,93.55,24.9667,Manipur,Tamenglong,Manipur,14,273,258.0,14.0
+4384,2012-06-03 00:00:00,landslide,downpour,medium,unknown,India,Assam,93.0123,25.1775,Assam,Dima Hasao,Assam,18,315,299.0,18.0
+4383,2012-06-03 00:00:00,landslide,downpour,medium,unknown,India,Assam,93.1265,25.3056,Assam,Dima Hasao,Assam,18,315,299.0,18.0
+7375,2015-08-01 00:00:00,landslide,continuous_rain,medium,above_road,India,Manipur,94.4481,25.1941,Manipur,Ukhrul,Manipur,14,279,260.0,14.0
+2163,2010-07-29 00:00:00,landslide,downpour,medium,unknown,India,Nāgāland,94.1054,25.4196,Nagaland,Senapati,Manipur,14,272,257.0,14.0
+3932,2011-08-18 00:00:00,landslide,monsoon,medium,unknown,India,Nāgāland,94.13,25.83,Nagaland,Kohima,Nagaland,13,270,245.0,13.0
+4861,2013-05-12 00:00:00,mudslide,rain,medium,unknown,India,Assam,93.4946,24.9926,Assam,Tamenglong,Manipur,14,273,258.0,14.0
+7972,2015-08-28 01:45:00,landslide,downpour,large,unknown,India,Mizoram,92.8112,23.4495,Mizoram,Aizawl,Mizoram,15,283,261.0,15.0
+3831,2011-07-22 00:00:00,landslide,downpour,medium,unknown,India,Manipur,93.948,24.7992,Manipur,Imphal East,Manipur,14,278,255.0,14.0
+5584,2013-10-06 00:00:00,landslide,downpour,medium,unknown,India,Assam,91.7049,26.1665,Assam,Kamrup Metro,Assam,18,322,618.0,18.0
+1986,2010-06-15 00:00:00,landslide,downpour,medium,unknown,India,Nāgāland,94.5512,26.3335,Nagaland,Mokokchung,Nagaland,13,262,246.0,13.0
+7387,2015-08-01 00:00:00,landslide,continuous_rain,small,below_road,India,Manipur,94.2156,24.954,Manipur,Ukhrul,Manipur,14,279,260.0,14.0
+2573,2010-10-09 00:00:00,mudslide,downpour,medium,unknown,India,Assam,93.0083,25.1796,Assam,Dima Hasao,Assam,18,315,299.0,18.0
+319,2007-10-19 00:00:00,landslide,rain,medium,unknown,India,Nāgāland,94.1162,25.4379,Nagaland,Senapati,Manipur,14,272,257.0,14.0
+313,2007-10-16 00:00:00,landslide,rain,large,unknown,India,Nāgāland,94.0132,25.7055,Nagaland,Kohima,Nagaland,13,270,245.0,13.0
+9010,2016-07-16 00:00:00,mudslide,downpour,medium,above_road,India,Arunachal Pradesh,93.804,27.3034,Arunachal Pradesh,Papum Pare,Arunachal Pradesh,12,248,237.0,12.0
+2539,2010-10-03 00:00:00,landslide,downpour,medium,unknown,India,Arunāchal Pradesh,95.4149,28.3092,Arunachal Pradesh,East Siang,Arunachal Pradesh,12,251,232.0,12.0
+6331,2014-09-08 00:00:00,mudslide,unknown,medium,unknown,India,Nagaland,94.6279,25.9466,Nagaland,Kiphire,Nagaland,13,269,614.0,13.0
+1987,2010-06-15 00:00:00,landslide,downpour,medium,unknown,India,Assam,93.1658,25.2269,Assam,Dima Hasao,Assam,18,315,299.0,18.0
+2043,2010-07-06 00:00:00,mudslide,monsoon,medium,unknown,India,Nāgāland,95.0281,26.7225,Nagaland,Mon,Nagaland,13,261,247.0,13.0
+7910,2015-08-01 00:00:00,landslide,unknown,medium,above_road,India,Manipur,94.1146,24.3481,Manipur,Chandel,Manipur,14,280,253.0,14.0
+6775,2015-02-14 00:00:00,landslide,mining,small,mine,India,Assam,91.6469,26.1468,Assam,Kamrup Metro,Assam,18,322,618.0,18.0
+1776,2010-04-21 00:00:00,landslide,downpour,medium,unknown,India,Meghālaya,92.2845,25.3612,Meghalaya,East Jaintia Hills,Meghalaya,17,714,657.0,17.0
+6786,2015-02-19 23:00:00,landslide,mining,medium,mine,India,Assam,92.562,24.6108,Assam,Hailakandi,Assam,18,318,289.0,18.0
+6291,2014-09-21 00:00:00,landslide,continuous_rain,large,unknown,India,Meghalaya,90.3852,25.7354,Meghalaya,West Garo Hills,Meghalaya,17,293,278.0,17.0
+6213,2014-09-24 00:00:00,landslide,continuous_rain,large,unknown,India,Meghalaya,90.5763,25.8143,Meghalaya,North Garo Hills,Meghalaya,17,712,656.0,17.0
+2415,2010-09-12 00:00:00,landslide,downpour,medium,unknown,India,Nāgāland,94.11112157,25.63961883,Nagaland,Kohima,Nagaland,13,270,245.0,13.0
+9336,2016-05-18 08:00:00,landslide,continuous_rain,small,unknown,India,Assam,92.5121,24.5308,Assam,Hailakandi,Assam,18,318,289.0,18.0
+9604,2016-10-12 00:00:00,landslide,continuous_rain,medium,above_road,India,Sikkim,88.2891,27.2676,Sikkim,Gyalshing,Sikkim,11,242,228.0,11.0
+7837,2015-08-27 00:00:00,landslide,downpour,medium,urban,India,Mizoram,92.7265,23.7269,Mizoram,Aizawl,Mizoram,15,283,261.0,15.0
+7267,2015-07-22 00:00:00,landslide,continuous_rain,small,above_road,India,Manipur,94.0926,25.3908,Manipur,Senapati,Manipur,14,272,257.0,14.0
+4848,2013-05-08 00:00:00,landslide,rain,medium,unknown,India,Tripura,91.4663,24.0896,Tripura,West Tripura,Tripura,16,289,272.0,16.0
+9122,2016-07-20 00:00:00,landslide,rain,medium,unknown,India,Assam,91.802,26.1966,Assam,Kamrup Metro,Assam,18,322,618.0,18.0
+2574,2010-10-09 00:00:00,landslide,downpour,medium,unknown,India,Assam,93.1477,25.4749,Assam,Dima Hasao,Assam,18,315,299.0,18.0
+6282,2014-09-22 00:00:00,landslide,rain,small,urban,India,Assam,91.7747,26.1097,Assam,Kamrup Metro,Assam,18,322,618.0,18.0
+2263,2010-08-17 00:00:00,landslide,downpour,medium,unknown,India,Nāgāland,94.6654,26.2753,Nagaland,Tuensang,Nagaland,13,267,249.0,13.0
+6289,2014-09-22 00:00:00,landslide,rain,small,unknown,India,Assam,91.6849,26.1001,Assam,Kamrup Metro,Assam,18,322,618.0,18.0
+9087,2016-07-19 00:00:00,landslide,downpour,medium,above_road,India,Arunachal Pradesh,94.9612,28.235,Arunachal Pradesh,Siang,Arunachal Pradesh,12,764,679.0,12.0
+130,2007-07-19 00:00:00,landslide,rain,medium,unknown,India,Assam,91.7986,26.1699,Assam,Kamrup Metro,Assam,18,322,618.0,18.0
