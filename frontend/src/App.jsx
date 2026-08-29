@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Layout from "./components/layout/Layout";
+
 import { AuthProvider } from "./context/AuthContext";
 
 import Dashboard from "./pages/Dashboard";
@@ -13,6 +14,7 @@ import Alerts from "./pages/Alerts";
 import RiskMap from "./pages/RiskMap";
 import AIAssistant from "./pages/AIAssistant";
 import NotFound from "./pages/NotFound";
+
 import ProtectedRoute from "./components/ProtectedRoute";
 import GuestRoute from "./components/GuestRoute";
 
@@ -29,6 +31,7 @@ function App() {
               </GuestRoute>
             }
           />
+
           <Route
             path="/signup"
             element={
@@ -49,10 +52,15 @@ function App() {
             }
           >
             <Route index element={<Dashboard />} />
+
             <Route path="risk-analysis" element={<RiskAnalysis />} />
+
             <Route path="reports" element={<Reports />} />
+
             <Route path="alerts" element={<Alerts />} />
+
             <Route path="assistant" element={<AIAssistant />} />
+
             <Route path="risk-map" element={<RiskMap />} />
           </Route>
 
