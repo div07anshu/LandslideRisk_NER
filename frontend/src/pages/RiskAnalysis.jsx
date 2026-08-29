@@ -97,7 +97,7 @@ export default function RiskAnalysis() {
                 transition
                 ${
                   range === r
-                    ? "bg-[#0B1B3B] text-white"
+                    ? "bg-brand-950 text-white"
                     : "text-slate-500 hover:bg-slate-100"
                 }
               `}

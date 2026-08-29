@@ -4,11 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { supabase } from "../../supabase";
 import { useAuth } from "../../context/AuthContext";
 
-function Topbar({
-  userName = "Madhur",
-  userRole = "Analyst",
-  notificationCount = 3,
-}) {
+function Topbar({ userName = "Madhur", notificationCount = 3 }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const { user } = useAuth();
@@ -52,8 +48,6 @@ function Topbar({
     user?.email?.split("@")[0] ||
     userName;
 
-  const displayRole = user ? userRole : "Guest";
-
   const initials = displayName
     .split(" ")
     .map((n) => n[0])
@@ -63,7 +57,7 @@ function Topbar({
 
   return (
     <header
-      className={`sticky top-0 z-50 isolate flex h-16 items-center justify-between bg-[#112D4E] px-6 shadow-md transition-all duration-500 ease-out motion-reduce:transition-none motion-reduce:transform-none ${
+      className={`sticky top-0 z-50 isolate flex h-16 items-center justify-between bg-brand-900 px-6 shadow-md transition-all duration-500 ease-out motion-reduce:transition-none motion-reduce:transform-none ${
         mounted ? "translate-y-0 opacity-100" : "-translate-y-4 opacity-0"
       }`}
     >
@@ -104,7 +98,6 @@ function Topbar({
               <p className="text-sm font-medium text-slate-900">
                 {displayName}
               </p>
-              <p className="text-[11px] text-slate-500">{displayRole}</p>
             </div>
 
             <ChevronDown

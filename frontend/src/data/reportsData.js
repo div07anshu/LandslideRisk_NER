@@ -22,61 +22,6 @@ export const CATEGORIES = [
   { value: "other", label: "Other", icon: HelpCircle },
 ];
 
-export const INITIAL_REPORTS = [
-  {
-    id: "r1",
-    title: "Road Crack in Cherrapunji",
-    location: "Mawsmai area, Cherrapunji",
-    detail: "Road crack observed near Mawsmai area, roughly 2 meters long.",
-    category: "road_crack",
-    reporter: "Field Team - Meghalaya",
-    time: "20 min ago",
-    status: "PENDING",
-  },
-  {
-    id: "r2",
-    title: "Soil Movement in Aizawl",
-    location: "Hlimen area, Aizawl",
-    detail: "Minor soil movement near Hlimen area following heavy rainfall.",
-    category: "soil_movement",
-    reporter: "Local Resident",
-    time: "1 hr ago",
-    status: "INVESTIGATING",
-  },
-  {
-    id: "r3",
-    title: "Small Landslide in Tawang",
-    location: "Village road, Tawang",
-    detail:
-      "Small scale landslide near village road, partially blocking one lane.",
-    category: "landslide",
-    reporter: "Field Team - Arunachal Pradesh",
-    time: "2 hr ago",
-    status: "RESOLVED",
-  },
-  {
-    id: "r4",
-    title: "Water Logging near Kohima Ridge",
-    location: "Kohima Ridge, Nagaland",
-    detail:
-      "Persistent water logging observed at the base of the slope after continuous rain.",
-    category: "flooding",
-    reporter: "Local Resident",
-    time: "5 hr ago",
-    status: "PENDING",
-  },
-  {
-    id: "r5",
-    title: "Slope Instability near Rumtek",
-    location: "Rumtek Slope, Sikkim",
-    detail: "Visible tilting of trees suggesting slope movement.",
-    category: "soil_movement",
-    reporter: "Field Team - Sikkim",
-    time: "1 day ago",
-    status: "RESOLVED",
-  },
-];
-
 export function categoryMeta(value) {
   return (
     CATEGORIES.find((c) => c.value === value) ??
