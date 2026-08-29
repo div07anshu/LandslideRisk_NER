@@ -9,6 +9,8 @@ import Login from "./pages/LoginPage";
 import Signup from "./pages/Signup";
 import Reports from "./pages/Reports";
 import Alerts from "./pages/Alerts";
+import RiskMap from "./pages/RiskMap";
+import AIAssistant from "./pages/AIAssistant";
 import ComingSoon from "./pages/ComingSoon";
 import NotFound from "./pages/NotFound";
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -33,34 +35,8 @@ function App() {
             <Route path="risk-analysis" element={<RiskAnalysis />} />
             <Route path="reports" element={<Reports />} />
             <Route path="alerts" element={<Alerts />} />
-
-            <Route
-              path="risk-map"
-              element={
-                <ComingSoon
-                  title="RISK MAP"
-                  subtitle="Interactive landslide risk map across North East Region"
-                />
-              }
-            />
-            <Route
-              path="assistant"
-              element={
-                <ComingSoon
-                  title="AI ASSISTANT"
-                  subtitle="Ask questions about risk, factors and safety"
-                />
-              }
-            />
-            <Route
-              path="weather"
-              element={
-                <ComingSoon
-                  title="WEATHER FORECAST"
-                  subtitle="Detailed rainfall and weather forecast across North East Region"
-                />
-              }
-            />
+            <Route path="assistant" element={<AIAssistant />} />
+            <Route path="risk-map" element={<RiskMap />} />
           </Route>
 
           <Route path="*" element={<NotFound />} />
