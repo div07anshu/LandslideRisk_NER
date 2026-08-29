@@ -20,7 +20,7 @@ function WeatherBanner() {
       </div>
 
       <Link
-        to=""
+        to="/weather"
         className="bg-[#0B1B3B] text-white text-sm font-semibold rounded-lg hover:bg-[#132a5c] px-4 py-2.5 shrink-0 text-center"
       >
         View Detailed Forecast

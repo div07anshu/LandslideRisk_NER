@@ -64,10 +64,9 @@ function Sidebar() {
 
   return (
     <div
-      className={`flex h-full w-60 flex-col bg-[#112D4E] text-slate-200 border-t border-[#475569] transition-all duration-500 ease-out motion-reduce:transition-none motion-reduce:transform-none ${mounted
-          ? "translate-x-0 opacity-100"
-          : "-translate-x-4 opacity-0"
-        }`}
+      className={`flex h-full w-60 flex-col bg-[#112D4E] text-slate-200 border-t border-[#475569] transition-all duration-500 ease-out motion-reduce:transition-none motion-reduce:transform-none ${
+        mounted ? "translate-x-0 opacity-100" : "-translate-x-4 opacity-0"
+      }`}
     >
       <style>{`
         @keyframes navItemIn {
@@ -98,9 +97,10 @@ function Sidebar() {
               group flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-sm
               transition-all duration-200 ease-out motion-reduce:transition-none
               ${mounted ? "nav-item-enter" : "opacity-0"}
-              ${isActive
-                ? "bg-[#3F72AF] font-medium text-white"
-                : "text-slate-300 hover:bg-white/20 hover:translate-x-1"
+              ${
+                isActive
+                  ? "bg-[#3F72AF] font-medium text-white"
+                  : "text-slate-300 hover:bg-white/20 hover:translate-x-1"
               }
               `
             }
@@ -119,9 +119,7 @@ function Sidebar() {
       <div className="p-3">
         {/* Emergency Contact */}
         <div className="rounded-xl border border-red-400/40 bg-gradient-to-b from-red-500/90 to-red-900 px-4 py-3 text-center shadow-md shadow-red-950/40 transition-transform duration-300 ease-out hover:scale-[1.02]">
-          <p className="text-xs text-red-100">
-            Emergency Contact
-          </p>
+          <p className="text-xs text-red-100">Emergency Contact</p>
 
           <div className="mt-1 flex items-center justify-center gap-2 text-white">
             <Phone
@@ -130,9 +128,7 @@ function Sidebar() {
               className="text-yellow-300 animate-pulse motion-reduce:animate-none"
             />
 
-            <span className="text-sm font-semibold">
-              0123456789
-            </span>
+            <span className="text-sm font-semibold">0123456789</span>
           </div>
         </div>
       </div>

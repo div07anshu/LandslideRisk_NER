@@ -2,14 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Search } from "lucide-react";
 import Card from "../../common/Card";
 import StatusBadge from "./StatusBadge";
-import { CATEGORIES, STATUS_FILTERS } from "../../data/reportsData";
-
-function categoryMeta(value) {
-  return (
-    CATEGORIES.find((c) => c.value === value) ??
-    CATEGORIES[CATEGORIES.length - 1]
-  );
-}
+import { categoryMeta, STATUS_FILTERS } from "../../data/reportsData";
 
 export default function ReportsList({
   reports,
@@ -83,6 +76,7 @@ export default function ReportsList({
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search reports..."
+              aria-label="Search reports"
               className="pl-8 pr-3 py-1.5 text-sm border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-[#3F72AF]"
             />
           </div>
@@ -140,6 +134,14 @@ export default function ReportsList({
                     {r.time}
                   </span>
                 </div>
+
+                {r.imageUrl && (
+                  <img
+                    src={r.imageUrl}
+                    alt=""
+                    className="mt-2 w-16 h-16 object-cover rounded-lg border border-gray-200"
+                  />
+                )}
 
                 <p className="text-xs text-slate-500 mt-0.5">{r.detail}</p>
 

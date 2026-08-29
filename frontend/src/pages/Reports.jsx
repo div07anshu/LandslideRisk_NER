@@ -3,19 +3,38 @@ import { useMemo, useState } from "react";
 import SectionHeader from "../common/SectionHeader";
 import SubmitReportForm from "../components/reports/SubmitReportForm";
 import ReportsList from "../components/reports/ReportsList";
+import { supabase } from "../supabase";
 
 import { INITIAL_REPORTS } from "../data/reportsData";
-
-let nextId = INITIAL_REPORTS.length + 1;
 
 export default function Reports() {
   const [reports, setReports] = useState(INITIAL_REPORTS);
   const [statusFilter, setStatusFilter] = useState("All");
   const [search, setSearch] = useState("");
 
-  function handleNewReport(form) {
+  async function handleNewReport(form) {
+    let imageUrl = null;
+
+    if (form.image) {
+      const fileExt = form.image.name.split(".").pop();
+      const filePath = `${crypto.randomUUID()}.${fileExt}`;
+
+      const { error: uploadError } = await supabase.storage
+        .from("report-photos")
+        .upload(filePath, form.image);
+
+      if (uploadError) {
+        console.error("Image upload failed:", uploadError.message);
+      } else {
+        const { data } = supabase.storage
+          .from("report-photos")
+          .getPublicUrl(filePath);
+        imageUrl = data.publicUrl;
+      }
+    }
+
     const newReport = {
-      id: `r${nextId++}`,
+      id: crypto.randomUUID(),
       title: form.title,
       location: form.location,
       detail: form.detail,
@@ -23,6 +42,7 @@ export default function Reports() {
       reporter: "You",
       time: "Just now",
       status: "PENDING",
+      imageUrl,
     };
 
     setReports((prev) => [newReport, ...prev]);
