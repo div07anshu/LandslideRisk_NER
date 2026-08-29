@@ -110,14 +110,14 @@ export default function ChatInput({ onSend, disabled }) {
             listening ? "Listening..." : "Ask about risk, factors or safety..."
           }
           disabled={disabled}
-          className="flex-1 bg-white border border-gray-300 rounded-xl px-4 py-2.5 text-sm text-slate-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#3F72AF] disabled:opacity-60"
+          className="flex-1 bg-white border border-gray-300 rounded-xl px-4 py-2.5 text-sm text-slate-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-brand-600 disabled:opacity-60"
         />
 
         <button
           type="submit"
           disabled={!value.trim() || disabled}
           aria-label="Send message"
-          className="w-9 h-9 rounded-full bg-[#0B1B3B] text-white flex items-center justify-center shrink-0 hover:bg-[#132a5c] transition-colors disabled:opacity-40 disabled:cursor-not-allowed active:scale-95"
+          className="w-9 h-9 rounded-full bg-brand-950 text-white flex items-center justify-center shrink-0 hover:bg-brand-800 transition-colors disabled:opacity-40 disabled:cursor-not-allowed active:scale-95"
         >
           <Send size={15} strokeWidth={3} />
         </button>

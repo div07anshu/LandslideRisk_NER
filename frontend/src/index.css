@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+@theme {
+  --color-brand-950: #0B1B3B; /* darkest navy — primary buttons */
+  --color-brand-900: #112D4E; /* navy — sidebar, topbar, auth panels */
+  --color-brand-800: #183d66; /* hover shade for brand-950 / brand-900 */
+  --color-brand-700: #345f92; /* hover shade for brand-600 */
+  --color-brand-600: #3F72AF; /* accent blue — links, focus rings */
+}
+
 html,
 body,
 #root {
@@ -8,10 +16,10 @@ body,
 }
 
 .no-scrollbar {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* old Edge/IE */
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
 }
 
 .no-scrollbar::-webkit-scrollbar {
-  display: none; /* Chrome/Safari */
+  display: none; 
 }

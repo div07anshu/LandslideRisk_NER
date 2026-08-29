@@ -4,10 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { supabase } from "../../supabase";
 import { useAuth } from "../../context/AuthContext";
 
-function Topbar({
-  userName = "Madhur",
-  notificationCount = 3,
-}) {
+function Topbar({ userName = "Madhur", notificationCount = 3 }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const { user } = useAuth();
@@ -60,8 +57,9 @@ function Topbar({
 
   return (
     <header
-      className={`sticky top-0 z-50 isolate flex h-16 items-center justify-between bg-[#112D4E] px-6 shadow-md transition-all duration-500 ease-out motion-reduce:transition-none motion-reduce:transform-none ${mounted ? "translate-y-0 opacity-100" : "-translate-y-4 opacity-0"
-        }`}
+      className={`sticky top-0 z-50 isolate flex h-16 items-center justify-between bg-brand-900 px-6 shadow-md transition-all duration-500 ease-out motion-reduce:transition-none motion-reduce:transform-none ${
+        mounted ? "translate-y-0 opacity-100" : "-translate-y-4 opacity-0"
+      }`}
     >
       <div>
         <h1 className="text-lg font-semibold leading-tight text-white">
@@ -109,10 +107,11 @@ function Topbar({
           </button>
 
           <div
-            className={`absolute right-0 mt-2 w-44 origin-top-right overflow-hidden rounded-lg border border-slate-200 bg-white shadow-lg transition-all duration-200 ease-out ${menuOpen
-              ? "translate-y-0 scale-100 opacity-100"
-              : "pointer-events-none -translate-y-1 scale-95 opacity-0"
-              }`}
+            className={`absolute right-0 mt-2 w-44 origin-top-right overflow-hidden rounded-lg border border-slate-200 bg-white shadow-lg transition-all duration-200 ease-out ${
+              menuOpen
+                ? "translate-y-0 scale-100 opacity-100"
+                : "pointer-events-none -translate-y-1 scale-95 opacity-0"
+            }`}
           >
             <button className="flex w-full items-center gap-2 px-3 py-2.5 text-sm text-slate-700 transition-colors hover:bg-slate-100">
               <User size={16} strokeWidth={2} />

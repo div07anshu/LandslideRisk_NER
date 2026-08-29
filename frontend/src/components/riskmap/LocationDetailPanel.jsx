@@ -71,7 +71,7 @@ export default function LocationDetailPanel({ selected, onClose }) {
 
       <Link
         to="/risk-analysis"
-        className="mt-auto pt-5 w-full bg-[#0B1B3B] text-white text-sm font-semibold rounded-lg py-2.5 hover:bg-[#132a5c] transition-colors text-center"
+        className="mt-auto pt-5 w-full bg-brand-950 text-white text-sm font-semibold rounded-lg py-2.5 hover:bg-brand-800 transition-colors text-center"
       >
         View Full Analysis
       </Link>

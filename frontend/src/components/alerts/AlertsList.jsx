@@ -48,7 +48,7 @@ export default function AlertsList({
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search alerts..."
               aria-label="Search alerts"
-              className="pl-8 pr-3 py-1.5 text-sm border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-[#3F72AF]"
+              className="pl-8 pr-3 py-1.5 text-sm border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-brand-600"
             />
           </div>
         </div>
@@ -61,7 +61,7 @@ export default function AlertsList({
               onClick={() => setLevelFilter(lvl)}
               className={`px-3 py-1.5 rounded-lg text-xs font-medium transition ${
                 levelFilter === lvl
-                  ? "bg-[#0B1B3B] text-white"
+                  ? "bg-brand-950 text-white"
                   : "text-slate-500 hover:bg-slate-200"
               }`}
             >
