@@ -20,6 +20,7 @@ export default function SubmitReportForm({ onSubmit }) {
   const [imageError, setImageError] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState("");
   const fileInputRef = useRef(null);
 
   const isValid =
@@ -72,14 +73,21 @@ export default function SubmitReportForm({ onSubmit }) {
     if (!isValid || submitting) return;
 
     setSubmitting(true);
-    await onSubmit({ ...form, image, imagePreview });
-    setSubmitting(false);
+    setSubmitError("");
 
-    setForm(EMPTY_FORM);
-    removeImage();
-    setSubmitted(true);
-
-    setTimeout(() => setSubmitted(false), 2500);
+    try {
+      await onSubmit({ ...form, image, imagePreview });
+      setForm(EMPTY_FORM);
+      removeImage();
+      setSubmitted(true);
+      setTimeout(() => setSubmitted(false), 2500);
+    } catch (err) {
+      setSubmitError(
+        err?.message || "Couldn't submit the report. Please try again.",
+      );
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -114,7 +122,7 @@ export default function SubmitReportForm({ onSubmit }) {
             value={form.title}
             onChange={update("title")}
             placeholder="e.g. Road crack near Mawsmai"
-            className="mt-1 w-full bg-white border border-gray-300 rounded-xl px-3 py-2 text-sm text-slate-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#3F72AF]"
+            className="mt-1 w-full bg-white border border-gray-300 rounded-xl px-3 py-2 text-sm text-slate-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-brand-600"
           />
         </div>
 
@@ -127,7 +135,7 @@ export default function SubmitReportForm({ onSubmit }) {
             value={form.location}
             onChange={update("location")}
             placeholder="e.g. Cherrapunji, Meghalaya"
-            className="mt-1 w-full bg-white border border-gray-300 rounded-xl px-3 py-2 text-sm text-slate-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#3F72AF]"
+            className="mt-1 w-full bg-white border border-gray-300 rounded-xl px-3 py-2 text-sm text-slate-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-brand-600"
           />
         </div>
 
@@ -138,7 +146,7 @@ export default function SubmitReportForm({ onSubmit }) {
           <select
             value={form.category}
             onChange={update("category")}
-            className="mt-1 w-full bg-white border border-gray-300 rounded-xl px-3 py-2 text-sm text-slate-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#3F72AF]"
+            className="mt-1 w-full bg-white border border-gray-300 rounded-xl px-3 py-2 text-sm text-slate-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-brand-600"
           >
             {CATEGORIES.map((c) => (
               <option key={c.value} value={c.value}>
@@ -157,7 +165,7 @@ export default function SubmitReportForm({ onSubmit }) {
             onChange={update("detail")}
             rows={4}
             placeholder="Describe what you observed..."
-            className="mt-1 w-full bg-white border border-gray-300 rounded-xl px-3 py-2 text-sm text-slate-700 shadow-sm resize-none focus:outline-none focus:ring-2 focus:ring-[#3F72AF]"
+            className="mt-1 w-full bg-white border border-gray-300 rounded-xl px-3 py-2 text-sm text-slate-700 shadow-sm resize-none focus:outline-none focus:ring-2 focus:ring-brand-600"
           />
         </div>
 
@@ -171,7 +179,7 @@ export default function SubmitReportForm({ onSubmit }) {
             <button
               type="button"
               onClick={() => fileInputRef.current?.click()}
-              className="mt-1 w-full flex flex-col items-center justify-center gap-1.5 border border-dashed border-gray-300 rounded-xl py-5 text-slate-400 hover:border-[#3F72AF] hover:text-[#3F72AF] transition-colors"
+              className="mt-1 w-full flex flex-col items-center justify-center gap-1.5 border border-dashed border-gray-300 rounded-xl py-5 text-slate-400 hover:border-brand-600 hover:text-brand-600 transition-colors"
             >
               <ImagePlus size={20} strokeWidth={2.5} />
               <span className="text-xs font-medium">
@@ -212,11 +220,15 @@ export default function SubmitReportForm({ onSubmit }) {
         <button
           type="submit"
           disabled={!isValid || submitting}
-          className="mt-1 flex items-center justify-center gap-2 bg-[#0B1B3B] text-white text-sm font-semibold rounded-lg py-2.5 hover:bg-[#132a5c] transition-colors disabled:opacity-40 disabled:cursor-not-allowed active:scale-[0.98]"
+          className="mt-1 flex items-center justify-center gap-2 bg-brand-950 text-white text-sm font-semibold rounded-lg py-2.5 hover:bg-brand-800 transition-colors disabled:opacity-40 disabled:cursor-not-allowed active:scale-[0.98]"
         >
           <Send size={14} strokeWidth={3} />
           {submitting ? "Submitting..." : "Submit Report"}
         </button>
+
+        {submitError && (
+          <p className="text-xs text-red-500 -mt-2">{submitError}</p>
+        )}
 
         {submitted && (
           <div className="success-message flex items-center gap-1.5 text-xs font-medium text-green-600">

@@ -1,25 +1,47 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Layout from "./components/layout/Layout";
+
 import { AuthProvider } from "./context/AuthContext";
 
 import Dashboard from "./pages/Dashboard";
 import RiskAnalysis from "./pages/RiskAnalysis";
 import Login from "./pages/LoginPage";
 import Signup from "./pages/Signup";
+import UpdatePassword from "./pages/UpdatePassword";
 import Reports from "./pages/Reports";
-import ComingSoon from "./pages/ComingSoon";
-import NotFound from "./pages/NotFound";
-import ProtectedRoute from "./components/ProtectedRoute";
+import Alerts from "./pages/Alerts";
+import RiskMap from "./pages/RiskMap";
 import AIAssistant from "./pages/AIAssistant";
+import NotFound from "./pages/NotFound";
+
+import ProtectedRoute from "./components/ProtectedRoute";
+import GuestRoute from "./components/GuestRoute";
 
 function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
+          <Route
+            path="/login"
+            element={
+              <GuestRoute>
+                <Login />
+              </GuestRoute>
+            }
+          />
+
+          <Route
+            path="/signup"
+            element={
+              <GuestRoute>
+                <Signup />
+              </GuestRoute>
+            }
+          />
+
+          <Route path="/update-password" element={<UpdatePassword />} />
 
           <Route
             path="/"
@@ -30,37 +52,16 @@ function App() {
             }
           >
             <Route index element={<Dashboard />} />
+
             <Route path="risk-analysis" element={<RiskAnalysis />} />
+
             <Route path="reports" element={<Reports />} />
 
-            <Route
-              path="risk-map"
-              element={
-                <ComingSoon
-                  title="RISK MAP"
-                  subtitle="Interactive landslide risk map across North East Region"
-                />
-              }
-            />
-            <Route
-              path="alerts"
-              element={
-                <ComingSoon
-                  title="ALERTS"
-                  subtitle="All active and historical landslide risk alerts"
-                />
-              }
-            />
+            <Route path="alerts" element={<Alerts />} />
+
             <Route path="assistant" element={<AIAssistant />} />
-            <Route
-              path="weather"
-              element={
-                <ComingSoon
-                  title="WEATHER FORECAST"
-                  subtitle="Detailed rainfall and weather forecast across North East Region"
-                />
-              }
-            />
+
+            <Route path="risk-map" element={<RiskMap />} />
           </Route>
 
           <Route path="*" element={<NotFound />} />
