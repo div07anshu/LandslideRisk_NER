@@ -12,7 +12,6 @@ import Reports from "./pages/Reports";
 import Alerts from "./pages/Alerts";
 import RiskMap from "./pages/RiskMap";
 import AIAssistant from "./pages/AIAssistant";
-import ComingSoon from "./pages/ComingSoon";
 import NotFound from "./pages/NotFound";
 import ProtectedRoute from "./components/ProtectedRoute";
 import GuestRoute from "./components/GuestRoute";
