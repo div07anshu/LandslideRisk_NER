@@ -1,4 +1,10 @@
-import { AlertTriangle, Droplets, Waves, CloudRain, HelpCircle } from "lucide-react";
+import {
+  AlertTriangle,
+  Droplets,
+  Waves,
+  CloudRain,
+  HelpCircle,
+} from "lucide-react";
 
 export const STATUS_STYLES = {
   PENDING: { color: "#B45309", bg: "#FEF3C7" },
@@ -41,7 +47,8 @@ export const INITIAL_REPORTS = [
     id: "r3",
     title: "Small Landslide in Tawang",
     location: "Village road, Tawang",
-    detail: "Small scale landslide near village road, partially blocking one lane.",
+    detail:
+      "Small scale landslide near village road, partially blocking one lane.",
     category: "landslide",
     reporter: "Field Team - Arunachal Pradesh",
     time: "2 hr ago",
@@ -51,7 +58,8 @@ export const INITIAL_REPORTS = [
     id: "r4",
     title: "Water Logging near Kohima Ridge",
     location: "Kohima Ridge, Nagaland",
-    detail: "Persistent water logging observed at the base of the slope after continuous rain.",
+    detail:
+      "Persistent water logging observed at the base of the slope after continuous rain.",
     category: "flooding",
     reporter: "Local Resident",
     time: "5 hr ago",
@@ -68,3 +76,10 @@ export const INITIAL_REPORTS = [
     status: "RESOLVED",
   },
 ];
+
+export function categoryMeta(value) {
+  return (
+    CATEGORIES.find((c) => c.value === value) ??
+    CATEGORIES[CATEGORIES.length - 1]
+  );
+}

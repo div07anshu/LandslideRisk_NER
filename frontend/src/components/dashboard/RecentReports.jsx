@@ -2,12 +2,8 @@ import { ChevronRight } from "lucide-react";
 import Card from "../../common/Card";
 import CardHeader from "../../common/CardHeader";
 import { recentReports } from "../../data/mockData";
-import { CATEGORIES } from "../../data/reportsData";
+import { categoryMeta } from "../../data/reportsData";
 import { Link } from "react-router-dom";
-
-function categoryMeta(value) {
-  return CATEGORIES.find((c) => c.value === value) ?? CATEGORIES[CATEGORIES.length - 1];
-}
 
 function RecentReports() {
   return (
@@ -52,7 +48,10 @@ function RecentReports() {
       </div>
 
       <div className="px-5 pb-4 pt-1 mt-auto">
-        <Link to="/reports" className="w-full text-sm font-medium text-blue-600 hover:text-blue-800 flex items-center justify-center gap-1 py-1">
+        <Link
+          to="/reports"
+          className="w-full text-sm font-medium text-blue-600 hover:text-blue-800 flex items-center justify-center gap-1 py-1"
+        >
           View all reports
           <ChevronRight size={14} strokeWidth={3} />
         </Link>

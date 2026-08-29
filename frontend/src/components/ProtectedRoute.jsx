@@ -1,26 +1,12 @@
 import { Navigate } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { supabase } from "../supabase";
+import { useAuth } from "../context/AuthContext";
+import LoadingScreen from "./LoadingScreen";
 
 function ProtectedRoute({ children }) {
-  const [loading, setLoading] = useState(true);
-  const [user, setUser] = useState(null);
-
-  useEffect(() => {
-    const checkUser = async () => {
-      const {
-        data: { session },
-      } = await supabase.auth.getSession();
-
-      setUser(session?.user ?? null);
-      setLoading(false);
-    };
-
-    checkUser();
-  }, []);
+  const { user, loading } = useAuth();
 
   if (loading) {
-    return null;
+    return <LoadingScreen />;
   }
 
   if (!user) {

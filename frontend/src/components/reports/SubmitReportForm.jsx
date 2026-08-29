@@ -18,6 +18,7 @@ export default function SubmitReportForm({ onSubmit }) {
   const [image, setImage] = useState(null); // File
   const [imagePreview, setImagePreview] = useState(null); // object URL
   const [imageError, setImageError] = useState("");
+  const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const fileInputRef = useRef(null);
 
@@ -65,12 +66,14 @@ export default function SubmitReportForm({ onSubmit }) {
     if (fileInputRef.current) fileInputRef.current.value = "";
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
 
-    if (!isValid) return;
+    if (!isValid || submitting) return;
 
-    onSubmit({ ...form, image, imagePreview });
+    setSubmitting(true);
+    await onSubmit({ ...form, image, imagePreview });
+    setSubmitting(false);
 
     setForm(EMPTY_FORM);
     removeImage();
@@ -208,11 +211,11 @@ export default function SubmitReportForm({ onSubmit }) {
 
         <button
           type="submit"
-          disabled={!isValid}
+          disabled={!isValid || submitting}
           className="mt-1 flex items-center justify-center gap-2 bg-[#0B1B3B] text-white text-sm font-semibold rounded-lg py-2.5 hover:bg-[#132a5c] transition-colors disabled:opacity-40 disabled:cursor-not-allowed active:scale-[0.98]"
         >
           <Send size={14} strokeWidth={3} />
-          Submit Report
+          {submitting ? "Submitting..." : "Submit Report"}
         </button>
 
         {submitted && (
