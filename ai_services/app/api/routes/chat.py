@@ -25,7 +25,9 @@ def chat(data: ChatInput):
         }
 
     except Exception as error:
+        # Log the actual error server-side for debugging
+        print(f"[chat] Error: {error}")
         raise HTTPException(
             status_code=500,
-            detail=f"Chat request failed: {error}",
+            detail="Chat service is currently unavailable. Please try again later.",
         )

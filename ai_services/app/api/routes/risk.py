@@ -23,7 +23,9 @@ def analyze_risk(data: LocationInput):
         )
 
     except Exception as error:
+        # Log the actual error server-side for debugging
+        print(f"[risk] Error analyzing {data.latitude}, {data.longitude}: {error}")
         raise HTTPException(
             status_code=500,
-            detail=f"Risk prediction failed: {error}",
+            detail="Risk analysis service is currently unavailable. Please try again later.",
         )
