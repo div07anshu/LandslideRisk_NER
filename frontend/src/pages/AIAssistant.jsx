@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Bot, Send, User, Sparkles } from "lucide-react";
 
 function AIAssistant() {
@@ -11,6 +11,15 @@ function AIAssistant() {
         },
     ]);
     const [isTyping, setIsTyping] = useState(false);
+    const messagesEndRef = useRef(null);
+
+    const scrollToBottom = () => {
+        messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    };
+
+    useEffect(() => {
+        scrollToBottom();
+    }, [messages, isTyping]);
 
     const handleSend = async () => {
         const trimmedMessage = message.trim();
@@ -180,6 +189,7 @@ function AIAssistant() {
                             </div>
                         </div>
                     )}
+                    <div ref={messagesEndRef} />
                 </div>
 
                 {/* Input Area */}
