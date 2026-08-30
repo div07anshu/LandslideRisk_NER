@@ -20,18 +20,6 @@ function DonutChart({ data, size = 128, thickness = 20 }) {
 
   return (
     <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
-      <style>{`
-        .donut-segment {
-          transition-property: stroke-dasharray;
-          transition-timing-function: linear;
-          transition-duration: var(--seg-duration, 700ms);
-          transition-delay: var(--seg-delay, 0ms);
-        }
-        @media (prefers-reduced-motion: reduce) {
-          .donut-segment { transition: none; }
-        }
-      `}</style>
-
       <g transform={`rotate(-90 ${size / 2} ${size / 2})`}>
         {data.map((d, i) => {
           const fraction = d.value / total;

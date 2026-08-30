@@ -68,24 +68,6 @@ function Sidebar() {
         mounted ? "translate-x-0 opacity-100" : "-translate-x-4 opacity-0"
       }`}
     >
-      <style>{`
-        @keyframes navItemIn {
-          from { opacity: 0; transform: translateX(-12px); }
-          to { opacity: 1; transform: translateX(0); }
-        }
-
-        .nav-item-enter {
-          animation: navItemIn 300ms ease-out both;
-          animation-delay: var(--enter-delay, 0ms);
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-          .nav-item-enter {
-            animation: none;
-          }
-        }
-      `}</style>
-
       <nav className="flex-1 space-y-1 px-3 pt-4">
         {NAV_ITEMS.map(({ key, label, icon: Icon, path }, index) => (
           <NavLink

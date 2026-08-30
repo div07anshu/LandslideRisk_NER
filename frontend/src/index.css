@@ -21,5 +21,33 @@ body,
 }
 
 .no-scrollbar::-webkit-scrollbar {
-  display: none; 
+  display: none;
+}
+
+/* Sidebar nav item animation */
+@keyframes navItemIn {
+  from { opacity: 0; transform: translateX(-12px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.nav-item-enter {
+  animation: navItemIn 300ms ease-out both;
+  animation-delay: var(--enter-delay, 0ms);
+}
+
+/* Donut chart segment animation */
+.donut-segment {
+  transition-property: stroke-dasharray;
+  transition-timing-function: linear;
+  transition-duration: var(--seg-duration, 700ms);
+  transition-delay: var(--seg-delay, 0ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-item-enter {
+    animation: none;
+  }
+  .donut-segment {
+    transition: none;
+  }
 }
