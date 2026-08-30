@@ -24,7 +24,7 @@ export const env = {
   port: int('PORT', 4000),
 
   /** Origins allowed by CORS. Supports a comma-separated list. */
-  corsOrigins: str('CORS_ORIGIN', 'http://localhost:5179')
+  corsOrigins: str('CORS_ORIGIN', 'http://localhost:5173')
     .split(',')
     .map((o) => o.trim())
     .filter(Boolean),
@@ -35,8 +35,8 @@ export const env = {
   },
 
   supabase: {
-    url: str('SUPABASE_URL', 'https://ijygzwwarhqjcccqvbnz.supabase.co'),
-    anonKey: str('SUPABASE_ANON_KEY', 'sb_publishable_isOzSriRhkJNEZR8A-Do_g_QWT8va67'),
+    url: str('SUPABASE_URL', ''),
+    anonKey: str('SUPABASE_ANON_KEY', ''),
     /** Server-only admin secret. Never send to the client, never log. */
     serviceRoleKey: str('SUPABASE_SERVICE_ROLE_KEY', ''),
   },
