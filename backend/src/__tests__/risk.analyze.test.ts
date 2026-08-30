@@ -1,13 +1,23 @@
 import request from 'supertest';
 import { createApp } from '../app';
-import { getSupabaseClient } from '../config/supabaseClient';
+import { getSupabaseClient, getSupabaseAdminClient } from '../config/supabaseClient';
 
 // requireAuth talks to Supabase — mock it so tests never hit a real project.
 jest.mock('../config/supabaseClient');
 
 const mockGetUser = jest.fn();
+const mockInsert = jest.fn();
+const mockSelect = jest.fn();
+
 (getSupabaseClient as jest.Mock).mockReturnValue({
   auth: { getUser: mockGetUser },
+});
+
+(getSupabaseAdminClient as jest.Mock).mockReturnValue({
+  from: jest.fn().mockReturnValue({
+    insert: mockInsert,
+    select: mockSelect,
+  }),
 });
 
 // The AI client uses global fetch — mock it so tests never hit FastAPI.
@@ -49,10 +59,27 @@ jest.spyOn(console, 'error').mockImplementation(() => undefined);
 beforeEach(() => {
   mockGetUser.mockReset();
   mockFetch.mockReset();
+  mockInsert.mockReset();
+  mockSelect.mockReset();
+
   // Default: authenticated user.
   mockGetUser.mockResolvedValue({
     data: { user: { id: 'user-1', email: 'u@example.com', role: 'authenticated' } },
     error: null,
+  });
+
+  // Default: successful database insert.
+  mockInsert.mockResolvedValue({
+    data: null,
+    error: null,
+  });
+
+  // Default: successful database select.
+  mockSelect.mockReturnValue({
+    order: jest.fn().mockResolvedValue({
+      data: [],
+      error: null,
+    }),
   });
 });
 
