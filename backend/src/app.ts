@@ -25,7 +25,7 @@ export function createApp(): Application {
       credentials: true,
     }),
   );
-console.log("CORS origin:", env.corsOrigins);
+
   // Body parsing
   app.use(express.json({ limit: '1mb' }));
   app.use(express.urlencoded({ extended: true }));
