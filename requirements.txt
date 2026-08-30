@@ -7,8 +7,10 @@ charset-normalizer==3.5.1
 click==8.5.0
 cryptography==50.0.1
 deprecation==2.1.0
+distro==1.9.0
 fastapi==0.141.1
 geopandas==1.1.4
+groq==1.7.0
 h11==0.16.0
 h2==4.4.1
 hpack==4.2.0
@@ -28,6 +30,7 @@ propcache==0.5.2
 pycparser==3.0
 pydantic==2.13.4
 pydantic_core==2.46.4
+pygame==2.6.1
 PyJWT==2.13.0
 pyogrio==0.13.0
 pyproj==3.7.2
@@ -40,6 +43,7 @@ scikit-learn==1.9.0
 scipy==1.18.1
 shapely==2.1.2
 six==1.17.0
+sniffio==1.3.1
 starlette==1.6.0
 storage3==2.31.0
 StrEnum==0.4.15
@@ -49,9 +53,9 @@ supabase-functions==2.31.0
 threadpoolctl==3.6.0
 typing-inspection==0.4.4
 typing_extensions==4.16.0
+tzdata==2026.3
 urllib3==2.7.0
 uvicorn==0.52.4
-uvloop==0.22.1
 watchfiles==1.2.0
 websockets==15.0.1
 yarl==1.24.5
