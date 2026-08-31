@@ -3,6 +3,7 @@ import { Bot, Send, User, Sparkles } from "lucide-react";
 
 function AIAssistant() {
     const [message, setMessage] = useState("");
+
     const [messages, setMessages] = useState([
         {
             id: 1,
@@ -10,11 +11,15 @@ function AIAssistant() {
             text: "Hello! I am the NER Landslide AI Assistant. I can help you understand landslide risks, risk factors, warning signs, and safety measures.",
         },
     ]);
+
     const [isTyping, setIsTyping] = useState(false);
+
     const messagesEndRef = useRef(null);
 
     const scrollToBottom = () => {
-        messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+        messagesEndRef.current?.scrollIntoView({
+            behavior: "smooth",
+        });
     };
 
     useEffect(() => {
@@ -24,7 +29,9 @@ function AIAssistant() {
     const handleSend = async () => {
         const trimmedMessage = message.trim();
 
-        if (!trimmedMessage || isTyping) return;
+        if (!trimmedMessage || isTyping) {
+            return;
+        }
 
         const userMessage = {
             id: Date.now(),
@@ -37,21 +44,28 @@ function AIAssistant() {
         setIsTyping(true);
 
         try {
-            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/chat`, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    message: trimmedMessage,
-                }),
-            });
+            const response = await fetch(
+                "http://127.0.0.1:8000/api/chat",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        message: trimmedMessage,
+                    }),
+                }
+            );
 
             if (!response.ok) {
-                throw new Error("AI service request failed");
+                throw new Error(
+                    `AI service returned ${response.status}`
+                );
             }
 
             const data = await response.json();
+
+            console.log("AI RESPONSE:", data);
 
             const botMessage = {
                 id: Date.now() + 1,
@@ -68,7 +82,8 @@ function AIAssistant() {
             const botMessage = {
                 id: Date.now() + 1,
                 sender: "bot",
-                text: "Sorry, I couldn't connect to the AI service. Please make sure the backend server is running.",
+                text:
+                    "Sorry, I couldn't connect to the AI service. Please make sure the backend server is running.",
             };
 
             setMessages((prev) => [...prev, botMessage]);
@@ -96,7 +111,8 @@ function AIAssistant() {
                         </h1>
 
                         <p className="text-sm text-slate-500">
-                            Ask questions about landslide risk, factors and safety.
+                            Ask questions about landslide risk,
+                            factors and safety.
                         </p>
                     </div>
                 </div>
@@ -104,6 +120,7 @@ function AIAssistant() {
 
             {/* Chat Card */}
             <div className="flex min-h-0 flex-1 flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
+
                 {/* Chat Header */}
                 <div className="flex items-center gap-3 border-b border-slate-200 bg-slate-50 px-5 py-4">
                     <div className="flex h-9 w-9 items-center justify-center rounded-full bg-blue-600">
@@ -127,6 +144,7 @@ function AIAssistant() {
 
                 {/* Messages */}
                 <div className="min-h-0 flex-1 space-y-5 overflow-y-auto bg-slate-50/50 p-5">
+
                     {messages.map((msg) => (
                         <div
                             key={msg.id}
@@ -183,22 +201,29 @@ function AIAssistant() {
                             <div className="rounded-2xl rounded-tl-sm border border-slate-200 bg-white px-4 py-3 shadow-sm">
                                 <div className="flex gap-1">
                                     <span className="h-2 w-2 animate-bounce rounded-full bg-slate-400" />
+
                                     <span className="h-2 w-2 animate-bounce rounded-full bg-slate-400 [animation-delay:150ms]" />
+
                                     <span className="h-2 w-2 animate-bounce rounded-full bg-slate-400 [animation-delay:300ms]" />
                                 </div>
                             </div>
                         </div>
                     )}
+
                     <div ref={messagesEndRef} />
                 </div>
 
                 {/* Input Area */}
                 <div className="border-t border-slate-200 bg-white p-4">
+
                     <div className="flex gap-3">
+
                         <input
                             type="text"
                             value={message}
-                            onChange={(e) => setMessage(e.target.value)}
+                            onChange={(e) =>
+                                setMessage(e.target.value)
+                            }
                             onKeyDown={(e) => {
                                 if (e.key === "Enter") {
                                     handleSend();
@@ -210,18 +235,27 @@ function AIAssistant() {
 
                         <button
                             onClick={handleSend}
-                            disabled={!message.trim() || isTyping}
+                            disabled={
+                                !message.trim() || isTyping
+                            }
                             className="flex items-center gap-2 rounded-xl bg-[#3F72AF] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#315f96] disabled:cursor-not-allowed disabled:opacity-50"
                         >
-                            <Send size={17} strokeWidth={2.5} />
+                            <Send
+                                size={17}
+                                strokeWidth={2.5}
+                            />
+
                             <span>Send</span>
                         </button>
+
                     </div>
 
                     <p className="mt-2 text-center text-[11px] text-slate-400">
-                        AI responses are for informational purposes. Always follow
-                        official disaster-management guidance during emergencies.
+                        AI responses are for informational purposes.
+                        Always follow official disaster-management
+                        guidance during emergencies.
                     </p>
+
                 </div>
             </div>
         </div>
