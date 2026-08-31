@@ -7,7 +7,11 @@ function levelLabel(level) {
   return level.charAt(0).toUpperCase() + level.slice(1);
 }
 
-export default function AreaComparisonTable({ selectedId, setSelectedId }) {
+export default function AreaComparisonTable({
+  selectedId,
+  setSelectedId,
+  riskData,
+}) {
   return (
     <Card className="overflow-hidden h-full">
       {/* Header */}
@@ -47,12 +51,7 @@ export default function AreaComparisonTable({ selectedId, setSelectedId }) {
 
       {/* Table */}
       <div className="overflow-x-auto">
-        <table
-          className="
-            w-full
-            text-sm
-          "
-        >
+        <table className="w-full text-sm">
           <thead>
             <tr
               className="
@@ -64,21 +63,61 @@ export default function AreaComparisonTable({ selectedId, setSelectedId }) {
               "
             >
               <th className="px-5 py-3 font-medium">Area</th>
-
               <th className="px-5 py-3 font-medium">State</th>
-
               <th className="px-5 py-3 font-medium">Score</th>
-
               <th className="px-5 py-3 font-medium">Level</th>
-
               <th className="px-5 py-3 font-medium">Trend</th>
             </tr>
           </thead>
 
           <tbody>
             {AREAS.map((a) => {
-              const lv = LEVEL_STYLES[a.riskLevel];
+              // Get all database records for this area
+              const areaRows = riskData
+                .filter(
+                  (row) =>
+                    row.Location === a.name &&
+                    row.State === a.state,
+                )
+                .sort(
+                  (x, y) =>
+                    new Date(y.created_at) -
+                    new Date(x.created_at),
+                );
 
+              // Newest and previous database records
+              const latest = areaRows[0];
+              const previous = areaRows[1];
+
+              // Use database score if available,
+              // otherwise use the existing AREAS value
+              const riskScore = latest
+                ? Number(latest.Risk_score)
+                : a.riskScore;
+
+              // Use database level if available
+              const riskLevel = latest
+                ? String(latest.Risk_level || "").toLowerCase()
+                : a.riskLevel;
+
+              // Calculate trend using the two newest records
+              let trend = "flat";
+
+              if (latest && previous) {
+                if (
+                  Number(latest.Risk_score) >
+                  Number(previous.Risk_score)
+                ) {
+                  trend = "up";
+                } else if (
+                  Number(latest.Risk_score) <
+                  Number(previous.Risk_score)
+                ) {
+                  trend = "down";
+                }
+              }
+
+              const lv = LEVEL_STYLES[riskLevel];
               const selected = a.id === selectedId;
 
               return (
@@ -94,6 +133,7 @@ export default function AreaComparisonTable({ selectedId, setSelectedId }) {
                     ${selected ? "bg-slate-100" : "hover:bg-slate-50"}
                   `}
                 >
+                  {/* Area */}
                   <td
                     className="
                       px-5
@@ -105,6 +145,7 @@ export default function AreaComparisonTable({ selectedId, setSelectedId }) {
                     {a.name}
                   </td>
 
+                  {/* State */}
                   <td
                     className="
                       px-5
@@ -115,6 +156,7 @@ export default function AreaComparisonTable({ selectedId, setSelectedId }) {
                     {a.state}
                   </td>
 
+                  {/* Score */}
                   <td
                     className="
                       px-5
@@ -124,15 +166,11 @@ export default function AreaComparisonTable({ selectedId, setSelectedId }) {
                       tabular-nums
                     "
                   >
-                    {a.riskScore}
+                    {riskScore}
                   </td>
 
-                  <td
-                    className="
-                      px-5
-                      py-3
-                    "
-                  >
+                  {/* Level */}
+                  <td className="px-5 py-3">
                     <span
                       className={`
                         text-xs
@@ -144,10 +182,11 @@ export default function AreaComparisonTable({ selectedId, setSelectedId }) {
                         ${lv.text}
                       `}
                     >
-                      {levelLabel(a.riskLevel)}
+                      {levelLabel(riskLevel)}
                     </span>
                   </td>
 
+                  {/* Trend */}
                   <td
                     className="
                       px-5
@@ -163,11 +202,11 @@ export default function AreaComparisonTable({ selectedId, setSelectedId }) {
                         text-xs
                       "
                     >
-                      <TrendIcon trend={a.trend} />
+                      <TrendIcon trend={trend} />
 
-                      {a.trend === "up"
+                      {trend === "up"
                         ? "Rising"
-                        : a.trend === "down"
+                        : trend === "down"
                           ? "Falling"
                           : "Stable"}
                     </span>
