@@ -70,7 +70,7 @@ def generate_chat_response(message: str) -> str:
         temperature=0.3,
     )
 
-    answer = completion.choices[0].message.content
+    answer = completion.choices[0].message.content or ""
 
     if "</think>" in answer:
         answer = answer.split("</think>", 1)[1].strip()

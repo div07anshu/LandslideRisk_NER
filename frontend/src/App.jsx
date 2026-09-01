@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import DistrictMapTest from "./pages/DistrictMapTest";
 
 import Layout from "./components/layout/Layout";
 
@@ -62,6 +63,7 @@ function App() {
             <Route path="assistant" element={<AIAssistant />} />
 
             <Route path="risk-map" element={<RiskMap />} />
+            <Route path="district-map-test" element={<DistrictMapTest />} />
           </Route>
 
           <Route path="*" element={<NotFound />} />
