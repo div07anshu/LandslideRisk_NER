@@ -69,7 +69,18 @@ export default function Reports() {
     let imageUrl = null;
 
     if (form.image) {
-      const fileExt = form.image.name.split(".").pop();
+      const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB
+      const ALLOWED_TYPES = ["image/jpeg", "image/png", "image/webp", "image/jpg"];
+
+      if (form.image.size > MAX_FILE_SIZE) {
+        throw new Error("The selected image must be smaller than 5MB.");
+      }
+
+      if (!ALLOWED_TYPES.includes(form.image.type.toLowerCase())) {
+        throw new Error("Only JPG, PNG, and WebP image files are allowed.");
+      }
+
+      const fileExt = form.image.name.split(".").pop()?.toLowerCase() || "jpg";
       const filePath = `${crypto.randomUUID()}.${fileExt}`;
 
       const { error: uploadError } = await supabase.storage

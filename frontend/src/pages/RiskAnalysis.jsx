@@ -55,10 +55,6 @@ export default function RiskAnalysis() {
   const [predError, setPredError] = useState("");
     const [riskData, setRiskData] = useState([]);
 
-useEffect(() => {
-    console.log("DATABASE DATA:", riskData);
-  }, [riskData]);
-
   const selected = useMemo(
     () => AREAS.find((a) => a.id === selectedId) ?? AREAS[0],
     [selectedId],
@@ -105,25 +101,22 @@ useEffect(() => {
           setPredError(errorForStatus(res.status));
           return;
         }
-        const testRes = await fetch(`${API_BASE}/api/risk/data`, {
-  method: "GET",
-  headers: {
-    Authorization: `Bearer ${token}`,
-  },
-});
-
-const testBody = await testRes.json();
-
-console.log("RISK DATA:", testRes.status, testBody);
-
-if (testRes.ok) {
-  setRiskData(testBody.data ?? []);
-}
-
-
 
         const body = await res.json();
         setPrediction(body?.data ?? null);
+
+        // Fetch historical risk data for trend charts
+        const historyRes = await fetch(`${API_BASE}/api/risk/data`, {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+
+        if (historyRes.ok) {
+          const historyBody = await historyRes.json();
+          setRiskData(historyBody.data ?? []);
+        }
       } catch (err) {
         if (err?.name === "AbortError") return;
         setPrediction(null);
@@ -136,7 +129,7 @@ if (testRes.ok) {
     loadPrediction();
 
     return () => controller.abort();
-  }, [selected.id, selected.latitude, selected.longitude]);
+  }, [selected.id, selected.latitude, selected.longitude, selected.name, selected.state]);
 
   // Overlay the real prediction onto the selected area for the score/factor UI.
   const view = useMemo(() => {

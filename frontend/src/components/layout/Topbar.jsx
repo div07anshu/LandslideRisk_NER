@@ -1,13 +1,16 @@
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Bell, ChevronDown, LogOut, Settings, User } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "../../supabase";
 import { useAuth } from "../../context/AuthContext";
 
-function Topbar({ userName = "Madhur", notificationCount = 3 }) {
+function Topbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const { user } = useAuth();
+
+  // TODO: Implement real notification system - for now, hide notifications
+  const notificationCount = 0;
 
   const menuRef = useRef(null);
   const navigate = useNavigate();

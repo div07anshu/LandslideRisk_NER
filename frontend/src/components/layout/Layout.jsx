@@ -15,7 +15,7 @@ function Layout() {
 
   return (
     <div className="flex h-screen flex-col">
-      <Topbar userName="User" notificationCount={3} />
+      <Topbar />
 
       <div className="flex flex-1 overflow-hidden">
         <Sidebar />

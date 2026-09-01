@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { supabase } from "../supabase";
 import { Mountain, Mail, Lock } from "lucide-react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Signup() {
   const [email, setEmail] = useState("");
@@ -9,8 +9,6 @@ function Signup() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
-
-  const navigate = useNavigate();
 
   const handleSignup = async (e) => {
     e.preventDefault();
