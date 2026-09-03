@@ -5,7 +5,6 @@ import {
   ChartNoAxesColumn,
   Bell,
   FileText,
-  Bot,
   Phone,
 } from "lucide-react";
 
@@ -46,13 +45,6 @@ const NAV_ITEMS = [
     icon: FileText,
     path: "/reports",
   },
-
-  {
-    key: "assistant",
-    label: "AI Assistant",
-    icon: Bot,
-    path: "/assistant",
-  },
 ];
 
 function Sidebar() {
@@ -64,9 +56,8 @@ function Sidebar() {
 
   return (
     <div
-      className={`flex h-full w-60 flex-col bg-brand-900 text-slate-200 border-t border-[#475569] transition-all duration-500 ease-out motion-reduce:transition-none motion-reduce:transform-none ${
-        mounted ? "translate-x-0 opacity-100" : "-translate-x-4 opacity-0"
-      }`}
+      className={`flex h-full w-60 flex-col bg-brand-900 text-slate-200 border-t border-[#475569] transition-all duration-500 ease-out motion-reduce:transition-none motion-reduce:transform-none ${mounted ? "translate-x-0 opacity-100" : "-translate-x-4 opacity-0"
+        }`}
     >
       <nav className="flex-1 space-y-1 px-3 pt-4">
         {NAV_ITEMS.map(({ key, label, icon: Icon, path }, index) => (
@@ -79,10 +70,9 @@ function Sidebar() {
               group flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-sm
               transition-all duration-200 ease-out motion-reduce:transition-none
               ${mounted ? "nav-item-enter" : "opacity-0"}
-              ${
-                isActive
-                  ? "bg-brand-600 font-medium text-white"
-                  : "text-slate-300 hover:bg-white/20 hover:translate-x-1"
+              ${isActive
+                ? "bg-brand-600 font-medium text-white"
+                : "text-slate-300 hover:bg-white/20 hover:translate-x-1"
               }
               `
             }

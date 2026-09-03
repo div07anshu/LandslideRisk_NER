@@ -1,4 +1,4 @@
-import { Compass, Search, Bot } from "lucide-react";
+import { Compass, Search } from "lucide-react";
 
 export const quickActions = [
   {
@@ -9,6 +9,7 @@ export const quickActions = [
     iconColor: "#16A34A",
     path: "/risk-map",
   },
+
   {
     title: "Analyze Risk",
     subtitle: "Check risk factors and predictive analysis.",
@@ -16,13 +17,5 @@ export const quickActions = [
     iconBg: "#FEF3C7",
     iconColor: "#D97706",
     path: "/risk-analysis",
-  },
-  {
-    title: "Ask AI Assistant",
-    subtitle: "Get answers about risk, factors and safety.",
-    icon: Bot,
-    iconBg: "#DBEAFE",
-    iconColor: "#2563EB",
-    path: "/assistant",
   },
 ];
