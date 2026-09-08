@@ -17,7 +17,7 @@ import FactorBreakdown from "../components/analysis/FactorBreakdown";
 import RiskTrendChart from "../components/analysis/RiskTrendChart";
 import AreaComparisonTable from "../components/analysis/AreaComparisonTable";
 
-const API_BASE = import.meta.env.VITE_BACKEND_URL ?? "http://localhost:4000";
+const API_BASE = import.meta.env.VITE_API_URL ?? import.meta.env.VITE_BACKEND_URL ?? "http://localhost:4000";
 
 // Maps the FastAPI feature payload onto the existing FactorBreakdown row shape.
 const FEATURE_META = [
@@ -196,9 +196,17 @@ export default function RiskAnalysis() {
     LEVEL_STYLES.low;
 
   const compareData = useMemo(() => {
+  // Parse range string like "7 days", "30 days", "90 days" to number of days
+  const rangeDays = parseInt(range.split(" ")[0], 10);
+  const cutoff = new Date();
+  cutoff.setDate(cutoff.getDate() - rangeDays);
+
   const rowsByDate = {};
 
   riskData.forEach((row) => {
+    const rowDate = new Date(row.created_at);
+    if (rowDate < cutoff) return; // Skip data outside the selected range
+
     const area = AREAS.find(
       (a) =>
         a.name === row.Location &&
@@ -207,7 +215,7 @@ export default function RiskAnalysis() {
 
     if (!area || !compareIds.includes(area.id)) return;
 
-    const day = new Date(row.created_at).toLocaleDateString("en-IN", {
+    const day = rowDate.toLocaleDateString("en-IN", {
       day: "2-digit",
       month: "short",
     });
@@ -220,7 +228,7 @@ export default function RiskAnalysis() {
   });
 
   return Object.values(rowsByDate);
-}, [riskData, compareIds]);
+}, [riskData, compareIds, range]);
 
   return (
     <div className="p-6 flex-1">

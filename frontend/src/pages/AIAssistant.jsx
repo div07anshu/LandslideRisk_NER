@@ -1,8 +1,9 @@
 import { useState, useRef, useEffect } from "react";
 import { Bot, Send, User, Sparkles } from "lucide-react";
+import ReactMarkdown from "react-markdown";
 import { supabase } from "../supabase";
 
-const API_BASE = import.meta.env.VITE_BACKEND_URL ?? "http://localhost:4000";
+const API_BASE = import.meta.env.VITE_API_URL ?? import.meta.env.VITE_BACKEND_URL ?? "http://localhost:4000";
 
 function AIAssistant() {
     const [message, setMessage] = useState("");
@@ -71,9 +72,13 @@ function AIAssistant() {
             );
 
             if (!response.ok) {
-                throw new Error(
-                    `AI service returned ${response.status}`
-                );
+                if (response.status === 502) {
+                    throw new Error("AI service is temporarily unavailable (502 Bad Gateway). Please try again shortly.");
+                } else if (response.status === 503) {
+                    throw new Error("AI service is overloaded (503 Service Unavailable). Please try again in a few moments.");
+                } else {
+                    throw new Error(`AI service returned status ${response.status}`);
+                }
             }
 
             const data = await response.json();
@@ -90,11 +95,16 @@ function AIAssistant() {
         } catch (error) {
             console.error("AI Assistant Error:", error);
 
+            let errorMessage = "Sorry, I couldn't connect to the AI service. Please make sure the backend server is running.";
+            if (error.message && error.message !== "Failed to fetch") {
+                errorMessage = error.message;
+            }
+
             const botMessage = {
                 id: Date.now() + 1,
                 sender: "bot",
-                text:
-                    "Sorry, I couldn't connect to the AI service. Please make sure the backend server is running.",
+                text: errorMessage,
+                isError: true
             };
 
             setMessages((prev) => [...prev, botMessage]);
@@ -185,12 +195,20 @@ function AIAssistant() {
 
                             {/* Message */}
                             <div
-                                className={`max-w-[75%] whitespace-pre-wrap rounded-2xl px-4 py-3 text-sm leading-relaxed ${msg.sender === "user"
-                                        ? "rounded-tr-sm bg-[#3F72AF] text-white"
+                                className={`max-w-[75%] rounded-2xl px-4 py-3 text-sm leading-relaxed ${msg.sender === "user"
+                                        ? "rounded-tr-sm bg-[#3F72AF] text-white whitespace-pre-wrap"
+                                        : msg.isError
+                                        ? "rounded-tl-sm border border-red-200 bg-red-50 text-red-700 shadow-sm"
                                         : "rounded-tl-sm border border-slate-200 bg-white text-slate-700 shadow-sm"
                                     }`}
                             >
-                                {msg.text}
+                                {msg.sender === "bot" ? (
+                                    <ReactMarkdown className="prose prose-sm max-w-none [&>*:first-child]:mt-0 [&>*:last-child]:mb-0">
+                                        {msg.text}
+                                    </ReactMarkdown>
+                                ) : (
+                                    msg.text
+                                )}
                             </div>
 
                             {/* User Icon */}

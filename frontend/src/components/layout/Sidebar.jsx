@@ -100,7 +100,7 @@ function Sidebar() {
               className="text-yellow-300 animate-pulse motion-reduce:animate-none"
             />
 
-            <span className="text-sm font-semibold">0123456789</span>
+            <span className="text-sm font-semibold">1078</span>
           </div>
         </div>
       </div>
