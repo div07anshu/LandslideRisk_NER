@@ -68,28 +68,36 @@ export default function Reports() {
   async function handleNewReport(form) {
     let imageUrl = null;
 
-    if (form.image) {
-      const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB
-      const ALLOWED_TYPES = ["image/jpeg", "image/png", "image/webp", "image/jpg"];
+    if (form.media) {
+      const isVideo = form.media.type.startsWith("video/");
+      const MAX_IMAGE_SIZE = 5 * 1024 * 1024; // 5MB
+      const MAX_VIDEO_SIZE = 50 * 1024 * 1024; // 50MB
 
-      if (form.image.size > MAX_FILE_SIZE) {
-        throw new Error("The selected image must be smaller than 5MB.");
+      const MAX_FILE_SIZE = isVideo ? MAX_VIDEO_SIZE : MAX_IMAGE_SIZE;
+
+      const ALLOWED_TYPES = [
+        "image/jpeg", "image/png", "image/webp", "image/jpg",
+        "video/mp4", "video/webm", "video/ogg", "video/quicktime"
+      ];
+
+      if (form.media.size > MAX_FILE_SIZE) {
+        throw new Error(`The selected ${isVideo ? 'video' : 'image'} must be smaller than ${isVideo ? '50MB' : '5MB'}.`);
       }
 
-      if (!ALLOWED_TYPES.includes(form.image.type.toLowerCase())) {
-        throw new Error("Only JPG, PNG, and WebP image files are allowed.");
+      if (!ALLOWED_TYPES.includes(form.media.type.toLowerCase())) {
+        throw new Error("Only JPG, PNG, WebP image and MP4, WebM, OGG video files are allowed.");
       }
 
-      const fileExt = form.image.name.split(".").pop()?.toLowerCase() || "jpg";
+      const fileExt = form.media.name.split(".").pop()?.toLowerCase() || (isVideo ? "mp4" : "jpg");
       const filePath = `${crypto.randomUUID()}.${fileExt}`;
 
       const { error: uploadError } = await supabase.storage
         .from("report-photos")
-        .upload(filePath, form.image);
+        .upload(filePath, form.media);
 
       if (uploadError) {
-        console.error("Image upload failed:", uploadError.message);
-        // Non-fatal: the report can still be saved without a photo.
+        console.error("Media upload failed:", uploadError.message);
+        // Non-fatal: the report can still be saved without a photo/video.
       } else {
         const { data } = supabase.storage
           .from("report-photos")

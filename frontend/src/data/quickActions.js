@@ -1,4 +1,4 @@
-import { Compass, Search } from "lucide-react";
+import { Compass, Search, Bell } from "lucide-react";
 
 export const quickActions = [
   {
@@ -17,5 +17,14 @@ export const quickActions = [
     iconBg: "#FEF3C7",
     iconColor: "#D97706",
     path: "/risk-analysis",
+  },
+
+  {
+    title: "Active Alerts",
+    subtitle: "View current landslide alerts and warnings.",
+    icon: Bell,
+    iconBg: "#FEE2E2",
+    iconColor: "#DC2626",
+    path: "/alerts",
   },
 ];

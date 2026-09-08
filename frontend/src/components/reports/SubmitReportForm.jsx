@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Send, CheckCircle2, ImagePlus, X } from "lucide-react";
+import { Send, CheckCircle2, ImagePlus, Video, X } from "lucide-react";
 import Card from "../../common/Card";
 import CardHeader from "../../common/CardHeader";
 import { CATEGORIES } from "../../data/reportsData";
@@ -12,12 +12,13 @@ const EMPTY_FORM = {
 };
 
 const MAX_IMAGE_MB = 5;
+const MAX_VIDEO_MB = 50;
 
 export default function SubmitReportForm({ onSubmit }) {
   const [form, setForm] = useState(EMPTY_FORM);
-  const [image, setImage] = useState(null); // File
-  const [imagePreview, setImagePreview] = useState(null); // object URL
-  const [imageError, setImageError] = useState("");
+  const [media, setMedia] = useState(null); // File
+  const [mediaPreview, setMediaPreview] = useState(null); // object URL
+  const [mediaError, setMediaError] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [submitError, setSubmitError] = useState("");
@@ -29,41 +30,49 @@ export default function SubmitReportForm({ onSubmit }) {
   // Clean up the object URL when it changes or the component unmounts
   useEffect(() => {
     return () => {
-      if (imagePreview) URL.revokeObjectURL(imagePreview);
+      if (mediaPreview) URL.revokeObjectURL(mediaPreview);
     };
-  }, [imagePreview]);
+  }, [mediaPreview]);
 
   function update(field) {
     return (e) => setForm((f) => ({ ...f, [field]: e.target.value }));
   }
 
-  function handleImageChange(e) {
+  function handleMediaChange(e) {
     const file = e.target.files?.[0];
     if (!file) return;
 
-    if (!file.type.startsWith("image/")) {
-      setImageError("Please choose an image file.");
+    const isImage = file.type.startsWith("image/");
+    const isVideo = file.type.startsWith("video/");
+
+    if (!isImage && !isVideo) {
+      setMediaError("Please choose an image or video file.");
       return;
     }
 
-    if (file.size > MAX_IMAGE_MB * 1024 * 1024) {
-      setImageError(`Image must be under ${MAX_IMAGE_MB}MB.`);
+    if (isImage && file.size > MAX_IMAGE_MB * 1024 * 1024) {
+      setMediaError(`Image must be under ${MAX_IMAGE_MB}MB.`);
       return;
     }
 
-    setImageError("");
-    setImage(file);
-    setImagePreview((prev) => {
+    if (isVideo && file.size > MAX_VIDEO_MB * 1024 * 1024) {
+      setMediaError(`Video must be under ${MAX_VIDEO_MB}MB.`);
+      return;
+    }
+
+    setMediaError("");
+    setMedia(file);
+    setMediaPreview((prev) => {
       if (prev) URL.revokeObjectURL(prev);
       return URL.createObjectURL(file);
     });
   }
 
-  function removeImage() {
-    if (imagePreview) URL.revokeObjectURL(imagePreview);
-    setImage(null);
-    setImagePreview(null);
-    setImageError("");
+  function removeMedia() {
+    if (mediaPreview) URL.revokeObjectURL(mediaPreview);
+    setMedia(null);
+    setMediaPreview(null);
+    setMediaError("");
     if (fileInputRef.current) fileInputRef.current.value = "";
   }
 
@@ -76,9 +85,9 @@ export default function SubmitReportForm({ onSubmit }) {
     setSubmitError("");
 
     try {
-      await onSubmit({ ...form, image, imagePreview });
+      await onSubmit({ ...form, media, mediaPreview });
       setForm(EMPTY_FORM);
-      removeImage();
+      removeMedia();
       setSubmitted(true);
       setTimeout(() => setSubmitted(false), 2500);
     } catch (err) {
@@ -169,34 +178,48 @@ export default function SubmitReportForm({ onSubmit }) {
           />
         </div>
 
-        {/* Photo upload */}
+        {/* Media upload */}
         <div>
           <label className="text-xs font-semibold text-slate-600">
-            Photo (optional)
+            Photo or Video (optional)
           </label>
 
-          {!imagePreview ? (
+          {!mediaPreview ? (
             <button
               type="button"
               onClick={() => fileInputRef.current?.click()}
               className="mt-1 w-full flex flex-col items-center justify-center gap-1.5 border border-dashed border-gray-300 rounded-xl py-5 text-slate-400 hover:border-brand-600 hover:text-brand-600 transition-colors"
             >
-              <ImagePlus size={20} strokeWidth={2.5} />
-              <span className="text-xs font-medium">
-                Click to upload a photo
+              <div className="flex items-center gap-2">
+                <ImagePlus size={20} strokeWidth={2.5} />
+                <Video size={20} strokeWidth={2.5} />
+              </div>
+              <span className="text-xs font-medium mt-1">
+                Click to upload a photo or video
               </span>
             </button>
           ) : (
             <div className="mt-1 relative w-fit image-preview-enter">
-              <img
-                src={imagePreview}
-                alt="Report preview"
-                className="w-28 h-28 object-cover rounded-xl border border-gray-300"
-              />
+              {media?.type.startsWith("video/") ? (
+                <video
+                  src={mediaPreview}
+                  controls
+                  playsInline
+                  autoPlay
+                  muted
+                  className="w-48 max-h-48 rounded-xl border border-gray-300 bg-black"
+                />
+              ) : (
+                <img
+                  src={mediaPreview}
+                  alt="Report preview"
+                  className="w-28 h-28 object-cover rounded-xl border border-gray-300"
+                />
+              )}
               <button
                 type="button"
-                onClick={removeImage}
-                aria-label="Remove photo"
+                onClick={removeMedia}
+                aria-label="Remove media"
                 className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-slate-800 text-white flex items-center justify-center hover:bg-red-600 transition-colors"
               >
                 <X size={12} strokeWidth={3} />
@@ -207,13 +230,13 @@ export default function SubmitReportForm({ onSubmit }) {
           <input
             ref={fileInputRef}
             type="file"
-            accept="image/*"
-            onChange={handleImageChange}
+            accept="image/*,video/*"
+            onChange={handleMediaChange}
             className="hidden"
           />
 
-          {imageError && (
-            <p className="text-xs text-red-500 mt-1.5">{imageError}</p>
+          {mediaError && (
+            <p className="text-xs text-red-500 mt-1.5">{mediaError}</p>
           )}
         </div>
 

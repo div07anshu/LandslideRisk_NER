@@ -145,11 +145,20 @@ export default function ReportsList({
                 </div>
 
                 {r.imageUrl && (
-                  <img
-                    src={r.imageUrl}
-                    alt=""
-                    className="mt-2 w-16 h-16 object-cover rounded-lg border border-gray-200"
-                  />
+                  /\.(mp4|webm|ogg|mov)(\?.*)?$/i.test(r.imageUrl) ? (
+                    <video
+                      src={r.imageUrl}
+                      controls
+                      playsInline
+                      className="mt-2 w-full max-w-sm max-h-48 object-contain bg-black rounded-lg border border-gray-200"
+                    />
+                  ) : (
+                    <img
+                      src={r.imageUrl}
+                      alt=""
+                      className="mt-2 w-16 h-16 object-cover rounded-lg border border-gray-200"
+                    />
+                  )
                 )}
 
                 <p className="text-xs text-slate-500 mt-0.5">{r.detail}</p>
