@@ -185,11 +185,15 @@ export default function RiskTrendChart({
                 <Line
                   key={id}
                   type="monotone"
+                  connectNulls={true}
                   dataKey={id}
                   name={area?.name}
                   stroke={compareColors[i % compareColors.length]}
                   strokeWidth={2.5}
                   dot={false}
+                  activeDot={{ r: 4 }}
+                  isAnimationActive={true}
+                  animationDuration={1200}
                 />
               );
             })}

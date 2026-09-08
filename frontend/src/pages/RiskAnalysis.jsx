@@ -196,39 +196,92 @@ export default function RiskAnalysis() {
     LEVEL_STYLES.low;
 
   const compareData = useMemo(() => {
-  // Parse range string like "7 days", "30 days", "90 days" to number of days
-  const rangeDays = parseInt(range.split(" ")[0], 10);
-  const cutoff = new Date();
-  cutoff.setDate(cutoff.getDate() - rangeDays);
+    // Fallback mock history generator when DB data is not yet loaded or empty
+    const getMockData = () => {
+      const allDays = AREAS[0]?.history?.map((h) => h.day) || [];
+      const sliceCount =
+        range === "7 days" ? 3 : range === "30 days" ? 5 : allDays.length;
+      const targetDays = allDays.slice(-sliceCount);
 
-  const rowsByDate = {};
+      return targetDays.map((day) => {
+        const point = { day };
+        AREAS.forEach((area) => {
+          if (compareIds.includes(area.id) && area.history) {
+            const h = area.history.find((item) => item.day === day);
+            if (h) {
+              point[area.id] = h.score;
+            }
+          }
+        });
+        return point;
+      });
+    };
 
-  riskData.forEach((row) => {
-    const rowDate = new Date(row.created_at);
-    if (rowDate < cutoff) return; // Skip data outside the selected range
-
-    const area = AREAS.find(
-      (a) =>
-        a.name === row.Location &&
-        a.state === row.State,
-    );
-
-    if (!area || !compareIds.includes(area.id)) return;
-
-    const day = rowDate.toLocaleDateString("en-IN", {
-      day: "2-digit",
-      month: "short",
-    });
-
-    if (!rowsByDate[day]) {
-      rowsByDate[day] = { day };
+    if (!riskData || riskData.length === 0) {
+      return getMockData();
     }
 
-    rowsByDate[day][area.id] = Number(row.Risk_score);
-  });
+    // Parse range string like "7 days", "30 days", "90 days" to number of days
+    const rangeDays = parseInt(range.split(" ")[0], 10);
+    const cutoff = new Date();
+    cutoff.setDate(cutoff.getDate() - rangeDays);
 
-  return Object.values(rowsByDate);
-}, [riskData, compareIds, range]);
+    // Collect valid entries within range
+    const entries = riskData
+      .map((row) => {
+        const rowDate = new Date(row.created_at);
+        if (isNaN(rowDate.getTime()) || rowDate < cutoff) return null;
+
+        const area = AREAS.find(
+          (a) =>
+            a.name === row.Location &&
+            a.state === row.State,
+        );
+
+        if (!area || !compareIds.includes(area.id)) return null;
+
+        return {
+          date: rowDate,
+          areaId: area.id,
+          score: Number(row.Risk_score),
+        };
+      })
+      .filter(Boolean);
+
+    if (entries.length === 0) {
+      return getMockData();
+    }
+
+    // Get unique dates sorted chronologically
+    const uniqueDates = Array.from(
+      new Set(entries.map((e) => e.date.toISOString().split("T")[0]))
+    ).sort();
+
+    // Build data points for each unique date
+    return uniqueDates.map((dateKey) => {
+      const point = {
+        day: new Date(dateKey).toLocaleDateString("en-IN", {
+          timeZone: "UTC",
+          day: "2-digit",
+          month: "short",
+        })
+      };
+
+      // For each area, find the latest score on this date
+      compareIds.forEach((areaId) => {
+        const areaEntries = entries
+          .filter((e) => e.areaId === areaId && e.date.toISOString().split("T")[0] === dateKey)
+          .sort((a, b) => b.date - a.date); // latest first
+
+        if (areaEntries.length > 0) {
+          point[areaId] = areaEntries[0].score;
+        }
+        // else leave undefined (null) - Recharts will skip if connectNulls is true
+      });
+
+      return point;
+    });
+  }, [riskData, compareIds, range]);
 
   return (
     <div className="p-6 flex-1">
