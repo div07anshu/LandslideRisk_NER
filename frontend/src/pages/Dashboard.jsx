@@ -5,13 +5,16 @@ import HighRiskLocations from "../components/dashboard/HighRiskLocations";
 import RecentAlerts from "../components/dashboard/RecentAlerts";
 import RecentReports from "../components/dashboard/RecentReports";
 import QuickActions from "../components/dashboard/QuickActions";
+import { useTranslation } from "react-i18next";
 
 function Dashboard() {
+  const { t } = useTranslation();
+
   return (
     <div className="p-6 flex-1">
       <SectionHeader
-        title="NER RISK OVERVIEW"
-        subtitle="Overall risk distribution across North East Region"
+        title={t("dashboard.title")}
+        subtitle={t("dashboard.subtitle")}
       />
 
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 mb-5">

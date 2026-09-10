@@ -3,8 +3,10 @@ import SectionHeader from "../common/SectionHeader";
 import AlertsSummary from "../components/alerts/AlertsSummary";
 import AlertsList from "../components/alerts/AlertsList";
 import { INITIAL_ALERTS } from "../data/alertsData";
+import { useTranslation } from "react-i18next";
 
 export default function Alerts() {
+  const { t } = useTranslation();
   const [levelFilter, setLevelFilter] = useState("All");
   const [search, setSearch] = useState("");
 
@@ -26,8 +28,8 @@ export default function Alerts() {
   return (
     <div className="p-6 flex-1">
       <SectionHeader
-        title="ALERTS"
-        subtitle="All active and historical landslide risk alerts across North East Region"
+        title={t("alerts.title")}
+        subtitle={t("alerts.subtitle")}
       />
 
       <AlertsSummary alerts={INITIAL_ALERTS} />

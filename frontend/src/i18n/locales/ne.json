@@ -1,0 +1,445 @@
+{
+  "app": {
+    "name": "NER भूस्खलन पूर्व चेतावनी प्रणाली",
+    "subtitle": "पूर्वोत्तर क्षेत्र (NER)",
+    "shortName": "भूस्खलन जोखिम NER",
+    "earlyWarning": "पूर्व चेतावनी र जोखिम निगरानी",
+    "earlyWarningSystem": "पूर्व चेतावनी प्रणाली",
+    "disasterSystem": "विपद व्यवस्थापन निगरानी प्रणाली",
+    "brandName": "app.brandName",
+    "tagline": "app.tagline",
+    "shortTagline": "app.shortTagline"
+  },
+  "navigation": {
+    "dashboard": "ड्यासबोर्ड",
+    "riskMap": "जोखिम नक्सा",
+    "riskAnalysis": "जोखिम विश्लेषण",
+    "alerts": "चेतावनीहरू",
+    "reports": "प्रतिवेदनहरू",
+    "emergencyContact": "आपतकालीन सम्पर्क"
+  },
+  "topbar": {
+    "notifications": "सूचनाहरू",
+    "profile": "प्रोफाइल",
+    "settings": "सेटिङहरू",
+    "logOut": "लग आउट",
+    "user": "प्रयोगकर्ता"
+  },
+  "language": {
+    "select": "भाषा",
+    "en": "English",
+    "hi": "हिंदी",
+    "bn": "बङ्गाली",
+    "as": "असमिया",
+    "ne": "नेपाली"
+  },
+  "common": {
+    "loading": "लोड हुँदैछ...",
+    "error": "एक त्रुटि भयो",
+    "retry": "फेरि प्रयास गर्नुहोस्",
+    "save": "सेभ गर्नुहोस्",
+    "cancel": "रद्द गर्नुहोस्",
+    "confirm": "पुष्टि गर्नुहोस्",
+    "close": "बन्द गर्नुहोस्",
+    "back": "फर्कनुहोस्",
+    "submit": "पेश गर्नुहोस्",
+    "search": "खोज्नुहोस्",
+    "filter": "फिल्टर",
+    "all": "सबै",
+    "none": "कुनै पनि छैन",
+    "yes": "हो",
+    "no": "होइन",
+    "areas": "क्षेत्रहरू",
+    "totalAreas": "कुल क्षेत्रहरू",
+    "viewAll": "सबै हेर्नुहोस्",
+    "viewDetails": "विवरण हेर्नुहोस्",
+    "status": "स्थिति",
+    "location": "स्थान",
+    "time": "समय",
+    "date": "मिति",
+    "score": "स्कोर",
+    "risk": "जोखिम"
+  },
+  "riskLevels": {
+    "high": "उच्च",
+    "moderate": "मध्यम",
+    "low": "निम्न",
+    "highRisk": "उच्च जोखिम",
+    "moderateRisk": "मध्यम जोखिम",
+    "lowRisk": "निम्न जोखिम",
+    "highRiskAlt": "उच्च जोखिम",
+    "moderateRiskAlt": "मध्यम जोखिम",
+    "lowRiskAlt": "निम्न जोखिम"
+  },
+  "dashboard": {
+    "title": "NER जोखिम अवलोकन",
+    "subtitle": "पूर्वोत्तर क्षेत्र भरिको समग्र जोखिम वितरण",
+    "highRiskLocations": "उच्च जोखिम स्थानहरू",
+    "recentAlerts": "हालका चेतावनीहरू",
+    "recentReports": "हालका प्रतिवेदनहरू",
+    "quickActions": "त्वरित कार्यहरू",
+    "viewAllHighRiskAreas": "सबै उच्च जोखिम क्षेत्रहरू हेर्नुहोस्",
+    "viewAllAlerts": "सबै चेतावनीहरू हेर्नुहोस्",
+    "viewAllReports": "सबै प्रतिवेदनहरू हेर्नुहोस्",
+    "riskScore": "जोखिम स्कोर",
+    "reportProblem": {
+      "title": "समस्या प्रतिवेदन गर्नुहोस्",
+      "description": "भूस्खलन वा सम्बन्धित समस्याहरू प्रतिवेदन गरी हामीलाई सहयोग गर्नुहोस्।",
+      "button": "अहिले प्रतिवेदन गर्नुहोस्"
+    },
+    "stableConditions": "स्थिर अवस्थाहरू",
+    "underObservation": "निरीक्षणमा",
+    "criticalAttention": "गम्भीर ध्यान आवश्यक"
+  },
+  "riskMap": {
+    "title": "जोखिम नक्सा",
+    "subtitle": "पूर्वोत्तर क्षेत्रभरिको इन्टरएक्टिभ भूस्खलन जोखिम नक्सा",
+    "riskScore": "जोखिम स्कोर",
+    "riskLegend": "जोखिम",
+    "noLocationSelected": "कुनै स्थान चयन गरिएको छैन",
+    "selectLocation": "विवरण हेर्न नक्सामा स्थान चयन गर्नुहोस्",
+    "locationDetails": "स्थान विवरण",
+    "closeDetails": "विवरण बन्द गर्नुहोस्",
+    "viewFullAnalysis": "View Full Analysis"
+  },
+  "riskAnalysis": {
+    "title": "जोखिम विश्लेषण",
+    "subtitle": "पूर्वोत्तर क्षेत्रमा निगरानी गरिएका ढलानहरूको कारक-स्तरीय विश्लेषण र स्कोर प्रवृत्ति",
+    "fetchingPrediction": "लाइभ पूर्वानुमान प्राप्त हुँदैछ…",
+    "aboveAlertThreshold": "चेतावनी सीमा माथि",
+    "scoreLabel": "जोखिम स्कोर",
+    "factorBreakdown": "कारक विश्लेषण",
+    "riskTrend": "जोखिम प्रवृत्ति",
+    "areaComparison": "क्षेत्र तुलना",
+    "selectArea": "क्षेत्र चयन गर्नुहोस्",
+    "range7days": "७ दिन",
+    "range30days": "३० दिन",
+    "range90days": "९० दिन",
+    "errors": {
+      "sessionExpired": "तपाईंको सत्र समाप्त भयो। कृपया फेरि साइन इन गर्नुहोस्।",
+      "unavailableLocation": "यस स्थानको लागि लाइभ पूर्वानुमान उपलब्ध छैन।",
+      "serviceUnavailable": "जोखिम सेवा अस्थायी रूपमा अनुपलब्ध छ। कृपया केही समय पछि फेरि प्रयास गर्नुहोस्।",
+      "signInRequired": "लाइभ जोखिम पूर्वानुमान लोड गर्न साइन इन गर्नुहोस्।",
+      "couldNotReach": "जोखिम सेवा पुग्न सकिएन। कृपया फेरि प्रयास गर्नुहोस्।"
+    },
+    "features": {
+      "rainfall24h": "वर्षा · २४ घण्टा (मिमि)",
+      "rainfall48h": "वर्षा · ४८ घण्टा (मिमि)",
+      "rainfall7d": "वर्षा · ७ दिन (मिमि)",
+      "humidity24h": "आर्द्रता · २४ घण्टा औसत (%)",
+      "soilMoisture": "माटो नमी (m³/m³)",
+      "elevation": "उचाइ (मिटर)",
+      "slope": "ढाल (°)"
+    },
+    "factorBreakdownSub": "Factors influencing the risk",
+    "thresholdNote": "Risk scores above 70 require immediate attention and monitoring.",
+    "vegetationNote": "उच्च वनस्पति आवरणले पहिरोको जोखिम कम गर्छ।"
+  },
+  "alerts": {
+    "title": "चेतावनीहरू",
+    "subtitle": "पूर्वोत्तर क्षेत्रभरिका सबै सक्रिय र ऐतिहासिक भूस्खलन जोखिम चेतावनीहरू",
+    "allAlerts": "सबै चेतावनीहरू",
+    "totalAlerts": "कुल चेतावनीहरू",
+    "alertsFound": "{{count}} चेतावनी फेला पर्यो",
+    "alertsFound_other": "{{count}} चेतावनीहरू फेला परेका छन्",
+    "noAlertsFound": "तपाईंको फिल्टरसँग कुनै चेतावनी मेल खान्दैन।",
+    "searchPlaceholder": "चेतावनीहरू खोज्नुहोस्...",
+    "levels": {
+      "all": "सबै",
+      "high": "उच्च",
+      "moderate": "मध्यम",
+      "low": "निम्न"
+    },
+    "status": {
+      "active": "सक्रिय",
+      "monitoring": "निगरानी",
+      "resolved": "समाधान भयो"
+    }
+  },
+  "reports": {
+    "title": "प्रतिवेदनहरू",
+    "subtitle": "पूर्वोत्तर क्षेत्रभरि नयाँ फिल्ड प्रतिवेदनहरू पेश गर्नुहोस् र विद्यमानहरू ट्र्याक गर्नुहोस्",
+    "submitReport": "प्रतिवेदन पेश गर्नुहोस्",
+    "reportTitle": "प्रतिवेदन शीर्षक",
+    "titlePlaceholder": "उदाहरण: राजमार्ग नजिकको ढालमा दरार",
+    "locationLabel": "स्थान",
+    "locationPlaceholder": "उदाहरण: कोहिमा, नागाल्याण्ड",
+    "detailLabel": "विवरण",
+    "detailPlaceholder": "तपाईंले हेर्नुभएको वर्णन गर्नुहोस्...",
+    "categoryLabel": "श्रेणी",
+    "mediaLabel": "फोटो / भिडियो (वैकल्पिक)",
+    "mediaHint": "JPG, PNG, WebP ५ MB सम्म • MP4, WebM ५० MB सम्म",
+    "submitButton": "प्रतिवेदन पेश गर्नुहोस्",
+    "submitting": "पेश गर्दै...",
+    "allReports": "सबै प्रतिवेदनहरू",
+    "reportsFound": "{{count}} प्रतिवेदन फेला पर्यो",
+    "reportsFound_other": "{{count}} प्रतिवेदनहरू फेला परेका छन्",
+    "noReportsFound": "तपाईंको फिल्टरसँग कुनै प्रतिवेदन मेल खान्दैन।",
+    "searchPlaceholder": "प्रतिवेदनहरू खोज्नुहोस्...",
+    "loadError": "अहिले प्रतिवेदनहरू लोड गर्न सकिएन। पृष्ठ रिफ्रेस गर्नुहोस्।",
+    "submitSuccess": "प्रतिवेदन सफलतापूर्वक पेश भयो!",
+    "submitError": "प्रतिवेदन सेभ गर्न सकिएन। कृपया फेरि प्रयास गर्नुहोस्।",
+    "categories": {
+      "landslide": "भूस्खलन",
+      "flooding": "बाढी",
+      "erosion": "कटान",
+      "cracking": "दरार",
+      "other": "अन्य",
+      "road_crack": "सडकको धाँजा",
+      "soil_movement": "माटोको हलचल",
+      "crack": "सडकको धाँजा",
+      "flow": "लेदो / पहिरोको बहाव",
+      "rockfall": "ढुङ्गा खस्नु"
+    },
+    "status": {
+      "all": "सबै",
+      "pending": "लम्बित",
+      "reviewing": "समीक्षाधीन",
+      "resolved": "समाधान भयो",
+      "investigating": "अनुसन्धान हुँदै",
+      "verified": "प्रमाणित",
+      "dismissed": "खारेज",
+      "in_progress": "प्रगतिमा"
+    },
+    "saveError": "प्रतिवेदन बचत गर्न सकिएन। कृपया पुन: प्रयास गर्नुहोस्।",
+    "error": {
+      "invalidType": "केवल JPG, PNG, WebP तस्बिर र MP4, WebM, OGG भिडियो फाइलहरू अनुमति छन्।",
+      "imageSize": "तस्बिरको आकार 5MB सीमा भन्दा बढी छ।",
+      "videoSize": "भिडियोको आकार 50MB सीमा भन्दा बढी छ।"
+    }
+  },
+  "assistant": {
+    "title": "AI सहायक",
+    "subtitle": "भूस्खलन जोखिम, कारकहरू र सुरक्षा बारे प्रश्न सोध्नुहोस्।",
+    "chatTitle": "भूस्खलन जोखिम सहायक",
+    "ready": "● सहयोग गर्न तयार",
+    "inputPlaceholder": "भूस्खलन जोखिम बारे सोध्नुहोस्...",
+    "inputAriaLabel": "आफ्नो सन्देश टाइप गर्नुहोस्",
+    "sendButton": "पठाउनुहोस्",
+    "sendAriaLabel": "सन्देश पठाउनुहोस्",
+    "chatAriaLabel": "च्याट सन्देशहरू",
+    "typingAriaLabel": "सहायक टाइप गर्दैछ",
+    "disclaimer": "AI प्रतिक्रियाहरू केवल जानकारीको उद्देश्यका लागि हुन्। अवस्थामा सधैं आधिकारिक विपद व्यवस्थापन दिशानिर्देशनहरू अनुसरण गर्नुहोस्।",
+    "welcomeMessage": "नमस्ते! म NER भूस्खलन AI सहायक हुँ। म तपाईंलाई भूस्खलन जोखिम, जोखिम कारकहरू, चेतावनी संकेतहरू र सुरक्षा उपायहरू बुझ्न सहयोग गर्न सक्छु।",
+    "floatingButton": "AI सोध्नुहोस्",
+    "floatingOpen": "AI सहायक खोल्नुहोस्",
+    "floatingClose": "AI सहायक बन्द गर्नुहोस्",
+    "floatingTitle": "भूस्खलन AI",
+    "floatingSubtitle": "AI जोखिम सहायक",
+    "floatingWelcome": "नमस्ते! म भूस्खलन AI हुँ। भूस्खलन जोखिम, चेतावनी संकेतहरू वा सुरक्षा उपायहरू बारे कुनै पनि कुरा सोध्नुहोस्।",
+    "floatingPlaceholder": "भूस्खलन बारे सोध्नुहोस्...",
+    "floatingThinking": "AI सोच्दैछ...",
+    "floatingDisclaimer": "AI प्रतिक्रियाहरू सहयोगका लागि हुन् र आधिकारिक अवस्था चेतावनीहरूको विकल्प हुन्।",
+    "errors": {
+      "default": "माफ गर्नुहोस्, म AI सेवा सँग जोड्न सकिंन। कृपया बैकएन्ड सर्भर चलिरहेको छ भने जाँच गर्नुहोस्।",
+      "couldNotGenerate": "माफ गर्नुहोस्, म प्रतिक्रिया उत्पन्न गर्न सकिंन।",
+      "service502": "AI सेवा अस्थायी रूपमा अनुपलब्ध छ। कृपया केही समय पछि फेरि प्रयास गर्नुहोस्।",
+      "service503": "AI सेवा हाल अतिभारित छ। कृपया केही क्षण पछि फेरि प्रयास गर्नुहोस्।",
+      "auth": "प्रमाणीकरण असफल भयो। कृपया आफ्नो कनेक्सन जाँच गरी फेरि प्रयास गर्नुहोस्।",
+      "floating502": "AI सेवा अस्थायी रूपमा अनुपलब्ध छ। कृपया केही समय पछि फेरि प्रयास गर्नुहोस्।",
+      "floating503": "AI सेवा हाल अतिभारित छ। कृपया पछि फेरि प्रयास गर्नुहोस्।",
+      "floatingDefault": "माफ गर्नुहोस्, म AI सेवा सँग जोड्न सकिंन। कृपया बैकएन्ड चलिरहेको छ भने जाँच गर्नुहोस्।"
+    },
+    "noResponse": "माफ गर्नुहोस्, म प्रतिक्रिया उत्पन्न गर्न सकिनँ। कृपया पुन: प्रयास गर्नुहोस्।",
+    "connectionError": "AI सेवामा जडान हुन सकेन। कृपया ब्याकएन्ड चलिरहेको छ भनी सुनिश्चित गर्नुहोस्।",
+    "thinking": "AI सोच्दैछ...",
+    "send": "पठाउनुहोस्",
+    "welcome": "नमस्ते! म NER पहिरो AI सहायक हुँ। आज म तपाईंलाई कसरी मद्दत गर्न सक्छु?"
+  },
+  "auth": {
+    "login": {
+      "title": "फेरि स्वागत छ",
+      "subtitle": "निगरानी ड्यासबोर्डमा पहुँच गर्न साइन इन गर्नुहोस्।",
+      "emailLabel": "इमेल",
+      "emailPlaceholder": "you@example.com",
+      "passwordLabel": "पासवर्ड",
+      "passwordPlaceholder": "आफ्नो पासवर्ड प्रविष्ट गर्नुहोस्",
+      "forgotPassword": "पासवर्ड बिर्सनुभयो?",
+      "signInButton": "साइन इन गर्नुहोस्",
+      "signingIn": "साइन इन हुँदैछ...",
+      "noAccount": "खाता छैन?",
+      "createAccount": "खाता बनाउनुहोस्",
+      "demoTitle": "डेमो पहुँच",
+      "demoText": "अधिकृत फिल्ड टिमहरू र विश्लेषकहरू आफ्ना क्षेत्रीय समन्वयकद्वारा जारी प्रमाणपत्रहरूबाट साइन इन गर्न सक्छन्।"
+    },
+    "signup": {
+      "title": "खाता बनाउनुहोस्",
+      "subtitle": "निगरानी र प्रतिवेदन प्लेटफर्ममा पहुँच गर्न साइन अप गर्नुहोस्।",
+      "emailLabel": "इमेल",
+      "emailPlaceholder": "you@example.com",
+      "passwordLabel": "पासवर्ड",
+      "passwordPlaceholder": "पासवर्ड बनाउनुहोस्",
+      "passwordHint": "पासवर्ड कम्तिमा ६ अक्षरको हुनुपर्छ।",
+      "createButton": "खाता बनाउनुहोस्",
+      "creating": "खाता बनाउँदै...",
+      "alreadyHaveAccount": "पहिल्यै खाता छ?",
+      "signIn": "साइन इन गर्नुहोस्",
+      "successTitle": "खाता बनेको छ",
+      "successMessage": "आफ्नो इमेल पुष्टि गर्न इनबक्स जाँच गर्नुहोस्, भनेर साइन इन गरी अगाडि बढ्नुहोस्।",
+      "goToSignIn": "साइन इनमा जानुहोस्"
+    },
+    "forgotPassword": {
+      "title": "आफ्नो पासवर्ड रिसेट गर्नुहोस्",
+      "subtitle": "आफ्नो खातासँग जोडिएको इमेल प्रविष्ट गर्नुहोस् र हामी तपाईंलाई पासवर्ड रिसेट गर्न लिङ्क पठाउनेछौं।",
+      "backToSignIn": "साइन इनमा फर्कनुहोस्",
+      "emailLabel": "इमेल",
+      "emailPlaceholder": "you@example.com",
+      "sendButton": "रिसेट लिङ्क पठाउनुहोस्",
+      "sending": "पठाउँदै...",
+      "successTitle": "आफ्नो इनबक्स जाँच गर्नुहोस्",
+      "successMessage": "हामीले पासवर्ड रिसेट लिङ्क पठाएका छौं"
+    },
+    "updatePassword": {
+      "title": "नयाँ पासवर्ड सेट गर्नुहोस्",
+      "subtitle": "आफ्नो LandslideRisk NER खाताको लागि नयाँ पासवर्ड छान्नुहोस्।",
+      "newPasswordLabel": "नयाँ पासवर्ड",
+      "newPasswordPlaceholder": "नयाँ पासवर्ड प्रविष्ट गर्नुहोस्",
+      "confirmPasswordLabel": "पासवर्ड पुष्टि गर्नुहोस्",
+      "confirmPasswordPlaceholder": "पासवर्ड फेरि प्रविष्ट गर्नुहोस्",
+      "updateButton": "पासवर्ड अपडेट गर्नुहोस्",
+      "updating": "अपडेट हुँदै...",
+      "backToSignIn": "साइन इनमा फर्कनुहोस्",
+      "successTitle": "पासवर्ड अपडेट भयो",
+      "successMessage": "तपाईंको पासवर्ड परिवर्तन भयो। अब तपाईं यससँग साइन इन गर्न सक्नुहुन्छ।",
+      "goToSignIn": "साइन इनमा जानुहोस्",
+      "errors": {
+        "tooShort": "पासवर्ड कम्तिमा ६ अक्षरको हुनुपर्छ।",
+        "noMatch": "पासवर्डहरू मेल खान्दैनन्।"
+      }
+    },
+    "hero": {
+      "monitorRisk": "जोखिम निगरानी गर्नुहोस्।",
+      "protectCommunities": "समुदायहरूको रक्षा गर्नुहोस्।",
+      "monitoringDescription": "भारतको पूर्वोत्तर क्षेत्रका लागि AI-आधारित भूस्खलन जोखिम निगरानी र पूर्व चेतावनी प्रणाली।",
+      "joinNetwork": "नेटवर्कमा सामेल हुनुहोस्।",
+      "stayAheadRisk": "जोखिमभन्दा अगाडि रहनुहोस्।",
+      "signupDescription": "फिल्ड प्रतिवेदनहरू पेश गर्न, उच्च जोखिमका ढलानहरू निगरानी गर्न र महत्वपूर्ण पूर्व चेतावनीहरू प्राप्त गर्न खाता बनाउनुहोस्।",
+      "areasMonitored": "निगरानीमा रहेका क्षेत्रहरू",
+      "liveMonitoring": "लाइभ निगरानी",
+      "statesCovered": "पूर्वोत्तर राज्यहरू"
+    },
+    "email": "auth.email",
+    "emailPlaceholder": "auth.emailPlaceholder",
+    "password": "auth.password",
+    "passwordPlaceholder": "auth.passwordPlaceholder",
+    "passwordShort": "auth.passwordShort",
+    "passwordMismatch": "auth.passwordMismatch",
+    "newPassword": "auth.newPassword",
+    "confirmPassword": "auth.confirmPassword",
+    "confirmPasswordPlaceholder": "auth.confirmPasswordPlaceholder"
+  },
+  "notFound": {
+    "heading": "४०४",
+    "message": "यो पृष्ठ विद्यमान छैन।",
+    "backToDashboard": "ड्यासबोर्डमा फर्कनुहोस्",
+    "backHome": "notFound.backHome"
+  },
+  "loading": {
+    "default": "लोड हुँदैछ..."
+  },
+  "locationDetail": {
+    "riskScore": "जोखिम स्कोर",
+    "riskLevel": "जोखिम स्तर",
+    "coordinates": "निर्देशांकहरू",
+    "state": "राज्य",
+    "noLocation": "नक्सामा एक बिन्दु चयन गर्नुहोस्",
+    "noLocationSub": "स्थान विवरण हेर्न कुनै मार्करमा क्लिक गर्नुहोस्"
+  },
+  "riskScoreCard": {
+    "riskScore": "जोखिम स्कोर",
+    "riskLevel": "जोखिम स्तर",
+    "out100": "/ १००"
+  },
+  "factorBreakdown": {
+    "title": "कारक विश्लेषण",
+    "noData": "कुनै कारक डेटा उपलब्ध छैन"
+  },
+  "riskTrendChart": {
+    "title": "जोखिम स्कोर प्रवृत्ति",
+    "compareAreas": "क्षेत्रहरू तुलना गर्नुहोस्:",
+    "noData": "कुनै प्रवृत्ति डेटा उपलब्ध छैन"
+  },
+  "areaComparison": {
+    "title": "क्षेत्र तुलना",
+    "area": "क्षेत्र",
+    "state": "राज्य",
+    "riskLevel": "जोखिम स्तर",
+    "riskScore": "जोखिम स्कोर",
+    "noData": "कुनै तुलनात्मक डेटा उपलब्ध छैन"
+  },
+  "mockData": {
+    "highRiskStatus": "तत्काल प्रतिक्रिया आवश्यक",
+    "moderateRiskStatus": "सक्रिय निगरानी",
+    "lowRiskStatus": "नियमित निगरानी",
+    "riskLabels": {
+      "high": "उच्च जोखिम",
+      "moderate": "मध्यम जोखिम",
+      "low": "निम्न जोखिम"
+    }
+  },
+  "submitReport": {
+    "titleLabel": "शीर्षक",
+    "titlePlaceholder": "उदाहरण: राजमार्ग नजिकको ढालमा दरार",
+    "locationLabel": "स्थान",
+    "locationPlaceholder": "उदाहरण: कोहिमा, नागाल्याण्ड",
+    "descriptionLabel": "विवरण",
+    "descriptionPlaceholder": "तपाईंले हेर्नुभएको वर्णन गर्नुहोस्...",
+    "categoryLabel": "श्रेणी",
+    "mediaLabel": "फोटो / भिडियो (वैकल्पिक)",
+    "mediaHint": "JPG, PNG, WebP ५ MB सम्म • MP4, WebM ५० MB सम्म",
+    "submitButton": "प्रतिवेदन पेश गर्नुहोस्",
+    "submitting": "पेश गर्दै...",
+    "successMessage": "प्रतिवेदन सफलतापूर्वक पेश भयो!",
+    "categories": {
+      "landslide": "भूस्खलन",
+      "flooding": "बाढी",
+      "erosion": "कटान",
+      "cracking": "दरार",
+      "other": "अन्य"
+    }
+  },
+  "quickActions": {
+    "viewRiskMap": "जोखिम नक्सा हेर्नुहोस्",
+    "viewRiskMapSubtitle": "पूर्वोत्तर क्षेत्रभरिका जोखिम स्तरहरू अन्वेषण गर्नुहोस्।",
+    "analyzeRisk": "जोखिम विश्लेषण गर्नुहोस्",
+    "analyzeRiskSubtitle": "जोखिम कारकहरू र पूर्वानुमान विश्लेषण जाँच गर्नुहोस्।",
+    "activeAlerts": "सक्रिय चेतावनीहरू",
+    "activeAlertsSubtitle": "वर्तमान भूस्खलन चेतावनीहरू र सूचनाहरू हेर्नुहोस्।"
+  },
+  "sidebar": {
+    "emergency": "Emergency Contact"
+  },
+  "analysis": {
+    "errorUnauthorized": "प्रत्यक्ष जोखिम भविष्यवाणी लोड गर्न कृपया साइन इन गर्नुहोस्।",
+    "errorUnavailable": "यो स्थानको लागि प्रत्यक्ष भविष्यवाणी उपलब्ध छैन।",
+    "errorService": "जोखिम सेवामा सम्पर्क हुन सकेन। कृपया पुन: प्रयास गर्नुहोस्।",
+    "title": "जोखिम विश्लेषण",
+    "subtitle": "उत्तर पूर्व क्षेत्रभरिका अनुगमन गरिएका भिरालो जमिनहरूको कारक-स्तर विवरण र स्कोर प्रवृत्तिहरू",
+    "dateRange": {
+      "7": "७ दिन",
+      "30": "३० दिन",
+      "90": "९० दिन"
+    },
+    "fetchingPrediction": "प्रत्यक्ष भविष्यवाणी ल्याउँदैछ…",
+    "aboveThreshold": "चेतावनी सीमा भन्दा माथि"
+  },
+  "factors": {
+    "rainfall24": "वर्षा · २४ घण्टा (मिमी)",
+    "slope": "भिरालोपन",
+    "elevation": "उचाइ (मिटर)",
+    "rainfall48": "वर्षा · ४८ घण्टा (मिमी)",
+    "rainfall7d": "वर्षा · ७ दिन (मिमी)",
+    "humidity": "आर्द्रता · २४ घण्टा औसत (%)",
+    "soilMoisture": "माटोको ओसिलोपना (m³/m³)",
+    "rainfall": "वर्षाको तीव्रता",
+    "soil": "माटोको संतृप्ति",
+    "seismic": "भूकम्पीय गतिविधि",
+    "vegetation": "वनस्पति आवरण",
+    "history": "विगतका घटनाहरू (५ वर्ष)",
+    "rainfall_24h": "वर्षा · २४ घण्टा (मिमी)",
+    "rainfall_48h": "वर्षा · ४८ घण्टा (मिमी)",
+    "rainfall_7d": "वर्षा · ७ दिन (मिमी)",
+    "average_humidity_24h": "आर्द्रता · २४ घण्टा औसत (%)",
+    "soil_moisture": "माटोको चिस्यान (घन मि/घन मि)"
+  }
+}

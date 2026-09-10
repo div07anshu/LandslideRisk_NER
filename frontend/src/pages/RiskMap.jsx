@@ -6,10 +6,12 @@ import SectionHeader from "../common/SectionHeader";
 import LocationDetailPanel from "../components/riskmap/LocationDetailPanel";
 import { MAP_LOCATIONS } from "../data/mapData";
 import { LEVEL_STYLES } from "../data/analysisData";
+import { useTranslation } from "react-i18next";
 
 const NER_CENTER = [26.2, 92.5];
 
 export default function RiskMap() {
+  const { t } = useTranslation();
   const [selectedId, setSelectedId] = useState(null);
 
   const selected = MAP_LOCATIONS.find((l) => l.id === selectedId) ?? null;
@@ -17,8 +19,8 @@ export default function RiskMap() {
   return (
     <div className="p-6 flex-1">
       <SectionHeader
-        title="RISK MAP"
-        subtitle="Interactive landslide risk map across North East Region"
+        title={t("riskMap.title")}
+        subtitle={t("riskMap.subtitle")}
       />
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 items-stretch">
@@ -56,7 +58,7 @@ export default function RiskMap() {
                   <Popup>
                     <span className="font-semibold">{loc.name}</span>
                     <br />
-                    Risk score: {loc.riskScore}/100
+                    {t("dashboard.riskScore")}: {loc.riskScore}/100
                   </Popup>
                 </CircleMarker>
               );
@@ -81,7 +83,7 @@ export default function RiskMap() {
               className="w-2.5 h-2.5 rounded-full"
               style={{ backgroundColor: style.bar }}
             />
-            {level.charAt(0).toUpperCase() + level.slice(1)} risk
+            {t(`riskLevels.${level}`)} {t("common.risk")}
           </div>
         ))}
       </div>

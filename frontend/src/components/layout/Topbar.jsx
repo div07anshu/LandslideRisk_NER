@@ -1,10 +1,13 @@
 import { useState, useRef, useEffect } from "react";
 import { Bell, ChevronDown, LogOut, Settings, User } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { supabase } from "../../supabase";
 import { useAuth } from "../../context/AuthContext";
+import LanguageSelector from "./LanguageSelector";
 
 function Topbar() {
+  const { t } = useTranslation();
   const [menuOpen, setMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const { user } = useAuth();
@@ -49,14 +52,15 @@ function Topbar() {
     user?.user_metadata?.name ||
     user?.user_metadata?.full_name ||
     user?.email?.split("@")[0] ||
-    userName;
+    t("topbar.user");
 
-  const initials = displayName
+  const initials = (displayName || "U")
     .split(" ")
+    .filter(Boolean)
     .map((n) => n[0])
     .join("")
     .slice(0, 2)
-    .toUpperCase();
+    .toUpperCase() || "U";
 
   return (
     <header
@@ -66,15 +70,17 @@ function Topbar() {
     >
       <div>
         <h1 className="text-lg font-semibold leading-tight text-white">
-          NER Landslide Early Warning System
+          {t("app.name")}
         </h1>
-        <p className="text-xs text-slate-400">North East Region (NER)</p>
+        <p className="text-xs text-slate-400">{t("app.subtitle")}</p>
       </div>
 
       <div className="flex items-center gap-4">
+        <LanguageSelector />
+
         <button
           className="relative rounded-full p-2 text-slate-300 transition-all duration-200 ease-out hover:bg-white/10 hover:text-white hover:-rotate-12 hover:scale-110 motion-reduce:transition-none motion-reduce:transform-none"
-          aria-label="Notifications"
+          aria-label={t("topbar.notifications")}
         >
           <Bell size={20} strokeWidth={3} />
 
@@ -118,12 +124,12 @@ function Topbar() {
           >
             <button className="flex w-full items-center gap-2 px-3 py-2.5 text-sm text-slate-700 transition-colors hover:bg-slate-100">
               <User size={16} strokeWidth={2} />
-              Profile
+              {t("topbar.profile")}
             </button>
 
             <button className="flex w-full items-center gap-2 px-3 py-2.5 text-sm text-slate-700 transition-colors hover:bg-slate-100">
               <Settings size={16} strokeWidth={2} />
-              Settings
+              {t("topbar.settings")}
             </button>
 
             <button
@@ -131,7 +137,7 @@ function Topbar() {
               className="flex w-full items-center gap-2 border-t border-slate-200 px-3 py-2.5 text-sm text-red-600 transition-colors hover:bg-slate-100"
             >
               <LogOut size={16} strokeWidth={2} />
-              Log out
+              {t("topbar.logOut")}
             </button>
           </div>
         </div>

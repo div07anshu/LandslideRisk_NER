@@ -1,0 +1,445 @@
+{
+  "app": {
+    "name": "NER ভূমিধস অৰ্থ আই ছিনতোৱাল তন্ত্র",
+    "subtitle": "উত্তৰ-পূৱanchল (NER)",
+    "shortName": "ভূমিধস ঝুঁকি NER",
+    "earlyWarning": "অৰ্থ আই ছিনতোৱাল আৰু ঝুঁকি নিৰীক্ষণ",
+    "earlyWarningSystem": "অৰ্থ আই ছিনতোৱাল তন্ত্র",
+    "disasterSystem": "দুৰ্ভাগ্য পৰিচালনা নিৰীক্ষণ তন্ত্ৰ",
+    "brandName": "app.brandName",
+    "tagline": "app.tagline",
+    "shortTagline": "app.shortTagline"
+  },
+  "navigation": {
+    "dashboard": "ডে‌শবোৰ্ড",
+    "riskMap": "ঝুঁকি মানচিত্ৰ",
+    "riskAnalysis": "ঝুঁকি বিশ্লেষণ",
+    "alerts": "ছিনতোৱাল",
+    "reports": "প্ৰতিবেদন",
+    "emergencyContact": "জৰুৰী যোগাযোগ"
+  },
+  "topbar": {
+    "notifications": "বিজ্ঞপ্তি",
+    "profile": "প্ৰোফাইল",
+    "settings": "সেটিংছ",
+    "logOut": "লগ আউট",
+    "user": "ব্যৱহাৰকাৰী"
+  },
+  "language": {
+    "select": "ভাষা",
+    "en": "English",
+    "hi": "हिंदी",
+    "bn": "বাংলা",
+    "as": "অসমীয়া",
+    "ne": "नेपाली"
+  },
+  "common": {
+    "loading": "লোড হৈছে...",
+    "error": "এটা ভুল হৈছে",
+    "retry": "পুনৰায় চেষ্টা কৰক",
+    "save": "সংৰক্ষণ কৰক",
+    "cancel": "বাতিল কৰক",
+    "confirm": "নিশ্চিত কৰক",
+    "close": "বন্ধ কৰক",
+    "back": "ফিৰে যাওক",
+    "submit": "জমা দিয়ক",
+    "search": "অনুসন্ধান কৰক",
+    "filter": "ফিল্টাৰ",
+    "all": "সকল",
+    "none": "কিছুই নাই",
+    "yes": "হয়",
+    "no": "নহয়",
+    "areas": "অঞ্চল",
+    "totalAreas": "মোঠ অঞ্চল",
+    "viewAll": "সকলক দেখক",
+    "viewDetails": "বিস্তাৰিত দেখক",
+    "status": "স্থিতি",
+    "location": "অৱস্থান",
+    "time": "সময়",
+    "date": "তাৰিখ",
+    "score": "স্কোৰ",
+    "risk": "ঝুঁকি"
+  },
+  "riskLevels": {
+    "high": "উচ্চ",
+    "moderate": "মাঝারি",
+    "low": "নিম্ন",
+    "highRisk": "উচ্চ ঝুঁকি",
+    "moderateRisk": "মাঝারি ঝুঁকি",
+    "lowRisk": "নিম্ন ঝুঁকি",
+    "highRiskAlt": "উচ্চ ঝুঁকি",
+    "moderateRiskAlt": "মাঝারি ঝুঁকি",
+    "lowRiskAlt": "নিম্ন ঝুঁকি"
+  },
+  "dashboard": {
+    "title": "NER ঝুঁকি সঙ্ক্ষিপ্ত দৃষ্টি",
+    "subtitle": "উত্তৰ-পূৱাঞ্চলত সামগ্ৰিক ঝুঁকি বণ্টন",
+    "highRiskLocations": "উচ্চ ঝুঁকিপূৰ্ণ স্থান",
+    "recentAlerts": "সাম্প্ৰতিক ছিনতোৱাল",
+    "recentReports": "সাম্প্ৰতিক প্ৰতিবেদন",
+    "quickActions": "দ্ৰুত পদক্ষেপ",
+    "viewAllHighRiskAreas": "সকলো উচ্চ ঝুঁকিপূৰ্ণ অঞ্চল দেখক",
+    "viewAllAlerts": "সকলো ছিনতোৱাল দেখক",
+    "viewAllReports": "সকলো প্ৰতিবেদন দেখক",
+    "riskScore": "ঝুঁকি স্কোৰ",
+    "reportProblem": {
+      "title": "সমস্যা প্ৰতিবেদন কৰক",
+      "description": "ভূমিধস বা সংবন্ধীয় সমস্যাবোৰ প্ৰতিবেদন কৰি আমাক সহায় কৰক।",
+      "button": "এতিয়াই প্ৰতিবেদন কৰক"
+    },
+    "stableConditions": "স্থিৰ অৱস্থা",
+    "underObservation": "নিৰীক্ষণত",
+    "criticalAttention": "জৰুৰি মনোযোগ দৰকাৰ"
+  },
+  "riskMap": {
+    "title": "ঝুঁকি মানচিত্ৰ",
+    "subtitle": "উত্তৰ-পূৱাঞ্চলত ইন্টাৰেক্টিভ ভূমিধস ঝুঁকি মানচিত্ৰ",
+    "riskScore": "ঝুঁকি স্কোৰ",
+    "riskLegend": "ঝুঁকি",
+    "noLocationSelected": "কোনো অৱস্থান বাছি নাই",
+    "selectLocation": "বিবৰণ দেখিবলৈ মানচিত্ৰত এটা অৱস্থান বাছক",
+    "locationDetails": "অৱস্থান বিৱৰণ",
+    "closeDetails": "বিবৰণ বন্ধ কৰক",
+    "viewFullAnalysis": "View Full Analysis"
+  },
+  "riskAnalysis": {
+    "title": "ঝুঁকি বিশ্লেষণ",
+    "subtitle": "উত্তৰ-পূৱাঞ্চলত নিৰীক্ষিত ঢালৰ উপাদান-স্তৰীয় বিশ্লেষণ আৰু স্কোৰ ধাব",
+    "fetchingPrediction": "লাইভ পূৰ্বানুমান লোড হৈছে…",
+    "aboveAlertThreshold": "ছিনতোৱাল সীমাৰ উপৰত",
+    "scoreLabel": "ঝুঁকি স্কোৰ",
+    "factorBreakdown": "উপাদান বিশ্লেষণ",
+    "riskTrend": "ঝুঁকি ধাব",
+    "areaComparison": "অঞ্চল তুলনা",
+    "selectArea": "অঞ্চল বাছক",
+    "range7days": "৭ দিন",
+    "range30days": "৩০ দিন",
+    "range90days": "৯০ দিন",
+    "errors": {
+      "sessionExpired": "আপোনাৰ অধিবেশন সমাপ্ত হৈছে। অনুগ্ৰহ কৰি পুনৰায় সাইন ইন কৰক।",
+      "unavailableLocation": "এই অৱস্থানৰ বাবে লাইভ পূৰ্বানুমান উপলব্ধ নহয়।",
+      "serviceUnavailable": "ঝুঁকি সেৱা সামগ্ৰিকভাৱে অনুপলব্ধ। অনুগ্ৰহ কৰি কিছু সময়ত পুনৰায় চেষ্টা কৰক।",
+      "signInRequired": "লাইভ ঝুঁকি পূৰ্বানুমান লোড কৰিবলৈ সাইন ইন কৰক।",
+      "couldNotReach": "ঝুঁকি সেৱালৈ পোঁহা নোৱাৰিল। অনুগ্ৰহ কৰি পুনৰায় চেষ্টা কৰক।"
+    },
+    "features": {
+      "rainfall24h": "বৃষ্টিপাত · ২৪ মণিত (মিমি)",
+      "rainfall48h": "বৃষ্টিপাত · ৪৮ মণিত (মিমি)",
+      "rainfall7d": "বৃষ্টিপাত · ৭ দিন (মিমি)",
+      "humidity24h": "আৰ্দ্ৰতা · ২৪ মণিত গড় (%)",
+      "soilMoisture": "মাটিৰ আৰ্দ্ৰতা (m³/m³)",
+      "elevation": "উচ্চতা (মিটাৰ)",
+      "slope": "ঢাল (°)"
+    },
+    "factorBreakdownSub": "Factors influencing the risk",
+    "thresholdNote": "Risk scores above 70 require immediate attention and monitoring.",
+    "vegetationNote": "অধিক উদ্ভিদ আৱৰণে ভূমিস্খলনৰ সম্ভাৱনা হ্ৰাস কৰে।"
+  },
+  "alerts": {
+    "title": "ছিনতোৱাল",
+    "subtitle": "উত্তৰ-পূৱাঞ্চলত সকলো সক্ৰিয় আৰু ঐতিহাসিক ভূমিধস ঝুঁকি ছিনতোৱাল",
+    "allAlerts": "সকলো ছিনতোৱাল",
+    "totalAlerts": "মোঠ ছিনতোৱাল",
+    "alertsFound": "{{count}}টি ছিনতোৱাল পোৱা গৈছে",
+    "alertsFound_other": "{{count}}টি ছিনতোৱাল পোৱা গৈছে",
+    "noAlertsFound": "আপোনাৰ ফিল্টাৰৰ সৈতে কোনো ছিনতোৱাল মিলি নাই।",
+    "searchPlaceholder": "ছিনতোৱাল শোধক...",
+    "levels": {
+      "all": "সকলো",
+      "high": "উচ্চ",
+      "moderate": "মাঝারি",
+      "low": "নিম্ন"
+    },
+    "status": {
+      "active": "সক্ৰিয়",
+      "monitoring": "নিৰীক্ষণ",
+      "resolved": "সমাধান হৈছে"
+    }
+  },
+  "reports": {
+    "title": "প্ৰতিবেদন",
+    "subtitle": "উত্তৰ-পূৱাঞ্চলত নতুনক্ষেত্ৰ প্ৰতিবেদন জমা দি আৰু বিদ্যমানটোকে ট্র্যাক কৰক",
+    "submitReport": "প্ৰতিবেদন জমা দিক",
+    "reportTitle": "প্ৰতিবেদনৰ শিৰোনাম",
+    "titlePlaceholder": "উদা. ৰাজপথৰ نزিকত ঢালত ফাটল",
+    "locationLabel": "অৱস্থান",
+    "locationPlaceholder": "উদা. কোহিমা, নাগাল्यान্ড",
+    "detailLabel": "বিৱৰণ",
+    "detailPlaceholder": "আপুনি কী দেখিছিল তা বৰ্ণনা কৰক...",
+    "categoryLabel": "বিভাগ",
+    "mediaLabel": "ছবি / ভিডিঅ' (ঐচ্ছিক)",
+    "mediaHint": "JPG, PNG, WebP ৫ MB লগত • MP4, WebM ৫০ MB লগত",
+    "submitButton": "প্ৰতিবেদন জমা দিক",
+    "submitting": "জমা হৈছে...",
+    "allReports": "সকলো প্ৰতিবেদন",
+    "reportsFound": "{{count}}টি প্ৰতিবেদন পোৱা গৈছে",
+    "reportsFound_other": "{{count}}টি প্ৰতিবেদন পোৱা গৈছে",
+    "noReportsFound": "আপোনাৰ ফিল্টাৰৰ সৈতে কোনো প্ৰতিবেদন মিলি নাই।",
+    "searchPlaceholder": "প্ৰতিবেদন শোধক...",
+    "loadError": "এতিয়া প্ৰতিবেদন লোড কৰিব নোৱাৰিল। পৃষ্ঠাটো ৰিফ্ৰেচ কৰক।",
+    "submitSuccess": "প্ৰতিবেদন সফলতাপূৰ্বক জমা হৈছে!",
+    "submitError": "প্ৰতিবেদন সংৰক্ষণ কৰিব নোৱাৰিল। অনুগ্ৰহ কৰি পুনৰায় চেষ্টা কৰক।",
+    "categories": {
+      "landslide": "ভূমিধস",
+      "flooding": "বন্যা",
+      "erosion": "ভাঙন",
+      "cracking": "ফাটল",
+      "other": "অন্যান্য",
+      "road_crack": "পথৰ ফাঁট",
+      "soil_movement": "মাটিৰ লৰচৰ",
+      "crack": "পথৰ ফাঁট",
+      "flow": "বোকা আৰু ধ্বংসাৱশেষৰ প্ৰবাহ",
+      "rockfall": "শিল খহি পৰা"
+    },
+    "status": {
+      "all": "সকলো",
+      "pending": "অপেক্ষমাণ",
+      "reviewing": "পৰ্যালোচনাধীন",
+      "resolved": "সমাধান হৈছে",
+      "investigating": "তদন্ত চলি আছে",
+      "verified": "প্ৰমাণিত",
+      "dismissed": "বাতিল",
+      "in_progress": "চলমান"
+    },
+    "saveError": "প্ৰতিবেদন সংৰক্ষণ কৰিব নোৱাৰিলোঁ। অনুগ্ৰহ কৰি পুনৰ চেষ্টা কৰক।",
+    "error": {
+      "invalidType": "কেৱল JPG, PNG, WebP ছবি আৰু MP4, WebM, OGG ভিডিঅ' ফাইল অনুমোদিত।",
+      "imageSize": "ছবিৰ আকাৰ 5MB সীমা অতিক্ৰম কৰিছে।",
+      "videoSize": "ভিডিঅ'ৰ আকাৰ 50MB সীমা অতিক্ৰম কৰিছে।"
+    }
+  },
+  "assistant": {
+    "title": "AI সহায়ক",
+    "subtitle": "ভূমিধস ঝুঁকি, উপাদান আৰু নিরাপত্তা বিষয়ত প্ৰশ্ন পুৰসক।",
+    "chatTitle": "ভূমিধস ঝুঁকি সহায়ক",
+    "ready": "● সহায় কৰিবলৈ প্ৰস্তুত",
+    "inputPlaceholder": "ভূমিধস ঝুঁকি বিষয়ত জিজ্ঞাসা কৰক...",
+    "inputAriaLabel": "আপোনাৰ সংদেশ লিখক",
+    "sendButton": "পাঠাওক",
+    "sendAriaLabel": "সংদেশ পাঠাওক",
+    "chatAriaLabel": "চ্যাট সংদেশ",
+    "typingAriaLabel": "সহায়ক টাইপ কৰিছে",
+    "disclaimer": "AI প্ৰতিক্ৰিয়া কেবল তথ্যপ্ৰদ উদ্দেশ্যমൂলে। আপদকালত সদা আফিসিয়েল দুৰ্ভাগ্য পৰিচালনা নিৰ্দেশনা অনুসৰণ কৰক।",
+    "welcomeMessage": "নমস্কাৰ! মই NER ভূমিধস AI সহায়ক। মই আপুনাক ভূমিধস ঝুঁকি, ঝুঁকিৰ উপাদান, ছিনতোৱালৰ লক্ষণ আৰু নিরাপত্তা উপায় বুজিবলৈ সহায় কৰিব পাৰম।",
+    "floatingButton": "AI জিজ্ঞাসা কৰক",
+    "floatingOpen": "AI সহায়ক খুলক",
+    "floatingClose": "AI সহায়ক বন্ধ কৰক",
+    "floatingTitle": "ভূমিধস AI",
+    "floatingSubtitle": "AI ঝুঁকি সহায়ক",
+    "floatingWelcome": "নমস্কাৰ! মই ভূমিধস AI। ভূমিধস ঝুঁকি, ছিনতোৱালৰ লক্ষণ বা নিরাপত্তা উপায় বিষয়তে যিকোনো কিচু জিজ্ঞাসা কৰক।",
+    "floatingPlaceholder": "ভূমিধস বিষয়তে জিজ্ঞাসা কৰক...",
+    "floatingThinking": "AI চিন্তা কৰিছে...",
+    "floatingDisclaimer": "AI প্ৰতিক্ৰিয়া সহায়ৰ বাবে আৰু আফিসিয়েল আপদ ছিনতোৱালৰ বিকল্প নহয়।",
+    "errors": {
+      "default": "দুঃখিত, AI সেৱালৈ সংযোগ সাধিব নোৱাৰিল। ব্যাকএণ্ড চাৰ্ভাৰ চলিছে নেকি সন্ধান কৰক।",
+      "couldNotGenerate": "দুঃখিত, উত্তৰ সৃষ্টি কৰিব নোৱাৰিল।",
+      "service502": "AI সেৱা সামগ্ৰিকভাৱে অনুপলব্ধ। অনুগ্ৰহ কৰি কিছু সময়ত পুনৰায় চেষ্টা কৰক।",
+      "service503": "AI সেৱা বৰ্তমান অতিব্যস্ত। অনুগ্ৰহ কৰি কিছুক্ষণত পুনৰায় চেষ্টা কৰক।",
+      "auth": "প্ৰমাণীকৰণ ব্যৰ্থ হৈছে। আপোনাৰ সংযোগ জাঁচি পুনৰায় চেষ্টা কৰক।",
+      "floating502": "AI সেৱা সামগ্ৰিকভাৱে অনুপলব্ধ। অনুগ্ৰহ কৰি কিছুক্ষণত পুনৰায় চেষ্টা কৰক।",
+      "floating503": "AI সেৱা অতিব্যস্ত। অনুগ্ৰহ কৰি পাছত চেষ্টা কৰক।",
+      "floatingDefault": "দুঃখিত, AI সেৱালৈ সংযোগ সাধিব নোৱাৰিল। ব্যাকএণ্ড চলিছে নেকি চিনাক।"
+    },
+    "noResponse": "ক্ষমা কৰিব, মই কোনো সঁহাৰি সৃষ্টি কৰিব নোৱাৰিলোঁ। অনুগ্ৰহ কৰি পুনৰ চেষ্টা কৰক।",
+    "connectionError": "AI সেৱাৰ সৈতে সংযোগ স্থাপন কৰিব পৰা নগ'ল। অনুগ্ৰহ কৰি বেকএণ্ড চলি থকাটো নিশ্চিত কৰক।",
+    "thinking": "AI য়ে ভাবি আছে...",
+    "send": "প্ৰেৰণ কৰক",
+    "welcome": "নমস্কাৰ! মই NER ভূমিস্খলন AI সহায়ক। আজি মই আপোনাক কেনেকৈ সহায় কৰিব পাৰোঁ?"
+  },
+  "auth": {
+    "login": {
+      "title": "পুনৰায় স্বাগতম",
+      "subtitle": "নিৰীক্ষণ ডে‌শবোৰ্ডত প্ৰৱেশ কৰিবলৈ সাইন ইন কৰক।",
+      "emailLabel": "ইমেইল",
+      "emailPlaceholder": "you@example.com",
+      "passwordLabel": "পাসওৰ্ড",
+      "passwordPlaceholder": "আপোনাৰ পাসওৰ্ড লিখক",
+      "forgotPassword": "পাসওৰ্ড ভুলি গৈছে?",
+      "signInButton": "সাইন ইন কৰক",
+      "signingIn": "সাইন ইন হৈছে...",
+      "noAccount": "কোনো অ্যাকাউন্ট নাই?",
+      "createAccount": "অ্যাকাউন্ট সৃষ্টি কৰক",
+      "demoTitle": "ডেমো প্ৰবেশ",
+      "demoText": "অনুমোদিত ক্ষেত্ৰ দল আৰু বিশ্লেষক আঁচনি আঞ্চলিক সমন্বয়কৰ প্ৰদান কৰা পৰিচয়পত্ৰ দি সাইন ইন কৰিব পাৰে।"
+    },
+    "signup": {
+      "title": "অ্যাকাউন্ট সৃষ্টি কৰক",
+      "subtitle": "নিৰীক্ষণ আৰু প্ৰতিবেদন প্লেটফ'র্মত প্ৰৱেশ কৰিবলৈ সাইন আপ কৰক।",
+      "emailLabel": "ইমেইল",
+      "emailPlaceholder": "you@example.com",
+      "passwordLabel": "পাসওৰ্ড",
+      "passwordPlaceholder": "এটা পাসওৰ্ড সৃষ্টি কৰক",
+      "passwordHint": "পাসওৰ্ড কমপক্ষে ৬ আখৰৰ হ'ব লাগিব।",
+      "createButton": "অ্যাকাউন্ট সৃষ্টি কৰক",
+      "creating": "অ্যাকাউন্ট সৃষ্টি হৈছে...",
+      "alreadyHaveAccount": "পূৰ্বৰতে অ্যাকাউন্ট আছে?",
+      "signIn": "সাইন ইন কৰক",
+      "successTitle": "অ্যাকাউন্ট সৃষ্টি হৈছে",
+      "successMessage": "আপোনাৰ ইমেইল নিশ্চিত কৰিবলৈ ইনবক্স চেক কৰক, পাছত এগেঁয়া সাইন ইন কৰক।",
+      "goToSignIn": "সাইন ইনলৈ যাওক"
+    },
+    "forgotPassword": {
+      "title": "আপোনাৰ পাসওৰ্ড ৰিসেট কৰক",
+      "subtitle": "আপোনাৰ অ্যাকাউন্টৰ সৈতে জোড়া ইমেইল লিখক আৰু আমি পাসওৰ্ড ৰিসেট কৰিবলৈ লিঙ্ক পাঠাইব।",
+      "backToSignIn": "সাইন ইনত ফিৰে যাওক",
+      "emailLabel": "ইমেইল",
+      "emailPlaceholder": "you@example.com",
+      "sendButton": "ৰিসেট লিঙ্ক পাঠাওক",
+      "sending": "পাঠোৱা হৈছে...",
+      "successTitle": "আপোনাৰ ইনবক্স চেক কৰক",
+      "successMessage": "আমি পাসওৰ্ড ৰিসেট লিঙ্ক পাঠাইছে"
+    },
+    "updatePassword": {
+      "title": "নতুন পাসওৰ্ড সেট কৰক",
+      "subtitle": "আপোনাৰ LandslideRisk NER অ্যাকাউন্টৰ বাবে নতুন পাসওৰ্ড বাছক।",
+      "newPasswordLabel": "নতুন পাসওৰ্ড",
+      "newPasswordPlaceholder": "নতুন পাসওৰ্ড দিয়ক",
+      "confirmPasswordLabel": "পাসওৰ্ড নিশ্চিত কৰক",
+      "confirmPasswordPlaceholder": "পাসওৰ্ডটি পুনৰায় লিখক",
+      "updateButton": "পাসওৰ্ড আপডেট কৰক",
+      "updating": "আপডেট হৈছে...",
+      "backToSignIn": "সাইন ইনত ফিৰে যাওক",
+      "successTitle": "পাসওৰ্ড আপডেট হৈছে",
+      "successMessage": "আপোনাৰ পাসওৰ্ড পৰিবৰ্তন হৈছে। এতিয়া আপুনি ইয়াৰ সৈতে সাইন ইন কৰিব পাৰিব।",
+      "goToSignIn": "সাইন ইনলৈ যাওক",
+      "errors": {
+        "tooShort": "পাসওৰ্ড কমপক্ষে ৬ আখৰৰ হ'ব লাগিব।",
+        "noMatch": "পাসওৰ্ড দুটা মিলি নাই।"
+      }
+    },
+    "hero": {
+      "monitorRisk": "ঝুঁকি নিৰীক্ষণ কৰক।",
+      "protectCommunities": "সম্প্ৰদায়ৰ ৰক্ষা কৰক।",
+      "monitoringDescription": "ভাৰতৰ উত্তৰ-পূৱাঞ্চলৰ বাবে AI-আধাৰিত ভূমিধস ঝুঁকি নিৰীক্ষণ আৰু অৰ্থ আই ছিনতোৱাল তন্ত্র।",
+      "joinNetwork": "নেটওৰ্কত যোগ দিয়ক।",
+      "stayAheadRisk": "ঝুঁকিৰ আগত থকক।",
+      "signupDescription": "ক্ষেত্ৰ প্ৰতিবেদন জমা দিবলৈ, উচ্চ ঝুঁকিপূৰ্ণ ঢাল নিৰীক্ষণ কৰিবলৈ আৰু মুখ্য অৰ্থ আই ছিনতোৱাল পাবলৈ অ্যাকাউন্ট সৃষ্টি কৰক।",
+      "areasMonitored": "নিৰীক্ষিত অঞ্চল",
+      "liveMonitoring": "লাইভ নিৰীক্ষণ",
+      "statesCovered": "উত্তৰ-পূৱৰ ৰাজ্য"
+    },
+    "email": "auth.email",
+    "emailPlaceholder": "auth.emailPlaceholder",
+    "password": "auth.password",
+    "passwordPlaceholder": "auth.passwordPlaceholder",
+    "passwordShort": "auth.passwordShort",
+    "passwordMismatch": "auth.passwordMismatch",
+    "newPassword": "auth.newPassword",
+    "confirmPassword": "auth.confirmPassword",
+    "confirmPasswordPlaceholder": "auth.confirmPasswordPlaceholder"
+  },
+  "notFound": {
+    "heading": "৪০৪",
+    "message": "এই পৃষ্ঠাটো বিদ্যমান নহয়।",
+    "backToDashboard": "ডে‌শবোৰ্ডত ফিৰে যাওক",
+    "backHome": "notFound.backHome"
+  },
+  "loading": {
+    "default": "লোড হৈছে..."
+  },
+  "locationDetail": {
+    "riskScore": "ঝুঁকি স্কোৰ",
+    "riskLevel": "ঝুঁকি স্তৰ",
+    "coordinates": "স্থানাঙ্ক",
+    "state": "ৰাজ্য",
+    "noLocation": "মানচিত্ৰত এটা বিন্দু বাছক",
+    "noLocationSub": "স্থান বিৱৰণ দেখিবলৈ যিকোনো মাৰ্কাৰ ক্লিক কৰক"
+  },
+  "riskScoreCard": {
+    "riskScore": "ঝুঁকি স্কোৰ",
+    "riskLevel": "ঝুঁকি স্তৰ",
+    "out100": "/ ১০০"
+  },
+  "factorBreakdown": {
+    "title": "উপাদান বিশ্লেষণ",
+    "noData": "কোনো উপাদান তথ্য উপলব্ধ নহয়"
+  },
+  "riskTrendChart": {
+    "title": "ঝুঁকি স্কোৰ ধাব",
+    "compareAreas": "অঞ্চলৰ তুলনা কৰক:",
+    "noData": "কোনো ধাব তথ্য উপলব্ধ নহয়"
+  },
+  "areaComparison": {
+    "title": "অঞ্চল তুলনা",
+    "area": "অঞ্চল",
+    "state": "ৰাজ্য",
+    "riskLevel": "ঝুঁকি স্তৰ",
+    "riskScore": "ঝুঁকি স্কোৰ",
+    "noData": "কোনো তুলনামূলক তথ্য উপলব্ধ নহয়"
+  },
+  "mockData": {
+    "highRiskStatus": "অবিলম্বে প্ৰতিক্ৰিয়া প্ৰয়োজন",
+    "moderateRiskStatus": "সক্ৰিয় নিৰীক্ষণ",
+    "lowRiskStatus": "নিয়মিত নিৰীক্ষণ",
+    "riskLabels": {
+      "high": "উচ্চ ঝুঁকি",
+      "moderate": "মাঝারি ঝুঁকি",
+      "low": "নিম্ন ঝুঁকি"
+    }
+  },
+  "submitReport": {
+    "titleLabel": "শিৰোনাম",
+    "titlePlaceholder": "উদা. ৰাজপথৰ نزিকত ঢালত ফাটল",
+    "locationLabel": "অৱস্থান",
+    "locationPlaceholder": "উদা. কোহিমা, নাগাল্যান্ড",
+    "descriptionLabel": "বিৱৰণ",
+    "descriptionPlaceholder": "আপুনি কী দেখিছিল তা বৰ্ণনা কৰক...",
+    "categoryLabel": "বিভাগ",
+    "mediaLabel": "ছবি / ভিডিঅ' (ঐচ্ছিক)",
+    "mediaHint": "JPG, PNG, WebP ৫ MB লগত • MP4, WebM ৫০ MB লগত",
+    "submitButton": "প্ৰতিবেদন জমা দিক",
+    "submitting": "জমা হৈছে...",
+    "successMessage": "প্ৰতিবেদন সফলতাপূৰ্বক জমা হৈছে!",
+    "categories": {
+      "landslide": "ভূমিধস",
+      "flooding": "বন্যা",
+      "erosion": "ভাঙন",
+      "cracking": "ফাটল",
+      "other": "অন্যান্য"
+    }
+  },
+  "quickActions": {
+    "viewRiskMap": "ঝুঁকি মানচিত্ৰ দেখক",
+    "viewRiskMapSubtitle": "উত্তৰ-পূৱাঞ্চলত ঝুঁকিৰ মাত্ৰা অন্বেষণ কৰক।",
+    "analyzeRisk": "ঝুঁকি বিশ্লেষণ কৰক",
+    "analyzeRiskSubtitle": "ঝুঁকিৰ কাৰণ আৰু পূৰ্বানুমান বিশ্লেষণ পৰীক্ষা কৰক।",
+    "activeAlerts": "সক্ৰিয় ছিনতোৱাল",
+    "activeAlertsSubtitle": "বৰ্তমান ভূমিধস ছিনতোৱাল আৰু বিজ্ঞপ্তি দেখক।"
+  },
+  "sidebar": {
+    "emergency": "Emergency Contact"
+  },
+  "analysis": {
+    "errorUnauthorized": "লাইভ বিপদাশংকা পূৰ্বাভাস ল'ড কৰিবলৈ অনুগ্ৰহ কৰি ছাইন ইন কৰক।",
+    "errorUnavailable": "এই স্থানৰ বাবে লাইভ পূৰ্বাভাস উপলব্ধ নহয়।",
+    "errorService": "বিপদাশংকা সেৱাত সংযোগ কৰিব পৰা নগ'ল। অনুগ্ৰহ কৰি পুনৰ চেষ্টা কৰক।",
+    "title": "বিপদাশংকা বিশ্লেষণ",
+    "subtitle": "উত্তৰ পূব অঞ্চলৰ নিৰীক্ষণ কৰা ঢালবোৰৰ বাবে কাৰক-স্তৰৰ বিশ্লেষণ আৰু স্ক'ৰৰ প্ৰৱণতা",
+    "dateRange": {
+      "7": "৭ দিন",
+      "30": "৩০ দিন",
+      "90": "৯০ দিন"
+    },
+    "fetchingPrediction": "লাইভ পূৰ্বাভাস সংগ্ৰহ কৰা হৈছে…",
+    "aboveThreshold": "সতৰ্কতা সীমাৰ ওপৰত"
+  },
+  "factors": {
+    "rainfall24": "বৰষুণ · ২৪ ঘণ্টা (মিমি)",
+    "slope": "ঢালৰ মাত্ৰা",
+    "elevation": "উচ্চতা (মিটাৰ)",
+    "rainfall48": "বৰষুণ · ৪৮ ঘণ্টা (মিমি)",
+    "rainfall7d": "বৰষুণ · ৭ দিন (মিমি)",
+    "humidity": "আৰ্দ্ৰতা · ২৪ ঘণ্টা গড় (%)",
+    "soilMoisture": "মাটিৰ আৰ্দ্ৰতা (m³/m³)",
+    "rainfall": "বৰষুণৰ তীব্ৰতা",
+    "soil": "মাটিৰ সংপৃক্তি",
+    "seismic": "ভূমিকম্পীয় কাৰ্যকলাপ",
+    "vegetation": "উদ্ভিদৰ আৱৰণ",
+    "history": "অতীতৰ ঘটনাৱলী (৫ বছৰ)",
+    "rainfall_24h": "বৰষুণ · ২৪ ঘণ্টা (মিমি)",
+    "rainfall_48h": "বৰষুণ · ৪৮ ঘণ্টা (মিমি)",
+    "rainfall_7d": "বৰষুণ · ৭ দিন (মিমি)",
+    "average_humidity_24h": "আৰ্দ্ৰতা · ২৪ ঘণ্টাৰ গড় (%)",
+    "soil_moisture": "মাটিৰ আৰ্দ্ৰতা (ঘন মি/ঘন মি)"
+  }
+}

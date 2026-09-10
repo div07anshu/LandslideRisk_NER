@@ -1,14 +1,13 @@
 import { AlertTriangle } from "lucide-react";
 import Card from "../../common/Card";
 import { LEVEL_STYLES } from "../../data/analysisData";
+import { useTranslation } from "react-i18next";
 
 const LEVELS = ["high", "moderate", "low"];
 
-function levelLabel(level) {
-  return level.charAt(0).toUpperCase() + level.slice(1);
-}
-
 export default function AlertsSummary({ alerts }) {
+  const { t } = useTranslation();
+
   return (
     <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-5">
       <Card className="p-5 flex items-center gap-4">
@@ -19,7 +18,7 @@ export default function AlertsSummary({ alerts }) {
           <div className="text-2xl font-bold text-slate-900">
             {alerts.length}
           </div>
-          <div className="text-xs text-slate-500 mt-0.5">Total Alerts</div>
+          <div className="text-xs text-slate-500 mt-0.5">{t("alerts.totalAlerts")}</div>
         </div>
       </Card>
 
@@ -37,7 +36,7 @@ export default function AlertsSummary({ alerts }) {
             <div>
               <div className="text-2xl font-bold text-slate-900">{count}</div>
               <div className="text-xs text-slate-500 mt-0.5">
-                {levelLabel(level)} Risk
+                {t(`riskLevels.${level}`)} {t("common.risk")}
               </div>
             </div>
           </Card>

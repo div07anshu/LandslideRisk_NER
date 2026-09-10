@@ -1,0 +1,445 @@
+{
+  "app": {
+    "name": "NER ভূমিধস প্রাথমিক সতর্কতা ব্যবস্থা",
+    "subtitle": "উত্তর-পূর্বাঞ্চল (NER)",
+    "shortName": "ভূমিধস ঝুঁকি NER",
+    "earlyWarning": "প্রাথমিক সতর্কতা এবং ঝুঁকি পর্যবেক্ষণ",
+    "earlyWarningSystem": "প্রাথমিক সতর্কতা ব্যবস্থা",
+    "disasterSystem": "দুর্যোগ ব্যবস্থাপনা পর্যবেক্ষণ ব্যবস্থা",
+    "brandName": "app.brandName",
+    "tagline": "app.tagline",
+    "shortTagline": "app.shortTagline"
+  },
+  "navigation": {
+    "dashboard": "ড্যাশবোর্ড",
+    "riskMap": "ঝুঁকি মানচিত্র",
+    "riskAnalysis": "ঝুঁকি বিশ্লেষণ",
+    "alerts": "সতর্কতা",
+    "reports": "প্রতিবেদন",
+    "emergencyContact": "জরুরি যোগাযোগ"
+  },
+  "topbar": {
+    "notifications": "বিজ্ঞপ্তি",
+    "profile": "প্রোফাইল",
+    "settings": "সেটিংস",
+    "logOut": "লগ আউট",
+    "user": "ব্যবহারকারী"
+  },
+  "language": {
+    "select": "ভাষা",
+    "en": "English",
+    "hi": "हिंदी",
+    "bn": "বাংলা",
+    "as": "অসমীয়া",
+    "ne": "नेपाली"
+  },
+  "common": {
+    "loading": "লোড হচ্ছে...",
+    "error": "একটি ত্রুটি ঘটেছে",
+    "retry": "পুনরায় চেষ্টা করুন",
+    "save": "সংরক্ষণ করুন",
+    "cancel": "বাতিল করুন",
+    "confirm": "নিশ্চিত করুন",
+    "close": "বন্ধ করুন",
+    "back": "ফিরে যান",
+    "submit": "জমা দিন",
+    "search": "অনুসন্ধান",
+    "filter": "ফিল্টার",
+    "all": "সমস্ত",
+    "none": "কিছুই না",
+    "yes": "হ্যাঁ",
+    "no": "না",
+    "areas": "এলাকা",
+    "totalAreas": "মোট এলাকা",
+    "viewAll": "সব দেখুন",
+    "viewDetails": "বিস্তারিত দেখুন",
+    "status": "স্থিতি",
+    "location": "অবস্থান",
+    "time": "সময়",
+    "date": "তারিখ",
+    "score": "স্কোর",
+    "risk": "ঝুঁকি"
+  },
+  "riskLevels": {
+    "high": "উচ্চ",
+    "moderate": "মাঝারি",
+    "low": "নিম্ন",
+    "highRisk": "উচ্চ ঝুঁকি",
+    "moderateRisk": "মাঝারি ঝুঁকি",
+    "lowRisk": "নিম্ন ঝুঁকি",
+    "highRiskAlt": "উচ্চ ঝুঁকি",
+    "moderateRiskAlt": "মাঝারি ঝুঁকি",
+    "lowRiskAlt": "নিম্ন ঝুঁকি"
+  },
+  "dashboard": {
+    "title": "NER ঝুঁকি সংক্ষিপ্ত বিবরণ",
+    "subtitle": "উত্তর-পূর্বাঞ্চল জুড়ে সামগ্রিক ঝুঁকি বন্টন",
+    "highRiskLocations": "উচ্চ ঝুঁকিপূর্ণ এলাকা",
+    "recentAlerts": "সাম্প্রতিক সতর্কতা",
+    "recentReports": "সাম্প্রতিক প্রতিবেদন",
+    "quickActions": "দ্রুত পদক্ষেপ",
+    "viewAllHighRiskAreas": "সব উচ্চ ঝুঁকিপূর্ণ এলাকা দেখুন",
+    "viewAllAlerts": "সব সতর্কতা দেখুন",
+    "viewAllReports": "সব প্রতিবেদন দেখুন",
+    "riskScore": "ঝুঁকি স্কোর",
+    "reportProblem": {
+      "title": "সমস্যা রিপোর্ট করুন",
+      "description": "ভূমিধস বা সম্পর্কিত সমস্যার রিপোর্ট করে আমাদের সাহায্য করুন।",
+      "button": "এখন রিপোর্ট করুন"
+    },
+    "stableConditions": "স্থিতিশীল অবস্থা",
+    "underObservation": "পর্যবেক্ষণের অধীনে",
+    "criticalAttention": "জরুরি মনোযোগ প্রয়োজন"
+  },
+  "riskMap": {
+    "title": "ঝুঁকি মানচিত্র",
+    "subtitle": "উত্তর-পূর্বাঞ্চল জুড়ে ইন্টারঅ্যাক্টিভ ভূমিধস ঝুঁকি মানচিত্র",
+    "riskScore": "ঝুঁকি স্কোর",
+    "riskLegend": "ঝুঁকি",
+    "noLocationSelected": "কোনো অবস্থান নির্বাচন করা হয়নি",
+    "selectLocation": "বিস্তারিত দেখতে মানচিত্রে একটি স্থান নির্বাচন করুন",
+    "locationDetails": "অবস্থানের বিবরণ",
+    "closeDetails": "বিবরণ বন্ধ করুন",
+    "viewFullAnalysis": "View Full Analysis"
+  },
+  "riskAnalysis": {
+    "title": "ঝুঁকি বিশ্লেষণ",
+    "subtitle": "উত্তর-পূর্বাঞ্চল জুড়ে পর্যবেক্ষণকৃত ঢালের উপাদান-ভিত্তিক বিশ্লেষণ এবং স্কোরের প্রবণতা",
+    "fetchingPrediction": "লাইভ পূর্বাভাস লোড হচ্ছে…",
+    "aboveAlertThreshold": "সতর্কতা সীমার উপরে",
+    "scoreLabel": "ঝুঁকি স্কোর",
+    "factorBreakdown": "উপাদান বিশ্লেষণ",
+    "riskTrend": "ঝুঁকির প্রবণতা",
+    "areaComparison": "এলাকা তুলনা",
+    "selectArea": "এলাকা নির্বাচন করুন",
+    "range7days": "৭ দিন",
+    "range30days": "৩০ দিন",
+    "range90days": "৯০ দিন",
+    "errors": {
+      "sessionExpired": "আপনার সেশনের মেয়াদ শেষ হয়ে গেছে। অনুগ্রহ করে আবার সাইন ইন করুন।",
+      "unavailableLocation": "এই অবস্থানের জন্য লাইভ পূর্বাভাস অনুপলব্ধ।",
+      "serviceUnavailable": "ঝুঁকি পরিষেবা সাময়িকভাবে অনুপলব্ধ। অনুগ্রহ করে কিছুক্ষণ পরে চেষ্টা করুন।",
+      "signInRequired": "লাইভ ঝুঁকি পূর্বাভাস দেখতে সাইন ইন করুন।",
+      "couldNotReach": "ঝুঁকি পরিষেবাতে পৌঁছানো যায়নি। অনুগ্রহ করে আবার চেষ্টা করুন।"
+    },
+    "features": {
+      "rainfall24h": "বৃষ্টিপাত · ২৪ ঘণ্টা (মিমি)",
+      "rainfall48h": "বৃষ্টিপাত · ৪৮ ঘণ্টা (মিমি)",
+      "rainfall7d": "বৃষ্টিপাত · ৭ দিন (মিমি)",
+      "humidity24h": "আর্দ্রতা · ২৪ ঘণ্টা গড় (%)",
+      "soilMoisture": "মাটির আর্দ্রতা (m³/m³)",
+      "elevation": "উচ্চতা (মিটার)",
+      "slope": "ঢাল (°)"
+    },
+    "factorBreakdownSub": "Factors influencing the risk",
+    "thresholdNote": "Risk scores above 70 require immediate attention and monitoring.",
+    "vegetationNote": "উচ্চ গাছপালার আবরণ ভূমিধসের ঝুঁকি হ্রাস করে।"
+  },
+  "alerts": {
+    "title": "সতর্কতা",
+    "subtitle": "উত্তর-পূর্বাঞ্চল জুড়ে সমস্ত সক্রিয় এবং ঐতিহাসিক ভূমিধস ঝুঁকি সতর্কতা",
+    "allAlerts": "সমস্ত সতর্কতা",
+    "totalAlerts": "মোট সতর্কতা",
+    "alertsFound": "{{count}}টি সতর্কতা পাওয়া গেছে",
+    "alertsFound_other": "{{count}}টি সতর্কতা পাওয়া গেছে",
+    "noAlertsFound": "আপনার ফিল্টারের সাথে কোনো সতর্কতা মেলেনি।",
+    "searchPlaceholder": "সতর্কতা খুঁজুন...",
+    "levels": {
+      "all": "সমস্ত",
+      "high": "উচ্চ",
+      "moderate": "মাঝারি",
+      "low": "নিম্ন"
+    },
+    "status": {
+      "active": "সক্রিয়",
+      "monitoring": "পর্যবেক্ষণ",
+      "resolved": "সমাধান হয়েছে"
+    }
+  },
+  "reports": {
+    "title": "প্রতিবেদন",
+    "subtitle": "উত্তর-পূর্বাঞ্চল জুড়ে নতুন ফিল্ড রিপোর্ট জমা দিন এবং ট্র্যাক করুন",
+    "submitReport": "প্রতিবেদন জমা দিন",
+    "reportTitle": "প্রতিবেদনের শিরোনাম",
+    "titlePlaceholder": "যেমন: মহাসড়কের কাছে ঢালে ফাটল",
+    "locationLabel": "অবস্থান",
+    "locationPlaceholder": "যেমন: কোহিমা, নাগাল্যান্ড",
+    "detailLabel": "বিবরণ",
+    "detailPlaceholder": "আপনি যা দেখেছেন তা বর্ণনা করুন...",
+    "categoryLabel": "বিভাগ",
+    "mediaLabel": "ছবি / ভিডিও (ঐচ্ছিক)",
+    "mediaHint": "JPG, PNG, WebP সর্বোচ্চ ৫ এমবি • MP4, WebM সর্বোচ্চ ৫০ এমবি",
+    "submitButton": "প্রতিবেদন জমা দিন",
+    "submitting": "জমা হচ্ছে...",
+    "allReports": "সমস্ত প্রতিবেদন",
+    "reportsFound": "{{count}}টি প্রতিবেদন পাওয়া গেছে",
+    "reportsFound_other": "{{count}}টি প্রতিবেদন পাওয়া গেছে",
+    "noReportsFound": "আপনার ফিল্টারের সাথে কোনো প্রতিবেদন মেলেনি।",
+    "searchPlaceholder": "প্রতিবেদন খুঁজুন...",
+    "loadError": "এখন প্রতিবেদন লোড করা যায়নি। পেজটি রিফ্রেশ করুন।",
+    "submitSuccess": "প্রতিবেদন সফলভাবে জমা দেওয়া হয়েছে!",
+    "submitError": "প্রতিবেদন সংরক্ষণ করা যায়নি। অনুগ্রহ করে আবার চেষ্টা করুন।",
+    "categories": {
+      "landslide": "ভূমিধস",
+      "flooding": "বন্যা",
+      "erosion": "ভাঙন",
+      "cracking": "ফাটল",
+      "other": "অন্যান্য",
+      "road_crack": "রাস্তায় ফাটল",
+      "soil_movement": "মাটি সরে যাওয়া",
+      "crack": "রাস্তায় ফাটল",
+      "flow": "কাদা ও ধ্বংসাবশেষ প্রবাহ",
+      "rockfall": "পাথর ধস"
+    },
+    "status": {
+      "all": "সমস্ত",
+      "pending": "অপেক্ষমাণ",
+      "reviewing": "পর্যালোচনাধীন",
+      "resolved": "সমাধান হয়েছে",
+      "investigating": "তদন্তাধীন",
+      "verified": "যাচাইকৃত",
+      "dismissed": "বাতিল",
+      "in_progress": "চলমান"
+    },
+    "saveError": "প্রতিবেদন সংরক্ষণ করা যায়নি। অনুগ্রহ করে আবার চেষ্টা করুন।",
+    "error": {
+      "invalidType": "শুধুমাত্র JPG, PNG, WebP ছবি এবং MP4, WebM, OGG ভিডিও ফাইল অনুমোদিত।",
+      "imageSize": "ছবির আকার 5MB সীমা অতিক্রম করেছে।",
+      "videoSize": "ভিডিওর আকার 50MB সীমা অতিক্রম করেছে।"
+    }
+  },
+  "assistant": {
+    "title": "এআই সহকারী",
+    "subtitle": "ভূমিধসের ঝুঁকি, উপাদান এবং নিরাপত্তা সম্পর্কে প্রশ্ন জিজ্ঞাসা করুন।",
+    "chatTitle": "ভূমিধস ঝুঁকি সহকারী",
+    "ready": "● সাহায্য করতে প্রস্তুত",
+    "inputPlaceholder": "ভূমিধস ঝুঁকি সম্পর্কে জিজ্ঞাসা করুন...",
+    "inputAriaLabel": "আপনার বার্তা টাইপ করুন",
+    "sendButton": "পাঠান",
+    "sendAriaLabel": "বার্তা পাঠান",
+    "chatAriaLabel": "চ্যাট বার্তা",
+    "typingAriaLabel": "সহকারী টাইপ করছে",
+    "disclaimer": "এআই প্রতিক্রিয়া শুধুমাত্র তথ্যগত উদ্দেশ্যে। জরুরি পরিস্থিতিতে সর্বদা অফিসিয়াল দুর্যোগ ব্যবস্থাপনা নির্দেশিকা অনুসরণ করুন।",
+    "welcomeMessage": "নমস্কার! আমি NER ভূমিধস এআই সহকারী। আমি আপনাকে ভূমিধসের ঝুঁকি, ঝুঁকির উপাদান, সতর্কতার লক্ষণ এবং সুরক্ষা ব্যবস্থা বুঝতে সাহায্য করতে পারি।",
+    "floatingButton": "এআই জিজ্ঞাসা করুন",
+    "floatingOpen": "এআই সহকারী খুলুন",
+    "floatingClose": "এআই সহকারী বন্ধ করুন",
+    "floatingTitle": "ভূমিধস এআই",
+    "floatingSubtitle": "এআই ঝুঁকি সহকারী",
+    "floatingWelcome": "নমস্কার! আমি ভূমিধস এআই। ভূমিধসের ঝুঁকি, সতর্কতার লক্ষণ বা সুরক্ষা ব্যবস্থা সম্পর্কে যেকোনো কিছু জিজ্ঞাসা করুন।",
+    "floatingPlaceholder": "ভূমিধস সম্পর্কে জিজ্ঞাসা করুন...",
+    "floatingThinking": "এআই চিন্তা করছে...",
+    "floatingDisclaimer": "এআই প্রতিক্রিয়া সহায়তার জন্য এবং অফিসিয়াল জরুরি সতর্কতার বিকল্প নয়।",
+    "errors": {
+      "default": "দুঃখিত, এআই পরিষেবার সাথে সংযোগ স্থাপন করা যায়নি। ব্যাকএন্ড সার্ভার চালু আছে কিনা তা পরীক্ষা করুন।",
+      "couldNotGenerate": "দুঃখিত, উত্তর তৈরি করতে পারিনি।",
+      "service502": "এআই পরিষেবা সাময়িকভাবে অনুপলব্ধ। অনুগ্রহ করে কিছুক্ষণ পরে চেষ্টা করুন।",
+      "service503": "এআই পরিষেবা বর্তমানে অতিরিক্ত ব্যস্ত। অনুগ্রহ করে কিছুক্ষণ পরে চেষ্টা করুন।",
+      "auth": "প্রমাণীকরণ ব্যর্থ হয়েছে। আপনার সংযোগ পরীক্ষা করে আবার চেষ্টা করুন।",
+      "floating502": "এআই পরিষেবা সাময়িকভাবে অনুপলব্ধ। অনুগ্রহ করে কিছুক্ষণ পরে চেষ্টা করুন।",
+      "floating503": "এআই পরিষেবা অতিরিক্ত ব্যস্ত। অনুগ্রহ করে পরে চেষ্টা করুন।",
+      "floatingDefault": "দুঃখিত, এআই পরিষেবার সাথে সংযোগ করা যায়নি। ব্যাকএন্ড চলছে কিনা দেখুন।"
+    },
+    "noResponse": "দুঃখিত, আমি প্রতিক্রিয়া তৈরি করতে পারিনি। অনুগ্রহ করে আবার চেষ্টা করুন।",
+    "connectionError": "AI সেবার সাথে সংযোগ করা যায়নি। অনুগ্রহ করে ব্যাকএন্ড চালু আছে কিনা তা নিশ্চিত করুন।",
+    "thinking": "AI ভাবছে...",
+    "send": "পাঠান",
+    "welcome": "নমস্কার! আমি NER ভূমিধস AI সহকারী। আজ আমি আপনাকে কীভাবে সাহায্য করতে পারি?"
+  },
+  "auth": {
+    "login": {
+      "title": "স্বাগতম",
+      "subtitle": "পর্যবেক্ষণ ড্যাশবোর্ডে প্রবেশ করতে সাইন ইন করুন।",
+      "emailLabel": "ইমেল",
+      "emailPlaceholder": "you@example.com",
+      "passwordLabel": "পাসওয়ার্ড",
+      "passwordPlaceholder": "আপনার পাসওয়ার্ড লিখুন",
+      "forgotPassword": "পাসওয়ার্ড ভুলে গেছেন?",
+      "signInButton": "সাইন ইন করুন",
+      "signingIn": "সাইন ইন হচ্ছে...",
+      "noAccount": "কোনো অ্যাকাউন্ট নেই?",
+      "createAccount": "অ্যাকাউন্ট তৈরি করুন",
+      "demoTitle": "ডেমো অ্যাক্সেস",
+      "demoText": "অনুমোদিত ফিল্ড টিম এবং বিশ্লেষকরা তাদের আঞ্চলিক সমন্বয়কের দেওয়া তথ্য দিয়ে সাইন ইন করতে পারেন।"
+    },
+    "signup": {
+      "title": "অ্যাকাউন্ট তৈরি করুন",
+      "subtitle": "পর্যবেক্ষণ এবং প্রতিবেদন প্ল্যাটফর্মে প্রবেশ করতে সাইন আপ করুন।",
+      "emailLabel": "ইমেল",
+      "emailPlaceholder": "you@example.com",
+      "passwordLabel": "পাসওয়ার্ড",
+      "passwordPlaceholder": "একটি পাসওয়ার্ড তৈরি করুন",
+      "passwordHint": "পাসওয়ার্ড কমপক্ষে ৬ অক্ষরের হতে হবে।",
+      "createButton": "অ্যাকাউন্ট তৈরি করুন",
+      "creating": "অ্যাকাউন্ট তৈরি হচ্ছে...",
+      "alreadyHaveAccount": "ইতিমধ্যে একটি অ্যাকাউন্ট আছে?",
+      "signIn": "সাইন ইন করুন",
+      "successTitle": "অ্যাকাউন্ট তৈরি হয়েছে",
+      "successMessage": "আপনার ইমেল নিশ্চিত করতে ইনবক্স চেক করুন, তারপর এগিয়ে যেতে সাইন ইন করুন।",
+      "goToSignIn": "সাইন ইন করতে যান"
+    },
+    "forgotPassword": {
+      "title": "পাসওয়ার্ড রিসেট করুন",
+      "subtitle": "আপনার অ্যাকাউন্টের সাথে যুক্ত ইমেল লিখুন এবং আমরা পাসওয়ার্ড রিসেট করার জন্য একটি লিঙ্ক পাঠাব।",
+      "backToSignIn": "সাইন ইন-এ ফিরে যান",
+      "emailLabel": "ইমেল",
+      "emailPlaceholder": "you@example.com",
+      "sendButton": "রিসেট লিঙ্ক পাঠান",
+      "sending": "পাঠানো হচ্ছে...",
+      "successTitle": "আপনার ইনবক্স চেক করুন",
+      "successMessage": "আমরা পাসওয়ার্ড রিসেট লিঙ্ক পাঠিয়েছি"
+    },
+    "updatePassword": {
+      "title": "নতুন পাসওয়ার্ড সেট করুন",
+      "subtitle": "আপনার LandslideRisk NER অ্যাকাউন্টের জন্য একটি নতুন পাসওয়ার্ড বেছে নিন।",
+      "newPasswordLabel": "নতুন পাসওয়ার্ড",
+      "newPasswordPlaceholder": "একটি নতুন পাসওয়ার্ড দিন",
+      "confirmPasswordLabel": "পাসওয়ার্ড নিশ্চিত করুন",
+      "confirmPasswordPlaceholder": "পাসওয়ার্ডটি পুনরায় লিখুন",
+      "updateButton": "পাসওয়ার্ড আপডেট করুন",
+      "updating": "আপডেট হচ্ছে...",
+      "backToSignIn": "সাইন ইন-এ ফিরে যান",
+      "successTitle": "পাসওয়ার্ড আপডেট হয়েছে",
+      "successMessage": "আপনার পাসওয়ার্ড পরিবর্তিত হয়েছে। আপনি এখন এটি দিয়ে সাইন ইন করতে পারেন।",
+      "goToSignIn": "সাইন ইন করতে যান",
+      "errors": {
+        "tooShort": "পাসওয়ার্ড কমপক্ষে ৬ অক্ষরের হতে হবে।",
+        "noMatch": "পাসওয়ার্ড দুটি মেলেনি।"
+      }
+    },
+    "hero": {
+      "monitorRisk": "ঝুঁকি পর্যবেক্ষণ করুন।",
+      "protectCommunities": "সম্প্রদায়কে রক্ষা করুন।",
+      "monitoringDescription": "ভারতের উত্তর-পূর্বাঞ্চলের জন্য এআই-ভিত্তিক ভূমিধস ঝুঁকি পর্যবেক্ষণ এবং প্রাথমিক সতর্কতা ব্যবস্থা।",
+      "joinNetwork": "নেটওয়ার্কে যোগ দিন।",
+      "stayAheadRisk": "ঝুঁকির আগে থাকুন।",
+      "signupDescription": "ফিল্ড রিপোর্ট জমা দিতে, উচ্চ ঝুঁকিপূর্ণ ঢাল পর্যবেক্ষণ করতে এবং গুরুত্বপূর্ণ প্রাথমিক সতর্কতা পেতে একটি অ্যাকাউন্ট তৈরি করুন।",
+      "areasMonitored": "পর্যবেক্ষিত এলাকা",
+      "liveMonitoring": "লাইভ পর্যবেক্ষণ",
+      "statesCovered": "উত্তর-পূর্বের রাজ্য"
+    },
+    "email": "auth.email",
+    "emailPlaceholder": "auth.emailPlaceholder",
+    "password": "auth.password",
+    "passwordPlaceholder": "auth.passwordPlaceholder",
+    "passwordShort": "auth.passwordShort",
+    "passwordMismatch": "auth.passwordMismatch",
+    "newPassword": "auth.newPassword",
+    "confirmPassword": "auth.confirmPassword",
+    "confirmPasswordPlaceholder": "auth.confirmPasswordPlaceholder"
+  },
+  "notFound": {
+    "heading": "৪০৪",
+    "message": "এই পৃষ্ঠাটি বিদ্যমান নেই।",
+    "backToDashboard": "ড্যাশবোর্ডে ফিরে যান",
+    "backHome": "notFound.backHome"
+  },
+  "loading": {
+    "default": "লোড হচ্ছে..."
+  },
+  "locationDetail": {
+    "riskScore": "ঝুঁকি স্কোর",
+    "riskLevel": "ঝুঁকি স্তর",
+    "coordinates": "স্থানাঙ্ক",
+    "state": "রাজ্য",
+    "noLocation": "মানচিত্রে একটি বিন্দু নির্বাচন করুন",
+    "noLocationSub": "স্থানের বিবরণ দেখতে যেকোনো মার্কার ক্লিক করুন"
+  },
+  "riskScoreCard": {
+    "riskScore": "ঝুঁকি স্কোর",
+    "riskLevel": "ঝুঁকি স্তর",
+    "out100": "/ ১০০"
+  },
+  "factorBreakdown": {
+    "title": "উপাদান বিশ্লেষণ",
+    "noData": "কোনো উপাদানের তথ্য উপলব্ধ নেই"
+  },
+  "riskTrendChart": {
+    "title": "ঝুঁকি স্কোরের প্রবণতা",
+    "compareAreas": "এলাকার তুলনা করুন:",
+    "noData": "কোনো ট্রেন্ড তথ্য উপলব্ধ নেই"
+  },
+  "areaComparison": {
+    "title": "এলাকা তুলনা",
+    "area": "এলাকা",
+    "state": "রাজ্য",
+    "riskLevel": "ঝুঁকি স্তর",
+    "riskScore": "ঝুঁকি স্কোর",
+    "noData": "কোনো তুলনামূলক তথ্য উপলব্ধ নেই"
+  },
+  "mockData": {
+    "highRiskStatus": "অবিলম্বে প্রতিক্রিয়া প্রয়োজন",
+    "moderateRiskStatus": "সক্রিয় পর্যবেক্ষণ",
+    "lowRiskStatus": "নিয়মিত পর্যবেক্ষণ",
+    "riskLabels": {
+      "high": "উচ্চ ঝুঁকি",
+      "moderate": "মাঝারি ঝুঁকি",
+      "low": "নিম্ন ঝুঁকি"
+    }
+  },
+  "submitReport": {
+    "titleLabel": "শিরোনাম",
+    "titlePlaceholder": "যেমন: মহাসড়কের কাছে ঢালে ফাটল",
+    "locationLabel": "অবস্থান",
+    "locationPlaceholder": "যেমন: কোহিমা, নাগাল্যান্ড",
+    "descriptionLabel": "বিবরণ",
+    "descriptionPlaceholder": "আপনি যা দেখেছেন তা বর্ণনা করুন...",
+    "categoryLabel": "বিভাগ",
+    "mediaLabel": "ছবি / ভিডিও (ঐচ্ছিক)",
+    "mediaHint": "JPG, PNG, WebP সর্বোচ্চ ৫ এমবি • MP4, WebM সর্বোচ্চ ৫০ এমবি",
+    "submitButton": "প্রতিবেদন জমা দিন",
+    "submitting": "জমা হচ্ছে...",
+    "successMessage": "প্রতিবেদন সফলভাবে জমা দেওয়া হয়েছে!",
+    "categories": {
+      "landslide": "ভূমিধস",
+      "flooding": "বন্যা",
+      "erosion": "ভাঙন",
+      "cracking": "ফাটল",
+      "other": "অন্যান্য"
+    }
+  },
+  "quickActions": {
+    "viewRiskMap": "ঝুঁকি মানচিত্র দেখুন",
+    "viewRiskMapSubtitle": "উত্তর-পূর্বাঞ্চল জুড়ে ঝুঁকির মাত্রা অন্বেষণ করুন।",
+    "analyzeRisk": "ঝুঁকি বিশ্লেষণ করুন",
+    "analyzeRiskSubtitle": "ঝুঁকির কারণ এবং পূর্বাভাস বিশ্লেষণ পরীক্ষা করুন।",
+    "activeAlerts": "সক্রিয় সতর্কতা",
+    "activeAlertsSubtitle": "বর্তমান ভূমিধস সতর্কতা এবং বিজ্ঞপ্তি দেখুন।"
+  },
+  "sidebar": {
+    "emergency": "Emergency Contact"
+  },
+  "analysis": {
+    "errorUnauthorized": "লাইভ ঝুঁকি পূর্বাভাস লোড করতে অনুগ্রহ করে সাইন ইন করুন।",
+    "errorUnavailable": "এই অবস্থানের জন্য লাইভ পূর্বাভাস উপলব্ধ নেই।",
+    "errorService": "ঝুঁকি সেবায় সংযোগ করা যায়নি। অনুগ্রহ করে আবার চেষ্টা করুন।",
+    "title": "ঝুঁকি বিশ্লেষণ",
+    "subtitle": "উত্তর পূর্ব অঞ্চলের পর্যবেক্ষণকৃত ঢালগুলির জন্য উপাদান-স্তরের বিভাজন এবং স্কোর প্রবণতা",
+    "dateRange": {
+      "7": "৭ দিন",
+      "30": "৩০ দিন",
+      "90": "৯০ দিন"
+    },
+    "fetchingPrediction": "লাইভ পূর্বাভাস আনা হচ্ছে…",
+    "aboveThreshold": "সতর্কতা সীমার উপরে"
+  },
+  "factors": {
+    "rainfall24": "বৃষ্টিপাত · ২৪ ঘণ্টা (মিমি)",
+    "slope": "ঢালের নতি",
+    "elevation": "উচ্চতা (মিটার)",
+    "rainfall48": "বৃষ্টিপাত · ৪৮ ঘণ্টা (মিমি)",
+    "rainfall7d": "বৃষ্টিপাত · ৭ দিন (মিমি)",
+    "humidity": "আর্দ্রতা · ২৪ ঘণ্টা গড় (%)",
+    "soilMoisture": "মাটির আর্দ্রতা (m³/m³)",
+    "rainfall": "বৃষ্টিপাতের তীব্রতা",
+    "soil": "মাটির আর্দ্রতা সম্পৃক্তি",
+    "seismic": "ভূমিকম্পীয় কার্যকলাপ",
+    "vegetation": "উদ্ভিদ আচ্ছাদন",
+    "history": "অতীতের ঘটনা (৫ বছর)",
+    "rainfall_24h": "বৃষ্টিপাত · ২৪ ঘণ্টা (মিমি)",
+    "rainfall_48h": "বৃষ্টিপাত · ৪৮ ঘণ্টা (মিমি)",
+    "rainfall_7d": "বৃষ্টিপাত · ৭ দিন (মিমি)",
+    "average_humidity_24h": "আর্দ্রতা · ২৪ ঘণ্টার গড় (%)",
+    "soil_moisture": "মাটির আর্দ্রতা (ঘন মি/ঘন মি)"
+  }
+}

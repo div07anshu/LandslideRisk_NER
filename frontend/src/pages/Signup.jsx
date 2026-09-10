@@ -3,8 +3,10 @@ import { supabase } from "../supabase";
 import { Mountain, Mail, Lock, ShieldCheck } from "lucide-react";
 import { Link } from "react-router-dom";
 import ContourMotif from "../components/analysis/ContourMotif";
+import { useTranslation } from "react-i18next";
 
 function Signup() {
+  const { t } = useTranslation();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -37,15 +39,15 @@ function Signup() {
               <Mountain size={28} />
             </div>
           </div>
-          <h1 className="text-2xl font-bold text-slate-800">Account created</h1>
+          <h1 className="text-2xl font-bold text-slate-800">{t("auth.signup.successTitle")}</h1>
           <p className="text-slate-500 mt-2">
-            Check your inbox to confirm your email, then sign in to continue.
+            {t("auth.signup.successMessage")}
           </p>
           <Link
             to="/login"
             className="inline-block mt-6 bg-brand-900 hover:bg-brand-800 text-white py-3 px-6 rounded-lg font-semibold transition"
           >
-            Go to sign in
+            {t("auth.signup.goToSignIn")}
           </Link>
         </div>
       </div>
@@ -67,23 +69,21 @@ function Signup() {
               </div>
 
               <div>
-                <h1 className="text-xl font-bold">LandslideRisk NER</h1>
+                <h1 className="text-xl font-bold">{t("app.shortName")}</h1>
 
                 <p className="text-xs text-slate-300">
-                  Early Warning & Risk Monitoring
+                  {t("app.earlyWarning")}
                 </p>
               </div>
             </div>
 
             <div className="mt-16">
               <h2 className="text-3xl font-bold leading-tight">
-                Join the Network.
-                <br />
-                Stay Ahead of Risk.
+                {t("auth.hero.joinNetwork")}
               </h2>
 
               <p className="mt-5 text-slate-200 leading-relaxed">
-                Create an account to submit field reports, monitor high-risk slopes, and receive critical early warnings.
+                {t("auth.hero.signupDescription")}
               </p>
             </div>
 
@@ -91,19 +91,19 @@ function Signup() {
               <div>
                 <div className="text-2xl font-bold">110</div>
                 <div className="text-xs text-slate-300 mt-0.5">
-                  Areas monitored
+                  {t("auth.hero.areasMonitored")}
                 </div>
               </div>
               <div>
                 <div className="text-2xl font-bold">24/7</div>
                 <div className="text-xs text-slate-300 mt-0.5">
-                  Live monitoring
+                  {t("auth.hero.liveMonitoring")}
                 </div>
               </div>
               <div>
                 <div className="text-2xl font-bold">8</div>
                 <div className="text-xs text-slate-300 mt-0.5">
-                  NE states covered
+                  {t("auth.hero.statesCovered")}
                 </div>
               </div>
             </div>
@@ -111,7 +111,7 @@ function Signup() {
 
           <div className="relative flex items-center gap-3 text-sm text-slate-200 font-medium">
             <ShieldCheck size={20} className="text-[#7FA8D9]" />
-            <span>Disaster Management Monitoring System</span>
+            <span>{t("app.disasterSystem")}</span>
           </div>
         </div>
 
@@ -124,25 +124,25 @@ function Signup() {
             </div>
 
             <div>
-              <h1 className="font-bold text-brand-900">LandslideRisk NER</h1>
+              <h1 className="font-bold text-brand-900">{t("app.shortName")}</h1>
 
-              <p className="text-xs text-slate-500">Early Warning System</p>
+              <p className="text-xs text-slate-500">{t("app.earlyWarningSystem")}</p>
             </div>
           </div>
 
           <div className="max-w-md mx-auto">
             <h2 className="text-3xl font-bold text-slate-800">
-              Create Account
+              {t("auth.signup.title")}
             </h2>
 
             <p className="mt-2 text-slate-500">
-              Sign up to access the monitoring and reporting platform.
+              {t("auth.signup.subtitle")}
             </p>
 
             <form onSubmit={handleSignup} className="mt-8 space-y-5">
               <div>
                 <label className="block text-sm font-medium text-slate-700 mb-2">
-                  Email
+                  {t("auth.signup.emailLabel")}
                 </label>
                 <div className="relative">
                   <Mail
@@ -151,7 +151,7 @@ function Signup() {
                   />
                   <input
                     type="email"
-                    placeholder="you@example.com"
+                    placeholder={t("auth.signup.emailPlaceholder")}
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
@@ -162,7 +162,7 @@ function Signup() {
 
               <div>
                 <label className="block text-sm font-medium text-slate-700 mb-2">
-                  Password
+                  {t("auth.signup.passwordLabel")}
                 </label>
                 <div className="relative">
                   <Lock
@@ -171,7 +171,7 @@ function Signup() {
                   />
                   <input
                     type="password"
-                    placeholder="Create a password"
+                    placeholder={t("auth.signup.passwordPlaceholder")}
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
@@ -180,7 +180,7 @@ function Signup() {
                   />
                 </div>
                 <p className="text-xs text-slate-400 mt-2">
-                  Password must be at least 6 characters.
+                  {t("auth.signup.passwordHint")}
                 </p>
               </div>
 
@@ -195,17 +195,17 @@ function Signup() {
                 disabled={loading}
                 className="w-full bg-brand-600 hover:bg-brand-700 text-white py-3 rounded-lg font-semibold shadow-sm shadow-brand-600/30 transition disabled:opacity-60"
               >
-                {loading ? "Creating account..." : "Create Account"}
+                {loading ? t("auth.signup.creating") : t("auth.signup.createButton")}
               </button>
             </form>
 
             <p className="text-center text-sm text-slate-500 mt-7">
-              Already have an account?{" "}
+              {t("auth.signup.alreadyHaveAccount")}{" "}
               <Link
                 to="/login"
                 className="text-brand-600 font-semibold hover:underline"
               >
-                Sign in
+                {t("auth.signup.signIn")}
               </Link>
             </p>
           </div>

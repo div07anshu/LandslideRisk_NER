@@ -3,18 +3,20 @@ import { Send, CheckCircle2, ImagePlus, Video, X } from "lucide-react";
 import Card from "../../common/Card";
 import CardHeader from "../../common/CardHeader";
 import { CATEGORIES } from "../../data/reportsData";
-
-const EMPTY_FORM = {
-  title: "",
-  location: "",
-  category: CATEGORIES[0].value,
-  detail: "",
-};
+import { useTranslation } from "react-i18next";
 
 const MAX_IMAGE_MB = 5;
 const MAX_VIDEO_MB = 50;
 
 export default function SubmitReportForm({ onSubmit }) {
+  const { t } = useTranslation();
+  const EMPTY_FORM = {
+    title: "",
+    location: "",
+    category: CATEGORIES[0].value,
+    detail: "",
+  };
+
   const [form, setForm] = useState(EMPTY_FORM);
   const [media, setMedia] = useState(null); // File
   const [mediaPreview, setMediaPreview] = useState(null); // object URL
@@ -46,17 +48,17 @@ export default function SubmitReportForm({ onSubmit }) {
     const isVideo = file.type.startsWith("video/");
 
     if (!isImage && !isVideo) {
-      setMediaError("Please choose an image or video file.");
+      setMediaError(t("reports.error.invalidType", "Invalid file type."));
       return;
     }
 
     if (isImage && file.size > MAX_IMAGE_MB * 1024 * 1024) {
-      setMediaError(`Image must be under ${MAX_IMAGE_MB}MB.`);
+      setMediaError(t("reports.error.imageSize", "Image size exceeds 5MB."));
       return;
     }
 
     if (isVideo && file.size > MAX_VIDEO_MB * 1024 * 1024) {
-      setMediaError(`Video must be under ${MAX_VIDEO_MB}MB.`);
+      setMediaError(t("reports.error.videoSize", "Video size exceeds 50MB."));
       return;
     }
 
@@ -92,7 +94,7 @@ export default function SubmitReportForm({ onSubmit }) {
       setTimeout(() => setSubmitted(false), 2500);
     } catch (err) {
       setSubmitError(
-        err?.message || "Couldn't submit the report. Please try again.",
+        err?.message || t("reports.submitError")
       );
     } finally {
       setSubmitting(false);
@@ -121,36 +123,36 @@ export default function SubmitReportForm({ onSubmit }) {
         }
       `}</style>
 
-      <CardHeader title="SUBMIT A REPORT" />
+      <CardHeader title={t("reports.submitReport")} />
 
       <form onSubmit={handleSubmit} className="px-5 pb-5 flex flex-col gap-4">
         <div>
-          <label className="text-xs font-semibold text-slate-600">Title</label>
+          <label className="text-xs font-semibold text-slate-600">{t("reports.reportTitle")}</label>
           <input
             type="text"
             value={form.title}
             onChange={update("title")}
-            placeholder="e.g. Road crack near Mawsmai"
+            placeholder={t("reports.titlePlaceholder")}
             className="mt-1 w-full bg-white border border-gray-300 rounded-xl px-3 py-2 text-sm text-slate-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-brand-600"
           />
         </div>
 
         <div>
           <label className="text-xs font-semibold text-slate-600">
-            Location
+            {t("reports.locationLabel")}
           </label>
           <input
             type="text"
             value={form.location}
             onChange={update("location")}
-            placeholder="e.g. Cherrapunji, Meghalaya"
+            placeholder={t("reports.locationPlaceholder")}
             className="mt-1 w-full bg-white border border-gray-300 rounded-xl px-3 py-2 text-sm text-slate-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-brand-600"
           />
         </div>
 
         <div>
           <label className="text-xs font-semibold text-slate-600">
-            Category
+            {t("reports.categoryLabel")}
           </label>
           <select
             value={form.category}
@@ -159,7 +161,7 @@ export default function SubmitReportForm({ onSubmit }) {
           >
             {CATEGORIES.map((c) => (
               <option key={c.value} value={c.value}>
-                {c.label}
+                {t(`reports.categories.${c.value}`, c.label)}
               </option>
             ))}
           </select>
@@ -167,13 +169,13 @@ export default function SubmitReportForm({ onSubmit }) {
 
         <div>
           <label className="text-xs font-semibold text-slate-600">
-            Description
+            {t("reports.detailLabel")}
           </label>
           <textarea
             value={form.detail}
             onChange={update("detail")}
             rows={4}
-            placeholder="Describe what you observed..."
+            placeholder={t("reports.detailPlaceholder")}
             className="mt-1 w-full bg-white border border-gray-300 rounded-xl px-3 py-2 text-sm text-slate-700 shadow-sm resize-none focus:outline-none focus:ring-2 focus:ring-brand-600"
           />
         </div>
@@ -181,7 +183,7 @@ export default function SubmitReportForm({ onSubmit }) {
         {/* Media upload */}
         <div>
           <label className="text-xs font-semibold text-slate-600">
-            Photo or Video (optional)
+            {t("reports.mediaLabel")}
           </label>
 
           {!mediaPreview ? (
@@ -195,7 +197,7 @@ export default function SubmitReportForm({ onSubmit }) {
                 <Video size={20} strokeWidth={2.5} />
               </div>
               <span className="text-xs font-medium mt-1">
-                Click to upload a photo or video
+                {t("reports.mediaHint")}
               </span>
             </button>
           ) : (
@@ -219,7 +221,6 @@ export default function SubmitReportForm({ onSubmit }) {
               <button
                 type="button"
                 onClick={removeMedia}
-                aria-label="Remove media"
                 className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-slate-800 text-white flex items-center justify-center hover:bg-red-600 transition-colors"
               >
                 <X size={12} strokeWidth={3} />
@@ -246,7 +247,7 @@ export default function SubmitReportForm({ onSubmit }) {
           className="mt-1 flex items-center justify-center gap-2 bg-brand-950 text-white text-sm font-semibold rounded-lg py-2.5 hover:bg-brand-800 transition-colors disabled:opacity-40 disabled:cursor-not-allowed active:scale-[0.98]"
         >
           <Send size={14} strokeWidth={3} />
-          {submitting ? "Submitting..." : "Submit Report"}
+          {submitting ? t("reports.submitting") : t("reports.submitButton")}
         </button>
 
         {submitError && (
@@ -256,7 +257,7 @@ export default function SubmitReportForm({ onSubmit }) {
         {submitted && (
           <div className="success-message flex items-center gap-1.5 text-xs font-medium text-green-600">
             <CheckCircle2 size={14} strokeWidth={3} />
-            Report submitted successfully
+            {t("reports.submitSuccess")}
           </div>
         )}
       </form>

@@ -2,8 +2,8 @@ import { Compass, Search, Bell } from "lucide-react";
 
 export const quickActions = [
   {
-    title: "View Risk Map",
-    subtitle: "Explore risk levels across North East Region.",
+    titleKey: "quickActions.viewRiskMap",
+    subtitleKey: "quickActions.viewRiskMapSubtitle",
     icon: Compass,
     iconBg: "#DCFCE7",
     iconColor: "#16A34A",
@@ -11,8 +11,8 @@ export const quickActions = [
   },
 
   {
-    title: "Analyze Risk",
-    subtitle: "Check risk factors and predictive analysis.",
+    titleKey: "quickActions.analyzeRisk",
+    subtitleKey: "quickActions.analyzeRiskSubtitle",
     icon: Search,
     iconBg: "#FEF3C7",
     iconColor: "#D97706",
@@ -20,8 +20,8 @@ export const quickActions = [
   },
 
   {
-    title: "Active Alerts",
-    subtitle: "View current landslide alerts and warnings.",
+    titleKey: "quickActions.activeAlerts",
+    subtitleKey: "quickActions.activeAlertsSubtitle",
     icon: Bell,
     iconBg: "#FEE2E2",
     iconColor: "#DC2626",

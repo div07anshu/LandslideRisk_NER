@@ -5,16 +5,7 @@ import {
   ALERT_LEVEL_FILTERS,
   ALERT_STATUS_STYLES,
 } from "../../data/alertsData";
-
-function levelFilterLabel(level) {
-  return level === "All"
-    ? "All"
-    : level.charAt(0).toUpperCase() + level.slice(1);
-}
-
-function statusLabel(status) {
-  return status.charAt(0) + status.slice(1).toLowerCase();
-}
+import { useTranslation } from "react-i18next";
 
 export default function AlertsList({
   alerts,
@@ -23,16 +14,18 @@ export default function AlertsList({
   search,
   setSearch,
 }) {
+  const { t } = useTranslation();
+
   return (
     <Card className="h-full flex flex-col">
       <div className="px-5 pt-4 pb-3">
         <div className="flex items-center justify-between gap-3 flex-wrap">
           <div>
             <h3 className="text-sm font-bold tracking-wide text-slate-900">
-              ALL ALERTS
+              {t("alerts.allAlerts")}
             </h3>
             <p className="text-xs text-slate-500 mt-1">
-              {alerts.length} alert{alerts.length !== 1 ? "s" : ""} found
+              {t("alerts.alertsFound", { count: alerts.length })}
             </p>
           </div>
 
@@ -46,8 +39,7 @@ export default function AlertsList({
               type="text"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              placeholder="Search alerts..."
-              aria-label="Search alerts"
+              placeholder={t("alerts.searchPlaceholder")}
               className="pl-8 pr-3 py-1.5 text-sm border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-brand-600"
             />
           </div>
@@ -65,7 +57,7 @@ export default function AlertsList({
                   : "text-slate-500 hover:bg-slate-200"
               }`}
             >
-              {levelFilterLabel(lvl)}
+              {t(`alerts.levels.${lvl.toLowerCase()}`, lvl)}
             </button>
           ))}
         </div>
@@ -75,7 +67,7 @@ export default function AlertsList({
       <div className="px-5 pb-4 divide-y divide-slate-200 overflow-y-auto flex-1">
         {alerts.length === 0 && (
           <p className="text-sm text-slate-400 py-6 text-center">
-            No alerts match your filters.
+            {t("alerts.noAlertsFound")}
           </p>
         )}
 
@@ -115,7 +107,7 @@ export default function AlertsList({
                       backgroundColor: statusStyle.bg,
                     }}
                   >
-                    {statusLabel(a.status)}
+                    {t(`alerts.status.${String(a.status || "active").toLowerCase()}`, a.status || "Active")}
                   </span>
                 </div>
               </div>

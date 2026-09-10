@@ -3,6 +3,7 @@ import { Search } from "lucide-react";
 import Card from "../../common/Card";
 import StatusBadge from "./StatusBadge";
 import { categoryMeta, STATUS_FILTERS } from "../../data/reportsData";
+import { useTranslation } from "react-i18next";
 
 export default function ReportsList({
   reports,
@@ -12,6 +13,7 @@ export default function ReportsList({
   setSearch,
   loading = false,
 }) {
+  const { t } = useTranslation();
   const prevIdsRef = useRef(new Set());
   const [newIds, setNewIds] = useState(new Set());
 
@@ -59,12 +61,12 @@ export default function ReportsList({
         <div className="flex items-center justify-between gap-3 flex-wrap">
           <div>
             <h3 className="text-sm font-bold tracking-wide text-slate-900">
-              ALL REPORTS
+              {t("reports.allReports")}
             </h3>
             <p className="text-xs text-slate-500 mt-1">
               {loading
-                ? "Loading reports..."
-                : `${reports.length} report${reports.length !== 1 ? "s" : ""} found`}
+                ? t("common.loading")
+                : t("reports.reportsFound", { count: reports.length })}
             </p>
           </div>
 
@@ -78,8 +80,7 @@ export default function ReportsList({
               type="text"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              placeholder="Search reports..."
-              aria-label="Search reports"
+              placeholder={t("reports.searchPlaceholder")}
               className="pl-8 pr-3 py-1.5 text-sm border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-brand-600"
             />
           </div>
@@ -97,7 +98,7 @@ export default function ReportsList({
                   : "text-slate-500 hover:bg-slate-200"
               }`}
             >
-              {s === "All" ? "All" : s.charAt(0) + s.slice(1).toLowerCase()}
+              {t(`reports.status.${s.toLowerCase()}`, s)}
             </button>
           ))}
         </div>
@@ -107,7 +108,7 @@ export default function ReportsList({
       <div className="px-5 pb-4 divide-y divide-slate-200 overflow-y-auto flex-1">
         {!loading && reports.length === 0 && (
           <p className="text-sm text-slate-400 py-6 text-center">
-            No reports match your filters.
+            {t("reports.noReportsFound")}
           </p>
         )}
 

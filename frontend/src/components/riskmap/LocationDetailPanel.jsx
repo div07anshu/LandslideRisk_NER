@@ -3,18 +3,16 @@ import { Link } from "react-router-dom";
 import Card from "../../common/Card";
 import TrendIcon from "../analysis/TrendIcon";
 import { LEVEL_STYLES } from "../../data/analysisData";
-
-function levelLabel(level) {
-  return level.charAt(0).toUpperCase() + level.slice(1);
-}
+import { useTranslation } from "react-i18next";
 
 export default function LocationDetailPanel({ selected, onClose }) {
+  const { t } = useTranslation();
   if (!selected) {
     return (
       <Card className="p-6 flex flex-col items-center justify-center text-center h-full min-h-[300px]">
         <MapPin size={22} strokeWidth={3} className="text-slate-300 mb-2" />
         <p className="text-sm text-slate-400">
-          Select a location on the map to view its risk details.
+          {t("riskMap.selectLocation")}
         </p>
       </Card>
     );
@@ -34,7 +32,7 @@ export default function LocationDetailPanel({ selected, onClose }) {
 
         <button
           onClick={onClose}
-          aria-label="Close details"
+          aria-label={t("common.close")}
           className="text-slate-400 hover:text-slate-600"
         >
           <X size={16} strokeWidth={3} />
@@ -52,7 +50,7 @@ export default function LocationDetailPanel({ selected, onClose }) {
         className={`inline-flex items-center gap-1.5 mt-3 w-fit text-xs font-semibold px-3 py-1 rounded-full ${level.bg} ${level.text}`}
       >
         <TrendIcon trend={selected.trend} />
-        {levelLabel(selected.riskLevel)} risk
+        {t(`riskLevels.${String(selected.riskLevel || "low").toLowerCase()}`, selected.riskLevel || "Low")} {t("common.risk")}
       </div>
 
       {selected.factors && (
@@ -62,7 +60,9 @@ export default function LocationDetailPanel({ selected, onClose }) {
               key={f.key}
               className="flex items-center justify-between text-xs"
             >
-              <span className="text-slate-500">{f.label}</span>
+              <span className="text-slate-500">
+                {f.labelKey ? t(f.labelKey, f.label) : t(`factors.${f.key}`, f.label)}
+              </span>
               <span className="font-semibold text-slate-700">{f.value}</span>
             </div>
           ))}
@@ -73,7 +73,7 @@ export default function LocationDetailPanel({ selected, onClose }) {
         to="/risk-analysis"
         className="mt-auto pt-5 w-full bg-brand-950 text-white text-sm font-semibold rounded-lg py-2.5 hover:bg-brand-800 transition-colors text-center"
       >
-        View Full Analysis
+        {t("riskMap.viewFullAnalysis")}
       </Link>
     </Card>
   );
