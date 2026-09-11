@@ -66,13 +66,18 @@ function FloatingAIAssistant({ onOpenChange }) {
       });
 
       if (!response.ok) {
-        // Provide more specific error messages based on status code
         if (response.status === 502) {
-          throw new Error("AI service is temporarily unavailable. Please try again in a moment.");
+          throw new Error(
+            "AI service is temporarily unavailable. Please try again in a moment."
+          );
         } else if (response.status === 503) {
-          throw new Error("AI service is currently overloaded. Please try again later.");
+          throw new Error(
+            "AI service is currently overloaded. Please try again later."
+          );
         } else if (response.status === 401 || response.status === 403) {
-          throw new Error("Authentication failed. Please check your connection and try again.");
+          throw new Error(
+            "Authentication failed. Please check your connection and try again."
+          );
         } else {
           throw new Error(`AI service error: ${response.status}`);
         }
@@ -93,10 +98,9 @@ function FloatingAIAssistant({ onOpenChange }) {
     } catch (error) {
       console.error("AI Assistant Error:", error);
 
-      // Determine the best user-friendly message
-      let errorMessage = "Sorry, I couldn't connect to the AI service. Please make sure the backend is running.";
+      let errorMessage =
+        "Sorry, I couldn't connect to the AI service. Please make sure the backend is running.";
 
-      // If the error message was thrown by our status check above
       if (error.message && error.message !== "Failed to fetch") {
         errorMessage = error.message;
       }
@@ -106,7 +110,7 @@ function FloatingAIAssistant({ onOpenChange }) {
         {
           role: "assistant",
           content: errorMessage,
-          isError: true
+          isError: true,
         },
       ]);
     } finally {
@@ -137,9 +141,8 @@ function FloatingAIAssistant({ onOpenChange }) {
 
       {/* AI Side Panel */}
       <div
-        className={`fixed right-0 top-0 z-50 flex h-screen w-[400px] max-w-[90vw] flex-col border-l border-slate-200 bg-white shadow-2xl transition-transform duration-300 ease-out ${
-          isOpen ? "translate-x-0" : "translate-x-full"
-        }`}
+        className={`fixed right-0 top-0 z-50 flex h-screen w-[400px] max-w-[90vw] flex-col border-l border-slate-200 bg-white shadow-2xl transition-transform duration-300 ease-out ${isOpen ? "translate-x-0" : "translate-x-full"
+          }`}
       >
         {/* Header */}
         <div className="flex items-center justify-between bg-brand-900 px-4 py-3 text-white">
@@ -168,18 +171,22 @@ function FloatingAIAssistant({ onOpenChange }) {
           {messages.map((msg, index) => (
             <div
               key={index}
-              className={`flex ${
-                msg.role === "user" ? "justify-end" : "justify-start"
-              }`}
+              className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"
+                }`}
             >
+              {msg.role === "assistant" && (
+                <div className="mr-2 mt-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand-600 text-white">
+                  <Bot size={15} strokeWidth={2.2} />
+                </div>
+              )}
+
               <div
-                className={`max-w-[85%] rounded-2xl px-3 py-2 text-sm leading-relaxed ${
-                  msg.role === "user"
+                className={`max-w-[85%] rounded-2xl px-3 py-2 text-sm leading-relaxed ${msg.role === "user"
                     ? "rounded-br-md bg-brand-600 text-white whitespace-pre-wrap"
                     : msg.isError
-                    ? "rounded-bl-md border border-red-200 bg-red-50 text-red-700 shadow-sm"
-                    : "rounded-bl-md border border-slate-200 bg-white text-slate-700 shadow-sm"
-                }`}
+                      ? "rounded-bl-md border border-red-200 bg-red-50 text-red-700 shadow-sm"
+                      : "rounded-bl-md border border-slate-200 bg-white text-slate-700 shadow-sm"
+                  }`}
               >
                 {msg.role === "assistant" ? (
                   <div className="prose prose-sm max-w-none [&>*:first-child]:mt-0 [&>*:last-child]:mb-0">
