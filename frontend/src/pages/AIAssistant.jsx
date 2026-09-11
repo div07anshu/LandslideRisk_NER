@@ -126,11 +126,11 @@ function AIAssistant() {
     };
 
     return (
-        <div className="flex flex-1 flex-col p-6">
+        <div className="flex flex-1 flex-col h-[calc(100vh-105px)]">
             {/* Page Header */}
             <div className="mb-5">
                 <div className="flex items-center gap-3">
-                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-100">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-100 border border-blue-200">
                         <Bot
                             size={24}
                             strokeWidth={2.5}
@@ -140,11 +140,11 @@ function AIAssistant() {
                     </div>
 
                     <div>
-                        <h1 className="text-2xl font-bold text-slate-800">
+                        <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 leading-tight">
                             {t("assistant.title")}
                         </h1>
 
-                        <p className="text-sm text-slate-500">
+                        <p className="text-xs sm:text-sm text-slate-500 mt-1 font-normal">
                             {t("assistant.subtitle")}
                         </p>
                     </div>

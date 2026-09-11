@@ -26,7 +26,7 @@ export default function Alerts() {
   }, [levelFilter, search]);
 
   return (
-    <div className="p-6 flex-1">
+    <div className="flex-1">
       <SectionHeader
         title={t("alerts.title")}
         subtitle={t("alerts.subtitle")}

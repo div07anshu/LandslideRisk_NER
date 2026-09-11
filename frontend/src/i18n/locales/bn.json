@@ -25,6 +25,44 @@
     "logOut": "লগ আউট",
     "user": "ব্যবহারকারী"
   },
+  "notifications": {
+    "markAllAsRead": "সবকে পঠিত হিসাবে চিহ্নিত করুন",
+    "noNotifications": "এখন কোনো বিজ্ঞপ্তি নেই",
+    "viewAll": "সব বিজ্ঞপ্তি দেখুন →",
+    "new": "নতুন",
+    "statusMessages": {
+      "submitted": "আপনার রিপোর্ট \"{title}\" জমা দেওয়া হয়েছে এবং পর্যালোচনার জন্য অপেক্ষা করা হচ্ছে।",
+      "PENDING": "আপনার রিপোর্ট \"{title}\" পর্যালোচনার জন্য অপেক্ষা করা হচ্ছে।",
+      "INVESTIGATING": "আপনার রিপোর্ট \"{title}\" এখন তদন্ত এর অধীনে।",
+      "VERIFIED": "আপনার রিপোর্ট \"{title}\" যাচাইকৃত হয়েছে।",
+      "RESOLVED": "আপনার রিপোর্ট \"{title}\" সমাধান করা হয়েছে।"
+    },
+    "statusLabels": {
+      "PENDING": "অপেক্ষামাণ",
+      "INVESTIGATING": "তদন্তকারী",
+      "VERIFIED": "যাচাইকৃত",
+      "RESOLVED": "সমাধান"
+    }
+  },
+  "notifications": {
+    "markAllAsRead": "সবকে পঠিত হিসাবে চिह্নিত করুন",
+    "noNotifications": "এখন কোনো বিজ্ঞপ্তি নেই",
+    "viewAll": "সব বিজ্ঞপ্তি দেখুন →",
+    "new": "নতুন",
+    "statusMessages": {
+      "submitted": "আপনার রিপোর্ট \"{title}\" জমা দেওয়া হয়েছে এবং পর্যালোচনার জন্য অপেক্ষা করা হচ্ছে।",
+      "PENDING": "আপনার রিপোর্ট \"{title}\" পর্যালোচনার জন্য অপেক্ষা করা হচ্ছে।",
+      "INVESTIGATING": "আপনার রিপোর্ট \"{title}\" এখন তদন্ত এর অধীনে।",
+      "VERIFIED": "আপনার রিপোর্ট \"{title}\" যাচাইকৃত হয়েছে।",
+      "RESOLVED": "আপনার রিপোর্ট \"{title}\" সমাধান করা হয়েছে।"
+    },
+    "statusLabels": {
+      "PENDING": "অপেক্ষামাণ",
+      "INVESTIGATING": "তদন্ত進行中",
+      "VERIFIED": "যাচাইকৃত",
+      "RESOLVED": "সমাধান"
+    }
+  },
   "language": {
     "select": "ভাষা",
     "en": "English",

@@ -11,7 +11,7 @@ function Dashboard() {
   const { t } = useTranslation();
 
   return (
-    <div className="p-6 flex-1">
+    <div className="flex-1">
       <SectionHeader
         title={t("dashboard.title")}
         subtitle={t("dashboard.subtitle")}

@@ -25,6 +25,25 @@
     "logOut": "লগ আউট",
     "user": "ব্যৱহাৰকাৰী"
   },
+  "notifications": {
+    "markAllAsRead": "সকলকে পঠিত হিচাপে চিহ্নিত কৰক",
+    "noNotifications": "এতিয়া কোনো বিজ্ঞপ্তি নাই",
+    "viewAll": "সকলো বিজ্ঞপ্তি দেখক →",
+    "new": "নতুন",
+    "statusMessages": {
+      "submitted": "আপোনাৰ প্ৰতিবেদন \"{title}\" জমা কৰা হৈছে আৰু পৰ্যালোচনাৰ বাবে অপেক্ষাত।",
+      "PENDING": "আপোনাৰ প্ৰতিবেদন \"{title}\" পৰ্যালোচনাৰ বাবে অপেক্ষাত।",
+      "INVESTIGATING": "আপোনাৰ প্ৰতিবেদন \"{title}\" এতিয়া তদন্তৰ অধীনত।",
+      "VERIFIED": "আপোনাৰ প্ৰতিবেদন \"{title}\" প্ৰমাণিত হৈছে।",
+      "RESOLVED": "আপোনাৰ প্ৰতিবেদন \"{title}\" সমাধান কৰা হৈছে।"
+    },
+    "statusLabels": {
+      "PENDING": "অপেক্ষমাণ",
+      "INVESTIGATING": "তদন্তকারী",
+      "VERIFIED": "প্ৰমাণিত",
+      "RESOLVED": "সমাধান"
+    }
+  },
   "language": {
     "select": "ভাষা",
     "en": "English",

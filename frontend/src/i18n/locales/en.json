@@ -28,6 +28,25 @@
     "logOut": "Log out",
     "user": "User"
   },
+  "notifications": {
+    "markAllAsRead": "Mark all as read",
+    "noNotifications": "No notifications yet",
+    "viewAll": "View all notifications →",
+    "new": "new",
+    "statusMessages": {
+      "submitted": "Your report \"{title}\" has been submitted and is pending review.",
+      "PENDING": "Your report \"{title}\" is pending review.",
+      "INVESTIGATING": "Your report \"{title}\" is now under investigation.",
+      "VERIFIED": "Your report \"{title}\" has been verified.",
+      "RESOLVED": "Your report \"{title}\" has been resolved."
+    },
+    "statusLabels": {
+      "PENDING": "Pending",
+      "INVESTIGATING": "Under Investigation",
+      "VERIFIED": "Verified",
+      "RESOLVED": "Resolved"
+    }
+  },
   "language": {
     "select": "Language",
     "en": "English",

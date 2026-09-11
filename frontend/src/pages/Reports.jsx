@@ -146,7 +146,7 @@ export default function Reports() {
   }, [reports, statusFilter, search]);
 
   return (
-    <div className="p-6 flex-1">
+    <div className="flex-1">
       <SectionHeader
         title={t("reports.title")}
         subtitle={t("reports.subtitle")}

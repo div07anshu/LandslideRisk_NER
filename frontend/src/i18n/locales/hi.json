@@ -25,6 +25,25 @@
     "logOut": "लॉग आउट",
     "user": "उपयोगकर्ता"
   },
+  "notifications": {
+    "markAllAsRead": "सभी पठित चिन्हित करें",
+    "noNotifications": "अभी कोई सूचना नहीं",
+    "viewAll": "सभी सूचनाएं देखें →",
+    "new": "नई",
+    "statusMessages": {
+      "submitted": "आपकी रिपोर्ट \"{title}\" जमा हो गई है और समीक्षा की प्रतीक्षा में है।",
+      "PENDING": "आपकी रिपोर्ट \"{title}\" समीक्षा की प्रतीक्षा में है।",
+      "INVESTIGATING": "आपकी रिपोर्ट \"{title}\" अब जांच के अधीन है।",
+      "VERIFIED": "आपकी रिपोर्ट \"{title}\" सत्यापित हो गई है।",
+      "RESOLVED": "आपकी रिपोर्ट \"{title}\" का समाधान हो गया है।"
+    },
+    "statusLabels": {
+      "PENDING": "लंबित",
+      "INVESTIGATING": "जांच जारी",
+      "VERIFIED": "सत्यापित",
+      "RESOLVED": "समाधान"
+    }
+  },
   "language": {
     "select": "भाषा",
     "en": "English",

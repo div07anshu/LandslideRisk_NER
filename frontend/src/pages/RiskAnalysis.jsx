@@ -286,7 +286,7 @@ export default function RiskAnalysis() {
   }, [riskData, compareIds, range]);
 
   return (
-    <div className="p-6 flex-1">
+    <div className="flex-1">
       {/* Header */}
       <SectionHeader
         title={t("analysis.title")}

@@ -17,7 +17,7 @@ export default function RiskMap() {
   const selected = MAP_LOCATIONS.find((l) => l.id === selectedId) ?? null;
 
   return (
-    <div className="p-6 flex-1">
+    <div className="flex-1">
       <SectionHeader
         title={t("riskMap.title")}
         subtitle={t("riskMap.subtitle")}
