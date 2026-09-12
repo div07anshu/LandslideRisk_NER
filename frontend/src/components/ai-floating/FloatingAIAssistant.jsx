@@ -151,11 +151,10 @@ function FloatingAIAssistant({ onOpenChange }) {
 
       {/* AI Side Panel */}
       <div
-        className={`fixed right-0 top-0 z-50 flex h-screen w-[400px] max-w-[90vw] flex-col border-l border-slate-200 bg-white shadow-2xl transition-transform duration-300 ease-out ${isOpen ? "translate-x-0" : "translate-x-full"
-          }`}
+        className={`fixed right-0 top-0 bottom-0 z-50 flex h-dvh w-[400px] max-w-[90vw] flex-col border-l border-slate-200 bg-white shadow-2xl transition-transform duration-300 ease-out box-border ${isOpen ? "translate-x-0" : "translate-x-full"}`}
       >
         {/* Header */}
-        <div className="flex items-center justify-between bg-brand-900 px-4 py-3 text-white">
+        <div className="flex h-16 shrink-0 items-center justify-between bg-brand-900 px-4 text-white box-border border-b border-brand-800/50">
           <div className="flex items-center gap-2">
             <div className="flex h-9 w-9 items-center justify-center rounded-full bg-brand-600">
               <Bot size={19} strokeWidth={2.2} />
@@ -177,7 +176,7 @@ function FloatingAIAssistant({ onOpenChange }) {
         </div>
 
         {/* Chat Messages */}
-        <div className="flex-1 space-y-3 overflow-y-auto bg-[#F9F7F7] p-4">
+        <div className="flex-1 space-y-3 overflow-y-auto no-scrollbar bg-[#F9F7F7] p-4 box-border">
           {messages.map((msg, index) => (
             <div
               key={index}
@@ -221,7 +220,7 @@ function FloatingAIAssistant({ onOpenChange }) {
         </div>
 
         {/* Input */}
-        <div className="border-t border-slate-200 bg-white p-3">
+        <div className="shrink-0 border-t border-slate-200 bg-white p-4 box-border">
           <div className="flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-2 py-1.5 focus-within:border-brand-500">
             <input
               type="text"
