@@ -17,3 +17,16 @@ __pycache__/
 
 # Node
 node_modules/
+# Local / generated files
+.hintrc
+IMPLEMENTATION_SUMMARY.md
+ai_services/cache/
+ai_services/package-lock.json
+backups/
+cache/
+check-status.sh
+package-lock.json
+run-background-fetcher.sh
+settings.json
+start-services.sh
+stop-services.sh
