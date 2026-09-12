@@ -46,6 +46,15 @@ export const env = {
     fastapiUrl: str('FASTAPI_URL', 'http://localhost:8000'),
     /** Request timeout (ms) for calls to the FastAPI service. */
     fastapiTimeoutMs: int('FASTAPI_TIMEOUT_MS', 15_000),
+    /**
+     * Shared secret sent as `X-Internal-Token` on every call to the FastAPI
+     * service, so it can refuse requests that didn't come from this backend.
+     * Optional: if unset, no header is sent and the FastAPI service (if it
+     * also has no token configured) accepts unauthenticated calls — set this
+     * in any environment where the AI service's network is reachable by
+     * anything other than this backend.
+     */
+    internalToken: str('AI_SERVICE_TOKEN', ''),
   },
 } as const;
 

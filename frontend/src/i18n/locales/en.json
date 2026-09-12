@@ -16,7 +16,222 @@
     "riskAnalysis": "Risk Analysis",
     "alerts": "Alerts",
     "reports": "Reports",
-    "emergencyContact": "Emergency Contact"
+    "emergencyContact": "Emergency Contact",
+    "adminPanel": "Admin Panel"
+  },
+  "unauthorized": {
+    "message": "You don't have permission to view this page.",
+    "backToDashboard": "Back to dashboard"
+  },
+  "admin": {
+    "nav": {
+      "panelLabel": "ADMIN PANEL",
+      "dashboard": "Dashboard",
+      "reports": "Reports",
+      "users": "Users",
+      "riskZones": "Risk Zones",
+      "config": "Risk Configuration",
+      "auditLogs": "Audit Logs",
+      "backToApp": "Back to Application"
+    },
+    "dashboard": {
+      "title": "ADMIN DASHBOARD",
+      "subtitle": "Overview of reports, risk data, and users across the platform",
+      "riskOverview": "Risk Overview",
+      "noRiskData": "No risk analysis data yet.",
+      "recentReports": "Recent Reports",
+      "noRecentReports": "No reports have been submitted yet.",
+      "metrics": {
+        "totalReports": "Total Reports",
+        "pendingReports": "Pending Reports",
+        "investigatingReports": "Under Investigation",
+        "resolvedReports": "Resolved Reports",
+        "highRiskLocations": "High-Risk Locations",
+        "registeredUsers": "Registered Users",
+        "riskAnalyses": "Risk Analyses"
+      },
+      "errors": {
+        "unauthorized": "Please sign in to view the admin dashboard.",
+        "forbidden": "You don't have permission to view this data.",
+        "loadFailed": "Couldn't load dashboard data. Try refreshing the page."
+      }
+    },
+    "reports": {
+      "title": "REPORT MODERATION",
+      "subtitle": "Search, filter, and update the status of submitted reports",
+      "searchPlaceholder": "Search by title, location, detail, or reporter...",
+      "locationPlaceholder": "Filter by location...",
+      "pageOf": "Page {{page}} of {{totalPages}}",
+      "errors": {
+        "forbidden": "You don't have permission to view reports.",
+        "loadFailed": "Couldn't load reports. Try refreshing the page."
+      },
+      "detail": {
+        "title": "Report Details",
+        "media": "Media",
+        "riskPrediction": "Risk Prediction",
+        "noRiskData": "No matching risk analysis data for this location.",
+        "changeStatus": "Change Status",
+        "loadError": "Couldn't load this report. Try again.",
+        "statusSaveError": "Couldn't update the status. Please try again."
+      }
+    },
+    "users": {
+      "title": "USER MANAGEMENT",
+      "subtitle": "Manage registered users and their application roles",
+      "searchPlaceholder": "Search by email...",
+      "usersFound": "{{count}} user found",
+      "usersFound_other": "{{count}} users found",
+      "noUsersFound": "No users match your filters.",
+      "unknownEmail": "(no email on file)",
+      "you": "(you)",
+      "never": "Never",
+      "cannotChangeSelf": "Can't change your own role",
+      "roleUpdated": "Role updated",
+      "columns": {
+        "email": "Email",
+        "role": "Role",
+        "registered": "Registered",
+        "lastSignIn": "Last Sign-in",
+        "actions": "Actions"
+      },
+      "roles": {
+        "ADMIN": "Admin",
+        "FIELD_OFFICER": "Field Officer",
+        "ANALYST": "Analyst",
+        "PUBLIC": "Public"
+      },
+      "errors": {
+        "forbidden": "You don't have permission to view users.",
+        "loadFailed": "Couldn't load users. Try refreshing the page.",
+        "saveFailed": "Couldn't update the role. Please try again.",
+        "lastAdmin": "At least one Admin must remain — choose a different user to change first.",
+        "selfChange": "You can't change your own role."
+      }
+    },
+    "riskZones": {
+      "title": "RISK ZONES",
+      "subtitle": "Manage monitored risk zones",
+      "searchPlaceholder": "Search by name or state...",
+      "addZone": "Add Zone",
+      "zonesFound": "{{count}} zone found",
+      "zonesFound_other": "{{count}} zones found",
+      "noZonesFound": "No zones match your filters.",
+      "noCoordinates": "No coordinates on file",
+      "monitoringOn": "Monitoring",
+      "monitoringOff": "Not monitored",
+      "confirmDeleteTitle": "Delete Risk Zone",
+      "confirmDeleteBody": "Are you sure you want to delete \"{{name}}\"? This cannot be undone.",
+      "deleteError": "Couldn't delete this zone. Please try again.",
+      "columns": {
+        "name": "Name",
+        "riskLevel": "Risk Level",
+        "coordinates": "Coordinates",
+        "monitoring": "Monitoring",
+        "actions": "Actions"
+      },
+      "mapNote": {
+        "title": "About this map",
+        "body": "{{plotted}} of {{total}} zones have real coordinates on file and are plotted here. Zones without coordinates only appear in the table below — none are invented."
+      },
+      "errors": {
+        "forbidden": "You don't have permission to view risk zones.",
+        "loadFailed": "Couldn't load risk zones. Try refreshing the page."
+      },
+      "form": {
+        "createTitle": "Add Risk Zone",
+        "editTitle": "Edit Risk Zone",
+        "name": "Name",
+        "state": "State",
+        "riskLevel": "Risk Level",
+        "latitude": "Latitude",
+        "longitude": "Longitude",
+        "optional": "Optional",
+        "coordsHint": "Only enter coordinates if you have a real, known location for this zone. Leave both blank otherwise.",
+        "coordsTogetherError": "Enter both latitude and longitude, or leave both blank.",
+        "notes": "Notes",
+        "monitoringEnabled": "Monitoring enabled",
+        "saveError": "Couldn't save this zone. Please try again."
+      }
+    },
+    "config": {
+      "title": "RISK CONFIGURATION",
+      "subtitle": "Configure the risk-score thresholds used to classify LOW / MODERATE / HIGH",
+      "saved": "Configuration saved",
+      "thresholds": {
+        "title": "Risk Score Thresholds",
+        "lowMax": "LOW / MODERATE boundary",
+        "lowMaxHint": "Risk scores below this value are classified LOW.",
+        "moderateMax": "MODERATE / HIGH boundary",
+        "moderateMaxHint": "Risk scores below this value (and at or above the LOW boundary) are classified MODERATE. Scores at or above it are classified HIGH."
+      },
+      "validation": {
+        "mustBeNumbers": "Both thresholds must be numbers.",
+        "lowMaxRange": "The LOW boundary must be greater than 0 and less than 100.",
+        "moderateMaxRange": "The MODERATE boundary must be greater than 0 and at most 100.",
+        "order": "The LOW boundary must be less than the MODERATE boundary."
+      },
+      "explainer": {
+        "title": "How this affects predictions",
+        "body": "New risk analyses run through /admin's risk pipeline are classified using these thresholds. This does not change the underlying AI prediction model or recalculate past analyses — only how new risk scores are labeled going forward.",
+        "scoreBelow": "score < {{value}}",
+        "scoreBetween": "{{min}} ≤ score < {{max}}",
+        "scoreAbove": "score ≥ {{value}}",
+        "note": "The AI assistant's own conversational risk descriptions are generated by a separate service and are not affected by this configuration."
+      },
+      "errors": {
+        "forbidden": "You don't have permission to view risk configuration.",
+        "loadFailed": "Couldn't load risk configuration. Try refreshing the page.",
+        "saveFailed": "Couldn't save the configuration. Please try again."
+      }
+    },
+    "auditLogs": {
+      "title": "AUDIT LOGS",
+      "subtitle": "A read-only record of administrative actions",
+      "entriesFound": "{{count}} entry found",
+      "entriesFound_other": "{{count}} entries found",
+      "noEntriesFound": "No audit log entries match your filters.",
+      "unknownActor": "(unknown)",
+      "columns": {
+        "timestamp": "Timestamp",
+        "actor": "Actor",
+        "action": "Action",
+        "details": "Details"
+      },
+      "filters": {
+        "action": "Action",
+        "resourceType": "Resource Type",
+        "dateFrom": "From",
+        "dateTo": "To"
+      },
+      "actions": {
+        "REPORT_STATUS_CHANGED": "Report status changed",
+        "USER_ROLE_CHANGED": "User role changed",
+        "RISK_ZONE_CREATED": "Risk zone created",
+        "RISK_ZONE_UPDATED": "Risk zone updated",
+        "RISK_ZONE_DELETED": "Risk zone deleted",
+        "RISK_CONFIG_UPDATED": "Risk configuration updated"
+      },
+      "resourceTypes": {
+        "report": "Report",
+        "user": "User",
+        "risk_zone": "Risk Zone",
+        "risk_config": "Risk Configuration"
+      },
+      "descriptions": {
+        "reportStatusChanged": "{{oldStatus}} → {{newStatus}}",
+        "userRoleChanged": "{{oldRole}} → {{newRole}}",
+        "riskZoneCreated": "\"{{name}}\"",
+        "riskZoneDeleted": "\"{{name}}\"",
+        "riskZoneUpdated": "changed: {{fields}}",
+        "riskConfigUpdated": "LOW/MOD boundary {{oldLowMax}}→{{newLowMax}}, MOD/HIGH boundary {{oldModerateMax}}→{{newModerateMax}}"
+      },
+      "errors": {
+        "forbidden": "You don't have permission to view audit logs.",
+        "loadFailed": "Couldn't load audit logs. Try refreshing the page.",
+        "invalidFilter": "One of the filters you entered isn't valid."
+      }
+    }
   },
   "sidebar": {
     "emergency": "Emergency Contact"

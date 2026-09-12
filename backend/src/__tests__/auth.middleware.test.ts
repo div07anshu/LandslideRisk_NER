@@ -1,6 +1,6 @@
 import request from 'supertest';
 import { createApp } from '../app';
-import { getSupabaseClient } from '../config/supabaseClient';
+import { getSupabaseClient, getSupabaseAdminClient } from '../config/supabaseClient';
 
 // Mock the centralized Supabase client so tests never touch a real project.
 jest.mock('../config/supabaseClient');
@@ -10,11 +10,24 @@ const mockGetUser = jest.fn();
   auth: { getUser: mockGetUser },
 });
 
+const mockMaybeSingle = jest.fn();
+(getSupabaseAdminClient as jest.Mock).mockReturnValue({
+  from: jest.fn().mockReturnValue({
+    select: jest.fn().mockReturnValue({
+      eq: jest.fn().mockReturnValue({
+        maybeSingle: mockMaybeSingle,
+      }),
+    }),
+  }),
+});
+
 const app = createApp();
 
 describe('requireAuth middleware — GET /api/auth/me', () => {
   beforeEach(() => {
     mockGetUser.mockReset();
+    mockMaybeSingle.mockReset();
+    mockMaybeSingle.mockResolvedValue({ data: { role: 'PUBLIC' }, error: null });
   });
 
   it('1. rejects a request with no Authorization header → 401', async () => {
@@ -71,7 +84,7 @@ describe('requireAuth middleware — GET /api/auth/me', () => {
     expect(res.status).toBe(200);
     expect(res.body).toEqual({
       success: true,
-      user: { id: 'user-123', email: 'user@example.com' },
+      user: { id: 'user-123', email: 'user@example.com', role: 'PUBLIC' },
     });
     expect(mockGetUser).toHaveBeenCalledWith('valid-token');
   });

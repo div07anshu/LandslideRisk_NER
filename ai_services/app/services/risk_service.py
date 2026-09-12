@@ -2,7 +2,11 @@ import math
 import time
 
 import requests
-from app.services.prediction_service import predict_risk
+from app.services.prediction_service import (
+    DEFAULT_LOW_MAX,
+    DEFAULT_MODERATE_MAX,
+    predict_risk,
+)
 from app.services.weather_service import extract_weather_features
 
 ELEVATION_URL = "https://api.open-meteo.com/v1/elevation"
@@ -138,6 +142,8 @@ def calculate_live_slope(
 def analyze_location(
     latitude: float,
     longitude: float,
+    low_max: float = DEFAULT_LOW_MAX,
+    moderate_max: float = DEFAULT_MODERATE_MAX,
 ) -> dict:
 
     weather = extract_weather_features(
@@ -165,7 +171,7 @@ def analyze_location(
         "slope": slope,
     }
 
-    prediction = predict_risk(features)
+    prediction = predict_risk(features, low_max=low_max, moderate_max=moderate_max)
 
     return {
         "probability": prediction["probability"],

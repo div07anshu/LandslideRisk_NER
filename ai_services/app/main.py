@@ -1,8 +1,9 @@
-from fastapi import FastAPI
+from fastapi import Depends, FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.api.routes.risk import router as risk_router
 from app.api.routes.chat import router as chat_router
+from app.core.security import verify_internal_token
 
 app = FastAPI()
 
@@ -20,8 +21,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(risk_router)
-app.include_router(chat_router)
+# Every route on these routers requires X-Internal-Token to match
+# AI_SERVICE_TOKEN (when that env var is set) — see app/core/security.py.
+# /health is intentionally excluded so uptime checks don't need the token.
+app.include_router(risk_router, dependencies=[Depends(verify_internal_token)])
+app.include_router(chat_router, dependencies=[Depends(verify_internal_token)])
 
 
 @app.get("/health")

@@ -6,9 +6,11 @@ import {
   Bell,
   FileText,
   Phone,
+  ShieldCheck,
 } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { useAdminAuth } from "../../hooks/useAdminAuth";
 
 const NAV_ITEMS = [
   {
@@ -49,6 +51,7 @@ const NAV_ITEMS = [
 
 function Sidebar() {
   const { t } = useTranslation();
+  const { isAdmin } = useAdminAuth();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -87,6 +90,22 @@ function Sidebar() {
             <span>{t(labelKey)}</span>
           </NavLink>
         ))}
+
+        {isAdmin && (
+          <NavLink
+            to="/admin/dashboard"
+            className={({ isActive }) =>
+              `group flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-sm transition-all duration-200 ease-out ${
+                isActive
+                  ? "bg-brand-600 font-medium text-white"
+                  : "text-slate-300 hover:bg-white/20 hover:translate-x-1"
+              }`
+            }
+          >
+            <ShieldCheck size={18} strokeWidth={3} />
+            <span>{t("navigation.adminPanel")}</span>
+          </NavLink>
+        )}
       </nav>
 
       <div className="p-3">

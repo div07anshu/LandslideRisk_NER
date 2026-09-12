@@ -70,7 +70,10 @@ export async function analyzeRisk(
   try {
     response = await fetch(url, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        ...(env.ai.internalToken ? { 'X-Internal-Token': env.ai.internalToken } : {}),
+      },
       body: JSON.stringify({
         latitude: input.latitude,
         longitude: input.longitude,

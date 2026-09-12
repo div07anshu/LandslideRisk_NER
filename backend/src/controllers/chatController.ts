@@ -1,6 +1,7 @@
 import type { NextFunction, Request, Response } from 'express';
 import { sendChatMessage, type ChatLocation } from '../services/ai';
 import { HttpError } from '../middleware/errorHandler';
+import { getRiskThresholds } from '../services/riskConfigService';
 
 function isFiniteNumber(value: unknown): value is number {
   return typeof value === 'number' && Number.isFinite(value);
@@ -48,12 +49,14 @@ export async function chat(
     const language = typeof body.language === 'string' ? body.language : undefined;
     const contextLocation = parseContextLocation(body.context_location);
     const awaitingLocation = body.awaiting_location === true;
+    const riskThresholds = await getRiskThresholds();
 
     const result = await sendChatMessage({
       message: message.trim(),
       language,
       contextLocation,
       awaitingLocation,
+      riskThresholds,
     });
 
     res.status(200).json({

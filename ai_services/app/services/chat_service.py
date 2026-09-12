@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 from groq import Groq
 
 from app.services.risk_service import analyze_location
+from app.services.prediction_service import DEFAULT_LOW_MAX, DEFAULT_MODERATE_MAX
 
 load_dotenv()
 
@@ -14,7 +15,15 @@ def generate_chat_response(
     message: str,
     location: dict | None = None,
     language: str | None = None,
+    low_max: float = DEFAULT_LOW_MAX,
+    moderate_max: float = DEFAULT_MODERATE_MAX,
 ) -> str:
+    """
+    low_max/moderate_max let the caller (the Node backend, via
+    POST /api/chat's risk_thresholds field) pass its own admin-configured
+    boundaries, so the assistant's live-location risk classification matches
+    the rest of the app instead of always using this service's own defaults.
+    """
 
     if not GROQ_API_KEY:
         raise RuntimeError("GROQ_API_KEY is not configured")
@@ -25,6 +34,8 @@ def generate_chat_response(
         analysis = analyze_location(
             latitude=location["latitude"],
             longitude=location["longitude"],
+            low_max=low_max,
+            moderate_max=moderate_max,
         )
 
         live_context = f"""

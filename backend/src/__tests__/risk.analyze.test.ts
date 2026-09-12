@@ -8,15 +8,30 @@ jest.mock('../config/supabaseClient');
 const mockGetUser = jest.fn();
 const mockInsert = jest.fn();
 const mockSelect = jest.fn();
+// risk_config lookup (getRiskThresholds) — defaults to "no row" so the
+// controller falls back to DEFAULT_RISK_THRESHOLDS (35/70), matching the
+// AI service's own hardcoded behavior exactly.
+const mockRiskConfigMaybeSingle = jest.fn();
 
 (getSupabaseClient as jest.Mock).mockReturnValue({
   auth: { getUser: mockGetUser },
 });
 
 (getSupabaseAdminClient as jest.Mock).mockReturnValue({
-  from: jest.fn().mockReturnValue({
-    insert: mockInsert,
-    select: mockSelect,
+  from: jest.fn((table: string) => {
+    if (table === 'risk_config') {
+      return {
+        select: jest.fn().mockReturnValue({
+          eq: jest.fn().mockReturnValue({
+            maybeSingle: mockRiskConfigMaybeSingle,
+          }),
+        }),
+      };
+    }
+    return {
+      insert: mockInsert,
+      select: mockSelect,
+    };
   }),
 });
 
@@ -61,6 +76,8 @@ beforeEach(() => {
   mockFetch.mockReset();
   mockInsert.mockReset();
   mockSelect.mockReset();
+  mockRiskConfigMaybeSingle.mockReset();
+  mockRiskConfigMaybeSingle.mockResolvedValue({ data: null, error: null });
 
   // Default: authenticated user.
   mockGetUser.mockResolvedValue({

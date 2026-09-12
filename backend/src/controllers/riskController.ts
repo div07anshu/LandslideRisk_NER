@@ -2,6 +2,7 @@ import type { NextFunction, Request, Response } from 'express';
 import { analyzeRisk } from '../services/ai';
 import { HttpError } from '../middleware/errorHandler';
 import { getSupabaseAdminClient } from '../config/supabaseClient';
+import { getRiskThresholds, classifyRiskScore } from '../services/riskConfigService';
 
 function coordinate(
   value: unknown,
@@ -38,6 +39,15 @@ export async function analyze(
 
     const prediction = await analyzeRisk({ latitude, longitude ,location,
   state,});
+
+    // Re-derive risk_level from the raw score using the admin-configurable
+    // thresholds (see riskConfigService) instead of trusting the AI
+    // service's own hardcoded classification — this is what makes risk
+    // thresholds configurable without touching the ML model itself.
+    const thresholds = await getRiskThresholds();
+    const riskLevel = classifyRiskScore(prediction.risk_score, thresholds);
+    const result = { ...prediction, risk_level: riskLevel };
+
   const supabase = getSupabaseAdminClient();
   const { error } = await supabase
       .from('risk_data')
@@ -49,7 +59,7 @@ export async function analyze(
         Elevation: prediction.features.elevation,
         Historical_landslide: null,
         Risk_score: prediction.risk_score,
-        Risk_level: prediction.risk_level,
+        Risk_level: riskLevel,
       });
 
     if (error) {
@@ -58,7 +68,7 @@ export async function analyze(
 
     res.status(200).json({
       success: true,
-      data: prediction,
+      data: result,
     });
   } catch (err) {
     next(err);

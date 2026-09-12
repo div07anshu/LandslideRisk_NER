@@ -11,11 +11,23 @@ export interface ChatLocation {
   longitude: number;
 }
 
+export interface ChatRiskThresholds {
+  lowMax: number;
+  moderateMax: number;
+}
+
 export interface ChatInput {
   message: string;
   language?: string;
   contextLocation?: ChatLocation | null;
   awaitingLocation?: boolean;
+  /**
+   * The same LOW/MODERATE boundary thresholds riskController.ts uses to
+   * classify risk_score (see riskConfigService.ts) — passed through so the
+   * chat assistant's own live-location risk classification matches the rest
+   * of the app instead of using the AI service's separate hardcoded 35/70.
+   */
+  riskThresholds?: ChatRiskThresholds | null;
 }
 
 export interface ChatResponse {
@@ -34,12 +46,18 @@ export async function sendChatMessage(input: ChatInput): Promise<ChatResponse> {
   try {
     response = await fetch(url, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        ...(env.ai.internalToken ? { 'X-Internal-Token': env.ai.internalToken } : {}),
+      },
       body: JSON.stringify({
         message: input.message,
         language: input.language,
         context_location: input.contextLocation ?? null,
         awaiting_location: input.awaitingLocation ?? false,
+        risk_thresholds: input.riskThresholds
+          ? { low_max: input.riskThresholds.lowMax, moderate_max: input.riskThresholds.moderateMax }
+          : null,
       }),
       signal: AbortSignal.timeout(env.ai.fastapiTimeoutMs),
     });
