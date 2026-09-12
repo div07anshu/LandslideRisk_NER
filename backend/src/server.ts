@@ -1,5 +1,6 @@
 import { createApp } from './app';
 import { env } from './config';
+import { startAlertMonitor } from './services/alertMonitor';
 
 const app = createApp();
 
@@ -7,6 +8,8 @@ const server = app.listen(env.port, () => {
   console.log(
     `[backend] listening on http://localhost:${env.port} (${env.nodeEnv})`,
   );
+
+  startAlertMonitor();
 });
 
 // Graceful shutdown

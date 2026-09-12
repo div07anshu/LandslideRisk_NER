@@ -1,10 +1,11 @@
 from app.services.risk_service import analyze_location
+from app.services.notification_service import send_trial_alert
 from app.services.cache_service import (
     get_cached_risk,
     set_cached_risk,
     get_all_cached_districts,
     get_cache_stats,
-    clear_expired_cache
+    clear_expired_cache,
 )
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel, Field
@@ -16,6 +17,12 @@ router = APIRouter(
 
 
 class LocationInput(BaseModel):
+    latitude: float = Field(..., ge=-90, le=90)
+    longitude: float = Field(..., ge=-180, le=180)
+
+
+class AlertInput(BaseModel):
+    phone_number: str = Field(..., min_length=10)
     latitude: float = Field(..., ge=-90, le=90)
     longitude: float = Field(..., ge=-180, le=180)
 
@@ -36,11 +43,43 @@ def analyze_risk(data: LocationInput):
         )
 
     except Exception as error:
-        # Log the actual error server-side for debugging
         print(f"[risk] Error analyzing {data.latitude}, {data.longitude}: {error}")
         raise HTTPException(
             status_code=500,
             detail="Risk analysis service is currently unavailable. Please try again later.",
+        )
+
+
+@router.post("/check-and-alert")
+def check_and_alert(data: AlertInput):
+
+    try:
+        risk = analyze_location(
+            latitude=data.latitude,
+            longitude=data.longitude,
+        )
+
+        if risk["risk_level"] == "HIGH":
+            sms_sid = send_trial_alert(data.phone_number)
+
+            return {
+                "success": True,
+                "alert_sent": True,
+                "risk": risk,
+                "sms_sid": sms_sid,
+            }
+
+        return {
+            "success": True,
+            "alert_sent": False,
+            "risk": risk,
+        }
+
+    except Exception as error:
+        print(f"[alert] Error for {data.latitude}, {data.longitude}: {error}")
+        raise HTTPException(
+            status_code=500,
+            detail="Risk alert service is currently unavailable.",
         )
 
 
@@ -51,23 +90,21 @@ def analyze_district_risk(data: DistrictInput):
     Returns real-time predictions with all weather and terrain features.
     Uses 3-hour cache to avoid redundant API calls.
     """
-    # Check cache first
+
     cached = get_cached_risk(data.district_name)
+
     if cached:
         print(f"[cache] Using cached data for {data.district_name}")
         return cached
 
-    # Cache miss - fetch fresh data
     try:
         result = analyze_location(
             latitude=data.latitude,
             longitude=data.longitude,
         )
 
-        # Add district name to the response
         result["district_name"] = data.district_name
 
-        # Cache the result
         set_cached_risk(data.district_name, result)
 
         return result
@@ -103,4 +140,8 @@ def clear_expired():
     Manually clear expired cache entries.
     """
     clear_expired_cache()
-    return {"status": "ok", "message": "Expired cache entries cleared"}
+
+    return {
+        "status": "ok",
+        "message": "Expired cache entries cleared",
+    }
