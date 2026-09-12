@@ -3,12 +3,25 @@ import { HttpError } from '../../middleware/errorHandler';
 
 const CHAT_PATH = '/api/chat';
 
+export interface ChatLocation {
+  state: string;
+  district: string;
+  city: string;
+  latitude: number;
+  longitude: number;
+}
+
 export interface ChatInput {
   message: string;
+  language?: string;
+  contextLocation?: ChatLocation | null;
+  awaitingLocation?: boolean;
 }
 
 export interface ChatResponse {
   response: string;
+  locationRequired: boolean;
+  resolvedLocation: ChatLocation | null;
 }
 
 /**
@@ -22,7 +35,12 @@ export async function sendChatMessage(input: ChatInput): Promise<ChatResponse> {
     response = await fetch(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ message: input.message }),
+      body: JSON.stringify({
+        message: input.message,
+        language: input.language,
+        context_location: input.contextLocation ?? null,
+        awaiting_location: input.awaitingLocation ?? false,
+      }),
       signal: AbortSignal.timeout(env.ai.fastapiTimeoutMs),
     });
   } catch (err) {
@@ -52,5 +70,11 @@ export async function sendChatMessage(input: ChatInput): Promise<ChatResponse> {
     throw new HttpError(502, 'AI chat service returned a malformed response');
   }
 
-  return payload as ChatResponse;
+  const body = payload as Record<string, unknown>;
+
+  return {
+    response: body.response as string,
+    locationRequired: body.location_required === true,
+    resolvedLocation: (body.resolved_location as ChatLocation | null) ?? null,
+  };
 }

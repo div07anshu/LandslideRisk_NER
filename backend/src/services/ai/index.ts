@@ -6,4 +6,4 @@ export type {
   RiskFeatures,
   RiskLevel,
 } from './types';
-export type { ChatInput, ChatResponse } from './chatClient';
+export type { ChatInput, ChatResponse, ChatLocation } from './chatClient';
