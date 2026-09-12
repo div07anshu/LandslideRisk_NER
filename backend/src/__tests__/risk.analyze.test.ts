@@ -138,7 +138,7 @@ describe('POST /api/risk/analyze', () => {
       .post('/api/risk/analyze')
       .set('Authorization', AUTH)
       .send(VALID_BODY);
-
+    
     expect(res.status).toBe(502);
     expect(JSON.stringify(res.body)).not.toMatch(/boom|line 42|Risk prediction failed/);
   });

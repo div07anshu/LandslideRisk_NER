@@ -429,12 +429,17 @@
     "activeAlertsSubtitle": "View current landslide alerts and warnings."
   },
   "analysis": {
+    "selectState": "Select state",
+    "selectDistrict": "Select district",
+    "selectLocation": "Select location",
     "errorUnauthorized": "Please sign in to load the live risk prediction.",
     "errorUnavailable": "Live prediction is unavailable for this location.",
     "errorService": "Could not reach the risk service. Please try again.",
     "title": "RISK ANALYSIS",
     "subtitle": "Factor-level breakdown and score trends for monitored slopes across North East Region",
     "dateRange": {
+      "24h": "24 hours",
+      "48h": "48 hours",
       "7": "7 days",
       "30": "30 days",
       "90": "90 days"

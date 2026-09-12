@@ -12,12 +12,14 @@ export const AREAS = [
     id: "kohima",
     name: "Kohima Ridge",
     state: "Nagaland",
+    district: "Kohima",
     latitude: 25.6701,
     longitude: 94.1077,
     riskScore: 78,
     riskLevel: "high",
     trend: "up",
 
+    
     factors: [
       {
         key: "rainfall",
@@ -57,6 +59,7 @@ export const AREAS = [
     id: "shillong",
     name: "Mawkynroh",
     state: "Meghalaya",
+    district: "East Khasi Hills",
     latitude: 25.576,
     longitude: 91.8825,
     riskScore: 63,
@@ -102,6 +105,7 @@ export const AREAS = [
     id: "gangtok",
     name: "Rumtek Slope",
     state: "Sikkim",
+    district: "East Sikkim",
     latitude: 27.2871,
     longitude: 88.5617,
     riskScore: 45,
@@ -147,6 +151,7 @@ export const AREAS = [
     id: "itanagar",
     name: "Ganga Market Slope",
     state: "Arunachal Pradesh",
+    district: "Papum Pare",
     latitude: 27.0955,
     longitude: 93.6215,
     riskScore: 29,
@@ -192,6 +197,7 @@ export const AREAS = [
     id: "aizawl",
     name: "Zarkawt Heights",
     state: "Mizoram",
+    district: "Aizawl",
     latitude: 23.7307,
     longitude: 92.7259,
     riskScore: 56,
@@ -234,7 +240,7 @@ export const AREAS = [
   },
 ];
 
-export const RANGE_OPTIONS = ["7 days", "30 days", "90 days"];
+export const RANGE_OPTIONS = ["24 hours", "48 hours", "7 days"];
 
 export const LEVEL_STYLES = {
   low: {
