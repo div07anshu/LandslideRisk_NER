@@ -72,7 +72,7 @@ def generate_chat_response(message: str) -> str:
 
     answer = completion.choices[0].message.content
 
-    if "</think>" in answer:
-        answer = answer.split("</think>", 1)[1].strip()
+    if "</think>" in answer: # type: ignore
+        answer = answer.split("</think>", 1)[1].strip() # type: ignore
 
-    return answer
+    return answer # type: ignore

@@ -1,4 +1,5 @@
 import math
+import time
 
 import requests
 from app.services.prediction_service import predict_risk
@@ -13,18 +14,38 @@ def get_elevation(
     latitude: float,
     longitude: float,
 ) -> float:
-    response = requests.get(
-        ELEVATION_URL,
-        params={
-            "latitude": latitude,
-            "longitude": longitude,
-        },
-        timeout=30,
-    )
+    max_retries = 2
+    timeout = 10
 
-    response.raise_for_status()
+    for attempt in range(max_retries + 1):
+        try:
+            response = requests.get(
+                ELEVATION_URL,
+                params={
+                    "latitude": latitude,
+                    "longitude": longitude,
+                },
+                timeout=timeout,
+            )
 
-    return float(response.json()["elevation"][0])
+            response.raise_for_status()
+            return float(response.json()["elevation"][0])
+
+        except requests.Timeout:
+            if attempt < max_retries:
+                time.sleep(2 ** attempt)
+                continue
+            else:
+                raise ValueError(f"Elevation API timeout after {max_retries + 1} attempts")
+
+        except requests.RequestException as e:
+            if attempt < max_retries:
+                time.sleep(1)
+                continue
+            else:
+                raise ValueError(f"Elevation API error: {str(e)}")
+
+    raise ValueError("Failed to fetch elevation data")
 
 
 def calculate_live_slope(
@@ -54,16 +75,40 @@ def calculate_live_slope(
         west_lon,
     ]
 
-    response = requests.get(
-        ELEVATION_URL,
-        params={
-            "latitude": ",".join(map(str, lats)),
-            "longitude": ",".join(map(str, lons)),
-        },
-        timeout=30,
-    )
+    max_retries = 2
+    timeout = 10
+    response = None
 
-    response.raise_for_status()
+    for attempt in range(max_retries + 1):
+        try:
+            response = requests.get(
+                ELEVATION_URL,
+                params={
+                    "latitude": ",".join(map(str, lats)),
+                    "longitude": ",".join(map(str, lons)),
+                },
+                timeout=timeout,
+            )
+
+            response.raise_for_status()
+            break
+
+        except requests.Timeout:
+            if attempt < max_retries:
+                time.sleep(2 ** attempt)
+                continue
+            else:
+                raise ValueError(f"Slope calculation API timeout after {max_retries + 1} attempts")
+
+        except requests.RequestException as e:
+            if attempt < max_retries:
+                time.sleep(1)
+                continue
+            else:
+                raise ValueError(f"Slope calculation API error: {str(e)}")
+
+    if response is None:
+        raise ValueError("Failed to fetch slope data")
 
     elevations = response.json()["elevation"]
 

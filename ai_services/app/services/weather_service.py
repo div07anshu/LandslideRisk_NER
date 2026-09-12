@@ -1,5 +1,5 @@
 from datetime import datetime, timedelta
-
+import time
 import requests
 
 OPEN_METEO_ARCHIVE_URL = "https://archive-api.open-meteo.com/v1/archive"
@@ -29,13 +29,39 @@ def extract_weather_features(
         "timezone": "auto",
     }
 
-    response = requests.get(
-        OPEN_METEO_ARCHIVE_URL,
-        params=params,
-        timeout=30,
-    )
+    # Retry logic with exponential backoff
+    max_retries = 2
+    timeout = 10  # Reduced timeout to fail faster
+    response = None
 
-    response.raise_for_status()
+    for attempt in range(max_retries + 1):
+        try:
+            response = requests.get(
+                OPEN_METEO_ARCHIVE_URL,
+                params=params,
+                timeout=timeout,
+            )
+
+            response.raise_for_status()
+            break  # Success, exit retry loop
+
+        except requests.Timeout:
+            if attempt < max_retries:
+                wait_time = 2 ** attempt  # Exponential backoff: 1s, 2s
+                time.sleep(wait_time)
+                continue
+            else:
+                raise ValueError(f"Weather API timeout after {max_retries + 1} attempts")
+
+        except requests.RequestException as e:
+            if attempt < max_retries:
+                time.sleep(1)
+                continue
+            else:
+                raise ValueError(f"Weather API error: {str(e)}")
+
+    if response is None:
+        raise ValueError("Failed to fetch weather data")
 
     hourly = response.json()["hourly"]
 

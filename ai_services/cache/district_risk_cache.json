@@ -1,0 +1,2472 @@
+{
+  "Gomati": {
+    "cached_at": 1789231273.103641,
+    "cached_at_readable": "2026-09-12T22:11:13.103642",
+    "data": {
+      "probability": 0.4184,
+      "risk_score": 41.84,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 14.8,
+        "rainfall_48h": 20.8,
+        "rainfall_7d": 67.8,
+        "average_humidity_24h": 91.12,
+        "soil_moisture": 0.481,
+        "elevation": 44.0,
+        "slope": 5.67
+      },
+      "district_name": "Gomati"
+    }
+  },
+  "Kamrup": {
+    "cached_at": 1789231322.434515,
+    "cached_at_readable": "2026-09-12T22:12:02.434516",
+    "data": {
+      "probability": 0.2322,
+      "risk_score": 23.22,
+      "risk_level": "LOW",
+      "features": {
+        "rainfall_24h": 2.8,
+        "rainfall_48h": 6.0,
+        "rainfall_7d": 42.9,
+        "average_humidity_24h": 85.0,
+        "soil_moisture": 0.468,
+        "elevation": 46.0,
+        "slope": 0.29
+      },
+      "district_name": "Kamrup"
+    }
+  },
+  "Bishnupur": {
+    "cached_at": 1789231544.104023,
+    "cached_at_readable": "2026-09-12T22:15:44.104024",
+    "data": {
+      "probability": 0.3772,
+      "risk_score": 37.72,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 5.3,
+        "rainfall_48h": 6.3,
+        "rainfall_7d": 25.8,
+        "average_humidity_24h": 82.67,
+        "soil_moisture": 0.388,
+        "elevation": 767.0,
+        "slope": 0.0
+      },
+      "district_name": "Bishnupur"
+    }
+  },
+  "Chandel": {
+    "cached_at": 1789231602.0740302,
+    "cached_at_readable": "2026-09-12T22:16:42.074031",
+    "data": {
+      "probability": 0.3882,
+      "risk_score": 38.82,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 6.5,
+        "rainfall_48h": 9.0,
+        "rainfall_7d": 37.4,
+        "average_humidity_24h": 92.21,
+        "soil_moisture": 0.478,
+        "elevation": 1138.0,
+        "slope": 18.57
+      },
+      "district_name": "Chandel"
+    }
+  },
+  "Churachandpur": {
+    "cached_at": 1789231606.5339258,
+    "cached_at_readable": "2026-09-12T22:16:46.533928",
+    "data": {
+      "probability": 0.304,
+      "risk_score": 30.4,
+      "risk_level": "LOW",
+      "features": {
+        "rainfall_24h": 1.5,
+        "rainfall_48h": 2.3,
+        "rainfall_7d": 18.5,
+        "average_humidity_24h": 85.08,
+        "soil_moisture": 0.432,
+        "elevation": 905.0,
+        "slope": 8.38
+      },
+      "district_name": "Churachandpur"
+    }
+  },
+  "Dhalai": {
+    "cached_at": 1789231617.524588,
+    "cached_at_readable": "2026-09-12T22:16:57.524590",
+    "data": {
+      "probability": 0.5238,
+      "risk_score": 52.38,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 19.5,
+        "rainfall_48h": 27.2,
+        "rainfall_7d": 65.1,
+        "average_humidity_24h": 90.38,
+        "soil_moisture": 0.416,
+        "elevation": 129.0,
+        "slope": 0.96
+      },
+      "district_name": "Dhalai"
+    }
+  },
+  "Tinsukia": {
+    "cached_at": 1789231621.616746,
+    "cached_at_readable": "2026-09-12T22:17:01.616747",
+    "data": {
+      "probability": 0.4062,
+      "risk_score": 40.62,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 1.7,
+        "rainfall_48h": 3.4,
+        "rainfall_7d": 52.6,
+        "average_humidity_24h": 72.96,
+        "soil_moisture": 0.413,
+        "elevation": 137.0,
+        "slope": 0.29
+      },
+      "district_name": "Tinsukia"
+    }
+  },
+  "Gangtok": {
+    "cached_at": 1789231636.5700212,
+    "cached_at_readable": "2026-09-12T22:17:16.570022",
+    "data": {
+      "probability": 0.637,
+      "risk_score": 63.7,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 2.5,
+        "rainfall_48h": 9.6,
+        "rainfall_7d": 57.8,
+        "average_humidity_24h": 74.5,
+        "soil_moisture": 0.365,
+        "elevation": 1503.0,
+        "slope": 15.27
+      },
+      "district_name": "Gangtok"
+    }
+  },
+  "East Garo Hills": {
+    "cached_at": 1789231645.4749591,
+    "cached_at_readable": "2026-09-12T22:17:25.474962",
+    "data": {
+      "probability": 0.3759,
+      "risk_score": 37.59,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 3.9,
+        "rainfall_48h": 9.5,
+        "rainfall_7d": 36.3,
+        "average_humidity_24h": 88.38,
+        "soil_moisture": 0.348,
+        "elevation": 307.0,
+        "slope": 3.87
+      },
+      "district_name": "East Garo Hills"
+    }
+  },
+  "East Khasi Hills": {
+    "cached_at": 1789231650.577934,
+    "cached_at_readable": "2026-09-12T22:17:30.577935",
+    "data": {
+      "probability": 0.5595,
+      "risk_score": 55.95,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 4.9,
+        "rainfall_48h": 7.5,
+        "rainfall_7d": 32.4,
+        "average_humidity_24h": 88.17,
+        "soil_moisture": 0.479,
+        "elevation": 1787.0,
+        "slope": 5.35
+      },
+      "district_name": "East Khasi Hills"
+    }
+  },
+  "Nagaon": {
+    "cached_at": 1789231666.9852438,
+    "cached_at_readable": "2026-09-12T22:17:46.985246",
+    "data": {
+      "probability": 0.2848,
+      "risk_score": 28.48,
+      "risk_level": "LOW",
+      "features": {
+        "rainfall_24h": 1.3,
+        "rainfall_48h": 2.4,
+        "rainfall_7d": 39.4,
+        "average_humidity_24h": 85.62,
+        "soil_moisture": 0.448,
+        "elevation": 60.0,
+        "slope": 0.0
+      },
+      "district_name": "Nagaon"
+    }
+  },
+  "Imphal West": {
+    "cached_at": 1789231676.25369,
+    "cached_at_readable": "2026-09-12T22:17:56.253692",
+    "data": {
+      "probability": 0.3333,
+      "risk_score": 33.33,
+      "risk_level": "LOW",
+      "features": {
+        "rainfall_24h": 3.4,
+        "rainfall_48h": 4.9,
+        "rainfall_7d": 23.6,
+        "average_humidity_24h": 86.71,
+        "soil_moisture": 0.439,
+        "elevation": 778.0,
+        "slope": 1.03
+      },
+      "district_name": "Imphal West"
+    }
+  },
+  "Khowai": {
+    "cached_at": 1789231686.646288,
+    "cached_at_readable": "2026-09-12T22:18:06.646291",
+    "data": {
+      "probability": 0.4106,
+      "risk_score": 41.06,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 10.1,
+        "rainfall_48h": 17.9,
+        "rainfall_7d": 59.5,
+        "average_humidity_24h": 90.04,
+        "soil_moisture": 0.411,
+        "elevation": 83.0,
+        "slope": 0.76
+      },
+      "district_name": "Khowai"
+    }
+  },
+  "East Jaintia Hills": {
+    "cached_at": 1789231713.559175,
+    "cached_at_readable": "2026-09-12T22:18:33.559176",
+    "data": {
+      "probability": 0.4846,
+      "risk_score": 48.46,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 5.6,
+        "rainfall_48h": 8.1,
+        "rainfall_7d": 26.0,
+        "average_humidity_24h": 90.71,
+        "soil_moisture": 0.491,
+        "elevation": 1004.0,
+        "slope": 12.72
+      },
+      "district_name": "East Jaintia Hills"
+    }
+  },
+  "North Tripura": {
+    "cached_at": 1789231754.425878,
+    "cached_at_readable": "2026-09-12T22:19:14.425879",
+    "data": {
+      "probability": 0.356,
+      "risk_score": 35.6,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 11.3,
+        "rainfall_48h": 20.5,
+        "rainfall_7d": 61.9,
+        "average_humidity_24h": 89.83,
+        "soil_moisture": 0.421,
+        "elevation": 58.0,
+        "slope": 1.17
+      },
+      "district_name": "North Tripura"
+    }
+  },
+  "Mangan": {
+    "cached_at": 1789231761.888515,
+    "cached_at_readable": "2026-09-12T22:19:21.888517",
+    "data": {
+      "probability": 0.435,
+      "risk_score": 43.5,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 2.4,
+        "rainfall_48h": 7.0,
+        "rainfall_7d": 51.8,
+        "average_humidity_24h": 87.29,
+        "soil_moisture": 0.259,
+        "elevation": 5258.0,
+        "slope": 26.64
+      },
+      "district_name": "Mangan"
+    }
+  },
+  "Siaha": {
+    "cached_at": 1789231767.311221,
+    "cached_at_readable": "2026-09-12T22:19:27.311221",
+    "data": {
+      "probability": 0.5272,
+      "risk_score": 52.72,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 11.4,
+        "rainfall_48h": 15.0,
+        "rainfall_7d": 143.9,
+        "average_humidity_24h": 95.38,
+        "soil_moisture": 0.417,
+        "elevation": 1082.0,
+        "slope": 31.22
+      },
+      "district_name": "Siaha"
+    }
+  },
+  "Sepahijala": {
+    "cached_at": 1789231794.480652,
+    "cached_at_readable": "2026-09-12T22:19:54.480654",
+    "data": {
+      "probability": 0.3369,
+      "risk_score": 33.69,
+      "risk_level": "LOW",
+      "features": {
+        "rainfall_24h": 14.9,
+        "rainfall_48h": 20.7,
+        "rainfall_7d": 76.2,
+        "average_humidity_24h": 89.96,
+        "soil_moisture": 0.486,
+        "elevation": 47.0,
+        "slope": 1.76
+      },
+      "district_name": "Sepahijala"
+    }
+  },
+  "Namchi": {
+    "cached_at": 1789231798.310046,
+    "cached_at_readable": "2026-09-12T22:19:58.310047",
+    "data": {
+      "probability": 0.5365,
+      "risk_score": 53.65,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 1.6,
+        "rainfall_48h": 7.7,
+        "rainfall_7d": 66.1,
+        "average_humidity_24h": 78.58,
+        "soil_moisture": 0.402,
+        "elevation": 2172.0,
+        "slope": 29.54
+      },
+      "district_name": "Namchi"
+    }
+  },
+  "South Tripura": {
+    "cached_at": 1789231822.007377,
+    "cached_at_readable": "2026-09-12T22:20:22.007379",
+    "data": {
+      "probability": 0.3017,
+      "risk_score": 30.17,
+      "risk_level": "LOW",
+      "features": {
+        "rainfall_24h": 11.8,
+        "rainfall_48h": 16.7,
+        "rainfall_7d": 61.1,
+        "average_humidity_24h": 89.0,
+        "soil_moisture": 0.485,
+        "elevation": 81.0,
+        "slope": 4.2
+      },
+      "district_name": "South Tripura"
+    }
+  },
+  "South Garo Hills": {
+    "cached_at": 1789231825.362494,
+    "cached_at_readable": "2026-09-12T22:20:25.362494",
+    "data": {
+      "probability": 0.4176,
+      "risk_score": 41.76,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 15.4,
+        "rainfall_48h": 18.1,
+        "rainfall_7d": 59.4,
+        "average_humidity_24h": 88.12,
+        "soil_moisture": 0.514,
+        "elevation": 90.0,
+        "slope": 6.51
+      },
+      "district_name": "South Garo Hills"
+    }
+  },
+  "Unakoti": {
+    "cached_at": 1789231836.775724,
+    "cached_at_readable": "2026-09-12T22:20:36.775725",
+    "data": {
+      "probability": 0.4605,
+      "risk_score": 46.05,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 10.8,
+        "rainfall_48h": 20.8,
+        "rainfall_7d": 65.5,
+        "average_humidity_24h": 89.38,
+        "soil_moisture": 0.43,
+        "elevation": 110.0,
+        "slope": 4.62
+      },
+      "district_name": "Unakoti"
+    }
+  },
+  "Kokrajhar": {
+    "cached_at": 1789231837.0393379,
+    "cached_at_readable": "2026-09-12T22:20:37.039339",
+    "data": {
+      "probability": 0.3077,
+      "risk_score": 30.77,
+      "risk_level": "LOW",
+      "features": {
+        "rainfall_24h": 4.5,
+        "rainfall_48h": 5.3,
+        "rainfall_7d": 26.4,
+        "average_humidity_24h": 87.33,
+        "soil_moisture": 0.396,
+        "elevation": 43.0,
+        "slope": 0.29
+      },
+      "district_name": "Kokrajhar"
+    }
+  },
+  "West Garo Hills": {
+    "cached_at": 1789231860.438512,
+    "cached_at_readable": "2026-09-12T22:21:00.438513",
+    "data": {
+      "probability": 0.3275,
+      "risk_score": 32.75,
+      "risk_level": "LOW",
+      "features": {
+        "rainfall_24h": 9.5,
+        "rainfall_48h": 12.1,
+        "rainfall_7d": 32.0,
+        "average_humidity_24h": 91.46,
+        "soil_moisture": 0.492,
+        "elevation": 337.0,
+        "slope": 8.32
+      },
+      "district_name": "West Garo Hills"
+    }
+  },
+  "Gyalshing": {
+    "cached_at": 1789231881.25875,
+    "cached_at_readable": "2026-09-12T22:21:21.258751",
+    "data": {
+      "probability": 0.4533,
+      "risk_score": 45.33,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 0.3,
+        "rainfall_48h": 2.2,
+        "rainfall_7d": 78.8,
+        "average_humidity_24h": 75.29,
+        "soil_moisture": 0.395,
+        "elevation": 2210.0,
+        "slope": 44.62
+      },
+      "district_name": "Gyalshing"
+    }
+  },
+  "Lawngtlai": {
+    "cached_at": 1789231898.862433,
+    "cached_at_readable": "2026-09-12T22:21:38.862435",
+    "data": {
+      "probability": 0.5195,
+      "risk_score": 51.95,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 10.7,
+        "rainfall_48h": 22.2,
+        "rainfall_7d": 177.5,
+        "average_humidity_24h": 92.5,
+        "soil_moisture": 0.417,
+        "elevation": 967.0,
+        "slope": 13.91
+      },
+      "district_name": "Lawngtlai"
+    }
+  },
+  "West Tripura": {
+    "cached_at": 1789231901.636776,
+    "cached_at_readable": "2026-09-12T22:21:41.636778",
+    "data": {
+      "probability": 0.3544,
+      "risk_score": 35.44,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 15.7,
+        "rainfall_48h": 25.5,
+        "rainfall_7d": 79.7,
+        "average_humidity_24h": 88.5,
+        "soil_moisture": 0.494,
+        "elevation": 37.0,
+        "slope": 5.17
+      },
+      "district_name": "West Tripura"
+    }
+  },
+  "Kolasib": {
+    "cached_at": 1789231917.615384,
+    "cached_at_readable": "2026-09-12T22:21:57.615385",
+    "data": {
+      "probability": 0.4606,
+      "risk_score": 46.06,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 11.0,
+        "rainfall_48h": 14.8,
+        "rainfall_7d": 74.3,
+        "average_humidity_24h": 90.58,
+        "soil_moisture": 0.425,
+        "elevation": 204.0,
+        "slope": 7.87
+      },
+      "district_name": "Kolasib"
+    }
+  },
+  "Serchhip": {
+    "cached_at": 1789231927.0688949,
+    "cached_at_readable": "2026-09-12T22:22:07.068896",
+    "data": {
+      "probability": 0.503,
+      "risk_score": 50.3,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 5.0,
+        "rainfall_48h": 6.1,
+        "rainfall_7d": 59.7,
+        "average_humidity_24h": 91.62,
+        "soil_moisture": 0.411,
+        "elevation": 749.0,
+        "slope": 21.9
+      },
+      "district_name": "Serchhip"
+    }
+  },
+  "Mamit": {
+    "cached_at": 1789231948.867462,
+    "cached_at_readable": "2026-09-12T22:22:28.867464",
+    "data": {
+      "probability": 0.3104,
+      "risk_score": 31.04,
+      "risk_level": "LOW",
+      "features": {
+        "rainfall_24h": 23.0,
+        "rainfall_48h": 29.3,
+        "rainfall_7d": 81.6,
+        "average_humidity_24h": 92.92,
+        "soil_moisture": 0.425,
+        "elevation": 644.0,
+        "slope": 33.96
+      },
+      "district_name": "Mamit"
+    }
+  },
+  "Jorhat": {
+    "cached_at": 1789231967.626503,
+    "cached_at_readable": "2026-09-12T22:22:47.626504",
+    "data": {
+      "probability": 0.4079,
+      "risk_score": 40.79,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 2.5,
+        "rainfall_48h": 3.3,
+        "rainfall_7d": 102.1,
+        "average_humidity_24h": 79.46,
+        "soil_moisture": 0.417,
+        "elevation": 107.0,
+        "slope": 0.39
+      },
+      "district_name": "Jorhat"
+    }
+  },
+  "West Khasi Hills": {
+    "cached_at": 1789231980.24876,
+    "cached_at_readable": "2026-09-12T22:23:00.248762",
+    "data": {
+      "probability": 0.3915,
+      "risk_score": 39.15,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 10.7,
+        "rainfall_48h": 20.8,
+        "rainfall_7d": 43.9,
+        "average_humidity_24h": 94.88,
+        "soil_moisture": 0.496,
+        "elevation": 830.0,
+        "slope": 20.15
+      },
+      "district_name": "West Khasi Hills"
+    }
+  },
+  "Barpeta": {
+    "cached_at": 1789232000.021687,
+    "cached_at_readable": "2026-09-12T22:23:20.021689",
+    "data": {
+      "probability": 0.2821,
+      "risk_score": 28.21,
+      "risk_level": "LOW",
+      "features": {
+        "rainfall_24h": 2.5,
+        "rainfall_48h": 6.5,
+        "rainfall_7d": 20.3,
+        "average_humidity_24h": 86.42,
+        "soil_moisture": 0.346,
+        "elevation": 42.0,
+        "slope": 0.26
+      },
+      "district_name": "Barpeta"
+    }
+  },
+  "Chirang": {
+    "cached_at": 1789232015.2553139,
+    "cached_at_readable": "2026-09-12T22:23:35.255316",
+    "data": {
+      "probability": 0.2892,
+      "risk_score": 28.92,
+      "risk_level": "LOW",
+      "features": {
+        "rainfall_24h": 8.7,
+        "rainfall_48h": 9.9,
+        "rainfall_7d": 54.0,
+        "average_humidity_24h": 90.12,
+        "soil_moisture": 0.417,
+        "elevation": 46.0,
+        "slope": 0.86
+      },
+      "district_name": "Chirang"
+    }
+  },
+  "Bongaigaon": {
+    "cached_at": 1789232029.760193,
+    "cached_at_readable": "2026-09-12T22:23:49.760195",
+    "data": {
+      "probability": 0.2476,
+      "risk_score": 24.76,
+      "risk_level": "LOW",
+      "features": {
+        "rainfall_24h": 6.6,
+        "rainfall_48h": 9.3,
+        "rainfall_7d": 34.8,
+        "average_humidity_24h": 89.92,
+        "soil_moisture": 0.417,
+        "elevation": 48.0,
+        "slope": 1.18
+      },
+      "district_name": "Bongaigaon"
+    }
+  },
+  "Nalbari": {
+    "cached_at": 1789232061.298115,
+    "cached_at_readable": "2026-09-12T22:24:21.298117",
+    "data": {
+      "probability": 0.2522,
+      "risk_score": 25.22,
+      "risk_level": "LOW",
+      "features": {
+        "rainfall_24h": 0.8,
+        "rainfall_48h": 2.4,
+        "rainfall_7d": 16.7,
+        "average_humidity_24h": 85.83,
+        "soil_moisture": 0.448,
+        "elevation": 46.0,
+        "slope": 0.0
+      },
+      "district_name": "Nalbari"
+    }
+  },
+  "Udalguri": {
+    "cached_at": 1789232063.8363671,
+    "cached_at_readable": "2026-09-12T22:24:23.836368",
+    "data": {
+      "probability": 0.2807,
+      "risk_score": 28.07,
+      "risk_level": "LOW",
+      "features": {
+        "rainfall_24h": 0.3,
+        "rainfall_48h": 2.8,
+        "rainfall_7d": 25.6,
+        "average_humidity_24h": 80.38,
+        "soil_moisture": 0.416,
+        "elevation": 77.0,
+        "slope": 0.77
+      },
+      "district_name": "Udalguri"
+    }
+  },
+  "Dima Hasao": {
+    "cached_at": 1789232091.183703,
+    "cached_at_readable": "2026-09-12T22:24:51.183705",
+    "data": {
+      "probability": 0.3221,
+      "risk_score": 32.21,
+      "risk_level": "LOW",
+      "features": {
+        "rainfall_24h": 4.2,
+        "rainfall_48h": 5.7,
+        "rainfall_7d": 31.8,
+        "average_humidity_24h": 85.83,
+        "soil_moisture": 0.374,
+        "elevation": 212.0,
+        "slope": 15.29
+      },
+      "district_name": "Dima Hasao"
+    }
+  },
+  "Marigaon": {
+    "cached_at": 1789232099.810121,
+    "cached_at_readable": "2026-09-12T22:24:59.810123",
+    "data": {
+      "probability": 0.1694,
+      "risk_score": 16.94,
+      "risk_level": "LOW",
+      "features": {
+        "rainfall_24h": 0.7,
+        "rainfall_48h": 3.0,
+        "rainfall_7d": 34.7,
+        "average_humidity_24h": 81.25,
+        "soil_moisture": 0.472,
+        "elevation": 56.0,
+        "slope": 2.31
+      },
+      "district_name": "Marigaon"
+    }
+  },
+  "Sonitpur": {
+    "cached_at": 1789232106.051729,
+    "cached_at_readable": "2026-09-12T22:25:06.051731",
+    "data": {
+      "probability": 0.3681,
+      "risk_score": 36.81,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 2.3,
+        "rainfall_48h": 2.6,
+        "rainfall_7d": 64.7,
+        "average_humidity_24h": 83.38,
+        "soil_moisture": 0.426,
+        "elevation": 66.0,
+        "slope": 0.0
+      },
+      "district_name": "Sonitpur"
+    }
+  },
+  "Dhemaji": {
+    "cached_at": 1789232114.617165,
+    "cached_at_readable": "2026-09-12T22:25:14.617167",
+    "data": {
+      "probability": 0.3598,
+      "risk_score": 35.98,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 7.9,
+        "rainfall_48h": 9.8,
+        "rainfall_7d": 79.8,
+        "average_humidity_24h": 77.58,
+        "soil_moisture": 0.413,
+        "elevation": 112.0,
+        "slope": 2.84
+      },
+      "district_name": "Dhemaji"
+    }
+  },
+  "Sivasagar": {
+    "cached_at": 1789232129.265826,
+    "cached_at_readable": "2026-09-12T22:25:29.265827",
+    "data": {
+      "probability": 0.4383,
+      "risk_score": 43.83,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 18.0,
+        "rainfall_48h": 22.7,
+        "rainfall_7d": 78.4,
+        "average_humidity_24h": 80.71,
+        "soil_moisture": 0.43,
+        "elevation": 91.0,
+        "slope": 0.0
+      },
+      "district_name": "Sivasagar"
+    }
+  },
+  "Dibrugarh": {
+    "cached_at": 1789232132.82516,
+    "cached_at_readable": "2026-09-12T22:25:32.825166",
+    "data": {
+      "probability": 0.2551,
+      "risk_score": 25.51,
+      "risk_level": "LOW",
+      "features": {
+        "rainfall_24h": 11.8,
+        "rainfall_48h": 25.3,
+        "rainfall_7d": 93.7,
+        "average_humidity_24h": 82.46,
+        "soil_moisture": 0.5,
+        "elevation": 105.0,
+        "slope": 0.63
+      },
+      "district_name": "Dibrugarh"
+    }
+  },
+  "Golaghat": {
+    "cached_at": 1789232141.527752,
+    "cached_at_readable": "2026-09-12T22:25:41.527754",
+    "data": {
+      "probability": 0.4901,
+      "risk_score": 49.01,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 2.2,
+        "rainfall_48h": 4.2,
+        "rainfall_7d": 133.1,
+        "average_humidity_24h": 82.71,
+        "soil_moisture": 0.434,
+        "elevation": 139.0,
+        "slope": 2.0
+      },
+      "district_name": "Golaghat"
+    }
+  },
+  "Cachar": {
+    "cached_at": 1789232156.576094,
+    "cached_at_readable": "2026-09-12T22:25:56.576096",
+    "data": {
+      "probability": 0.2228,
+      "risk_score": 22.28,
+      "risk_level": "LOW",
+      "features": {
+        "rainfall_24h": 9.2,
+        "rainfall_48h": 12.0,
+        "rainfall_7d": 74.5,
+        "average_humidity_24h": 83.88,
+        "soil_moisture": 0.518,
+        "elevation": 24.0,
+        "slope": 0.59
+      },
+      "district_name": "Cachar"
+    }
+  },
+  "Sribhumi": {
+    "cached_at": 1789232159.996324,
+    "cached_at_readable": "2026-09-12T22:25:59.996326",
+    "data": {
+      "probability": 0.224,
+      "risk_score": 22.4,
+      "risk_level": "LOW",
+      "features": {
+        "rainfall_24h": 8.1,
+        "rainfall_48h": 14.0,
+        "rainfall_7d": 61.0,
+        "average_humidity_24h": 85.54,
+        "soil_moisture": 0.52,
+        "elevation": 18.0,
+        "slope": 1.07
+      },
+      "district_name": "Sribhumi"
+    }
+  },
+  "Hailakandi": {
+    "cached_at": 1789232168.610632,
+    "cached_at_readable": "2026-09-12T22:26:08.610633",
+    "data": {
+      "probability": 0.3124,
+      "risk_score": 31.24,
+      "risk_level": "LOW",
+      "features": {
+        "rainfall_24h": 9.8,
+        "rainfall_48h": 16.4,
+        "rainfall_7d": 54.4,
+        "average_humidity_24h": 86.0,
+        "soil_moisture": 0.429,
+        "elevation": 26.0,
+        "slope": 0.89
+      },
+      "district_name": "Hailakandi"
+    }
+  },
+  "Ri Bhoi": {
+    "cached_at": 1789232183.805794,
+    "cached_at_readable": "2026-09-12T22:26:23.805796",
+    "data": {
+      "probability": 0.2963,
+      "risk_score": 29.63,
+      "risk_level": "LOW",
+      "features": {
+        "rainfall_24h": 2.1,
+        "rainfall_48h": 3.4,
+        "rainfall_7d": 36.8,
+        "average_humidity_24h": 87.67,
+        "soil_moisture": 0.469,
+        "elevation": 359.0,
+        "slope": 11.03
+      },
+      "district_name": "Ri Bhoi"
+    }
+  },
+  "South West Khasi Hills": {
+    "cached_at": 1789232187.04479,
+    "cached_at_readable": "2026-09-12T22:26:27.044792",
+    "data": {
+      "probability": 0.3493,
+      "risk_score": 34.93,
+      "risk_level": "LOW",
+      "features": {
+        "rainfall_24h": 7.0,
+        "rainfall_48h": 11.0,
+        "rainfall_7d": 32.5,
+        "average_humidity_24h": 89.62,
+        "soil_moisture": 0.49,
+        "elevation": 758.0,
+        "slope": 8.97
+      },
+      "district_name": "South West Khasi Hills"
+    }
+  },
+  "South West Garo Hills": {
+    "cached_at": 1789232195.688404,
+    "cached_at_readable": "2026-09-12T22:26:35.688405",
+    "data": {
+      "probability": 0.3903,
+      "risk_score": 39.03,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 8.8,
+        "rainfall_48h": 11.1,
+        "rainfall_7d": 25.6,
+        "average_humidity_24h": 82.33,
+        "soil_moisture": 0.094,
+        "elevation": 91.0,
+        "slope": 4.21
+      },
+      "district_name": "South West Garo Hills"
+    }
+  },
+  "North Garo Hills": {
+    "cached_at": 1789232210.40594,
+    "cached_at_readable": "2026-09-12T22:26:50.405942",
+    "data": {
+      "probability": 0.4692,
+      "risk_score": 46.92,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 12.6,
+        "rainfall_48h": 17.3,
+        "rainfall_7d": 46.8,
+        "average_humidity_24h": 92.88,
+        "soil_moisture": 0.509,
+        "elevation": 138.0,
+        "slope": 7.67
+      },
+      "district_name": "North Garo Hills"
+    }
+  },
+  "West Jaintia Hills": {
+    "cached_at": 1789232225.559786,
+    "cached_at_readable": "2026-09-12T22:27:05.559788",
+    "data": {
+      "probability": 0.4521,
+      "risk_score": 45.21,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 4.4,
+        "rainfall_48h": 10.5,
+        "rainfall_7d": 31.2,
+        "average_humidity_24h": 88.0,
+        "soil_moisture": 0.477,
+        "elevation": 1306.0,
+        "slope": 8.56
+      },
+      "district_name": "West Jaintia Hills"
+    }
+  },
+  "Aizawl": {
+    "cached_at": 1789232245.3119109,
+    "cached_at_readable": "2026-09-12T22:27:25.311915",
+    "data": {
+      "probability": 0.3983,
+      "risk_score": 39.83,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 13.5,
+        "rainfall_48h": 15.2,
+        "rainfall_7d": 83.4,
+        "average_humidity_24h": 92.29,
+        "soil_moisture": 0.425,
+        "elevation": 594.0,
+        "slope": 17.28
+      },
+      "district_name": "Aizawl"
+    }
+  },
+  "Dhubri": {
+    "cached_at": 1789232248.827363,
+    "cached_at_readable": "2026-09-12T22:27:28.827364",
+    "data": {
+      "probability": 0.2528,
+      "risk_score": 25.28,
+      "risk_level": "LOW",
+      "features": {
+        "rainfall_24h": 2.8,
+        "rainfall_48h": 5.1,
+        "rainfall_7d": 16.7,
+        "average_humidity_24h": 87.46,
+        "soil_moisture": 0.378,
+        "elevation": 52.0,
+        "slope": 1.07
+      },
+      "district_name": "Dhubri"
+    }
+  },
+  "Goalpara": {
+    "cached_at": 1789232263.80124,
+    "cached_at_readable": "2026-09-12T22:27:43.801250",
+    "data": {
+      "probability": 0.2713,
+      "risk_score": 27.13,
+      "risk_level": "LOW",
+      "features": {
+        "rainfall_24h": 6.9,
+        "rainfall_48h": 16.6,
+        "rainfall_7d": 34.7,
+        "average_humidity_24h": 91.54,
+        "soil_moisture": 0.418,
+        "elevation": 44.0,
+        "slope": 1.72
+      },
+      "district_name": "Goalpara"
+    }
+  },
+  "Charaideo": {
+    "cached_at": 1789232284.128632,
+    "cached_at_readable": "2026-09-12T22:28:04.128634",
+    "data": {
+      "probability": 0.2661,
+      "risk_score": 26.61,
+      "risk_level": "LOW",
+      "features": {
+        "rainfall_24h": 6.9,
+        "rainfall_48h": 12.6,
+        "rainfall_7d": 50.4,
+        "average_humidity_24h": 79.96,
+        "soil_moisture": 0.459,
+        "elevation": 107.0,
+        "slope": 1.64
+      },
+      "district_name": "Charaideo"
+    }
+  },
+  "Biswanath": {
+    "cached_at": 1789232311.8206458,
+    "cached_at_readable": "2026-09-12T22:28:31.820648",
+    "data": {
+      "probability": 0.3249,
+      "risk_score": 32.49,
+      "risk_level": "LOW",
+      "features": {
+        "rainfall_24h": 0.9,
+        "rainfall_48h": 2.9,
+        "rainfall_7d": 53.4,
+        "average_humidity_24h": 80.54,
+        "soil_moisture": 0.422,
+        "elevation": 84.0,
+        "slope": 0.77
+      },
+      "district_name": "Biswanath"
+    }
+  },
+  "Majuli": {
+    "cached_at": 1789232324.946965,
+    "cached_at_readable": "2026-09-12T22:28:44.946966",
+    "data": {
+      "probability": 0.2506,
+      "risk_score": 25.06,
+      "risk_level": "LOW",
+      "features": {
+        "rainfall_24h": 9.9,
+        "rainfall_48h": 11.4,
+        "rainfall_7d": 98.6,
+        "average_humidity_24h": 81.38,
+        "soil_moisture": 0.507,
+        "elevation": 84.0,
+        "slope": 0.26
+      },
+      "district_name": "Majuli"
+    }
+  },
+  "Hojai": {
+    "cached_at": 1789232327.637991,
+    "cached_at_readable": "2026-09-12T22:28:47.637992",
+    "data": {
+      "probability": 0.3811,
+      "risk_score": 38.11,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 3.9,
+        "rainfall_48h": 10.3,
+        "rainfall_7d": 59.6,
+        "average_humidity_24h": 83.46,
+        "soil_moisture": 0.417,
+        "elevation": 77.0,
+        "slope": 0.57
+      },
+      "district_name": "Hojai"
+    }
+  },
+  "Karbi Anglong": {
+    "cached_at": 1789232346.874528,
+    "cached_at_readable": "2026-09-12T22:29:06.874529",
+    "data": {
+      "probability": 0.3459,
+      "risk_score": 34.59,
+      "risk_level": "LOW",
+      "features": {
+        "rainfall_24h": 2.3,
+        "rainfall_48h": 9.1,
+        "rainfall_7d": 34.3,
+        "average_humidity_24h": 83.88,
+        "soil_moisture": 0.452,
+        "elevation": 949.0,
+        "slope": 9.75
+      },
+      "district_name": "Karbi Anglong"
+    }
+  },
+  "West Karbi Anglong": {
+    "cached_at": 1789232366.684991,
+    "cached_at_readable": "2026-09-12T22:29:26.684993",
+    "data": {
+      "probability": 0.3997,
+      "risk_score": 39.97,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 1.3,
+        "rainfall_48h": 3.8,
+        "rainfall_7d": 46.8,
+        "average_humidity_24h": 86.67,
+        "soil_moisture": 0.443,
+        "elevation": 533.0,
+        "slope": 11.56
+      },
+      "district_name": "West Karbi Anglong"
+    }
+  },
+  "South Salmara Mancachar": {
+    "cached_at": 1789232378.5782652,
+    "cached_at_readable": "2026-09-12T22:29:38.578266",
+    "data": {
+      "probability": 0.3058,
+      "risk_score": 30.58,
+      "risk_level": "LOW",
+      "features": {
+        "rainfall_24h": 3.1,
+        "rainfall_48h": 6.8,
+        "rainfall_7d": 20.1,
+        "average_humidity_24h": 88.58,
+        "soil_moisture": 0.273,
+        "elevation": 27.0,
+        "slope": 0.38
+      },
+      "district_name": "South Salmara Mancachar"
+    }
+  },
+  "Imphal East": {
+    "cached_at": 1789232392.7036102,
+    "cached_at_readable": "2026-09-12T22:29:52.703611",
+    "data": {
+      "probability": 0.4212,
+      "risk_score": 42.12,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 1.9,
+        "rainfall_48h": 2.6,
+        "rainfall_7d": 65.0,
+        "average_humidity_24h": 86.0,
+        "soil_moisture": 0.46,
+        "elevation": 788.0,
+        "slope": 3.97
+      },
+      "district_name": "Imphal East"
+    }
+  },
+  "Jiribam": {
+    "cached_at": 1789232396.611496,
+    "cached_at_readable": "2026-09-12T22:29:56.611498",
+    "data": {
+      "probability": 0.4357,
+      "risk_score": 43.57,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 16.5,
+        "rainfall_48h": 16.7,
+        "rainfall_7d": 71.1,
+        "average_humidity_24h": 89.12,
+        "soil_moisture": 0.43,
+        "elevation": 96.0,
+        "slope": 16.08
+      },
+      "district_name": "Jiribam"
+    }
+  },
+  "Changlang": {
+    "cached_at": 1789232420.255281,
+    "cached_at_readable": "2026-09-12T22:30:20.255283",
+    "data": {
+      "probability": 0.3718,
+      "risk_score": 37.18,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 1.2,
+        "rainfall_48h": 1.5,
+        "rainfall_7d": 41.9,
+        "average_humidity_24h": 80.17,
+        "soil_moisture": 0.441,
+        "elevation": 496.0,
+        "slope": 20.9
+      },
+      "district_name": "Changlang"
+    }
+  },
+  "Dibang Valley": {
+    "cached_at": 1789232435.509409,
+    "cached_at_readable": "2026-09-12T22:30:35.509410",
+    "data": {
+      "probability": 0.4606,
+      "risk_score": 46.06,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 18.7,
+        "rainfall_48h": 25.1,
+        "rainfall_7d": 48.9,
+        "average_humidity_24h": 87.21,
+        "soil_moisture": 0.395,
+        "elevation": 1905.0,
+        "slope": 27.3
+      },
+      "district_name": "Dibang Valley"
+    }
+  },
+  "Peren": {
+    "cached_at": 1789232443.7683551,
+    "cached_at_readable": "2026-09-12T22:30:43.768357",
+    "data": {
+      "probability": 0.5022,
+      "risk_score": 50.22,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 2.1,
+        "rainfall_48h": 5.5,
+        "rainfall_7d": 51.5,
+        "average_humidity_24h": 89.67,
+        "soil_moisture": 0.465,
+        "elevation": 1500.0,
+        "slope": 33.5
+      },
+      "district_name": "Peren"
+    }
+  },
+  "Ukhrul": {
+    "cached_at": 1789232462.327001,
+    "cached_at_readable": "2026-09-12T22:31:02.327004",
+    "data": {
+      "probability": 0.3563,
+      "risk_score": 35.63,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 1.4,
+        "rainfall_48h": 3.3,
+        "rainfall_7d": 39.4,
+        "average_humidity_24h": 82.58,
+        "soil_moisture": 0.461,
+        "elevation": 1343.0,
+        "slope": 10.46
+      },
+      "district_name": "Ukhrul"
+    }
+  },
+  "Meluri": {
+    "cached_at": 1789232471.102049,
+    "cached_at_readable": "2026-09-12T22:31:11.102050",
+    "data": {
+      "probability": 0.3128,
+      "risk_score": 31.28,
+      "risk_level": "LOW",
+      "features": {
+        "rainfall_24h": 0.9,
+        "rainfall_48h": 3.4,
+        "rainfall_7d": 26.7,
+        "average_humidity_24h": 78.42,
+        "soil_moisture": 0.412,
+        "elevation": 549.0,
+        "slope": 6.72
+      },
+      "district_name": "Meluri"
+    }
+  },
+  "Lohit": {
+    "cached_at": 1789232489.686461,
+    "cached_at_readable": "2026-09-12T22:31:29.686463",
+    "data": {
+      "probability": 0.5574,
+      "risk_score": 55.74,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 4.6,
+        "rainfall_48h": 6.8,
+        "rainfall_7d": 46.3,
+        "average_humidity_24h": 79.08,
+        "soil_moisture": 0.383,
+        "elevation": 1508.0,
+        "slope": 44.49
+      },
+      "district_name": "Lohit"
+    }
+  },
+  "Lower Dibang Valley": {
+    "cached_at": 1789232509.55305,
+    "cached_at_readable": "2026-09-12T22:31:49.553052",
+    "data": {
+      "probability": 0.4183,
+      "risk_score": 41.83,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 4.7,
+        "rainfall_48h": 10.0,
+        "rainfall_7d": 36.1,
+        "average_humidity_24h": 80.33,
+        "soil_moisture": 0.373,
+        "elevation": 2090.0,
+        "slope": 50.67
+      },
+      "district_name": "Lower Dibang Valley"
+    }
+  },
+  "Wokha": {
+    "cached_at": 1789232536.711422,
+    "cached_at_readable": "2026-09-12T22:32:16.711424",
+    "data": {
+      "probability": 0.3981,
+      "risk_score": 39.81,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 2.8,
+        "rainfall_48h": 5.9,
+        "rainfall_7d": 60.3,
+        "average_humidity_24h": 84.08,
+        "soil_moisture": 0.451,
+        "elevation": 380.0,
+        "slope": 24.18
+      },
+      "district_name": "Wokha"
+    }
+  },
+  "Papum Pare": {
+    "cached_at": 1789232550.7631402,
+    "cached_at_readable": "2026-09-12T22:32:30.763142",
+    "data": {
+      "probability": 0.5253,
+      "risk_score": 52.53,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 4.4,
+        "rainfall_48h": 6.0,
+        "rainfall_7d": 50.7,
+        "average_humidity_24h": 82.58,
+        "soil_moisture": 0.392,
+        "elevation": 2013.0,
+        "slope": 13.86
+      },
+      "district_name": "Papum Pare"
+    }
+  },
+  "Tamenglong": {
+    "cached_at": 1789232563.2016141,
+    "cached_at_readable": "2026-09-12T22:32:43.201615",
+    "data": {
+      "probability": 0.3972,
+      "risk_score": 39.72,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 2.0,
+        "rainfall_48h": 2.5,
+        "rainfall_7d": 43.0,
+        "average_humidity_24h": 77.92,
+        "soil_moisture": 0.363,
+        "elevation": 579.0,
+        "slope": 5.14
+      },
+      "district_name": "Tamenglong"
+    }
+  },
+  "Thoubal": {
+    "cached_at": 1789232586.955351,
+    "cached_at_readable": "2026-09-12T22:33:06.955352",
+    "data": {
+      "probability": 0.314,
+      "risk_score": 31.4,
+      "risk_level": "LOW",
+      "features": {
+        "rainfall_24h": 2.7,
+        "rainfall_48h": 3.0,
+        "rainfall_7d": 17.4,
+        "average_humidity_24h": 85.75,
+        "soil_moisture": 0.415,
+        "elevation": 775.0,
+        "slope": 0.0
+      },
+      "district_name": "Thoubal"
+    }
+  },
+  "Tawang": {
+    "cached_at": 1789232589.418106,
+    "cached_at_readable": "2026-09-12T22:33:09.418107",
+    "data": {
+      "probability": 0.3814,
+      "risk_score": 38.14,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 1.2,
+        "rainfall_48h": 4.3,
+        "rainfall_7d": 16.8,
+        "average_humidity_24h": 79.12,
+        "soil_moisture": 0.361,
+        "elevation": 3982.0,
+        "slope": 18.65
+      },
+      "district_name": "Tawang"
+    }
+  },
+  "Kamjong": {
+    "cached_at": 1789232616.9753768,
+    "cached_at_readable": "2026-09-12T22:33:36.975378",
+    "data": {
+      "probability": 0.4903,
+      "risk_score": 49.03,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 8.5,
+        "rainfall_48h": 12.6,
+        "rainfall_7d": 48.1,
+        "average_humidity_24h": 91.71,
+        "soil_moisture": 0.39,
+        "elevation": 521.0,
+        "slope": 26.06
+      },
+      "district_name": "Kamjong"
+    }
+  },
+  "Upper Siang": {
+    "cached_at": 1789232649.13009,
+    "cached_at_readable": "2026-09-12T22:34:09.130092",
+    "data": {
+      "probability": 0.3936,
+      "risk_score": 39.36,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 2.9,
+        "rainfall_48h": 3.7,
+        "rainfall_7d": 19.3,
+        "average_humidity_24h": 75.92,
+        "soil_moisture": 0.369,
+        "elevation": 1224.0,
+        "slope": 31.18
+      },
+      "district_name": "Upper Siang"
+    }
+  },
+  "Lunglei": {
+    "cached_at": 1789232650.809199,
+    "cached_at_readable": "2026-09-12T22:34:10.809201",
+    "data": {
+      "probability": 0.4505,
+      "risk_score": 45.05,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 14.9,
+        "rainfall_48h": 25.8,
+        "rainfall_7d": 88.4,
+        "average_humidity_24h": 94.83,
+        "soil_moisture": 0.426,
+        "elevation": 616.0,
+        "slope": 21.19
+      },
+      "district_name": "Lunglei"
+    }
+  },
+  "Lower Siang": {
+    "cached_at": 1789232675.533277,
+    "cached_at_readable": "2026-09-12T22:34:35.533280",
+    "data": {
+      "probability": 0.4645,
+      "risk_score": 46.45,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 12.3,
+        "rainfall_48h": 15.5,
+        "rainfall_7d": 61.3,
+        "average_humidity_24h": 77.21,
+        "soil_moisture": 0.426,
+        "elevation": 801.0,
+        "slope": 25.6
+      },
+      "district_name": "Lower Siang"
+    }
+  },
+  "Chumoukedima": {
+    "cached_at": 1789232679.197268,
+    "cached_at_readable": "2026-09-12T22:34:39.197270",
+    "data": {
+      "probability": 0.301,
+      "risk_score": 30.1,
+      "risk_level": "LOW",
+      "features": {
+        "rainfall_24h": 12.6,
+        "rainfall_48h": 18.1,
+        "rainfall_7d": 75.4,
+        "average_humidity_24h": 80.46,
+        "soil_moisture": 0.51,
+        "elevation": 399.0,
+        "slope": 16.48
+      },
+      "district_name": "Chumoukedima"
+    }
+  },
+  "Kiphire": {
+    "cached_at": 1789232712.722425,
+    "cached_at_readable": "2026-09-12T22:35:12.722426",
+    "data": {
+      "probability": 0.5208,
+      "risk_score": 52.08,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 0.2,
+        "rainfall_48h": 0.5,
+        "rainfall_7d": 10.5,
+        "average_humidity_24h": 72.62,
+        "soil_moisture": 0.348,
+        "elevation": 1014.0,
+        "slope": 34.5
+      },
+      "district_name": "Kiphire"
+    }
+  },
+  "Zunheboto": {
+    "cached_at": 1789232716.28107,
+    "cached_at_readable": "2026-09-12T22:35:16.281071",
+    "data": {
+      "probability": 0.478,
+      "risk_score": 47.8,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 1.2,
+        "rainfall_48h": 3.2,
+        "rainfall_7d": 56.8,
+        "average_humidity_24h": 75.83,
+        "soil_moisture": 0.459,
+        "elevation": 1541.0,
+        "slope": 31.81
+      },
+      "district_name": "Zunheboto"
+    }
+  },
+  "Mokokchung": {
+    "cached_at": 1789232733.223001,
+    "cached_at_readable": "2026-09-12T22:35:33.223003",
+    "data": {
+      "probability": 0.2834,
+      "risk_score": 28.34,
+      "risk_level": "LOW",
+      "features": {
+        "rainfall_24h": 13.3,
+        "rainfall_48h": 20.7,
+        "rainfall_7d": 110.1,
+        "average_humidity_24h": 78.75,
+        "soil_moisture": 0.505,
+        "elevation": 298.0,
+        "slope": 19.68
+      },
+      "district_name": "Mokokchung"
+    }
+  },
+  "Mon": {
+    "cached_at": 1789232762.589327,
+    "cached_at_readable": "2026-09-12T22:36:02.589328",
+    "data": {
+      "probability": 0.3745,
+      "risk_score": 37.45,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 11.8,
+        "rainfall_48h": 13.5,
+        "rainfall_7d": 65.6,
+        "average_humidity_24h": 84.96,
+        "soil_moisture": 0.451,
+        "elevation": 889.0,
+        "slope": 2.89
+      },
+      "district_name": "Mon"
+    }
+  },
+  "Tuensang": {
+    "cached_at": 1789232778.538356,
+    "cached_at_readable": "2026-09-12T22:36:18.538357",
+    "data": {
+      "probability": 0.3491,
+      "risk_score": 34.91,
+      "risk_level": "LOW",
+      "features": {
+        "rainfall_24h": 1.1,
+        "rainfall_48h": 1.7,
+        "rainfall_7d": 72.8,
+        "average_humidity_24h": 78.58,
+        "soil_moisture": 0.437,
+        "elevation": 1998.0,
+        "slope": 39.47
+      },
+      "district_name": "Tuensang"
+    }
+  },
+  "Keyi Panyor": {
+    "cached_at": 1789232781.30285,
+    "cached_at_readable": "2026-09-12T22:36:21.302851",
+    "data": {
+      "probability": 0.5618,
+      "risk_score": 56.18,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 2.1,
+        "rainfall_48h": 9.1,
+        "rainfall_7d": 35.5,
+        "average_humidity_24h": 82.04,
+        "soil_moisture": 0.36,
+        "elevation": 1665.0,
+        "slope": 14.05
+      },
+      "district_name": "Keyi Panyor"
+    }
+  },
+  "Longleng": {
+    "cached_at": 1789232801.089247,
+    "cached_at_readable": "2026-09-12T22:36:41.089250",
+    "data": {
+      "probability": 0.2911,
+      "risk_score": 29.11,
+      "risk_level": "LOW",
+      "features": {
+        "rainfall_24h": 15.5,
+        "rainfall_48h": 18.3,
+        "rainfall_7d": 92.6,
+        "average_humidity_24h": 82.42,
+        "soil_moisture": 0.507,
+        "elevation": 529.0,
+        "slope": 27.51
+      },
+      "district_name": "Longleng"
+    }
+  },
+  "Pherzawl": {
+    "cached_at": 1789232831.0571089,
+    "cached_at_readable": "2026-09-12T22:37:11.057110",
+    "data": {
+      "probability": 0.4315,
+      "risk_score": 43.15,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 12.3,
+        "rainfall_48h": 12.5,
+        "rainfall_7d": 92.5,
+        "average_humidity_24h": 88.67,
+        "soil_moisture": 0.423,
+        "elevation": 523.0,
+        "slope": 3.82
+      },
+      "district_name": "Pherzawl"
+    }
+  },
+  "Kangpokpi": {
+    "cached_at": 1789232854.6419258,
+    "cached_at_readable": "2026-09-12T22:37:34.641927",
+    "data": {
+      "probability": 0.4251,
+      "risk_score": 42.51,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 1.9,
+        "rainfall_48h": 2.6,
+        "rainfall_7d": 65.0,
+        "average_humidity_24h": 86.0,
+        "soil_moisture": 0.46,
+        "elevation": 807.0,
+        "slope": 6.0
+      },
+      "district_name": "Kangpokpi"
+    }
+  },
+  "Kakching": {
+    "cached_at": 1789232858.200373,
+    "cached_at_readable": "2026-09-12T22:37:38.200374",
+    "data": {
+      "probability": 0.3328,
+      "risk_score": 33.28,
+      "risk_level": "LOW",
+      "features": {
+        "rainfall_24h": 3.6,
+        "rainfall_48h": 4.3,
+        "rainfall_7d": 23.5,
+        "average_humidity_24h": 85.29,
+        "soil_moisture": 0.424,
+        "elevation": 841.0,
+        "slope": 4.9
+      },
+      "district_name": "Kakching"
+    }
+  },
+  "Siang": {
+    "cached_at": 1789232878.27091,
+    "cached_at_readable": "2026-09-12T22:37:58.270912",
+    "data": {
+      "probability": 0.4536,
+      "risk_score": 45.36,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 10.8,
+        "rainfall_48h": 16.5,
+        "rainfall_7d": 64.4,
+        "average_humidity_24h": 80.96,
+        "soil_moisture": 0.421,
+        "elevation": 1112.0,
+        "slope": 19.19
+      },
+      "district_name": "Siang"
+    }
+  },
+  "West Siang": {
+    "cached_at": 1789232893.140185,
+    "cached_at_readable": "2026-09-12T22:38:13.140187",
+    "data": {
+      "probability": 0.4752,
+      "risk_score": 47.52,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 4.9,
+        "rainfall_48h": 5.0,
+        "rainfall_7d": 46.6,
+        "average_humidity_24h": 74.71,
+        "soil_moisture": 0.361,
+        "elevation": 630.0,
+        "slope": 35.62
+      },
+      "district_name": "West Siang"
+    }
+  },
+  "Leparada": {
+    "cached_at": 1789232917.3989902,
+    "cached_at_readable": "2026-09-12T22:38:37.398992",
+    "data": {
+      "probability": 0.5207,
+      "risk_score": 52.07,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 9.9,
+        "rainfall_48h": 10.8,
+        "rainfall_7d": 61.4,
+        "average_humidity_24h": 79.12,
+        "soil_moisture": 0.426,
+        "elevation": 954.0,
+        "slope": 12.95
+      },
+      "district_name": "Leparada"
+    }
+  },
+  "Pakke Kessang": {
+    "cached_at": 1789232932.4473119,
+    "cached_at_readable": "2026-09-12T22:38:52.447312",
+    "data": {
+      "probability": 0.3251,
+      "risk_score": 32.51,
+      "risk_level": "LOW",
+      "features": {
+        "rainfall_24h": 3.1,
+        "rainfall_48h": 6.4,
+        "rainfall_7d": 31.6,
+        "average_humidity_24h": 83.42,
+        "soil_moisture": 0.457,
+        "elevation": 1099.0,
+        "slope": 23.08
+      },
+      "district_name": "Pakke Kessang"
+    }
+  },
+  "Namsai": {
+    "cached_at": 1789232961.4467788,
+    "cached_at_readable": "2026-09-12T22:39:21.446781",
+    "data": {
+      "probability": 0.6649,
+      "risk_score": 66.49,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 0.0,
+        "rainfall_48h": 0.0,
+        "rainfall_7d": 48.1,
+        "average_humidity_24h": 63.88,
+        "soil_moisture": 0.402,
+        "elevation": 231.0,
+        "slope": 6.56
+      },
+      "district_name": "Namsai"
+    }
+  },
+  "Kamrup Metro": {
+    "cached_at": 1789232973.789016,
+    "cached_at_readable": "2026-09-12T22:39:33.789019",
+    "data": {
+      "probability": 0.2655,
+      "risk_score": 26.55,
+      "risk_level": "LOW",
+      "features": {
+        "rainfall_24h": 1.1,
+        "rainfall_48h": 1.7,
+        "rainfall_7d": 26.9,
+        "average_humidity_24h": 83.04,
+        "soil_moisture": 0.429,
+        "elevation": 60.0,
+        "slope": 1.03
+      },
+      "district_name": "Kamrup Metro"
+    }
+  },
+  "Kamle": {
+    "cached_at": 1789232976.818312,
+    "cached_at_readable": "2026-09-12T22:39:36.818314",
+    "data": {
+      "probability": 0.6319,
+      "risk_score": 63.19,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 6.5,
+        "rainfall_48h": 7.0,
+        "rainfall_7d": 124.9,
+        "average_humidity_24h": 84.29,
+        "soil_moisture": 0.377,
+        "elevation": 890.0,
+        "slope": 21.38
+      },
+      "district_name": "Kamle"
+    }
+  },
+  "Kra Daadi": {
+    "cached_at": 1789232982.787662,
+    "cached_at_readable": "2026-09-12T22:39:42.787663",
+    "data": {
+      "probability": 0.4305,
+      "risk_score": 43.05,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 15.9,
+        "rainfall_48h": 20.7,
+        "rainfall_7d": 71.6,
+        "average_humidity_24h": 79.62,
+        "soil_moisture": 0.423,
+        "elevation": 622.0,
+        "slope": 18.7
+      },
+      "district_name": "Kra Daadi"
+    }
+  },
+  "Longding": {
+    "cached_at": 1789233000.459787,
+    "cached_at_readable": "2026-09-12T22:40:00.459789",
+    "data": {
+      "probability": 0.4842,
+      "risk_score": 48.42,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 3.6,
+        "rainfall_48h": 5.7,
+        "rainfall_7d": 69.3,
+        "average_humidity_24h": 76.75,
+        "soil_moisture": 0.438,
+        "elevation": 683.0,
+        "slope": 25.04
+      },
+      "district_name": "Longding"
+    }
+  },
+  "East Siang": {
+    "cached_at": 1789233002.8060632,
+    "cached_at_readable": "2026-09-12T22:40:02.806064",
+    "data": {
+      "probability": 0.399,
+      "risk_score": 39.9,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 1.0,
+        "rainfall_48h": 1.7,
+        "rainfall_7d": 82.6,
+        "average_humidity_24h": 71.33,
+        "soil_moisture": 0.423,
+        "elevation": 177.0,
+        "slope": 1.18
+      },
+      "district_name": "East Siang"
+    }
+  },
+  "Noklak": {
+    "cached_at": 1789233019.293765,
+    "cached_at_readable": "2026-09-12T22:40:19.293766",
+    "data": {
+      "probability": 0.5591,
+      "risk_score": 55.91,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 6.6,
+        "rainfall_48h": 11.7,
+        "rainfall_7d": 87.3,
+        "average_humidity_24h": 88.79,
+        "soil_moisture": 0.405,
+        "elevation": 1606.0,
+        "slope": 25.02
+      },
+      "district_name": "Noklak"
+    }
+  },
+  "Hnahthial": {
+    "cached_at": 1789233039.1707,
+    "cached_at_readable": "2026-09-12T22:40:39.170702",
+    "data": {
+      "probability": 0.4162,
+      "risk_score": 41.62,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 9.1,
+        "rainfall_48h": 16.2,
+        "rainfall_7d": 77.4,
+        "average_humidity_24h": 92.79,
+        "soil_moisture": 0.413,
+        "elevation": 234.0,
+        "slope": 19.96
+      },
+      "district_name": "Hnahthial"
+    }
+  },
+  "Lakhimpur": {
+    "cached_at": 1789233051.7567391,
+    "cached_at_readable": "2026-09-12T22:40:51.756741",
+    "data": {
+      "probability": 0.4816,
+      "risk_score": 48.16,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 8.5,
+        "rainfall_48h": 10.4,
+        "rainfall_7d": 85.8,
+        "average_humidity_24h": 77.79,
+        "soil_moisture": 0.379,
+        "elevation": 87.0,
+        "slope": 0.0
+      },
+      "district_name": "Lakhimpur"
+    }
+  },
+  "Khawzawl": {
+    "cached_at": 1789233077.867973,
+    "cached_at_readable": "2026-09-12T22:41:17.867975",
+    "data": {
+      "probability": 0.5298,
+      "risk_score": 52.98,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 3.9,
+        "rainfall_48h": 4.7,
+        "rainfall_7d": 53.2,
+        "average_humidity_24h": 86.79,
+        "soil_moisture": 0.409,
+        "elevation": 897.0,
+        "slope": 14.34
+      },
+      "district_name": "Khawzawl"
+    }
+  },
+  "Darrang": {
+    "cached_at": 1789233078.958509,
+    "cached_at_readable": "2026-09-12T22:41:18.958510",
+    "data": {
+      "probability": 0.25,
+      "risk_score": 25.0,
+      "risk_level": "LOW",
+      "features": {
+        "rainfall_24h": 0.5,
+        "rainfall_48h": 1.8,
+        "rainfall_7d": 30.4,
+        "average_humidity_24h": 80.92,
+        "soil_moisture": 0.455,
+        "elevation": 64.0,
+        "slope": 1.54
+      },
+      "district_name": "Darrang"
+    }
+  },
+  "Champhai": {
+    "cached_at": 1789233091.676078,
+    "cached_at_readable": "2026-09-12T22:41:31.676080",
+    "data": {
+      "probability": 0.542,
+      "risk_score": 54.2,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 6.6,
+        "rainfall_48h": 7.2,
+        "rainfall_7d": 72.4,
+        "average_humidity_24h": 84.5,
+        "soil_moisture": 0.39,
+        "elevation": 1087.0,
+        "slope": 28.15
+      },
+      "district_name": "Champhai"
+    }
+  },
+  "Bajali": {
+    "cached_at": 1789233092.476581,
+    "cached_at_readable": "2026-09-12T22:41:32.476583",
+    "data": {
+      "probability": 0.2472,
+      "risk_score": 24.72,
+      "risk_level": "LOW",
+      "features": {
+        "rainfall_24h": 1.8,
+        "rainfall_48h": 4.0,
+        "rainfall_7d": 16.0,
+        "average_humidity_24h": 85.62,
+        "soil_moisture": 0.336,
+        "elevation": 48.0,
+        "slope": 1.46
+      },
+      "district_name": "Bajali"
+    }
+  },
+  "Saitual": {
+    "cached_at": 1789233095.965248,
+    "cached_at_readable": "2026-09-12T22:41:35.965249",
+    "data": {
+      "probability": 0.4891,
+      "risk_score": 48.91,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 2.0,
+        "rainfall_48h": 3.4,
+        "rainfall_7d": 49.3,
+        "average_humidity_24h": 87.79,
+        "soil_moisture": 0.384,
+        "elevation": 700.0,
+        "slope": 21.43
+      },
+      "district_name": "Saitual"
+    }
+  },
+  "Pakyong": {
+    "cached_at": 1789233116.131598,
+    "cached_at_readable": "2026-09-12T22:41:56.131600",
+    "data": {
+      "probability": 0.4307,
+      "risk_score": 43.07,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 16.0,
+        "rainfall_48h": 39.9,
+        "rainfall_7d": 76.4,
+        "average_humidity_24h": 81.25,
+        "soil_moisture": 0.399,
+        "elevation": 2117.0,
+        "slope": 37.59
+      },
+      "district_name": "Pakyong"
+    }
+  },
+  "Soreng": {
+    "cached_at": 1789233130.604558,
+    "cached_at_readable": "2026-09-12T22:42:10.604560",
+    "data": {
+      "probability": 0.6459,
+      "risk_score": 64.59,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 2.8,
+        "rainfall_48h": 3.2,
+        "rainfall_7d": 193.9,
+        "average_humidity_24h": 78.21,
+        "soil_moisture": 0.374,
+        "elevation": 2294.0,
+        "slope": 23.44
+      },
+      "district_name": "Soreng"
+    }
+  },
+  "Eastern West Khasi Hills": {
+    "cached_at": 1789233145.435619,
+    "cached_at_readable": "2026-09-12T22:42:25.435619",
+    "data": {
+      "probability": 0.4823,
+      "risk_score": 48.23,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 4.8,
+        "rainfall_48h": 7.9,
+        "rainfall_7d": 27.3,
+        "average_humidity_24h": 84.12,
+        "soil_moisture": 0.464,
+        "elevation": 1608.0,
+        "slope": 3.74
+      },
+      "district_name": "Eastern West Khasi Hills"
+    }
+  },
+  "Baksa": {
+    "cached_at": 1789233165.3186429,
+    "cached_at_readable": "2026-09-12T22:42:45.318644",
+    "data": {
+      "probability": 0.29,
+      "risk_score": 29.0,
+      "risk_level": "LOW",
+      "features": {
+        "rainfall_24h": 1.8,
+        "rainfall_48h": 3.4,
+        "rainfall_7d": 11.0,
+        "average_humidity_24h": 85.04,
+        "soil_moisture": 0.327,
+        "elevation": 48.0,
+        "slope": 0.0
+      },
+      "district_name": "Baksa"
+    }
+  },
+  "Tseminyu": {
+    "cached_at": 1789233179.961904,
+    "cached_at_readable": "2026-09-12T22:42:59.961906",
+    "data": {
+      "probability": 0.2897,
+      "risk_score": 28.97,
+      "risk_level": "LOW",
+      "features": {
+        "rainfall_24h": 4.4,
+        "rainfall_48h": 6.9,
+        "rainfall_7d": 50.7,
+        "average_humidity_24h": 84.42,
+        "soil_moisture": 0.474,
+        "elevation": 657.0,
+        "slope": 18.25
+      },
+      "district_name": "Tseminyu"
+    }
+  },
+  "Dimapur": {
+    "cached_at": 1789233208.820939,
+    "cached_at_readable": "2026-09-12T22:43:28.820941",
+    "data": {
+      "probability": 0.3518,
+      "risk_score": 35.18,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 10.7,
+        "rainfall_48h": 13.6,
+        "rainfall_7d": 80.5,
+        "average_humidity_24h": 85.38,
+        "soil_moisture": 0.464,
+        "elevation": 147.0,
+        "slope": 0.51
+      },
+      "district_name": "Dimapur"
+    }
+  },
+  "Tamulpur": {
+    "cached_at": 1789233217.5681658,
+    "cached_at_readable": "2026-09-12T22:43:37.568168",
+    "data": {
+      "probability": 0.2089,
+      "risk_score": 20.89,
+      "risk_level": "LOW",
+      "features": {
+        "rainfall_24h": 0.9,
+        "rainfall_48h": 5.2,
+        "rainfall_7d": 27.9,
+        "average_humidity_24h": 83.21,
+        "soil_moisture": 0.45,
+        "elevation": 72.0,
+        "slope": 1.63
+      },
+      "district_name": "Tamulpur"
+    }
+  },
+  "Phek": {
+    "cached_at": 1789233265.532892,
+    "cached_at_readable": "2026-09-12T22:44:25.532894",
+    "data": {
+      "probability": 0.4247,
+      "risk_score": 42.47,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 0.4,
+        "rainfall_48h": 1.0,
+        "rainfall_7d": 59.9,
+        "average_humidity_24h": 77.42,
+        "soil_moisture": 0.436,
+        "elevation": 1964.0,
+        "slope": 33.34
+      },
+      "district_name": "Phek"
+    }
+  },
+  "Niuland": {
+    "cached_at": 1789233268.339391,
+    "cached_at_readable": "2026-09-12T22:44:28.339393",
+    "data": {
+      "probability": 0.1969,
+      "risk_score": 19.69,
+      "risk_level": "LOW",
+      "features": {
+        "rainfall_24h": 6.7,
+        "rainfall_48h": 10.1,
+        "rainfall_7d": 46.4,
+        "average_humidity_24h": 82.5,
+        "soil_moisture": 0.48,
+        "elevation": 213.0,
+        "slope": 4.82
+      },
+      "district_name": "Niuland"
+    }
+  },
+  "Bichom": {
+    "cached_at": 1789233280.629872,
+    "cached_at_readable": "2026-09-12T22:44:40.629874",
+    "data": {
+      "probability": 0.3383,
+      "risk_score": 33.83,
+      "risk_level": "LOW",
+      "features": {
+        "rainfall_24h": 0.7,
+        "rainfall_48h": 2.4,
+        "rainfall_7d": 36.2,
+        "average_humidity_24h": 82.12,
+        "soil_moisture": 0.347,
+        "elevation": 803.0,
+        "slope": 24.58
+      },
+      "district_name": "Bichom"
+    }
+  },
+  "Lower Subansiri": {
+    "cached_at": 1789233296.54232,
+    "cached_at_readable": "2026-09-12T22:44:56.542321",
+    "data": {
+      "probability": 0.5065,
+      "risk_score": 50.65,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 5.7,
+        "rainfall_48h": 9.3,
+        "rainfall_7d": 100.9,
+        "average_humidity_24h": 85.96,
+        "soil_moisture": 0.415,
+        "elevation": 1837.0,
+        "slope": 14.94
+      },
+      "district_name": "Lower Subansiri"
+    }
+  },
+  "West Kameng": {
+    "cached_at": 1789233554.8120608,
+    "cached_at_readable": "2026-09-12T22:49:14.812063",
+    "data": {
+      "probability": 0.5845,
+      "risk_score": 58.45,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 1.8,
+        "rainfall_48h": 4.8,
+        "rainfall_7d": 54.5,
+        "average_humidity_24h": 74.92,
+        "soil_moisture": 0.396,
+        "elevation": 1274.0,
+        "slope": 21.53
+      },
+      "district_name": "West Kameng"
+    }
+  },
+  "Senapati": {
+    "cached_at": 1789233820.5445151,
+    "cached_at_readable": "2026-09-12T22:53:40.544517",
+    "data": {
+      "probability": 0.3253,
+      "risk_score": 32.53,
+      "risk_level": "LOW",
+      "features": {
+        "rainfall_24h": 2.3,
+        "rainfall_48h": 4.6,
+        "rainfall_7d": 31.2,
+        "average_humidity_24h": 84.75,
+        "soil_moisture": 0.416,
+        "elevation": 1280.0,
+        "slope": 17.81
+      },
+      "district_name": "Senapati"
+    }
+  },
+  "Kohima": {
+    "cached_at": 1789233827.39057,
+    "cached_at_readable": "2026-09-12T22:53:47.390572",
+    "data": {
+      "probability": 0.4191,
+      "risk_score": 41.91,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 10.6,
+        "rainfall_48h": 12.7,
+        "rainfall_7d": 83.5,
+        "average_humidity_24h": 81.0,
+        "soil_moisture": 0.509,
+        "elevation": 1003.0,
+        "slope": 12.47
+      },
+      "district_name": "Kohima"
+    }
+  },
+  "Anjaw": {
+    "cached_at": 1789233852.725325,
+    "cached_at_readable": "2026-09-12T22:54:12.725327",
+    "data": {
+      "probability": 0.3949,
+      "risk_score": 39.49,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 3.9,
+        "rainfall_48h": 20.0,
+        "rainfall_7d": 67.5,
+        "average_humidity_24h": 87.17,
+        "soil_moisture": 0.4,
+        "elevation": 3276.0,
+        "slope": 43.92
+      },
+      "district_name": "Anjaw"
+    }
+  },
+  "Shi Yomi": {
+    "cached_at": 1789233874.3030531,
+    "cached_at_readable": "2026-09-12T22:54:34.303054",
+    "data": {
+      "probability": 0.4278,
+      "risk_score": 42.78,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 3.3,
+        "rainfall_48h": 7.1,
+        "rainfall_7d": 44.3,
+        "average_humidity_24h": 85.08,
+        "soil_moisture": 0.397,
+        "elevation": 3601.0,
+        "slope": 13.67
+      },
+      "district_name": "Shi Yomi"
+    }
+  },
+  "Upper Subansiri": {
+    "cached_at": 1789233875.744052,
+    "cached_at_readable": "2026-09-12T22:54:35.744055",
+    "data": {
+      "probability": 0.3694,
+      "risk_score": 36.94,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 11.5,
+        "rainfall_48h": 17.2,
+        "rainfall_7d": 66.0,
+        "average_humidity_24h": 86.21,
+        "soil_moisture": 0.42,
+        "elevation": 2716.0,
+        "slope": 35.52
+      },
+      "district_name": "Upper Subansiri"
+    }
+  },
+  "Tengnoupal": {
+    "cached_at": 1789233919.992267,
+    "cached_at_readable": "2026-09-12T22:55:19.992269",
+    "data": {
+      "probability": 0.5188,
+      "risk_score": 51.88,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 10.7,
+        "rainfall_48h": 13.9,
+        "rainfall_7d": 42.9,
+        "average_humidity_24h": 95.25,
+        "soil_moisture": 0.398,
+        "elevation": 1397.0,
+        "slope": 23.11
+      },
+      "district_name": "Tengnoupal"
+    }
+  },
+  "East Kameng": {
+    "cached_at": 1789234091.078511,
+    "cached_at_readable": "2026-09-12T22:58:11.078520",
+    "data": {
+      "probability": 0.5776,
+      "risk_score": 57.76,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 5.1,
+        "rainfall_48h": 8.3,
+        "rainfall_7d": 48.5,
+        "average_humidity_24h": 76.17,
+        "soil_moisture": 0.385,
+        "elevation": 1114.0,
+        "slope": 31.3
+      },
+      "district_name": "East Kameng"
+    }
+  },
+  "Kurung Kumey": {
+    "cached_at": 1789234110.256934,
+    "cached_at_readable": "2026-09-12T22:58:30.256936",
+    "data": {
+      "probability": 0.429,
+      "risk_score": 42.9,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 6.5,
+        "rainfall_48h": 28.3,
+        "rainfall_7d": 91.5,
+        "average_humidity_24h": 81.08,
+        "soil_moisture": 0.408,
+        "elevation": 1191.0,
+        "slope": 27.2
+      },
+      "district_name": "Kurung Kumey"
+    }
+  },
+  "Tirap": {
+    "cached_at": 1789235129.356717,
+    "cached_at_readable": "2026-09-12T23:15:29.356726",
+    "data": {
+      "probability": 0.438,
+      "risk_score": 43.8,
+      "risk_level": "MODERATE",
+      "features": {
+        "rainfall_24h": 5.2,
+        "rainfall_48h": 13.0,
+        "rainfall_7d": 72.3,
+        "average_humidity_24h": 78.17,
+        "soil_moisture": 0.446,
+        "elevation": 520.0,
+        "slope": 16.08
+      },
+      "district_name": "Tirap"
+    }
+  }
+}

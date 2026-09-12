@@ -1,0 +1,27 @@
+{
+  "installMethod": "native",
+  "autoUpdates": false,
+  "firstStartTime": "2026-08-20T14:29:04.697Z",
+  "machineID": "da1528fa4d61dba8fabb97bdb580d3102f1c9b5e77b73efa217b8f201ee38a3b",
+  "opusProMigrationComplete": true,
+  "sonnet1m45MigrationComplete": true,
+  "seenNotifications": {},
+  "hasResetAutoModeOptInForDefaultOffer": true,
+  "migrationVersion": 14,
+  "userID": "7eecb2c61a85b9715745e70c29e9e1de680d4968dbb1ddb14419c3a858d75e2d",
+  "projects": {
+    "/Users/divyanshu/Desktop/LandslideRisk_NER": {
+      "allowedTools": [],
+      "mcpContextUris": [],
+      "mcpServers": {},
+      "enabledMcpjsonServers": [],
+      "disabledMcpjsonServers": [],
+      "hasTrustDialogAccepted": false,
+      "hasClaudeMdExternalIncludesApproved": false,
+      "hasClaudeMdExternalIncludesWarningShown": false,
+      "hasUnseenTeamArtifacts": false
+    }
+  },
+  "changelogLastFetched": 1789202316649,
+  "autoUpdatesProtectedForNative": true
+}
