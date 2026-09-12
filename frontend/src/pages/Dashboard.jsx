@@ -5,6 +5,7 @@ import HighRiskLocations from "../components/dashboard/HighRiskLocations";
 import RecentAlerts from "../components/dashboard/RecentAlerts";
 import RecentReports from "../components/dashboard/RecentReports";
 import QuickActions from "../components/dashboard/QuickActions";
+import LocationAlertSubscription from "../components/alerts/LocationAlertSubscription";
 import { useTranslation } from "react-i18next";
 
 function Dashboard() {
@@ -32,6 +33,8 @@ function Dashboard() {
       </div>
 
       <QuickActions />
+
+      <LocationAlertSubscription />
     </div>
   );
 }
