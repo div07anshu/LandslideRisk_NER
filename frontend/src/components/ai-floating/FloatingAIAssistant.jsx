@@ -3,19 +3,30 @@ import { Bot, Send, X } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import { useTranslation } from "react-i18next";
 
-const API_BASE = import.meta.env.VITE_API_URL ?? import.meta.env.VITE_BACKEND_URL ?? "http://localhost:4000";
+const API_BASE =
+  import.meta.env.VITE_API_URL ??
+  import.meta.env.VITE_BACKEND_URL ??
+  "http://localhost:4000";
 
 function FloatingAIAssistant({ onOpenChange }) {
   const { t, i18n } = useTranslation();
+
   const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  // Remembers the last location resolved by the backend.
+  const [currentLocation, setCurrentLocation] = useState(null);
+
+  // Used when the backend asks the user to provide a location.
+  const [awaitingLocation, setAwaitingLocation] = useState(false);
+
   const [messages, setMessages] = useState([
     {
       role: "assistant",
       content: t("assistant.floatingWelcome"),
     },
   ]);
-  const [loading, setLoading] = useState(false);
 
   const messagesEndRef = useRef(null);
 
@@ -32,8 +43,14 @@ function FloatingAIAssistant({ onOpenChange }) {
   useEffect(() => {
     setMessages((prev) => {
       if (prev.length === 1 && prev[0].role === "assistant") {
-        return [{ role: "assistant", content: t("assistant.floatingWelcome") }];
+        return [
+          {
+            role: "assistant",
+            content: t("assistant.floatingWelcome"),
+          },
+        ];
       }
+
       return prev;
     });
   }, [i18n.language, t]);
@@ -73,6 +90,8 @@ function FloatingAIAssistant({ onOpenChange }) {
         body: JSON.stringify({
           message: trimmedMessage,
           language: i18n.language,
+          context_location: currentLocation,
+          awaiting_location: awaitingLocation,
         }),
       });
 
@@ -95,6 +114,14 @@ function FloatingAIAssistant({ onOpenChange }) {
       }
 
       const data = await response.json();
+
+      // Save the location resolved by the backend.
+      if (data.resolved_location) {
+        setCurrentLocation(data.resolved_location);
+      }
+
+      // Remember whether the backend is waiting for a location.
+      setAwaitingLocation(Boolean(data.location_required));
 
       setMessages((prev) => [
         ...prev,
@@ -137,7 +164,6 @@ function FloatingAIAssistant({ onOpenChange }) {
 
   return (
     <>
-      {/* Floating Ask AI Button */}
       {!isOpen && (
         <button
           onClick={openAssistant}
@@ -149,11 +175,10 @@ function FloatingAIAssistant({ onOpenChange }) {
         </button>
       )}
 
-      {/* AI Side Panel */}
       <div
-        className={`fixed right-0 top-0 bottom-0 z-50 flex h-dvh w-[400px] max-w-[90vw] flex-col border-l border-slate-200 bg-white shadow-2xl transition-transform duration-300 ease-out box-border ${isOpen ? "translate-x-0" : "translate-x-full"}`}
+        className={`fixed right-0 top-0 bottom-0 z-50 flex h-dvh w-[400px] max-w-[90vw] flex-col border-l border-slate-200 bg-white shadow-2xl transition-transform duration-300 ease-out box-border ${isOpen ? "translate-x-0" : "translate-x-full"
+          }`}
       >
-        {/* Header */}
         <div className="flex h-16 shrink-0 items-center justify-between bg-brand-900 px-4 text-white box-border border-b border-brand-800/50">
           <div className="flex items-center gap-2">
             <div className="flex h-9 w-9 items-center justify-center rounded-full bg-brand-600">
@@ -161,8 +186,13 @@ function FloatingAIAssistant({ onOpenChange }) {
             </div>
 
             <div>
-              <p className="text-sm font-semibold">{t("assistant.title")}</p>
-              <p className="text-[11px] text-slate-300">{t("assistant.floatingSubtitle")}</p>
+              <p className="text-sm font-semibold">
+                {t("assistant.title")}
+              </p>
+
+              <p className="text-[11px] text-slate-300">
+                {t("assistant.floatingSubtitle")}
+              </p>
             </div>
           </div>
 
@@ -175,16 +205,17 @@ function FloatingAIAssistant({ onOpenChange }) {
           </button>
         </div>
 
-        {/* Chat Messages */}
         <div className="flex-1 space-y-3 overflow-y-auto no-scrollbar bg-[#F9F7F7] p-4 box-border">
           {messages.map((msg, index) => (
             <div
               key={index}
-              className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"
+              className={`flex ${msg.role === "user"
+                  ? "justify-end"
+                  : "justify-start"
                 }`}
             >
               {msg.role === "assistant" && (
-                <div className="mr-2 mt-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand-600 text-white">
+                <div className="mr-2 mt-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand-600text-white">
                   <Bot size={15} strokeWidth={2.2} />
                 </div>
               )}
@@ -219,7 +250,6 @@ function FloatingAIAssistant({ onOpenChange }) {
           <div ref={messagesEndRef} />
         </div>
 
-        {/* Input */}
         <div className="shrink-0 border-t border-slate-200 bg-white p-4 box-border">
           <div className="flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-2 py-1.5 focus-within:border-brand-500">
             <input
