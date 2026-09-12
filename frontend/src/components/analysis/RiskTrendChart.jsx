@@ -9,16 +9,31 @@ import {
   ReferenceLine,
 } from "recharts";
 
-import { AREAS } from "../../data/analysisData";
 import Card from "../../common/Card";
 import { useTranslation } from "react-i18next";
 
-const compareColors = ["#3F72AF", "#112D4E", "#2563EB", "#16A34A"];
+const compareColors = [
+  "#3F72AF",
+  "#112D4E",
+  "#2563EB",
+  "#16A34A",
+  "#D97706",
+  "#DC2626",
+  "#7C3AED",
+];
+
+const TREND_RANGES = [
+  { value: "24 hours", key: "24h" },
+  { value: "7 days", key: "7" },
+];
 
 export default function RiskTrendChart({
-  compareIds,
-  setCompareIds,
-  compareData,
+  locations,
+  activeIds,
+  setActiveIds,
+  range,
+  setRange,
+  chartData,
 }) {
   const { t } = useTranslation();
 
@@ -32,7 +47,7 @@ export default function RiskTrendChart({
           items-center
           justify-between
           gap-3
-          mb-5
+          mb-4
         "
       >
         <div>
@@ -58,67 +73,101 @@ export default function RiskTrendChart({
           </p>
         </div>
 
-        {/* Area toggles */}
+        {/* Range toggle */}
         <div
           className="
             flex
-            flex-wrap
-            gap-2
+            bg-white
+            border
+            border-gray-300
+            rounded-xl
+            p-1
+            shadow-sm
           "
         >
-          {AREAS.map((a) => {
-            const active = compareIds.includes(a.id);
-
-            return (
-              <button
-                key={a.id}
-                onClick={() =>
-                  setCompareIds((prev) =>
-                    prev.includes(a.id)
-                      ? prev.filter((id) => id !== a.id)
-                      : prev.length < 4
-                        ? [...prev, a.id]
-                        : prev,
-                  )
+          {TREND_RANGES.map(({ value, key }) => (
+            <button
+              key={value}
+              onClick={() => setRange(value)}
+              className={`
+                px-2.5
+                py-1
+                rounded-lg
+                text-xs
+                font-medium
+                transition
+                ${
+                  range === value
+                    ? "bg-brand-950 text-white"
+                    : "text-slate-500 hover:bg-slate-100"
                 }
-                className={`
-                  flex
-                  items-center
-                  gap-1.5
-                  px-2.5
-                  py-1
-                  rounded-lg
-                  text-xs
-                  font-medium
-                  border
-                  transition
-                  ${
-                    active
-                      ? "bg-slate-100 border-gray-300 text-slate-800"
-                      : "bg-white border-transparent text-slate-400 hover:bg-slate-100"
-                  }
-                `}
-              >
-                <span
-                  className="
-                    w-2
-                    h-2
-                    rounded-full
-                  "
-                  style={{
-                    backgroundColor: active
-                      ? compareColors[
-                          compareIds.indexOf(a.id) % compareColors.length
-                        ]
-                      : "#CBD5E1",
-                  }}
-                />
-
-                {a.name}
-              </button>
-            );
-          })}
+              `}
+            >
+              {t(`analysis.dateRange.${key}`, value)}
+            </button>
+          ))}
         </div>
+      </div>
+
+      {/* Compact selectable legend of the top monitored locations */}
+      <div className="flex flex-wrap gap-2 mb-5">
+        {locations.map((loc, i) => {
+          const active = activeIds.includes(loc.id);
+
+          return (
+            <button
+              key={loc.id}
+              onClick={() =>
+                setActiveIds((prev) =>
+                  prev.includes(loc.id)
+                    ? prev.filter((id) => id !== loc.id)
+                    : [...prev, loc.id],
+                )
+              }
+              className={`
+                flex
+                items-center
+                gap-1.5
+                px-2.5
+                py-1
+                rounded-lg
+                text-xs
+                font-medium
+                border
+                transition
+                ${
+                  active
+                    ? "bg-slate-100 border-gray-300 text-slate-800"
+                    : "bg-white border-transparent text-slate-400 hover:bg-slate-100"
+                }
+              `}
+            >
+              <span
+                className="
+                  w-2
+                  h-2
+                  rounded-full
+                "
+                style={{
+                  backgroundColor: active
+                    ? compareColors[i % compareColors.length]
+                    : "#CBD5E1",
+                }}
+              />
+
+              {loc.name}
+            </button>
+          );
+        })}
+
+        {locations.length === 0 && (
+          <p className="text-xs text-slate-400">
+            {t(
+              "riskAnalysis.noComparisonData",
+              "No monitored locations with history yet for this state.",
+            )}
+          </p>
+        )}
       </div>
 
       {/* Chart */}
@@ -130,7 +179,7 @@ export default function RiskTrendChart({
       >
         <ResponsiveContainer>
           <LineChart
-            data={compareData}
+            data={chartData}
             margin={{
               top: 10,
               right: 10,
@@ -141,7 +190,7 @@ export default function RiskTrendChart({
             <CartesianGrid vertical={false} stroke="#E2E8F0" />
 
             <XAxis
-              dataKey="day"
+              dataKey="label"
               tick={{
                 fontSize: 12,
                 fill: "#64748B",
@@ -180,8 +229,10 @@ export default function RiskTrendChart({
               }}
             />
 
-            {compareIds.map((id, i) => {
-              const area = AREAS.find((a) => a.id === id);
+            {activeIds.map((id) => {
+              const colorIndex = locations.findIndex((l) => l.id === id);
+              const loc = locations[colorIndex];
+              const color = compareColors[Math.max(colorIndex, 0) % compareColors.length];
 
               return (
                 <Line
@@ -189,10 +240,10 @@ export default function RiskTrendChart({
                   type="monotone"
                   connectNulls={true}
                   dataKey={id}
-                  name={area?.name}
-                  stroke={compareColors[i % compareColors.length]}
+                  name={loc?.name}
+                  stroke={color}
                   strokeWidth={2.5}
-                  dot={false}
+                  dot={{ r: 3, strokeWidth: 0, fill: color }}
                   activeDot={{ r: 4 }}
                   isAnimationActive={true}
                   animationDuration={1200}

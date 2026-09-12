@@ -5,6 +5,7 @@ import { AREAS, LEVEL_STYLES } from "../../data/analysisData";
 import { useTranslation } from "react-i18next";
 
 export default function AreaComparisonTable({
+  areas = AREAS,
   selectedId,
   setSelectedId,
   riskData,
@@ -70,7 +71,7 @@ export default function AreaComparisonTable({
           </thead>
 
           <tbody>
-            {AREAS.map((a) => {
+            {areas.map((a) => {
               // Get all database records for this area
               const areaRows = riskData
                 .filter(

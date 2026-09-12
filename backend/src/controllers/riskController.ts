@@ -90,3 +90,36 @@ export async function getRiskData(
     next(err);
   }
 }
+
+/**
+ * GET /api/risk/locations — protected.
+ * Returns the state/district/city reference list used to populate the
+ * location search filter.
+ */
+export async function getLocations(
+  _req: Request,
+  res: Response,
+  next: NextFunction,
+): Promise<void> {
+  try {
+    const supabase = getSupabaseAdminClient();
+
+    const { data, error } = await supabase
+      .from('location')
+      .select('id, State, District, City, Latitude, Longitude')
+      .order('State', { ascending: true })
+      .order('District', { ascending: true })
+      .order('City', { ascending: true });
+
+    if (error) {
+      throw error;
+    }
+
+    res.status(200).json({
+      success: true,
+      data,
+    });
+  } catch (err) {
+    next(err);
+  }
+}
