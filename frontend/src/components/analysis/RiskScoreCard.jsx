@@ -2,12 +2,10 @@ import Card from "../../common/Card";
 
 import ContourMotif from "./ContourMotif";
 import TrendIcon from "./TrendIcon";
-
-function levelLabel(level) {
-  return level.charAt(0).toUpperCase() + level.slice(1);
-}
+import { useTranslation } from "react-i18next";
 
 export default function RiskScoreCard({ selected, level }) {
+  const { t } = useTranslation();
   return (
     <Card
       className="
@@ -59,7 +57,7 @@ export default function RiskScoreCard({ selected, level }) {
             text-slate-500
           "
         >
-          COMPOSITE RISK SCORE
+          {t("riskAnalysis.scoreLabel")}
         </p>
 
         <div className="flex items-baseline gap-2 mt-2">
@@ -100,7 +98,7 @@ export default function RiskScoreCard({ selected, level }) {
           `}
         >
           <TrendIcon trend={selected.trend} />
-          {levelLabel(selected.riskLevel)} risk
+          {t(`riskLevels.${String(selected.riskLevel || "low").toLowerCase()}`, selected.riskLevel || "Low")} {t("common.risk")}
         </div>
       </div>
 

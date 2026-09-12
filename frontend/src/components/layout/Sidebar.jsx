@@ -7,47 +7,48 @@ import {
   FileText,
   Phone,
 } from "lucide-react";
-
 import { NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const NAV_ITEMS = [
   {
     key: "dashboard",
-    label: "Dashboard",
+    labelKey: "navigation.dashboard",
     icon: LayoutDashboard,
     path: "/",
   },
 
   {
     key: "riskmap",
-    label: "Risk Map",
+    labelKey: "navigation.riskMap",
     icon: Map,
     path: "/risk-map",
   },
 
   {
     key: "riskanalysis",
-    label: "Risk Analysis",
+    labelKey: "navigation.riskAnalysis",
     icon: ChartNoAxesColumn,
     path: "/risk-analysis",
   },
 
   {
     key: "alerts",
-    label: "Alerts",
+    labelKey: "navigation.alerts",
     icon: Bell,
     path: "/alerts",
   },
 
   {
     key: "reports",
-    label: "Reports",
+    labelKey: "navigation.reports",
     icon: FileText,
     path: "/reports",
   },
 ];
 
 function Sidebar() {
+  const { t } = useTranslation();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -60,7 +61,7 @@ function Sidebar() {
         }`}
     >
       <nav className="flex-1 space-y-1 px-3 pt-4">
-        {NAV_ITEMS.map(({ key, label, icon: Icon, path }, index) => (
+        {NAV_ITEMS.map(({ key, labelKey, icon: Icon, path }, index) => (
           <NavLink
             key={key}
             to={path}
@@ -83,7 +84,7 @@ function Sidebar() {
               className="transition-transform duration-200 ease-out group-hover:scale-110"
             />
 
-            <span>{label}</span>
+            <span>{t(labelKey)}</span>
           </NavLink>
         ))}
       </nav>
@@ -91,7 +92,7 @@ function Sidebar() {
       <div className="p-3">
         {/* Emergency Contact */}
         <div className="rounded-xl border border-red-400/40 bg-gradient-to-b from-red-500/90 to-red-900 px-4 py-3 text-center shadow-md shadow-red-950/40 transition-transform duration-300 ease-out hover:scale-[1.02]">
-          <p className="text-xs text-red-100">Emergency Contact</p>
+          <p className="text-xs text-red-100">{t("sidebar.emergency")}</p>
 
           <div className="mt-1 flex items-center justify-center gap-2 text-white">
             <Phone

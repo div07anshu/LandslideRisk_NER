@@ -3,11 +3,14 @@ import Card from "../../common/Card";
 import CardHeader from "../../common/CardHeader";
 import { recentAlerts, alertLevelColor } from "../../data/mockData";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 function RecentAlerts() {
+  const { t } = useTranslation();
+
   return (
     <Card className="h-full flex flex-col">
-      <CardHeader title="RECENT ALERTS" />
+      <CardHeader title={t("dashboard.recentAlerts")} />
 
       <div className="px-5 pb-4 space-y-4">
         {recentAlerts.map((a) => (
@@ -48,7 +51,7 @@ function RecentAlerts() {
 
       <div className="px-5 pb-4 pt-1 mt-auto">
         <Link to="/alerts" className="w-full text-sm font-medium text-blue-600 hover:text-blue-800 flex items-center justify-center gap-1 py-1">
-          View all alerts
+          {t("dashboard.viewAllAlerts")}
           <ChevronRight size={14} strokeWidth={3} />
         </Link>
       </div>

@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import Card from "../../common/Card";
+import { useTranslation } from "react-i18next";
 
 export default function FactorBreakdown({ selected, level }) {
+  const { t } = useTranslation();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -21,7 +23,7 @@ export default function FactorBreakdown({ selected, level }) {
             text-slate-900
           "
         >
-          CONTRIBUTING FACTORS
+          {t("riskAnalysis.factorBreakdown")}
         </h3>
 
         <p
@@ -31,7 +33,7 @@ export default function FactorBreakdown({ selected, level }) {
             mt-1
           "
         >
-          Factors influencing the current risk score
+          {t("riskAnalysis.factorBreakdownSub")}
         </p>
       </div>
 
@@ -80,7 +82,7 @@ export default function FactorBreakdown({ selected, level }) {
                     text-slate-700
                   "
                 >
-                  {f.label}
+                  {f.labelKey ? t(f.labelKey, f.label) : t(`factors.${f.key}`, f.label)}
                 </p>
               </div>
 
@@ -129,7 +131,7 @@ export default function FactorBreakdown({ selected, level }) {
           mt-5
         "
       >
-        Vegetation cover is protective — lower bars indicate higher exposure.
+        {t("riskAnalysis.vegetationNote", "Higher vegetation coverage reduces landslide vulnerability.")}
       </p>
     </Card>
   );

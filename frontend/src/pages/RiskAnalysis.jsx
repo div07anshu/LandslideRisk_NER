@@ -16,18 +16,19 @@ import RiskScoreCard from "../components/analysis/RiskScoreCard";
 import FactorBreakdown from "../components/analysis/FactorBreakdown";
 import RiskTrendChart from "../components/analysis/RiskTrendChart";
 import AreaComparisonTable from "../components/analysis/AreaComparisonTable";
+import { useTranslation } from "react-i18next";
 
 const API_BASE = import.meta.env.VITE_API_URL ?? import.meta.env.VITE_BACKEND_URL ?? "http://localhost:4000";
 
 // Maps the FastAPI feature payload onto the existing FactorBreakdown row shape.
 const FEATURE_META = [
-  { key: "rainfall_24h", label: "Rainfall · 24h (mm)", icon: CloudRain },
-  { key: "rainfall_48h", label: "Rainfall · 48h (mm)", icon: CloudRain },
-  { key: "rainfall_7d", label: "Rainfall · 7d (mm)", icon: CloudRain },
-  { key: "average_humidity_24h", label: "Humidity · 24h avg (%)", icon: Droplets },
-  { key: "soil_moisture", label: "Soil moisture (m³/m³)", icon: Waves },
-  { key: "elevation", label: "Elevation (m)", icon: Mountain },
-  { key: "slope", label: "Slope (°)", icon: TreePine },
+  { key: "rainfall_24h", labelKey: "factors.rainfall24", icon: CloudRain },
+  { key: "rainfall_48h", labelKey: "factors.rainfall48", icon: CloudRain },
+  { key: "rainfall_7d", labelKey: "factors.rainfall7d", icon: CloudRain },
+  { key: "average_humidity_24h", labelKey: "factors.humidity", icon: Droplets },
+  { key: "soil_moisture", labelKey: "factors.soilMoisture", icon: Waves },
+  { key: "elevation", labelKey: "factors.elevation", icon: Mountain },
+  { key: "slope", labelKey: "factors.slope", icon: TreePine },
 ];
 
 function formatFeature(key, value) {
@@ -37,13 +38,14 @@ function formatFeature(key, value) {
   return Number(value.toFixed(1));
 }
 
-function errorForStatus(status) {
-  if (status === 401) return "Your session has expired. Please sign in again.";
-  if (status === 400) return "Live prediction is unavailable for this location.";
-  return "The risk service is temporarily unavailable. Please try again shortly.";
+function errorForStatus(status, t) {
+  if (status === 401) return t("analysis.errorUnauthorized");
+  if (status === 400) return t("analysis.errorUnavailable");
+  return t("analysis.errorService");
 }
 
 export default function RiskAnalysis() {
+  const { t } = useTranslation();
   const [selectedId, setSelectedId] = useState(AREAS[0].id);
 
   const [range, setRange] = useState("30 days");
@@ -53,7 +55,7 @@ export default function RiskAnalysis() {
   const [prediction, setPrediction] = useState(null);
   const [predLoading, setPredLoading] = useState(false);
   const [predError, setPredError] = useState("");
-    const [riskData, setRiskData] = useState([]);
+  const [riskData, setRiskData] = useState([]);
 
   const selected = useMemo(
     () => AREAS.find((a) => a.id === selectedId) ?? AREAS[0],
@@ -77,7 +79,7 @@ export default function RiskAnalysis() {
 
         if (!token) {
           setPrediction(null);
-          setPredError("Please sign in to load the live risk prediction.");
+          setPredError(t("analysis.errorUnauthorized"));
           return;
         }
 
@@ -92,13 +94,13 @@ export default function RiskAnalysis() {
             longitude: selected.longitude,
             location: selected.name,
             state: selected.state,
-}),
+          }),
           signal: controller.signal,
         });
 
         if (!res.ok) {
           setPrediction(null);
-          setPredError(errorForStatus(res.status));
+          setPredError(errorForStatus(res.status, t));
           return;
         }
 
@@ -120,7 +122,7 @@ export default function RiskAnalysis() {
       } catch (err) {
         if (err?.name === "AbortError") return;
         setPrediction(null);
-        setPredError("Could not reach the risk service. Please try again.");
+        setPredError(t("analysis.errorService"));
       } finally {
         if (!controller.signal.aborted) setPredLoading(false);
       }
@@ -129,7 +131,7 @@ export default function RiskAnalysis() {
     loadPrediction();
 
     return () => controller.abort();
-  }, [selected.id, selected.latitude, selected.longitude, selected.name, selected.state]);
+  }, [selected.id, selected.latitude, selected.longitude, selected.name, selected.state, t]);
 
   // Overlay the real prediction onto the selected area for the score/factor UI.
   const view = useMemo(() => {
@@ -147,7 +149,7 @@ export default function RiskAnalysis() {
       riskLevel: String(prediction.risk_level || "").toLowerCase(),
       factors: FEATURE_META.map((meta) => ({
         key: meta.key,
-        label: meta.label,
+        label: t(meta.labelKey),
         value: formatFeature(
           meta.key,
           prediction.features?.[meta.key],
@@ -166,19 +168,19 @@ export default function RiskAnalysis() {
       factors: [
         {
           key: "rainfall_24h",
-          label: "Rainfall · 24h (mm)",
+          label: t("factors.rainfall24"),
           value: dbRow.Rainfall,
           icon: CloudRain,
         },
         {
           key: "slope",
-          label: "Slope (°)",
+          label: t("factors.slope"),
           value: dbRow.Slope,
           icon: TreePine,
         },
         {
           key: "elevation",
-          label: "Elevation (m)",
+          label: t("factors.elevation"),
           value: dbRow.Elevation,
           icon: Mountain,
         },
@@ -188,7 +190,7 @@ export default function RiskAnalysis() {
 
   // Final fallback
   return selected;
-}, [prediction, riskData, selected]);
+}, [prediction, riskData, selected, t]);
 
   const level =
     LEVEL_STYLES[view.riskLevel] ??
@@ -284,11 +286,11 @@ export default function RiskAnalysis() {
   }, [riskData, compareIds, range]);
 
   return (
-    <div className="p-6 flex-1">
+    <div className="flex-1">
       {/* Header */}
       <SectionHeader
-        title="RISK ANALYSIS"
-        subtitle="Factor-level breakdown and score trends for monitored slopes across North East Region"
+        title={t("analysis.title")}
+        subtitle={t("analysis.subtitle")}
       />
 
       {/* Filters */}
@@ -326,27 +328,30 @@ export default function RiskAnalysis() {
             shadow-sm
           "
         >
-          {RANGE_OPTIONS.map((r) => (
-            <button
-              key={r}
-              onClick={() => setRange(r)}
-              className={`
-                px-3
-                py-1.5
-                rounded-lg
-                text-xs
-                font-medium
-                transition
-                ${
-                  range === r
-                    ? "bg-brand-950 text-white"
-                    : "text-slate-500 hover:bg-slate-100"
-                }
-              `}
-            >
-              {r}
-            </button>
-          ))}
+          {RANGE_OPTIONS.map((r) => {
+            const rawLabel = String(r).toLowerCase().replace(" days", "");
+            return (
+              <button
+                key={r}
+                onClick={() => setRange(r)}
+                className={`
+                  px-3
+                  py-1.5
+                  rounded-lg
+                  text-xs
+                  font-medium
+                  transition
+                  ${
+                    range === r
+                      ? "bg-brand-950 text-white"
+                      : "text-slate-500 hover:bg-slate-100"
+                  }
+                `}
+              >
+                {t(`analysis.dateRange.${rawLabel}`, t(`riskAnalysis.range${rawLabel}days`, r))}
+              </button>
+            )
+          })}
         </div>
 
         {predLoading && (
@@ -364,7 +369,7 @@ export default function RiskAnalysis() {
               rounded-xl
             "
           >
-            Fetching live prediction…
+            {t("analysis.fetchingPrediction")}
           </div>
         )}
 
@@ -402,7 +407,7 @@ export default function RiskAnalysis() {
               rounded-xl
             "
           >
-            Above alert threshold
+            {t("analysis.aboveThreshold")}
           </div>
         )}
       </div>

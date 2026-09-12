@@ -1,0 +1,464 @@
+{
+  "app": {
+    "name": "NER Landslide Early Warning System",
+    "subtitle": "North East Region (NER)",
+    "shortName": "LandslideRisk NER",
+    "earlyWarning": "Early Warning & Risk Monitoring",
+    "earlyWarningSystem": "Early Warning System",
+    "disasterSystem": "Disaster Management Monitoring System",
+    "brandName": "app.brandName",
+    "tagline": "app.tagline",
+    "shortTagline": "app.shortTagline"
+  },
+  "navigation": {
+    "dashboard": "Dashboard",
+    "riskMap": "Risk Map",
+    "riskAnalysis": "Risk Analysis",
+    "alerts": "Alerts",
+    "reports": "Reports",
+    "emergencyContact": "Emergency Contact"
+  },
+  "sidebar": {
+    "emergency": "Emergency Contact"
+  },
+  "topbar": {
+    "notifications": "Notifications",
+    "profile": "Profile",
+    "settings": "Settings",
+    "logOut": "Log out",
+    "user": "User"
+  },
+  "notifications": {
+    "markAllAsRead": "Mark all as read",
+    "noNotifications": "No notifications yet",
+    "viewAll": "View all notifications →",
+    "new": "new",
+    "statusMessages": {
+      "submitted": "Your report \"{title}\" has been submitted and is pending review.",
+      "PENDING": "Your report \"{title}\" is pending review.",
+      "INVESTIGATING": "Your report \"{title}\" is now under investigation.",
+      "VERIFIED": "Your report \"{title}\" has been verified.",
+      "RESOLVED": "Your report \"{title}\" has been resolved."
+    },
+    "statusLabels": {
+      "PENDING": "Pending",
+      "INVESTIGATING": "Under Investigation",
+      "VERIFIED": "Verified",
+      "RESOLVED": "Resolved"
+    }
+  },
+  "language": {
+    "select": "Language",
+    "en": "English",
+    "hi": "हिंदी",
+    "bn": "বাংলা",
+    "as": "অসমীয়া",
+    "ne": "नेपाली"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "retry": "Retry",
+    "save": "Save",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "close": "Close",
+    "back": "Back",
+    "submit": "Submit",
+    "search": "Search",
+    "filter": "Filter",
+    "all": "All",
+    "none": "None",
+    "yes": "Yes",
+    "no": "No",
+    "areas": "Areas",
+    "totalAreas": "Total Areas",
+    "viewAll": "View all",
+    "viewDetails": "View Details",
+    "status": "Status",
+    "location": "Location",
+    "time": "Time",
+    "date": "Date",
+    "score": "Score",
+    "risk": "Risk"
+  },
+  "riskLevels": {
+    "high": "High",
+    "moderate": "Moderate",
+    "low": "Low",
+    "highRisk": "High Risk",
+    "moderateRisk": "Moderate Risk",
+    "lowRisk": "Low Risk",
+    "highRiskAlt": "High risk",
+    "moderateRiskAlt": "Moderate risk",
+    "lowRiskAlt": "Low risk"
+  },
+  "dashboard": {
+    "title": "NER RISK OVERVIEW",
+    "subtitle": "Overall risk distribution across North East Region",
+    "highRiskLocations": "HIGH RISK LOCATIONS",
+    "recentAlerts": "RECENT ALERTS",
+    "recentReports": "RECENT REPORTS",
+    "quickActions": "Quick Actions",
+    "viewAllHighRiskAreas": "View all high risk areas",
+    "viewAllAlerts": "View all alerts",
+    "viewAllReports": "View all reports",
+    "riskScore": "Risk Score",
+    "reportProblem": {
+      "title": "Report a Problem",
+      "description": "Help us by reporting landslide or related issues.",
+      "button": "Report Now"
+    },
+    "stableConditions": "Stable conditions",
+    "underObservation": "Under observation",
+    "criticalAttention": "Critical attention"
+  },
+  "riskMap": {
+    "title": "RISK MAP",
+    "subtitle": "Interactive landslide risk map across North East Region",
+    "riskScore": "Risk score",
+    "riskLegend": "risk",
+    "noLocationSelected": "No location selected",
+    "selectLocation": "Select a location on the map to view details",
+    "locationDetails": "Location Details",
+    "closeDetails": "Close details",
+    "viewFullAnalysis": "View Full Analysis"
+  },
+  "riskAnalysis": {
+    "title": "RISK ANALYSIS",
+    "subtitle": "Factor-level breakdown and score trends for monitored slopes across North East Region",
+    "fetchingPrediction": "Fetching live prediction…",
+    "aboveAlertThreshold": "Above alert threshold",
+    "scoreLabel": "Risk Score",
+    "factorBreakdown": "Factor Breakdown",
+    "factorBreakdownSub": "Factors influencing the risk",
+    "vegetationNote": "Higher vegetation coverage reduces landslide vulnerability.",
+    "thresholdNote": "Risk scores above 70 require immediate attention and monitoring.",
+    "riskTrend": "Risk Trend",
+    "areaComparison": "Area Comparison",
+    "selectArea": "Select area",
+    "range7days": "7 days",
+    "range30days": "30 days",
+    "range90days": "90 days",
+    "errors": {
+      "sessionExpired": "Your session has expired. Please sign in again.",
+      "unavailableLocation": "Live prediction is unavailable for this location.",
+      "serviceUnavailable": "The risk service is temporarily unavailable. Please try again shortly.",
+      "signInRequired": "Please sign in to load the live risk prediction.",
+      "couldNotReach": "Could not reach the risk service. Please try again."
+    },
+    "features": {
+      "rainfall24h": "Rainfall · 24h (mm)",
+      "rainfall48h": "Rainfall · 48h (mm)",
+      "rainfall7d": "Rainfall · 7d (mm)",
+      "humidity24h": "Humidity · 24h avg (%)",
+      "soilMoisture": "Soil moisture (m³/m³)",
+      "elevation": "Elevation (m)",
+      "slope": "Slope (°)"
+    }
+  },
+  "alerts": {
+    "title": "ALERTS",
+    "subtitle": "All active and historical landslide risk alerts across North East Region",
+    "allAlerts": "ALL ALERTS",
+    "totalAlerts": "Total Alerts",
+    "alertsFound": "{{count}} alert found",
+    "alertsFound_other": "{{count}} alerts found",
+    "noAlertsFound": "No alerts match your filters.",
+    "searchPlaceholder": "Search alerts...",
+    "levels": {
+      "all": "All",
+      "high": "High",
+      "moderate": "Moderate",
+      "low": "Low"
+    },
+    "status": {
+      "active": "Active",
+      "monitoring": "Monitoring",
+      "resolved": "Resolved"
+    }
+  },
+  "reports": {
+    "title": "REPORTS",
+    "subtitle": "Submit new field reports and track existing ones across North East Region",
+    "submitReport": "Submit Report",
+    "reportTitle": "Report Title",
+    "titlePlaceholder": "e.g. Slope crack near highway",
+    "locationLabel": "Location",
+    "locationPlaceholder": "e.g. Kohima, Nagaland",
+    "detailLabel": "Description",
+    "detailPlaceholder": "Describe what you observed...",
+    "categoryLabel": "Category",
+    "mediaLabel": "Photo / Video (optional)",
+    "mediaHint": "JPG, PNG, WebP up to 5 MB • MP4, WebM up to 50 MB",
+    "submitButton": "Submit Report",
+    "submitting": "Submitting...",
+    "allReports": "ALL REPORTS",
+    "reportsFound": "{{count}} report found",
+    "reportsFound_other": "{{count}} reports found",
+    "noReportsFound": "No reports match your filters.",
+    "searchPlaceholder": "Search reports...",
+    "loadError": "Couldn't load reports right now. Try refreshing the page.",
+    "submitSuccess": "Report submitted successfully!",
+    "submitError": "Couldn't save the report. Please try again.",
+    "categories": {
+      "landslide": "Landslide",
+      "flooding": "Flooding",
+      "erosion": "Erosion",
+      "cracking": "Cracking",
+      "other": "Other",
+      "road_crack": "Road Crack",
+      "soil_movement": "Soil Movement",
+      "crack": "Road Crack",
+      "flow": "Mud / Debris Flow",
+      "rockfall": "Rockfall"
+    },
+    "status": {
+      "all": "All",
+      "pending": "Pending",
+      "reviewing": "Reviewing",
+      "resolved": "Resolved",
+      "investigating": "Investigating",
+      "verified": "Verified",
+      "dismissed": "Dismissed",
+      "in_progress": "In Progress"
+    },
+    "saveError": "Couldn't save the report. Please try again.",
+    "error": {
+      "invalidType": "Only JPG, PNG, WebP image and MP4, WebM, OGG video files are allowed.",
+      "imageSize": "Image size exceeds 5MB limit.",
+      "videoSize": "Video size exceeds 50MB limit."
+    }
+  },
+  "assistant": {
+    "title": "AI Assistant",
+    "subtitle": "Ask questions about landslide risk, factors and safety.",
+    "chatTitle": "Landslide Risk Assistant",
+    "ready": "● Ready to help",
+    "inputPlaceholder": "Ask about landslide risk...",
+    "inputAriaLabel": "Type your message",
+    "sendButton": "Send",
+    "sendAriaLabel": "Send message",
+    "chatAriaLabel": "Chat messages",
+    "typingAriaLabel": "Assistant is typing",
+    "disclaimer": "AI responses are for informational purposes. Always follow official disaster-management guidance during emergencies.",
+    "welcomeMessage": "Hello! I am the NER Landslide AI Assistant. I can help you understand landslide risks, risk factors, warning signs, and safety measures.",
+    "floatingButton": "Ask AI",
+    "floatingOpen": "Open AI Assistant",
+    "floatingClose": "Close AI Assistant",
+    "floatingTitle": "Landslide AI",
+    "floatingSubtitle": "AI Risk Assistant",
+    "floatingWelcome": "Hello! I'm Landslide AI. Ask me anything about landslide risk, warning signs, or safety measures.",
+    "floatingPlaceholder": "Ask about landslides...",
+    "floatingThinking": "AI is thinking...",
+    "floatingDisclaimer": "AI responses are for assistance and do not replace official emergency warnings.",
+    "errors": {
+      "default": "Sorry, I couldn't connect to the AI service. Please make sure the backend server is running.",
+      "couldNotGenerate": "Sorry, I could not generate a response.",
+      "service502": "AI service is temporarily unavailable (502 Bad Gateway). Please try again shortly.",
+      "service503": "AI service is overloaded (503 Service Unavailable). Please try again in a few moments.",
+      "auth": "Authentication failed. Please check your connection and try again.",
+      "floating502": "AI service is temporarily unavailable. Please try again in a moment.",
+      "floating503": "AI service is currently overloaded. Please try again later.",
+      "floatingDefault": "Sorry, I couldn't connect to the AI service. Please make sure the backend is running."
+    },
+    "noResponse": "Sorry, I could not generate a response. Please try again.",
+    "connectionError": "Could not connect to the AI service. Please make sure the backend is running.",
+    "thinking": "AI is thinking...",
+    "send": "Send",
+    "welcome": "Hello! I am the NER Landslide AI Assistant. How can I help you today?"
+  },
+  "auth": {
+    "login": {
+      "title": "Welcome back",
+      "subtitle": "Sign in to access the monitoring dashboard.",
+      "emailLabel": "Email",
+      "emailPlaceholder": "you@example.com",
+      "passwordLabel": "Password",
+      "passwordPlaceholder": "Enter your password",
+      "forgotPassword": "Forgot password?",
+      "signInButton": "Sign In",
+      "signingIn": "Signing in...",
+      "noAccount": "Don't have an account?",
+      "createAccount": "Create account",
+      "demoTitle": "Demo access",
+      "demoText": "Authorized field teams and analysts can sign in with credentials issued by their regional coordinator."
+    },
+    "signup": {
+      "title": "Create Account",
+      "subtitle": "Sign up to access the monitoring and reporting platform.",
+      "emailLabel": "Email",
+      "emailPlaceholder": "you@example.com",
+      "passwordLabel": "Password",
+      "passwordPlaceholder": "Create a password",
+      "passwordHint": "Password must be at least 6 characters.",
+      "createButton": "Create Account",
+      "creating": "Creating account...",
+      "alreadyHaveAccount": "Already have an account?",
+      "signIn": "Sign in",
+      "successTitle": "Account created",
+      "successMessage": "Check your inbox to confirm your email, then sign in to continue.",
+      "goToSignIn": "Go to sign in"
+    },
+    "forgotPassword": {
+      "title": "Reset your password",
+      "subtitle": "Enter the email associated with your account and we'll send you a link to reset your password.",
+      "backToSignIn": "Back to sign in",
+      "emailLabel": "Email",
+      "emailPlaceholder": "you@example.com",
+      "sendButton": "Send reset link",
+      "sending": "Sending...",
+      "successTitle": "Check your inbox",
+      "successMessage": "We've sent a password reset link to"
+    },
+    "updatePassword": {
+      "title": "Set a new password",
+      "subtitle": "Choose a new password for your LandslideRisk NER account.",
+      "newPasswordLabel": "New password",
+      "newPasswordPlaceholder": "Enter a new password",
+      "confirmPasswordLabel": "Confirm password",
+      "confirmPasswordPlaceholder": "Re-enter the password",
+      "updateButton": "Update password",
+      "updating": "Updating...",
+      "backToSignIn": "Back to sign in",
+      "successTitle": "Password updated",
+      "successMessage": "Your password has been changed. You can now sign in with it.",
+      "goToSignIn": "Go to sign in",
+      "errors": {
+        "tooShort": "Password must be at least 6 characters.",
+        "noMatch": "Passwords don't match."
+      }
+    },
+    "hero": {
+      "monitorRisk": "Monitor Risk.",
+      "protectCommunities": "Protect Communities.",
+      "monitoringDescription": "AI-based landslide risk monitoring and early warning system for the North Eastern Region of India.",
+      "joinNetwork": "Join the Network.",
+      "stayAheadRisk": "Stay Ahead of Risk.",
+      "signupDescription": "Create an account to submit field reports, monitor high-risk slopes, and receive critical early warnings.",
+      "areasMonitored": "Areas monitored",
+      "liveMonitoring": "Live monitoring",
+      "statesCovered": "NE states covered"
+    },
+    "email": "auth.email",
+    "emailPlaceholder": "auth.emailPlaceholder",
+    "password": "auth.password",
+    "passwordPlaceholder": "auth.passwordPlaceholder",
+    "passwordShort": "auth.passwordShort",
+    "passwordMismatch": "auth.passwordMismatch",
+    "newPassword": "auth.newPassword",
+    "confirmPassword": "auth.confirmPassword",
+    "confirmPasswordPlaceholder": "auth.confirmPasswordPlaceholder"
+  },
+  "notFound": {
+    "heading": "404",
+    "message": "This page doesn't exist.",
+    "backToDashboard": "Back to dashboard",
+    "backHome": "notFound.backHome"
+  },
+  "loading": {
+    "default": "Loading..."
+  },
+  "locationDetail": {
+    "riskScore": "Risk Score",
+    "riskLevel": "Risk Level",
+    "coordinates": "Coordinates",
+    "state": "State",
+    "noLocation": "Select a point on the map",
+    "noLocationSub": "Click any marker to view location details"
+  },
+  "riskScoreCard": {
+    "riskScore": "Risk Score",
+    "riskLevel": "Risk Level",
+    "out100": "/ 100"
+  },
+  "factorBreakdown": {
+    "title": "Factor Breakdown",
+    "noData": "No factor data available"
+  },
+  "riskTrendChart": {
+    "title": "Risk Score Trend",
+    "compareAreas": "Compare areas:",
+    "noData": "No trend data available"
+  },
+  "areaComparison": {
+    "title": "Area Comparison",
+    "area": "Area",
+    "state": "State",
+    "riskLevel": "Risk Level",
+    "riskScore": "Risk Score",
+    "noData": "No comparison data available"
+  },
+  "mockData": {
+    "highRiskStatus": "Immediate response needed",
+    "moderateRiskStatus": "Active monitoring",
+    "lowRiskStatus": "Routine monitoring",
+    "riskLabels": {
+      "high": "HIGH RISK",
+      "moderate": "MODERATE RISK",
+      "low": "LOW RISK"
+    }
+  },
+  "submitReport": {
+    "titleLabel": "Title",
+    "titlePlaceholder": "e.g. Slope crack near highway",
+    "locationLabel": "Location",
+    "locationPlaceholder": "e.g. Kohima, Nagaland",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Describe what you observed...",
+    "categoryLabel": "Category",
+    "mediaLabel": "Photo / Video (optional)",
+    "mediaHint": "JPG, PNG, WebP up to 5 MB • MP4, WebM up to 50 MB",
+    "submitButton": "Submit Report",
+    "submitting": "Submitting...",
+    "successMessage": "Report submitted successfully!",
+    "categories": {
+      "landslide": "Landslide",
+      "flooding": "Flooding",
+      "erosion": "Erosion",
+      "cracking": "Cracking",
+      "other": "Other"
+    }
+  },
+  "quickActions": {
+    "viewRiskMap": "View Risk Map",
+    "viewRiskMapSubtitle": "Explore risk levels across North East Region.",
+    "analyzeRisk": "Analyze Risk",
+    "analyzeRiskSubtitle": "Check risk factors and predictive analysis.",
+    "activeAlerts": "Active Alerts",
+    "activeAlertsSubtitle": "View current landslide alerts and warnings."
+  },
+  "analysis": {
+    "errorUnauthorized": "Please sign in to load the live risk prediction.",
+    "errorUnavailable": "Live prediction is unavailable for this location.",
+    "errorService": "Could not reach the risk service. Please try again.",
+    "title": "RISK ANALYSIS",
+    "subtitle": "Factor-level breakdown and score trends for monitored slopes across North East Region",
+    "dateRange": {
+      "7": "7 days",
+      "30": "30 days",
+      "90": "90 days"
+    },
+    "fetchingPrediction": "Fetching live prediction…",
+    "aboveThreshold": "Above alert threshold"
+  },
+  "factors": {
+    "rainfall24": "Rainfall · 24h (mm)",
+    "slope": "Slope gradient",
+    "elevation": "Elevation (m)",
+    "rainfall48": "Rainfall · 48h (mm)",
+    "rainfall7d": "Rainfall · 7d (mm)",
+    "humidity": "Humidity · 24h avg (%)",
+    "soilMoisture": "Soil moisture (m³/m³)",
+    "rainfall": "Rainfall intensity",
+    "soil": "Soil saturation",
+    "seismic": "Seismic activity",
+    "vegetation": "Vegetation cover",
+    "history": "Past incidents (5yr)",
+    "rainfall_24h": "Rainfall · 24h (mm)",
+    "rainfall_48h": "Rainfall · 48h (mm)",
+    "rainfall_7d": "Rainfall · 7d (mm)",
+    "average_humidity_24h": "Humidity · 24h avg (%)",
+    "soil_moisture": "Soil moisture (m³/m³)"
+  }
+}

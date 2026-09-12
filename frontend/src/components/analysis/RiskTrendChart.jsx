@@ -10,8 +10,8 @@ import {
 } from "recharts";
 
 import { AREAS } from "../../data/analysisData";
-
 import Card from "../../common/Card";
+import { useTranslation } from "react-i18next";
 
 const compareColors = ["#3F72AF", "#112D4E", "#2563EB", "#16A34A"];
 
@@ -20,6 +20,8 @@ export default function RiskTrendChart({
   setCompareIds,
   compareData,
 }) {
+  const { t } = useTranslation();
+
   return (
     <Card className="p-5 h-full">
       {/* Header */}
@@ -42,7 +44,7 @@ export default function RiskTrendChart({
               text-slate-900
             "
           >
-            RISK SCORE TREND
+            {t("riskAnalysis.title")}
           </h3>
 
           <p
@@ -52,7 +54,7 @@ export default function RiskTrendChart({
               mt-1
             "
           >
-            Historical risk movement across monitored areas
+            {t("riskAnalysis.subtitle")}
           </p>
         </div>
 
@@ -208,7 +210,7 @@ export default function RiskTrendChart({
           mt-3
         "
       >
-        Dashed line represents the alert threshold (70).
+        {t("riskAnalysis.thresholdNote")}
       </p>
     </Card>
   );

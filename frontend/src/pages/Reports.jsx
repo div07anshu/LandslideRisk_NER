@@ -1,9 +1,9 @@
 import { useEffect, useMemo, useState } from "react";
-
 import SectionHeader from "../common/SectionHeader";
 import SubmitReportForm from "../components/reports/SubmitReportForm";
 import ReportsList from "../components/reports/ReportsList";
 import { supabase } from "../supabase";
+import { useTranslation } from "react-i18next";
 
 function toDisplayReport(row) {
   return {
@@ -23,6 +23,7 @@ function toDisplayReport(row) {
 }
 
 export default function Reports() {
+  const { t } = useTranslation();
   const [reports, setReports] = useState([]);
   const [loading, setLoading] = useState(true);
   const [loadError, setLoadError] = useState("");
@@ -49,7 +50,7 @@ export default function Reports() {
       if (error) {
         console.error("Failed to load reports:", error.message);
         setLoadError(
-          "Couldn't load reports right now. Try refreshing the page.",
+          t("reports.loadError")
         );
       } else {
         setReports((data ?? []).map(toDisplayReport));
@@ -63,7 +64,7 @@ export default function Reports() {
     return () => {
       active = false;
     };
-  }, []);
+  }, [t]);
 
   async function handleNewReport(form) {
     let imageUrl = null;
@@ -123,7 +124,7 @@ export default function Reports() {
     if (error) {
       // Thrown so SubmitReportForm can surface it and avoid clearing the
       // form / showing a false "submitted successfully" message.
-      throw new Error("Couldn't save the report. Please try again.");
+      throw new Error(t("reports.saveError"));
     }
 
     setReports((prev) => [toDisplayReport(data), ...prev]);
@@ -145,10 +146,10 @@ export default function Reports() {
   }, [reports, statusFilter, search]);
 
   return (
-    <div className="p-6 flex-1">
+    <div className="flex-1">
       <SectionHeader
-        title="REPORTS"
-        subtitle="Submit new field reports and track existing ones across North East Region"
+        title={t("reports.title")}
+        subtitle={t("reports.subtitle")}
       />
 
       {loadError && (

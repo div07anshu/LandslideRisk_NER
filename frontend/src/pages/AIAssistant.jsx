@@ -2,17 +2,19 @@ import { useState, useRef, useEffect } from "react";
 import { Bot, Send, User, Sparkles } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import { supabase } from "../supabase";
+import { useTranslation } from "react-i18next";
 
 const API_BASE = import.meta.env.VITE_API_URL ?? import.meta.env.VITE_BACKEND_URL ?? "http://localhost:4000";
 
 function AIAssistant() {
+    const { t, i18n } = useTranslation();
     const [message, setMessage] = useState("");
 
     const [messages, setMessages] = useState([
         {
             id: 1,
             sender: "bot",
-            text: "Hello! I am the NER Landslide AI Assistant. I can help you understand landslide risks, risk factors, warning signs, and safety measures.",
+            text: t("assistant.welcome"),
         },
     ]);
 
@@ -29,6 +31,15 @@ function AIAssistant() {
     useEffect(() => {
         scrollToBottom();
     }, [messages, isTyping]);
+
+    useEffect(() => {
+        setMessages((prev) => {
+            if (prev.length === 1 && prev[0].sender === "bot") {
+                return [{ id: 1, sender: "bot", text: t("assistant.welcome") }];
+            }
+            return prev;
+        });
+    }, [i18n.language, t]);
 
     const handleSend = async () => {
         const trimmedMessage = message.trim();
@@ -67,6 +78,7 @@ function AIAssistant() {
                     headers,
                     body: JSON.stringify({
                         message: trimmedMessage,
+                        language: i18n.language,
                     }),
                 }
             );
@@ -88,14 +100,14 @@ function AIAssistant() {
                 sender: "bot",
                 text:
                     data.response ||
-                    "Sorry, I could not generate a response.",
+                    t("assistant.noResponse"),
             };
 
             setMessages((prev) => [...prev, botMessage]);
         } catch (error) {
             console.error("AI Assistant Error:", error);
 
-            let errorMessage = "Sorry, I couldn't connect to the AI service. Please make sure the backend server is running.";
+            let errorMessage = t("assistant.connectionError");
             if (error.message && error.message !== "Failed to fetch") {
                 errorMessage = error.message;
             }
@@ -114,11 +126,11 @@ function AIAssistant() {
     };
 
     return (
-        <div className="flex flex-1 flex-col p-6">
+        <div className="flex flex-1 flex-col h-[calc(100vh-105px)]">
             {/* Page Header */}
             <div className="mb-5">
                 <div className="flex items-center gap-3">
-                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-100">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-100 border border-blue-200">
                         <Bot
                             size={24}
                             strokeWidth={2.5}
@@ -128,13 +140,12 @@ function AIAssistant() {
                     </div>
 
                     <div>
-                        <h1 className="text-2xl font-bold text-slate-800">
-                            AI Assistant
+                        <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 leading-tight">
+                            {t("assistant.title")}
                         </h1>
 
-                        <p className="text-sm text-slate-500">
-                            Ask questions about landslide risk,
-                            factors and safety.
+                        <p className="text-xs sm:text-sm text-slate-500 mt-1 font-normal">
+                            {t("assistant.subtitle")}
                         </p>
                     </div>
                 </div>
@@ -156,11 +167,11 @@ function AIAssistant() {
 
                     <div>
                         <p className="text-sm font-semibold text-slate-800">
-                            Landslide Risk Assistant
+                            {t("assistant.title")}
                         </p>
 
                         <p className="text-xs text-green-600">
-                            ● Ready to help
+                            ● {t("assistant.ready")}
                         </p>
                     </div>
                 </div>
@@ -270,7 +281,7 @@ function AIAssistant() {
                                 setMessage(e.target.value)
                             }
                             aria-label="Type your message"
-                            placeholder="Ask about landslide risk..."
+                            placeholder={t("assistant.inputPlaceholder")}
                             className="min-w-0 flex-1 rounded-xl border border-slate-300 px-4 py-3 text-sm text-slate-700 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
                         />
 
@@ -288,15 +299,13 @@ function AIAssistant() {
                                 aria-hidden="true"
                             />
 
-                            <span>Send</span>
+                            <span>{t("assistant.send")}</span>
                         </button>
 
                     </form>
 
                     <p className="mt-2 text-center text-[11px] text-slate-400">
-                        AI responses are for informational purposes.
-                        Always follow official disaster-management
-                        guidance during emergencies.
+                        {t("assistant.disclaimer")}
                     </p>
 
                 </div>

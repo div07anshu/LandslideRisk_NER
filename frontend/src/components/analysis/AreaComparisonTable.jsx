@@ -2,16 +2,15 @@ import TrendIcon from "./TrendIcon";
 import Card from "../../common/Card";
 
 import { AREAS, LEVEL_STYLES } from "../../data/analysisData";
-
-function levelLabel(level) {
-  return level.charAt(0).toUpperCase() + level.slice(1);
-}
+import { useTranslation } from "react-i18next";
 
 export default function AreaComparisonTable({
   selectedId,
   setSelectedId,
   riskData,
 }) {
+  const { t } = useTranslation();
+
   return (
     <Card className="overflow-hidden h-full">
       {/* Header */}
@@ -34,7 +33,7 @@ export default function AreaComparisonTable({
               text-slate-900
             "
           >
-            AREA COMPARISON
+            {t("areaComparison.title")}
           </h3>
 
           <p
@@ -44,7 +43,7 @@ export default function AreaComparisonTable({
               mt-1
             "
           >
-            All monitored risk areas
+            {t("riskAnalysis.subtitle")}
           </p>
         </div>
       </div>
@@ -62,11 +61,11 @@ export default function AreaComparisonTable({
                 border-slate-200
               "
             >
-              <th className="px-5 py-3 font-medium">Area</th>
-              <th className="px-5 py-3 font-medium">State</th>
-              <th className="px-5 py-3 font-medium">Score</th>
-              <th className="px-5 py-3 font-medium">Level</th>
-              <th className="px-5 py-3 font-medium">Trend</th>
+              <th className="px-5 py-3 font-medium">{t("areaComparison.area")}</th>
+              <th className="px-5 py-3 font-medium">{t("areaComparison.state")}</th>
+              <th className="px-5 py-3 font-medium">{t("areaComparison.riskScore")}</th>
+              <th className="px-5 py-3 font-medium">{t("areaComparison.riskLevel")}</th>
+              <th className="px-5 py-3 font-medium">{t("riskAnalysis.riskTrend")}</th>
             </tr>
           </thead>
 
@@ -117,7 +116,7 @@ export default function AreaComparisonTable({
                 }
               }
 
-              const lv = LEVEL_STYLES[riskLevel];
+              const lv = LEVEL_STYLES[riskLevel] || LEVEL_STYLES.low;
               const selected = a.id === selectedId;
 
               return (
@@ -182,7 +181,7 @@ export default function AreaComparisonTable({
                         ${lv.text}
                       `}
                     >
-                      {levelLabel(riskLevel)}
+                      {t(`riskLevels.${(riskLevel || "low").toLowerCase()}`, riskLevel || "Low")}
                     </span>
                   </td>
 
@@ -205,10 +204,10 @@ export default function AreaComparisonTable({
                       <TrendIcon trend={trend} />
 
                       {trend === "up"
-                        ? "Rising"
+                        ? "↑"
                         : trend === "down"
-                          ? "Falling"
-                          : "Stable"}
+                          ? "↓"
+                          : "→"}
                     </span>
                   </td>
                 </tr>

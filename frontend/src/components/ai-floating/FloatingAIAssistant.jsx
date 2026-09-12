@@ -1,17 +1,18 @@
 import { useEffect, useRef, useState } from "react";
 import { Bot, Send, X } from "lucide-react";
 import ReactMarkdown from "react-markdown";
+import { useTranslation } from "react-i18next";
 
-const API_BASE = import.meta.env.VITE_API_URL ?? "http://localhost:4000";
+const API_BASE = import.meta.env.VITE_API_URL ?? import.meta.env.VITE_BACKEND_URL ?? "http://localhost:4000";
 
 function FloatingAIAssistant({ onOpenChange }) {
+  const { t, i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([
     {
       role: "assistant",
-      content:
-        "Hello! I’m Landslide AI. Ask me anything about landslide risk, warning signs, or safety measures.",
+      content: t("assistant.floatingWelcome"),
     },
   ]);
   const [loading, setLoading] = useState(false);
@@ -27,6 +28,15 @@ function FloatingAIAssistant({ onOpenChange }) {
   useEffect(() => {
     scrollToBottom();
   }, [messages, loading]);
+
+  useEffect(() => {
+    setMessages((prev) => {
+      if (prev.length === 1 && prev[0].role === "assistant") {
+        return [{ role: "assistant", content: t("assistant.floatingWelcome") }];
+      }
+      return prev;
+    });
+  }, [i18n.language, t]);
 
   const openAssistant = () => {
     setIsOpen(true);
@@ -62,6 +72,7 @@ function FloatingAIAssistant({ onOpenChange }) {
         },
         body: JSON.stringify({
           message: trimmedMessage,
+          language: i18n.language,
         }),
       });
 
@@ -92,14 +103,13 @@ function FloatingAIAssistant({ onOpenChange }) {
           content:
             data.response ||
             data.message ||
-            "Sorry, I could not generate a response.",
+            t("assistant.noResponse"),
         },
       ]);
     } catch (error) {
       console.error("AI Assistant Error:", error);
 
-      let errorMessage =
-        "Sorry, I couldn't connect to the AI service. Please make sure the backend is running.";
+      let errorMessage = t("assistant.connectionError");
 
       if (error.message && error.message !== "Failed to fetch") {
         errorMessage = error.message;
@@ -132,10 +142,10 @@ function FloatingAIAssistant({ onOpenChange }) {
         <button
           onClick={openAssistant}
           className="fixed bottom-5 right-5 z-50 flex items-center gap-2 rounded-full bg-brand-600 px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-brand-900/30 transition-all duration-200 hover:-translate-y-1 hover:bg-brand-700 hover:shadow-xl"
-          aria-label="Open AI Assistant"
+          aria-label={t("assistant.floatingOpen")}
         >
           <Bot size={21} strokeWidth={2.2} />
-          <span>Ask AI</span>
+          <span>{t("assistant.floatingButton")}</span>
         </button>
       )}
 
@@ -152,15 +162,15 @@ function FloatingAIAssistant({ onOpenChange }) {
             </div>
 
             <div>
-              <p className="text-sm font-semibold">Landslide AI</p>
-              <p className="text-[11px] text-slate-300">AI Risk Assistant</p>
+              <p className="text-sm font-semibold">{t("assistant.title")}</p>
+              <p className="text-[11px] text-slate-300">{t("assistant.floatingSubtitle")}</p>
             </div>
           </div>
 
           <button
             onClick={closeAssistant}
             className="rounded-lg p-1.5 text-slate-300 transition-colors hover:bg-white/10 hover:text-white"
-            aria-label="Close AI Assistant"
+            aria-label={t("assistant.floatingClose")}
           >
             <X size={20} />
           </button>
@@ -202,7 +212,7 @@ function FloatingAIAssistant({ onOpenChange }) {
           {loading && (
             <div className="flex justify-start">
               <div className="rounded-2xl rounded-bl-md border border-slate-200 bg-white px-3 py-2 text-sm text-slate-500 shadow-sm">
-                AI is thinking...
+                {t("assistant.thinking")}
               </div>
             </div>
           )}
@@ -218,7 +228,7 @@ function FloatingAIAssistant({ onOpenChange }) {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               onKeyDown={handleKeyDown}
-              placeholder="Ask about landslides..."
+              placeholder={t("assistant.inputPlaceholder")}
               disabled={loading}
               className="min-w-0 flex-1 bg-transparent px-2 py-1 text-sm text-slate-700 outline-none placeholder:text-slate-400 disabled:opacity-50"
             />
@@ -227,15 +237,14 @@ function FloatingAIAssistant({ onOpenChange }) {
               onClick={sendMessage}
               disabled={!message.trim() || loading}
               className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-brand-600 text-white transition-colors hover:bg-brand-700 disabled:cursor-not-allowed disabled:opacity-40"
-              aria-label="Send message"
+              aria-label={t("assistant.send")}
             >
               <Send size={16} />
             </button>
           </div>
 
           <p className="mt-2 text-center text-[10px] text-slate-400">
-            AI responses are for assistance and do not replace official
-            emergency warnings.
+            {t("assistant.floatingDisclaimer")}
           </p>
         </div>
       </div>

@@ -2,8 +2,10 @@ import { useState } from "react";
 import { Mountain, Lock, CheckCircle2 } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { supabase } from "../supabase";
+import { useTranslation } from "react-i18next";
 
 export default function UpdatePassword() {
+  const { t } = useTranslation();
   const [password, setPassword] = useState("");
   const [confirm, setConfirm] = useState("");
   const [loading, setLoading] = useState(false);
@@ -16,12 +18,12 @@ export default function UpdatePassword() {
     setError("");
 
     if (password.length < 6) {
-      setError("Password must be at least 6 characters.");
+      setError(t("auth.updatePassword.errors.tooShort"));
       return;
     }
 
     if (password !== confirm) {
-      setError("Passwords don't match.");
+      setError(t("auth.updatePassword.errors.noMatch"));
       return;
     }
 
@@ -50,18 +52,18 @@ export default function UpdatePassword() {
           </div>
 
           <h1 className="text-2xl font-bold text-slate-800">
-            Password updated
+            {t("auth.updatePassword.successTitle")}
           </h1>
 
           <p className="text-slate-500 mt-2">
-            Your password has been changed. You can now sign in with it.
+            {t("auth.updatePassword.successMessage")}
           </p>
 
           <button
             onClick={() => navigate("/login")}
             className="inline-block mt-6 bg-brand-900 hover:bg-brand-800 text-white py-3 px-6 rounded-lg font-semibold transition"
           >
-            Go to sign in
+            {t("auth.updatePassword.goToSignIn")}
           </button>
         </div>
       </div>
@@ -78,17 +80,17 @@ export default function UpdatePassword() {
         </div>
 
         <h1 className="text-2xl font-bold text-center text-slate-800">
-          Set a new password
+          {t("auth.updatePassword.title")}
         </h1>
 
         <p className="text-center text-slate-500 mt-2">
-          Choose a new password for your LandslideRisk NER account.
+          {t("auth.updatePassword.subtitle")}
         </p>
 
         <form onSubmit={handleSubmit} className="mt-8 space-y-5">
           <div>
             <label className="block text-sm font-medium text-slate-700 mb-2">
-              New password
+              {t("auth.updatePassword.newPasswordLabel")}
             </label>
             <div className="relative">
               <Lock
@@ -97,7 +99,7 @@ export default function UpdatePassword() {
               />
               <input
                 type="password"
-                placeholder="Enter a new password"
+                placeholder={t("auth.updatePassword.newPasswordPlaceholder")}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
@@ -109,7 +111,7 @@ export default function UpdatePassword() {
 
           <div>
             <label className="block text-sm font-medium text-slate-700 mb-2">
-              Confirm password
+              {t("auth.updatePassword.confirmPasswordLabel")}
             </label>
             <div className="relative">
               <Lock
@@ -118,7 +120,7 @@ export default function UpdatePassword() {
               />
               <input
                 type="password"
-                placeholder="Re-enter the password"
+                placeholder={t("auth.updatePassword.confirmPasswordPlaceholder")}
                 value={confirm}
                 onChange={(e) => setConfirm(e.target.value)}
                 required
@@ -139,7 +141,7 @@ export default function UpdatePassword() {
             disabled={loading}
             className="w-full bg-brand-900 hover:bg-brand-800 text-white py-3 rounded-lg font-semibold transition disabled:opacity-60"
           >
-            {loading ? "Updating..." : "Update password"}
+            {loading ? t("auth.updatePassword.updating") : t("auth.updatePassword.updateButton")}
           </button>
         </form>
 
@@ -148,7 +150,7 @@ export default function UpdatePassword() {
             to="/login"
             className="text-brand-600 font-semibold hover:underline"
           >
-            Back to sign in
+            {t("auth.updatePassword.backToSignIn")}
           </Link>
         </p>
       </div>

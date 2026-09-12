@@ -10,8 +10,10 @@ import {
 } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import ContourMotif from "../components/analysis/ContourMotif";
+import { useTranslation } from "react-i18next";
 
 function Login() {
+  const { t } = useTranslation();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -93,45 +95,42 @@ function Login() {
               </div>
 
               <div>
-                <h1 className="text-xl font-bold">LandslideRisk NER</h1>
+                <h1 className="text-xl font-bold">{t("app.shortName")}</h1>
 
                 <p className="text-xs text-slate-300">
-                  Early Warning & Risk Monitoring
+                  {t("app.earlyWarning")}
                 </p>
               </div>
             </div>
 
             <div className="mt-16">
               <h2 className="text-3xl font-bold leading-tight">
-                Monitor Risk.
-                <br />
-                Protect Communities.
+                {t("auth.hero.monitorRisk")}
               </h2>
 
               <p className="mt-5 text-slate-200 leading-relaxed">
-                AI-based landslide risk monitoring and early warning system for
-                the North Eastern Region of India.
+                {t("auth.hero.monitoringDescription")}
               </p>
             </div>
 
-            {/* Stat callouts to fill the mid-panel space with intent */}
+            {/* Stat callouts */}
             <div className="mt-10 grid grid-cols-3 gap-4">
               <div>
                 <div className="text-2xl font-bold">110</div>
                 <div className="text-xs text-slate-300 mt-0.5">
-                  Areas monitored
+                  {t("auth.hero.areasMonitored")}
                 </div>
               </div>
               <div>
                 <div className="text-2xl font-bold">24/7</div>
                 <div className="text-xs text-slate-300 mt-0.5">
-                  Live monitoring
+                  {t("auth.hero.liveMonitoring")}
                 </div>
               </div>
               <div>
                 <div className="text-2xl font-bold">8</div>
                 <div className="text-xs text-slate-300 mt-0.5">
-                  NE states covered
+                  {t("auth.hero.statesCovered")}
                 </div>
               </div>
             </div>
@@ -139,7 +138,7 @@ function Login() {
 
           <div className="relative flex items-center gap-3 text-sm text-slate-200 font-medium">
             <ShieldCheck size={20} className="text-[#7FA8D9]" />
-            <span>Disaster Management Monitoring System</span>
+            <span>{t("app.disasterSystem")}</span>
           </div>
         </div>
 
@@ -152,9 +151,9 @@ function Login() {
             </div>
 
             <div>
-              <h1 className="font-bold text-brand-900">LandslideRisk NER</h1>
+              <h1 className="font-bold text-brand-900">{t("app.shortName")}</h1>
 
-              <p className="text-xs text-slate-500">Early Warning System</p>
+              <p className="text-xs text-slate-500">{t("app.earlyWarningSystem")}</p>
             </div>
           </div>
 
@@ -162,11 +161,11 @@ function Login() {
             {mode === "login" ? (
               <>
                 <h2 className="text-3xl font-bold text-slate-800">
-                  Welcome back
+                  {t("auth.login.title")}
                 </h2>
 
                 <p className="mt-2 text-slate-500">
-                  Sign in to access the monitoring dashboard.
+                  {t("auth.login.subtitle")}
                 </p>
 
                 {/* LOGIN FORM */}
@@ -174,7 +173,7 @@ function Login() {
                   {/* EMAIL */}
                   <div>
                     <label className="block text-sm font-medium text-slate-700 mb-2">
-                      Email
+                      {t("auth.login.emailLabel")}
                     </label>
 
                     <div className="relative">
@@ -185,7 +184,7 @@ function Login() {
 
                       <input
                         type="email"
-                        placeholder="you@example.com"
+                        placeholder={t("auth.login.emailPlaceholder")}
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required
@@ -198,7 +197,7 @@ function Login() {
                   <div>
                     <div className="flex items-center justify-between mb-2">
                       <label className="block text-sm font-medium text-slate-700">
-                        Password
+                        {t("auth.login.passwordLabel")}
                       </label>
 
                       <button
@@ -206,7 +205,7 @@ function Login() {
                         onClick={goToForgot}
                         className="text-xs font-semibold text-brand-600 hover:underline"
                       >
-                        Forgot password?
+                        {t("auth.login.forgotPassword")}
                       </button>
                     </div>
 
@@ -218,7 +217,7 @@ function Login() {
 
                       <input
                         type="password"
-                        placeholder="Enter your password"
+                        placeholder={t("auth.login.passwordPlaceholder")}
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         required
@@ -248,27 +247,26 @@ function Login() {
                     disabled={loading}
                     className="w-full bg-brand-600 hover:bg-brand-700 text-white py-3 rounded-lg font-semibold shadow-sm shadow-brand-600/30 transition disabled:opacity-60"
                   >
-                    {loading ? "Signing in..." : "Sign In"}
+                    {loading ? t("auth.login.signingIn") : t("auth.login.signInButton")}
                   </button>
                 </form>
 
                 {/* SIGN UP */}
                 <p className="text-center text-sm text-slate-500 mt-7">
-                  Don't have an account?{" "}
+                  {t("auth.login.noAccount")}{" "}
                   <Link
                     to="/signup"
                     className="text-brand-600 font-semibold hover:underline"
                   >
-                    Create account
+                    {t("auth.login.createAccount")}
                   </Link>
                 </p>
 
                 {/* DEMO NOTE */}
                 <div className="mt-8 p-4 bg-slate-50 border border-slate-200 rounded-lg text-xs text-slate-500">
-                  <strong className="text-slate-700">Demo access</strong>
+                  <strong className="text-slate-700">{t("auth.login.demoTitle")}</strong>
                   <br />
-                  Authorized field teams and analysts can sign in with
-                  credentials issued by their regional coordinator.
+                  {t("auth.login.demoText")}
                 </div>
               </>
             ) : (
@@ -279,7 +277,7 @@ function Login() {
                   className="flex items-center gap-1.5 text-sm font-medium text-slate-500 hover:text-slate-700 mb-6"
                 >
                   <ArrowLeft size={16} strokeWidth={2.5} />
-                  Back to sign in
+                  {t("auth.forgotPassword.backToSignIn")}
                 </button>
 
                 {resetSent ? (
@@ -293,11 +291,11 @@ function Login() {
                     </div>
 
                     <h2 className="text-2xl font-bold text-slate-800">
-                      Check your inbox
+                      {t("auth.forgotPassword.successTitle")}
                     </h2>
 
                     <p className="mt-2 text-slate-500">
-                      We've sent a password reset link to{" "}
+                      {t("auth.forgotPassword.successMessage")}{" "}
                       <span className="font-medium text-slate-700">
                         {resetEmail}
                       </span>
@@ -309,18 +307,17 @@ function Login() {
                       onClick={backToLogin}
                       className="inline-block mt-6 bg-brand-900 hover:bg-brand-800 text-white py-3 px-6 rounded-lg font-semibold transition"
                     >
-                      Back to sign in
+                      {t("auth.forgotPassword.backToSignIn")}
                     </button>
                   </div>
                 ) : (
                   <>
                     <h2 className="text-3xl font-bold text-slate-800">
-                      Reset your password
+                      {t("auth.forgotPassword.title")}
                     </h2>
 
                     <p className="mt-2 text-slate-500">
-                      Enter the email associated with your account and we'll
-                      send you a link to reset your password.
+                      {t("auth.forgotPassword.subtitle")}
                     </p>
 
                     <form
@@ -329,7 +326,7 @@ function Login() {
                     >
                       <div>
                         <label className="block text-sm font-medium text-slate-700 mb-2">
-                          Email
+                          {t("auth.login.emailLabel")}
                         </label>
 
                         <div className="relative">
@@ -340,7 +337,7 @@ function Login() {
 
                           <input
                             type="email"
-                            placeholder="you@example.com"
+                            placeholder={t("auth.login.emailPlaceholder")}
                             value={resetEmail}
                             onChange={(e) => setResetEmail(e.target.value)}
                             required
@@ -368,7 +365,7 @@ function Login() {
                         disabled={resetLoading}
                         className="w-full bg-brand-600 hover:bg-brand-700 text-white py-3 rounded-lg font-semibold shadow-sm shadow-brand-600/30 transition disabled:opacity-60"
                       >
-                        {resetLoading ? "Sending..." : "Send reset link"}
+                        {resetLoading ? t("auth.forgotPassword.sending") : t("auth.forgotPassword.sendButton")}
                       </button>
                     </form>
                   </>

@@ -4,11 +4,14 @@ import CardHeader from "../../common/CardHeader";
 import { recentReports } from "../../data/mockData";
 import { categoryMeta } from "../../data/reportsData";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 function RecentReports() {
+  const { t } = useTranslation();
+
   return (
     <Card className="h-full flex flex-col">
-      <CardHeader title="RECENT REPORTS" />
+      <CardHeader title={t("dashboard.recentReports")} />
 
       <div className="px-5 pb-4 divide-y divide-slate-300">
         {recentReports.map((r) => {
@@ -39,7 +42,7 @@ function RecentReports() {
                     backgroundColor: r.statusBg,
                   }}
                 >
-                  {r.status}
+                  {t(`reports.status.${r.status.toLowerCase()}`, r.status)}
                 </span>
               </div>
             </div>
@@ -52,7 +55,7 @@ function RecentReports() {
           to="/reports"
           className="w-full text-sm font-medium text-blue-600 hover:text-blue-800 flex items-center justify-center gap-1 py-1"
         >
-          View all reports
+          {t("dashboard.viewAllReports")}
           <ChevronRight size={14} strokeWidth={3} />
         </Link>
       </div>
