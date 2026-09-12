@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { MapContainer, TileLayer, CircleMarker, Popup } from "react-leaflet";
+import { MapContainer, LayersControl, CircleMarker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { Search, Plus, Pencil, Trash2, MapPin } from "lucide-react";
 
 import SectionHeader from "../../common/SectionHeader";
 import Card from "../../common/Card";
 import Modal from "../../common/Modal";
+import RiskMapBaseLayers from "../../components/riskmap/RiskMapBaseLayers";
+import DistrictBoundariesLayer from "../../components/riskmap/DistrictBoundariesLayer";
+import { useRiskMapData } from "../../hooks/useRiskMapData";
 import { LEVEL_STYLES } from "../../data/analysisData";
 import { adminFetch } from "../../api/adminApi";
 
@@ -197,6 +200,8 @@ function ZoneFormModal({ initial, onClose, onSaved }) {
 export default function AdminRiskZones() {
   const { t } = useTranslation();
 
+  const { geoData, features, liveRiskScores, getFeatureStyle } = useRiskMapData();
+
   const [zones, setZones] = useState([]);
   const [total, setTotal] = useState(0);
   const [search, setSearch] = useState("");
@@ -310,27 +315,39 @@ export default function AdminRiskZones() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 items-stretch mb-5">
         <div className="lg:col-span-2 rounded-3xl overflow-hidden border border-gray-300 shadow-sm h-[400px]">
           <MapContainer center={NER_CENTER} zoom={6} scrollWheelZoom className="w-full h-full">
-            <TileLayer
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            />
-            {zonesWithCoords.map((z) => {
-              const style = LEVEL_STYLES[String(z.risk_level).toLowerCase()] ?? LEVEL_STYLES.low;
-              return (
-                <CircleMarker
-                  key={z.id}
-                  center={[z.latitude, z.longitude]}
-                  radius={10}
-                  pathOptions={{ color: style.bar, fillColor: style.bar, fillOpacity: 0.6, weight: 2 }}
-                >
-                  <Popup>
-                    <span className="font-semibold">{z.name}</span>
-                    <br />
-                    {t(`riskLevels.${String(z.risk_level).toLowerCase()}`)}
-                  </Popup>
-                </CircleMarker>
-              );
-            })}
+            <LayersControl position="topright">
+              <RiskMapBaseLayers />
+
+              {geoData && (
+                <DistrictBoundariesLayer
+                  features={features}
+                  liveRiskScores={liveRiskScores}
+                  getFeatureStyle={getFeatureStyle}
+                />
+              )}
+
+              <LayersControl.Overlay checked name="Admin Zones">
+                <div>
+                  {zonesWithCoords.map((z) => {
+                    const style = LEVEL_STYLES[String(z.risk_level).toLowerCase()] ?? LEVEL_STYLES.low;
+                    return (
+                      <CircleMarker
+                        key={z.id}
+                        center={[z.latitude, z.longitude]}
+                        radius={10}
+                        pathOptions={{ color: style.bar, fillColor: style.bar, fillOpacity: 0.6, weight: 2 }}
+                      >
+                        <Popup>
+                          <span className="font-semibold">{z.name}</span>
+                          <br />
+                          {t(`riskLevels.${String(z.risk_level).toLowerCase()}`)}
+                        </Popup>
+                      </CircleMarker>
+                    );
+                  })}
+                </div>
+              </LayersControl.Overlay>
+            </LayersControl>
           </MapContainer>
         </div>
 

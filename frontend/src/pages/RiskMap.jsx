@@ -1,61 +1,21 @@
 import { useState, useEffect, useMemo, useCallback } from "react";
 import {
-  MapContainer, TileLayer, GeoJSON, CircleMarker, Popup,
+  MapContainer, CircleMarker, Popup,
   Tooltip, LayersControl, useMap,
 } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { Search, RotateCcw, X, MapPin } from "lucide-react";
 import SectionHeader from "../common/SectionHeader";
 import LocationDetailPanel from "../components/riskmap/LocationDetailPanel";
+import RiskMapBaseLayers from "../components/riskmap/RiskMapBaseLayers";
+import DistrictBoundariesLayer from "../components/riskmap/DistrictBoundariesLayer";
+import { useRiskMapData, calculateCentroid } from "../hooks/useRiskMapData";
 import { MAP_LOCATIONS } from "../data/mapData";
 import { LEVEL_STYLES } from "../data/analysisData";
 import { useTranslation } from "react-i18next";
 import { supabase } from "../supabase";
 
 const CENTER = [26.2, 92.5], ZOOM = 7;
-
-const COLORS = {
-  high: { fill: "#EF4444", stroke: "#B91C1C" },
-  moderate: { fill: "#F59E0B", stroke: "#B45309" },
-  low: { fill: "#22C55E", stroke: "#15803D" },
-};
-
-// Generate color based on risk score (0-100)
-const getColorFromScore = (score) => {
-  const clampedScore = Math.max(0, Math.min(100, score || 0));
-
-  if (clampedScore >= 70) {
-    // High risk: Red gradient (70-100)
-    const intensity = (clampedScore - 70) / 30;
-    const r = Math.round(220 + intensity * 35); // 220-255
-    const g = Math.round(38 - intensity * 18); // 38-20
-    const b = Math.round(38 - intensity * 18); // 38-20
-    return {
-      fill: `rgb(${r}, ${g}, ${b})`,
-      stroke: `rgb(${Math.round(r * 0.7)}, ${Math.round(g * 0.5)}, ${Math.round(b * 0.5)})`
-    };
-  } else if (clampedScore >= 40) {
-    // Moderate risk: Orange to Yellow gradient (40-70)
-    const intensity = (clampedScore - 40) / 30;
-    const r = Math.round(251 - intensity * 31); // 251-220
-    const g = Math.round(146 + intensity * 40); // 146-186
-    const b = Math.round(60 - intensity * 22); // 60-38
-    return {
-      fill: `rgb(${r}, ${g}, ${b})`,
-      stroke: `rgb(${Math.round(r * 0.7)}, ${Math.round(g * 0.6)}, ${Math.round(b * 0.5)})`
-    };
-  } else {
-    // Low risk: Green gradient (0-40)
-    const intensity = clampedScore / 40;
-    const r = Math.round(34 + intensity * 217); // 34-251
-    const g = Math.round(197 - intensity * 51); // 197-146
-    const b = Math.round(94 - intensity * 34); // 94-60
-    return {
-      fill: `rgb(${r}, ${g}, ${b})`,
-      stroke: `rgb(${Math.round(r * 0.6)}, ${Math.round(g * 0.7)}, ${Math.round(b * 0.6)})`
-    };
-  }
-};
 
 function MapController({ center, zoom }) {
   const map = useMap();
@@ -79,7 +39,7 @@ const stableCoords = (id) => {
 export default function RiskMap() {
   const { t } = useTranslation();
 
-  const [geoData, setGeoData] = useState(null);
+  const { geoData, features, liveRiskScores, setLiveRiskScores, getFeatureStyle } = useRiskMapData();
   const [reports, setReports] = useState([]);
   const [selected, setSelected] = useState(null);
   const [riskFilter, setRiskFilter] = useState("all");
@@ -87,175 +47,6 @@ export default function RiskMap() {
   const [searchFocused, setSearchFocused] = useState(false);
   const [mapCenter, setMapCenter] = useState(CENTER);
   const [mapZoom, setMapZoom] = useState(ZOOM);
-  const [liveRiskScores, setLiveRiskScores] = useState({});
-  const [fetchingDistricts, setFetchingDistricts] = useState(new Set());
-
-  // Helper to calculate centroid of a polygon/multipolygon
-  const calculateCentroid = useCallback((geometry) => {
-    if (geometry.type === "Polygon") {
-      const coords = geometry.coordinates[0];
-      const n = coords.length;
-      let sumLat = 0, sumLng = 0;
-      coords.forEach(([lng, lat]) => {
-        sumLat += lat;
-        sumLng += lng;
-      });
-      return [sumLat / n, sumLng / n];
-    } else if (geometry.type === "MultiPolygon") {
-      const coords = geometry.coordinates[0][0];
-      const n = coords.length;
-      let sumLat = 0, sumLng = 0;
-      coords.forEach(([lng, lat]) => {
-        sumLat += lat;
-        sumLng += lng;
-      });
-      return [sumLat / n, sumLng / n];
-    }
-    return CENTER;
-  }, []);
-
-  // Fetch live risk score for a single district (with caching)
-  const fetchDistrictRiskScore = useCallback(async (districtName, geometry) => {
-    // Skip if already fetched or currently fetching
-    if (liveRiskScores[districtName] || fetchingDistricts.has(districtName)) {
-      return;
-    }
-
-    // Mark as fetching
-    setFetchingDistricts(prev => new Set(prev).add(districtName));
-
-    try {
-      const [lat, lng] = calculateCentroid(geometry);
-      const response = await fetch("http://localhost:8000/api/risk/district", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          district_name: districtName,
-          latitude: lat,
-          longitude: lng,
-        }),
-      });
-
-      if (response.ok) {
-        const data = await response.json();
-        setLiveRiskScores(prev => ({
-          ...prev,
-          [districtName]: {
-            riskScore: data.risk_score,
-            riskLevel: data.risk_level.toLowerCase(),
-            probability: data.probability,
-            features: data.features,
-            timestamp: Date.now(),
-          },
-        }));
-      }
-    } catch (error) {
-      console.error(`Failed to fetch risk for ${districtName}:`, error);
-    } finally {
-      // Remove from fetching set
-      setFetchingDistricts(prev => {
-        const newSet = new Set(prev);
-        newSet.delete(districtName);
-        return newSet;
-      });
-    }
-  }, [calculateCentroid, liveRiskScores, fetchingDistricts]);
-
-  // Background worker: Fetch risk scores gradually
-  useEffect(() => {
-    if (!geoData) return;
-
-    const features = geoData.features || [];
-    let currentIndex = 0;
-    let intervalId;
-
-    // Fetch one district every 2 seconds in the background
-    const fetchNext = () => {
-      if (currentIndex >= features.length) {
-        clearInterval(intervalId);
-        return;
-      }
-
-      const feature = features[currentIndex];
-      const districtName = feature.properties?.dtname;
-
-      if (districtName) {
-        fetchDistrictRiskScore(districtName, feature.geometry);
-      }
-
-      currentIndex++;
-    };
-
-    // Start background fetching after 2 seconds
-    const timeoutId = setTimeout(() => {
-      intervalId = setInterval(fetchNext, 2000);
-    }, 2000);
-
-    return () => {
-      clearTimeout(timeoutId);
-      if (intervalId) clearInterval(intervalId);
-    };
-  }, [geoData, fetchDistrictRiskScore]);
-
-  // Periodic refresh: Re-fetch all risk scores every 4 hours
-  useEffect(() => {
-    if (!geoData) return;
-
-    const FOUR_HOURS = 4 * 60 * 60 * 1000; // 4 hours in milliseconds
-
-    const refreshAllScores = () => {
-      console.log("[RiskMap] Periodic refresh: clearing cache and refetching all scores");
-      // Clear existing scores to force re-fetch
-      setLiveRiskScores({});
-      setFetchingDistricts(new Set());
-    };
-
-    // Set up periodic refresh
-    const refreshInterval = setInterval(refreshAllScores, FOUR_HOURS);
-
-    return () => clearInterval(refreshInterval);
-  }, [geoData]);
-
-  useEffect(() => {
-    fetch("/ner_districts_simplified.geojson")
-      .then(r => {
-        if (!r.ok) throw new Error(`GeoJSON error: ${r.status}`);
-        return r.json();
-      })
-      .then(data => {
-        setGeoData(data);
-        // Load all cached risk scores from backend
-        loadCachedRiskScores();
-      })
-      .catch(e => console.error("GeoJSON:", e));
-  }, []);
-
-  // Load all cached risk scores from backend
-  const loadCachedRiskScores = async () => {
-    try {
-      const response = await fetch("http://localhost:8000/api/risk/cache/all");
-      if (response.ok) {
-        const cached = await response.json();
-        console.log(`[RiskMap] Loaded ${Object.keys(cached).length} cached districts`);
-
-        // Transform cached data to match our state format - include full features
-        const transformed = {};
-        for (const [districtName, data] of Object.entries(cached)) {
-          transformed[districtName] = {
-            riskScore: data.risk_score,
-            riskLevel: data.risk_level.toLowerCase(),
-            probability: data.probability,
-            features: data.features, // Store the full features object
-            timestamp: Date.now(), // Mark as fresh
-          };
-        }
-
-        setLiveRiskScores(transformed);
-      }
-    } catch (error) {
-      console.error("[RiskMap] Failed to load cached risk scores:", error);
-    }
-  };
 
   useEffect(() => {
     let active = true;
@@ -312,15 +103,6 @@ export default function RiskMap() {
     }), [reports]
   );
 
-  const features = geoData?.features || [];
-
-  const filteredFeatures = useMemo(
-    () => riskFilter === "all"
-      ? features
-      : features.filter(f => f.properties?.riskLevel === riskFilter),
-    [geoData, riskFilter]
-  );
-
   const districts = useMemo(() =>
     features
       .map(f => ({
@@ -346,31 +128,15 @@ export default function RiskMap() {
       .slice(0, 8);
   }, [districts, searchQuery]);
 
-  const counts = useMemo(() => ({
-    all: features.length,
-    high: features.filter(f => f.properties?.riskLevel === "high").length,
-    moderate: features.filter(f => f.properties?.riskLevel === "moderate").length,
-    low: features.filter(f => f.properties?.riskLevel === "low").length,
-  }), [geoData]);
-
-  const getFeatureStyle = useCallback(feature => {
-    const p = feature.properties || {};
-    // Use live risk score if available, otherwise fall back to GeoJSON data
-    const districtName = p.dtname;
-    const riskScore = liveRiskScores[districtName]?.riskScore ?? Number(p.riskScore) ?? 0;
-    const color = getColorFromScore(riskScore);
-    const active =
-      selected?.isDistrict && selected.name === p.dtname;
-
+  const counts = useMemo(() => {
+    const levelOf = f => liveRiskScores[f.properties?.dtname]?.riskLevel ?? f.properties?.riskLevel;
     return {
-      fillColor: color.fill,
-      color: active ? "#0F172A" : color.stroke,
-      weight: active ? 3 : 1.5,
-      opacity: active ? 1 : 0.8,
-      fillOpacity: active ? 0.72 : 0.42,
-      dashArray: active ? "" : "3",
+      all: features.length,
+      high: features.filter(f => levelOf(f) === "high").length,
+      moderate: features.filter(f => levelOf(f) === "moderate").length,
+      low: features.filter(f => levelOf(f) === "low").length,
     };
-  }, [selected, liveRiskScores]);
+  }, [features, liveRiskScores]);
 
   const selectDistrict = useCallback(async (name) => {
     setSearchQuery(name);
@@ -588,47 +354,6 @@ export default function RiskMap() {
     }
   }, [features, calculateCentroid, liveRiskScores, setLiveRiskScores]);
 
-  const handleFeature = useCallback((feature, layer) => {
-    const p = feature.properties || {};
-    const name = p.dtname || "Unknown District";
-    const state = p.stname || "NER";
-
-    // Function to update tooltip with latest data
-    const updateTooltip = () => {
-      const liveData = liveRiskScores[name];
-      const score = liveData?.riskScore ?? Number(p.riskScore) ?? 20;
-      const risk = liveData?.riskLevel ?? p.riskLevel ?? "low";
-
-      layer.setTooltipContent(`
-        <div class="p-1 text-xs">
-          <div class="font-bold text-slate-900">${name}</div>
-          <div class="text-slate-500">${state}</div>
-          <div class="mt-1">Risk: <b>${typeof score === 'number' ? score.toFixed(1) : score}/100</b> · ${risk}</div>
-        </div>
-      `);
-    };
-
-    // Initial tooltip
-    layer.bindTooltip("", { sticky: true });
-    updateTooltip();
-
-    // Store update function on layer for later use
-    layer._updateTooltip = updateTooltip;
-
-    layer.on({
-      mouseover: e => {
-        e.target.setStyle({
-          weight: 3,
-          color: "#1E293B",
-          fillOpacity: 0.7,
-        });
-        e.target.bringToFront();
-      },
-      mouseout: e => e.target.setStyle(getFeatureStyle(feature)),
-      click: () => selectDistrict(name),
-    });
-  }, [getFeatureStyle, selectDistrict, liveRiskScores]);
-
   const resetMap = () => {
     setMapCenter(CENTER);
     setMapZoom(ZOOM);
@@ -760,50 +485,17 @@ export default function RiskMap() {
             <MapController center={mapCenter} zoom={mapZoom} />
 
             <LayersControl position="topright">
-              <LayersControl.BaseLayer checked name="OpenStreetMap">
-                <TileLayer
-                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                  attribution="&copy; OpenStreetMap"
-                  maxZoom={19}
-                />
-              </LayersControl.BaseLayer>
-
-              <LayersControl.BaseLayer name="Satellite">
-                <TileLayer
-                  url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
-                  attribution="Tiles &copy; Esri"
-                  maxZoom={18}
-                />
-              </LayersControl.BaseLayer>
-
-              <LayersControl.BaseLayer name="Terrain">
-                <TileLayer
-                  url="https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png"
-                  attribution="&copy; OpenTopoMap"
-                  maxZoom={17}
-                />
-              </LayersControl.BaseLayer>
-
-              <LayersControl.BaseLayer name="Dark">
-                <TileLayer
-                  url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
-                  attribution="&copy; CARTO"
-                  maxZoom={19}
-                />
-              </LayersControl.BaseLayer>
+              <RiskMapBaseLayers />
 
               {geoData && (
-                <LayersControl.Overlay checked name="Risk Zones">
-                  <GeoJSON
-                    key={`${riskFilter}-${filteredFeatures.length}-${Object.keys(liveRiskScores).length}`}
-                    data={{
-                      type: "FeatureCollection",
-                      features: filteredFeatures,
-                    }}
-                    style={getFeatureStyle}
-                    onEachFeature={handleFeature}
-                  />
-                </LayersControl.Overlay>
+                <DistrictBoundariesLayer
+                  features={features}
+                  liveRiskScores={liveRiskScores}
+                  getFeatureStyle={getFeatureStyle}
+                  riskFilter={riskFilter}
+                  activeDistrictName={selected?.isDistrict ? selected.name : undefined}
+                  onFeatureClick={selectDistrict}
+                />
               )}
 
               <LayersControl.Overlay checked name="Sensor Stations">
