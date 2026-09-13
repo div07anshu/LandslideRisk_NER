@@ -11,6 +11,8 @@ import RiskMapBaseLayers from "../../components/riskmap/RiskMapBaseLayers";
 import DistrictBoundariesLayer from "../../components/riskmap/DistrictBoundariesLayer";
 import { useRiskMapData } from "../../hooks/useRiskMapData";
 import { LEVEL_STYLES } from "../../data/analysisData";
+import { MAP_LOCATIONS } from "../../data/mapData";
+import { supabase } from "../../supabase";
 import { adminFetch } from "../../api/adminApi";
 
 const RISK_LEVELS = ["LOW", "MODERATE", "HIGH"];
@@ -202,6 +204,7 @@ export default function AdminRiskZones() {
 
   const { geoData, features, liveRiskScores, getFeatureStyle } = useRiskMapData();
 
+  const [reports, setReports] = useState([]);
   const [zones, setZones] = useState([]);
   const [total, setTotal] = useState(0);
   const [search, setSearch] = useState("");
@@ -213,6 +216,51 @@ export default function AdminRiskZones() {
   const [zoneToDelete, setZoneToDelete] = useState(null);
   const [deleting, setDeleting] = useState(false);
   const [deleteError, setDeleteError] = useState("");
+
+  useEffect(() => {
+    let active = true;
+
+    const load = async () => {
+      const { data, error: err } = await supabase
+        .from("reports")
+        .select("*")
+        .not("status", "eq", "RESOLVED")
+        .order("created_at", { ascending: false });
+
+      if (err) return console.error("Reports:", err.message);
+      if (active) setReports(data || []);
+    };
+
+    load();
+
+    const channel = supabase
+      .channel("public:reports:admin-risk-zones")
+      .on("postgres_changes", {
+        event: "*", schema: "public", table: "reports",
+      }, (payload) => {
+        if (payload.eventType === "INSERT")
+          setReports((p) => [payload.new, ...p]);
+
+        if (payload.eventType === "UPDATE")
+          setReports((p) =>
+            p.map((r) => (r.id === payload.new.id ? payload.new : r))
+              .filter((r) => r.status !== "RESOLVED")
+          );
+
+        if (payload.eventType === "DELETE")
+          setReports((p) => p.filter((r) => r.id !== payload.old.id));
+      })
+      .subscribe();
+
+    return () => {
+      active = false;
+      supabase.removeChannel(channel);
+    };
+  }, []);
+
+  const reportsWithCoords = reports.filter(
+    (r) => Number.isFinite(Number(r.latitude)) && Number.isFinite(Number(r.longitude))
+  );
 
   async function loadZones(signal) {
     setLoading(true);
@@ -345,6 +393,64 @@ export default function AdminRiskZones() {
                       </CircleMarker>
                     );
                   })}
+                </div>
+              </LayersControl.Overlay>
+
+              <LayersControl.Overlay checked name="Sensor Stations">
+                <div>
+                  {MAP_LOCATIONS.map((location) => {
+                    const level = LEVEL_STYLES[location.riskLevel] || LEVEL_STYLES.low;
+
+                    return (
+                      <CircleMarker
+                        key={location.id}
+                        center={[location.lat, location.lng]}
+                        radius={9}
+                        pathOptions={{
+                          color: "#FFFFFF",
+                          fillColor: level.bar,
+                          fillOpacity: 0.9,
+                          weight: 2.5,
+                        }}
+                      >
+                        <Popup>
+                          <div className="text-xs">
+                            <b>{location.name}</b>
+                            <div className="text-slate-500">{location.state}</div>
+                            <div className="mt-2">
+                              Risk: <b>{location.riskScore}/100</b>
+                            </div>
+                          </div>
+                        </Popup>
+                      </CircleMarker>
+                    );
+                  })}
+                </div>
+              </LayersControl.Overlay>
+
+              <LayersControl.Overlay checked name="Live Reports">
+                <div>
+                  {reportsWithCoords.map((report) => (
+                    <CircleMarker
+                      key={`report-${report.id}`}
+                      center={[Number(report.latitude), Number(report.longitude)]}
+                      radius={7}
+                      pathOptions={{
+                        color: "#FFFFFF",
+                        fillColor: "#DC2626",
+                        fillOpacity: 1,
+                        weight: 2.5,
+                      }}
+                    >
+                      <Popup>
+                        <div className="min-w-[180px] text-xs">
+                          <b className="text-red-700">Live Report</b>
+                          <div className="font-semibold">{report.title}</div>
+                          <div className="text-slate-500">{report.location}</div>
+                        </div>
+                      </Popup>
+                    </CircleMarker>
+                  ))}
                 </div>
               </LayersControl.Overlay>
             </LayersControl>
