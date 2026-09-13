@@ -15,7 +15,43 @@ import { LEVEL_STYLES } from "../data/analysisData";
 import { useTranslation } from "react-i18next";
 import { supabase } from "../supabase";
 
+const API_BASE =
+  import.meta.env.VITE_API_URL ?? import.meta.env.VITE_BACKEND_URL ?? "http://localhost:4000";
+
 const CENTER = [26.2, 92.5], ZOOM = 7;
+
+// Looks up the district's reference record (population, highways, government
+// schools/hospitals) from the Supabase `Details` table, via the backend so
+// RLS doesn't block it. Returns null on any miss/failure — the location
+// panel just omits the section when there's nothing to show.
+async function fetchDistrictDetails(districtName, stateName, signal) {
+  try {
+    const {
+      data: { session },
+    } = await supabase.auth.getSession();
+
+    const token = session?.access_token;
+    if (!token) return null;
+
+    const params = new URLSearchParams({ district: districtName });
+    if (stateName) params.set("state", stateName);
+
+    const res = await fetch(`${API_BASE}/api/risk/district-details?${params.toString()}`, {
+      headers: { Authorization: `Bearer ${token}` },
+      signal,
+    });
+
+    if (!res.ok) return null;
+
+    const body = await res.json();
+    return body?.data ?? null;
+  } catch (error) {
+    if (error?.name !== "AbortError") {
+      console.error(`Failed to fetch details for ${districtName}:`, error);
+    }
+    return null;
+  }
+}
 
 function MapController({ center, zoom }) {
   const map = useMap();
@@ -148,6 +184,18 @@ export default function RiskMap() {
     if (!feature) return;
 
     const p = feature.properties || {};
+
+    // Fetch the Supabase-backed district reference details in parallel with
+    // the risk score below, and patch them into `selected` once they land
+    // (whichever branch below ends up setting it).
+    fetchDistrictDetails(p.dtname, p.stname).then((details) => {
+      if (!details) return;
+      setSelected((prev) =>
+        prev && prev.isDistrict && prev.name === p.dtname
+          ? { ...prev, details }
+          : prev
+      );
+    });
 
     // Calculate centroid for the district
     const [lat, lng] = calculateCentroid(feature.geometry);
