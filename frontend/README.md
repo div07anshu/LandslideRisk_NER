@@ -10,9 +10,11 @@ Modern React 19 dashboard built with Vite, Tailwind CSS 4, and React Router for 
 - **Risk Map**: Interactive Leaflet map with location-based risk analysis
 - **Risk Analysis**: Historical trends, factor breakdowns, area comparisons
 - **Reports**: Community-submitted incident reports and status tracking
-- **Alerts**: System-generated warnings by severity level
-- **AI Assistant**: LLM-powered chat interface for landslide risk queries
-- **Authentication**: Supabase-based login, signup, and protected routes
+- **Alerts**: System-generated warnings by severity, plus SMS alert subscription for a saved location
+- **AI Assistant**: LLM-powered chat interface for landslide risk queries (also available as a floating widget on every page)
+- **Authentication**: Supabase-based login, signup, password reset, and protected routes
+- **Admin Panel**: Separate admin-only area — dashboard stats, report moderation, user role management, risk zone editing, risk threshold configuration, and audit logs
+- **Internationalization**: UI available in English, Hindi, Assamese, Bengali, and Nepali
 
 ---
 
@@ -26,6 +28,7 @@ Modern React 19 dashboard built with Vite, Tailwind CSS 4, and React Router for 
 - **Recharts** for data visualization
 - **Supabase JS Client** for authentication & database
 - **Lucide React** for iconography
+- **i18next** with browser language detection for multi-language support
 
 ---
 
@@ -80,12 +83,15 @@ Runs **Oxlint** for code quality checks.
 frontend/
 ├── src/
 │   ├── components/       # Reusable UI components
-│   │   ├── layout/       # Layout, Sidebar, Topbar
+│   │   ├── layout/       # Layout, Sidebar, Topbar, LanguageSelector
 │   │   ├── dashboard/    # Dashboard widgets
-│   │   ├── alerts/       # Alert components
+│   │   ├── alerts/       # Alert list/summary + SMS location alert subscription form
+│   │   ├── analysis/     # Risk Analysis page components (trend chart, factor breakdown, comparisons)
 │   │   ├── reports/      # Report forms and lists
-│   │   ├── assistant/    # AI chat components
-│   │   └── riskmap/      # Map panels
+│   │   ├── assistant/    # AI chat components (chat page)
+│   │   ├── ai-floating/  # Floating AI Assistant widget shown across pages
+│   │   ├── riskmap/      # Map layers and location detail panel
+│   │   └── admin/        # Admin-only layout, sidebar, metric cards, report detail modal
 │   ├── pages/            # Top-level route pages
 │   │   ├── Dashboard.jsx
 │   │   ├── RiskMap.jsx
@@ -94,10 +100,17 @@ frontend/
 │   │   ├── Alerts.jsx
 │   │   ├── AIAssistant.jsx
 │   │   ├── LoginPage.jsx
-│   │   └── Signup.jsx
+│   │   ├── Signup.jsx
+│   │   ├── UpdatePassword.jsx
+│   │   ├── Unauthorized.jsx
+│   │   ├── NotFound.jsx
+│   │   └── admin/        # AdminDashboard, AdminReports, AdminUsers, AdminRiskZones, AdminConfig, AdminAuditLogs
 │   ├── context/          # React Context providers
 │   │   └── AuthContext.jsx
-│   ├── common/           # Shared components (Card, SectionHeader)
+│   ├── hooks/            # useAdminAuth, useRiskMapData, useTranslation
+│   ├── i18n/             # i18next setup + locale JSON files (en, hi, as, bn, ne)
+│   ├── api/              # adminApi.js — typed calls to the backend admin API
+│   ├── common/           # Shared components (Card, CardHeader, Modal, SectionHeader)
 │   ├── data/             # Mock data and constants
 │   ├── supabase.js       # Supabase client instance
 │   ├── App.jsx           # Router configuration
@@ -133,7 +146,15 @@ frontend/
 | `/reports` | `Reports` | Yes |
 | `/alerts` | `Alerts` | Yes |
 | `/assistant` | `AIAssistant` | Yes |
+| `/update-password` | `UpdatePassword` | No |
+| `/unauthorized` | `Unauthorized` | No |
+| `/admin/*` | Admin pages (`AdminDashboard`, `AdminReports`, `AdminUsers`, `AdminRiskZones`, `AdminConfig`, `AdminAuditLogs`) | Yes + `ADMIN` role |
 | `*` | `NotFound` | No |
+
+Admin routes are guarded client-side by `AdminRoute` (via `useAdminAuth`), but
+the actual authorization check happens server-side on every request in the
+backend (`requireAdmin` — see `../backend/README.md`); the frontend guard is
+only for UX.
 
 ---
 
@@ -188,8 +209,18 @@ Uses **Tailwind CSS 4** with:
 
 ---
 
+## 🌍 Internationalization
+
+`src/i18n/` configures i18next with browser language detection and locale
+files for English (`en`), Hindi (`hi`), Assamese (`as`), Bengali (`bn`), and
+Nepali (`ne`). Components read strings via the `useTranslation` hook; the
+`LanguageSelector` in the layout lets users switch at runtime.
+
 ## 📝 Notes
 
 - Mock data in `src/data/` is used for development/testing when backend is unavailable
 - Map requires `leaflet.css` imported in component files
 - Chart components use Recharts with custom styling
+- `LocationAlertSubscription` (in `components/alerts/`) posts to the backend's
+  `/api/auth/alerts/subscribe` so a user's phone number + location can receive
+  automatic SMS alerts — see `../backend/README.md` for the alert monitor.

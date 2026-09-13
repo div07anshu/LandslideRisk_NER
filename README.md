@@ -13,23 +13,26 @@ The system follows a modern three-tier decoupled architecture:
 │                 React Frontend (Vite + Tailwind)            │
 │  - Interactive Risk Maps (Leaflet) & Analytics Dashboard    │
 │  - User Authentication & Community Incident Reporting       │
-│  - AI Assistant Chat Interface                              │
+│  - AI Assistant Chat Interface & Admin Panel                │
+│  - Multi-language UI (i18next)                              │
 └──────────────────────────────┬──────────────────────────────┘
                                │ HTTP / Supabase Auth Tokens
                                ▼
 ┌─────────────────────────────────────────────────────────────┐
 │          Node.js Backend Gateway (Express + TypeScript)     │
 │  - Centralized API Gateway & Security Headers (Helmet)      │
-│  - Supabase Bearer-Token Authentication Middleware          │
+│  - Supabase Bearer-Token Authentication + Admin Role Checks │
 │  - Rate Limiting & Proxying to AI / Database Services       │
+│  - SMS Alert Subscriptions & Background Risk Monitor        │
 └──────────────────────────────┬──────────────────────────────┘
-                               │ Proxied REST calls
+                               │ Proxied REST calls (X-Internal-Token)
                                ▼
 ┌─────────────────────────────────────────────────────────────┐
 │             AI & ML Microservice (FastAPI + Python)         │
 │  - Machine Learning Model (`landslide_risk_model.joblib`)   │
 │  - Real-Time Weather Integration (Open-Meteo API)           │
 │  - LLM-Powered Advisory Assistant (Groq API)                │
+│  - Twilio SMS Alerts for HIGH-Risk Locations                │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -139,8 +142,14 @@ Visit **`http://localhost:5173`** in your browser.
 | Service | File | Key Variables |
 | :--- | :--- | :--- |
 | **Frontend** | `frontend/.env` | `VITE_SUPABASE_URL`, `VITE_SUPABASE_KEY`, `VITE_API_URL` |
-| **Backend** | `backend/.env` | `PORT`, `CORS_ORIGIN`, `SUPABASE_URL`, `SUPABASE_ANON_KEY`, `FASTAPI_URL` |
-| **AI Services** | `ai_services/.env` | `GROQ_API_KEY`, `SUPABASE_URL`, `SUPABASE_KEY` |
+| **Backend** | `backend/.env` | `PORT`, `CORS_ORIGIN`, `SUPABASE_URL`, `SUPABASE_ANON_KEY`, `FASTAPI_URL`, `AI_SERVICE_TOKEN` |
+| **AI Services** | `ai_services/.env` | `GROQ_API_KEY`, `SUPABASE_URL`, `SUPABASE_KEY`, `AI_SERVICE_TOKEN`, `TWILIO_ACCOUNT_SID`, `TWILIO_AUTH_TOKEN`, `TWILIO_PHONE_NUMBER` |
+
+`AI_SERVICE_TOKEN` must match between `backend/.env` and `ai_services/.env` —
+it's the shared secret the backend sends as `X-Internal-Token` so the AI
+service can refuse calls that didn't come from it. The `TWILIO_*` variables
+are required only for automatic/on-demand SMS risk alerts (see
+`backend/README.md` and `ai_services/README.md`).
 
 ---
 
