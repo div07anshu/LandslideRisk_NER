@@ -102,6 +102,50 @@ export async function getRiskData(
 }
 
 /**
+ * GET /api/risk/district-details — protected.
+ * Looks up the district reference record (population, highways, government
+ * schools/hospitals) from the `Details` table so the Risk Map's location
+ * panel can show it alongside the live risk score.
+ */
+export async function getDistrictDetails(
+  req: Request,
+  res: Response,
+  next: NextFunction,
+): Promise<void> {
+  try {
+    const district = String(req.query.district ?? '').trim();
+    if (!district) {
+      throw new HttpError(400, 'district is required');
+    }
+
+    const supabase = getSupabaseAdminClient();
+
+    let query = supabase
+      .from('Details')
+      .select('*')
+      .ilike('District', district);
+
+    const state = String(req.query.state ?? '').trim();
+    if (state) {
+      query = query.ilike('State', state);
+    }
+
+    const { data, error } = await query.limit(1).maybeSingle();
+
+    if (error) {
+      throw error;
+    }
+
+    res.status(200).json({
+      success: true,
+      data: data ?? null,
+    });
+  } catch (err) {
+    next(err);
+  }
+}
+
+/**
  * GET /api/risk/locations — protected.
  * Returns the state/district/city reference list used to populate the
  * location search filter.

@@ -13,6 +13,7 @@ export default function AlertsList({
   setLevelFilter,
   search,
   setSearch,
+  loading = false,
 }) {
   const { t } = useTranslation();
 
@@ -65,7 +66,13 @@ export default function AlertsList({
 
       {/* List */}
       <div className="px-5 pb-4 divide-y divide-slate-200 overflow-y-auto flex-1">
-        {alerts.length === 0 && (
+        {loading && (
+          <p className="text-sm text-slate-400 py-6 text-center">
+            {t("alerts.loadingAlerts", "Loading alerts…")}
+          </p>
+        )}
+
+        {!loading && alerts.length === 0 && (
           <p className="text-sm text-slate-400 py-6 text-center">
             {t("alerts.noAlertsFound")}
           </p>

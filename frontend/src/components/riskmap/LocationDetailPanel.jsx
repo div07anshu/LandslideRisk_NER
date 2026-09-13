@@ -7,6 +7,10 @@ import {
   AlertTriangle,
   BarChart3,
   RefreshCw,
+  Users,
+  Route,
+  School,
+  Hospital,
 } from "lucide-react";
 
 import { Link } from "react-router-dom";
@@ -555,6 +559,80 @@ export default function LocationDetailPanel({
                 </span>
               </div>
             )}
+
+          {/* DISTRICT DETAILS */}
+          {selected.details && (
+            <div className="mt-3">
+              <div className="
+                text-[9px]
+                uppercase
+                tracking-widest
+                font-bold
+                text-slate-400
+                mb-3
+              ">
+                District Details
+              </div>
+
+              <div className="grid grid-cols-2 gap-2">
+                {selected.details.Population != null && (
+                  <div className="rounded-xl border border-slate-100 bg-slate-50 p-3">
+                    <div className="flex items-center gap-1.5 text-slate-400">
+                      <Users size={12} />
+                      <span className="text-[9px] uppercase tracking-wider font-bold">
+                        Population
+                      </span>
+                    </div>
+                    <div className="mt-1 text-sm font-bold text-slate-900 tabular-nums">
+                      {Number(selected.details.Population).toLocaleString()}
+                    </div>
+                  </div>
+                )}
+
+                {selected.details["National Highways"] && (
+                  <div className="rounded-xl border border-slate-100 bg-slate-50 p-3">
+                    <div className="flex items-center gap-1.5 text-slate-400">
+                      <Route size={12} />
+                      <span className="text-[9px] uppercase tracking-wider font-bold">
+                        National Highways
+                      </span>
+                    </div>
+                    <div className="mt-1 text-xs font-bold text-slate-900">
+                      {selected.details["National Highways"]}
+                    </div>
+                  </div>
+                )}
+
+                {selected.details["Government Schools"] != null && (
+                  <div className="rounded-xl border border-slate-100 bg-slate-50 p-3">
+                    <div className="flex items-center gap-1.5 text-slate-400">
+                      <School size={12} />
+                      <span className="text-[9px] uppercase tracking-wider font-bold">
+                        Govt. Schools
+                      </span>
+                    </div>
+                    <div className="mt-1 text-sm font-bold text-slate-900 tabular-nums">
+                      {selected.details["Government Schools"]}
+                    </div>
+                  </div>
+                )}
+
+                {selected.details["Government Hospitals"] != null && (
+                  <div className="rounded-xl border border-slate-100 bg-slate-50 p-3">
+                    <div className="flex items-center gap-1.5 text-slate-400">
+                      <Hospital size={12} />
+                      <span className="text-[9px] uppercase tracking-wider font-bold">
+                        Govt. Hospitals
+                      </span>
+                    </div>
+                    <div className="mt-1 text-sm font-bold text-slate-900 tabular-nums">
+                      {selected.details["Government Hospitals"]}
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
 
           {/* ERROR MESSAGE */}
           {selected.error && (
